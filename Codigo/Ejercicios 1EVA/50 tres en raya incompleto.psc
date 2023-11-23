@@ -68,7 +68,6 @@ SubProceso LeerCoordenada(Coords,TurnoJ1)
 	
 	cordx<-0;
 	cordy<-0;
-	
 	Mientras cordx<1 o cordx>3 o cordy<1 o cordy>3 Hacer
 		Leer cordx,cordy;
 		si cordx<1 o cordx>3 o cordy<1 o cordy>3
@@ -101,6 +100,35 @@ SubProceso RegistrarTirada(t,Coords,TurnoJ1)
 	
 FinSubProceso
 
+SubProceso r<-PosicionValida(t,Coords)
+	
+	posx,posy es entero;
+	r es logico;
+	
+	posx<-coords[0];
+	posy<-coords[1];
+	
+	si t[posx,posy]=0
+		r<-Verdadero;
+	SiNo
+		r<-Falso;
+	FinSi
+	
+FinSubProceso
+
+	
+
+SubProceso HayGanador<-ComprobarGanador(t,TurnoJ1)
+	
+//	HayGanador es logico;
+//	
+//	si t[0,0] == t[1,1] == t[2,2]
+//		HayGanador<-Verdadero;
+//	FinSi
+	
+	
+	
+FinSubProceso
 
 Proceso ejercicio50
 	
@@ -110,9 +138,10 @@ Proceso ejercicio50
 	Coords es entero;
 	TurnoJ1 es logico;
 	Nturnos es entero;
-	Ganador es logico;
+	HayGanador es logico;
+	PosValida es logico;
 	
-	Ganador<-Falso;
+	HayGanador<-Falso;
 	
 	Dimension Coords[2];
 	
@@ -130,23 +159,22 @@ Proceso ejercicio50
 	
 	repetir 
 		
-		LeerCoordenada(Coords,TurnoJ1);
+		repetir
+			LeerCoordenada(Coords,TurnoJ1);
+			PosValida<-PosicionValida(t,Coords);
+			si PosValida==Falso
+				escribir "Esa posicion está ocupada";
+			FinSi
+		hasta que PosValida==verdadero
+		
 		RegistrarTirada(t,Coords,TurnoJ1);
 		Nturnos<-Nturnos+1;
 		Borrar Pantalla;
 		VisualizarTablero(t,MAX,cad);
+		HayGanador<-ComprobarGanador(t,TurnoJ1);
+		TurnoJ1<-!TurnoJ1;
 		
-		//No funciona el cambio de turno a partir del turno 3
-		
-		si TurnoJ1 es Verdadero
-			TurnoJ1<-Falso;
-		FinSi
-		
-		si TurnoJ1 es Falso
-			TurnoJ1<-Verdadero;
-		FinSi
-		
-	Hasta Que Ganador==Verdadero o NTurnos==9
+	Hasta Que HayGanador==Verdadero o NTurnos==9
 
 
 	

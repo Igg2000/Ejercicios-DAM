@@ -1,0 +1,4 @@
+Para este ejercicio le pediremos al usuario que pulse cualquier tecla
+una vez lo haga se generará 15 (mediante un bucle) un numero aleatorio del 1 al 3
+si ese numero aleatorio es 1, se escribira 1 como resultado del partido, si sale el dos se escribirá 2
+y si sale 3 se escribirá X, que significa que el partido ha acabado en empate

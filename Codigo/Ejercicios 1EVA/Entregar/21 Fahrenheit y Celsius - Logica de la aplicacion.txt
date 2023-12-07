@@ -1,0 +1,11 @@
+Para resolver este ejercicio he empezado creando un menú en el que se te da la opcion de:
+1 transformar de grados Fahrenheit a celsius
+2 hacer la opcion inversa
+3 salir
+
+he creado un bucle que te obliga a introducir un numero que sea una de las 3 opciones
+
+en base a ese numero se decide que ocurre
+si eliges la primera opcion te pide que introduzcas un numero, el cual le restará 32 y luego dividirá entre 1.8 para pasarlo a Celsius
+si eliges la segunda opcion te pide que introduzcas un numero, el cual le sumará 32 y luego multiplicará por 1.8 para pasarlo a Fahrenheit
+si eliges la tercera opcion te mostrará un mensaje en el que dice: "Hasta luego"

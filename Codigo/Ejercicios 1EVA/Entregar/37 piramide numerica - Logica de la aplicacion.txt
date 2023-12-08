@@ -1,0 +1,6 @@
+Para resolver este ejercicio he metido he generado: 
+primero una escalera de espacios que va de mas a menos
+segundo una escalera numerica que va de mas a menos y acaba en 2
+y tercero una escalera numerica normal
+
+para generar una escalera numerica es tener un bucle dentro de un bucle, y que el segundo llegue hasta el contador actual del primer bucle

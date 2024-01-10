@@ -72,9 +72,9 @@ Funcion x<-ValidarMovimiento(tablero, movimiento)
 	
 Fin Funcion
 
-Funcion moverficha(tablero)
+Funcion moverficha(tablero, monedas Por Referencia)
 	
-	i,j,movimientovalido es entero;
+	i,j,movimientovalido,posfila,poscolumna es entero;
 	movimiento es caracter;
 	direccionCorrecta es logico;
 	
@@ -85,6 +85,7 @@ Funcion moverficha(tablero)
 	escribir sin saltar "selecciona a donde quieres moverte: ";
 	
 	repetir
+		
 		leer movimiento;
 		
 		Repetir
@@ -93,6 +94,7 @@ Funcion moverficha(tablero)
 			SiNo
 				direccionCorrecta<-Falso;
 				escribir "La tecla que has pulsado no es un movimiento valido";
+				leer movimiento;
 			FinSi
 		Hasta Que direccionCorrecta==Verdadero
 		
@@ -100,39 +102,50 @@ Funcion moverficha(tablero)
 		si movimientovalido==1
 			escribir "Existe un muro en esa posicion";
 		FinSi
+		
+		si movimientovalido==3
+			monedas<-monedas+1;
+		FinSi
 	hasta que movimientovalido==0 o movimientovalido==3 
 	
 	para i<-0 hasta 19 Hacer
 		para j<-0 hasta 19 hacer
 			si tablero[i,j]==2
-				si movimiento=='a' o movimiento=='A'
-					tablero[i,j]<-0;
-					tablero[i,j-1]<-2;
-				SiNo
-					si movimiento=='d' o movimiento=='D'
-						tablero[i,j]<-0;
-						tablero[i,j+1]<-2;
-					SiNo
-						si movimiento=='w' o movimiento=='W'
-							tablero[i,j]<-0;
-							tablero[i-1,j]<-2;
-						SiNo
-							si movimiento=='s' o movimiento=='S'
-								tablero[i,j]<-0;
-								tablero[i+1,j]<-2;
-							FinSi
-						FinSi
-					FinSi
+				poscolumna<-j;
+				posfila<-i;
+			FinSi
+		finpara
+	finpara
+	
+	si movimiento=='a' o movimiento=='A'
+		tablero[posfila,poscolumna]<-0;
+		tablero[posfila,poscolumna-1]<-2;
+	SiNo
+		si movimiento=='d' o movimiento=='D'
+			tablero[posfila,poscolumna]<-0;
+			tablero[posfila,poscolumna+1]<-2;
+		SiNo
+			si movimiento=='w' o movimiento=='W'
+				tablero[posfila,poscolumna]<-0;
+				tablero[posfila-1,poscolumna]<-2;
+			SiNo
+				si movimiento=='s' o movimiento=='S'
+					tablero[posfila,poscolumna]<-0;
+					tablero[posfila+1,poscolumna]<-2;
 				FinSi
 			FinSi
-		FinPara
-	FinPara
+		FinSi
+	FinSi
+	
+	
 	
 Fin Funcion
 
-Funcion pintartablero(tablero)
+Funcion pintartablero(tablero,monedas)
 	
 	i,j es entero;
+	
+	Escribir "Monedas: " monedas;
 	
 	para i<-0 hasta 19 Hacer
 		para j<-0 hasta 19 hacer
@@ -166,7 +179,7 @@ Funcion inicializartablero(tablero)
 					tablero[i,j]<-2;
 				sino
 					Si i==3 y j==3 o i==3 y j==4 o i==3 y j==5 o i==4 y j==5 Entonces
-						//si hay un 3 pondremos puntos
+						//si hay un 3 pondremos monedas
 						tablero[i,j]<-3;
 					SiNo
 						//si hay un 0 estará vacio
@@ -183,17 +196,20 @@ Fin Funcion
 Algoritmo comecocos
 	
 	i es entero;
-	tablero es entero;
+	tablero,monedas es entero;
+	
+	monedas<-0;
 	
 	dimension tablero[20,20];
 	
+	Borrar Pantalla;
 	inicializartablero(tablero);
-	pintartablero(tablero);
+	pintartablero(tablero, monedas);
 	
-	Para i<-1 Hasta 5 Con Paso 1 Hacer
-		moverficha(tablero);
+	Para i<-1 Hasta 20 Con Paso 1 Hacer
+		moverficha(tablero, monedas);
 		Borrar Pantalla;
-		pintartablero(tablero);
+		pintartablero(tablero, monedas);
 	Fin Para
 	
 

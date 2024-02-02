@@ -65,11 +65,7 @@ void pintarLetras(char c,int letras[Tam][Tam],char car)
 	
 	rellenar_C(letras);
 	
-	/*
-	for(i=0;i<Tam;i++)
-		for(j=0;j<Tam;j++)
-			letras[i][j]=1;
-	*/
+	
 	
 	for(i=0;i<Tam;i++)
 	{

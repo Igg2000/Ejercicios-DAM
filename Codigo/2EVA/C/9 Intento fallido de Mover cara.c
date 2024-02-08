@@ -34,10 +34,8 @@ void PintarPantalla(int pantalla[Alto][Ancho], char caras[][3][10], int m){
 				printf(".");
 			}
 			else{
-				/*printf("X");*/
-				for(x=0;x<3;x++){
-					for(y=0;y<10;y++)
-					printf("%c",caras[0][x][y]);
+				
+				printf("%c",caras[0][x][y]);
 				
 				puts("");
 				}

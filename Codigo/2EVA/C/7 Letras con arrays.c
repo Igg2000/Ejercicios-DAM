@@ -63,7 +63,7 @@ void pintarLetras(char c,int letras[Tam][Tam],char car)
 {
 	int i,j;
 	
-	rellenar_C(letras);
+	rellenar_B(letras);
 	
 	
 	
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 	int letras[Tam][Tam];
 	char car;
 	
-	car='$';
+	car='º';
 	
 	
 	pintarLetras('A',letras,car);

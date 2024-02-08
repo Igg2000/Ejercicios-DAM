@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <conio.h>
-#define SaltoV 2
-#define SaltoH 5
+/*si no funciona el system cls añadir #include <stdlib.h> */
+#define SaltoV 3
+#define SaltoH 1
 void gotoxy( int x, int y );
 
 
@@ -46,8 +47,8 @@ int main(int argc, char *argv[]) {
 	
 	cont=0;
 	
-	posx=80; /*horizontal Max 113*/
-	posy=20; /*vertical Max 28*/
+	posx=50; /*horizontal Max 113*/
+	posy=14; /*vertical Max 28*/
 	
 	
 	for(i=0;i<3;i++){
@@ -71,8 +72,8 @@ int main(int argc, char *argv[]) {
 				for(j=0;j<10;j++)
 					printf("%c",caras[2][i][j]);
 				cont++;
-				posx=(posx - SaltoH); 
-			}
+				
+			}posx=(posx - SaltoH); 
 			break;
 		}
 		case 'D':
@@ -82,8 +83,8 @@ int main(int argc, char *argv[]) {
 				for(j=0;j<10;j++)
 					printf("%c",caras[3][i][j]);
 				cont++;
-			posx=(posx + SaltoH); 
-			}
+			
+			}posx=(posx + SaltoH); 
 		break;
 		}	
 		case 'W':
@@ -93,8 +94,8 @@ int main(int argc, char *argv[]) {
 				for(j=0;j<10;j++)
 					printf("%c",caras[0][i][j]);
 				cont++;
-			posy=(posy - SaltoV); 
-			}
+			 
+			}posy=(posy - SaltoV);
 			break;
 		}
 		case 'S':
@@ -104,8 +105,8 @@ int main(int argc, char *argv[]) {
 				for(j=0;j<10;j++)
 					printf("%c",caras[1][i][j]);
 				cont++;
-				posy=(posy + SaltoV); 
-			}
+				
+			}posy=(posy + SaltoV); 
 			break;
 		}	
 	}

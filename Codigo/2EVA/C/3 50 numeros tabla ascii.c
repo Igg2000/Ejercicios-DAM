@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 		if (i+MIN==111)
 		{
 			printf ("%c ",164);
-			int HayN=1;
+			HayN=1;
 		}
 		
 		if (HayN==1)

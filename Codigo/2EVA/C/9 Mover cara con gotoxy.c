@@ -2,7 +2,7 @@
 #include <conio.h>
 /*si no funciona el system cls añadir #include <stdlib.h> */
 #define SaltoV 3
-#define SaltoH 1
+#define SaltoH 5
 void gotoxy( int x, int y );
 
 

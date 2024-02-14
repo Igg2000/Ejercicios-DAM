@@ -10,12 +10,15 @@ Al empezar el juego aparecerá un menú con las siguientes opciones:
 
 
 por lo tanto crearemos una funcion PintarMenú y mediante un switch elegiremos un metodo elegir dificultad o un metodo jugar
+para el selector de dificultad tendremos que crear la funcion menuDificultad que mostrará el menú y devolverá la opcion elegida
+para crear ambos menus crearemos los metodos pintarCentrado y pintarCentradoSinSalto, para pintar los menus en el centro de la pantalla
+
 
 El juego consiste en mover una ficha por un laberinto de obstaculos hasta llegar a la meta dentro de un limite de tiempo
 el metodo Jugar será el mas grande ya que es el mas complejo asique lo dividiremos en muchos metodos y/o funciones
 
--Metodo generarMapa:
 
+-Metodo generarMapa:
 para empezar generaremos un "mapa" aleatorio mediante una matriz de un tamaño determinado
 ese "mapa" tendrá: 1 Jugador, 1 Meta y N muros, la cantidad de muros irá en funcion de la dificultad
 si el tamaño del mapa es "TAM" en funcion de la dificultad se generarán "N" muros por ejemplo:

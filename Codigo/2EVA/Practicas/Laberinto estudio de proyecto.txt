@@ -22,9 +22,9 @@ el metodo Jugar será el mas grande ya que es el mas complejo asique lo dividire
 para empezar generaremos un "mapa" aleatorio mediante una matriz de un tamaño determinado
 ese "mapa" tendrá: 1 Jugador, 1 Meta y N muros, la cantidad de muros irá en funcion de la dificultad
 si el tamaño del mapa es "TAM" en funcion de la dificultad se generarán "N" muros por ejemplo:
-Facil= N=TAM/8
-Medio= N=TAM/5
-Dificil= N=TAM/3
+Facil= N=TAM/20
+Medio= N=TAM/10
+Dificil= N=TAM/5
 Los muros se generarán de manera aleatoria en el mapa
 
 -Metodo mostrarMapa:

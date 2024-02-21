@@ -30,12 +30,12 @@ Los muros se generarán de manera aleatoria en el mapa
 -Metodo mostrarMapa:
 es el metodo que va a mostrar constantemente lo que haya en la matriz de una forma determinada
 
--Metodo cambiarMapa:
-una vez se muestre el mapa antes de empezar a jugar se le preguntará al usuario si quiere jugar ese mapa o no, si dice que no, el mapa cambiará, por lo que esté metodo y los dos anteriores deben ir en un bucle seguido de un "borrarPantalla"
+-Función cambiarMapa:
+una vez se muestre el mapa antes de empezar a jugar se le preguntará al usuario si quiere jugar ese mapa o no, si dice que no por lo cual debe devolver la opcion elegida para saber si tiene que volver a generar el mapa o no
 
 
 
--Metodo movimientoJugador:
+-Metodo moverJugador:
 esté metodo contendra el codigo necesario para mover la ficha del jugador, para el cual será necesario una función validarMovimiento
 
 -Función validarMovimiento:
@@ -43,7 +43,7 @@ comprobará que hay en la posicion de la matriz a la que el usuario se quiere mo
 esa posicion contiene un espacio en blanco, el jugador podra moverse, si contiene un muro devolverá un valor que hará que salte una pantalla de GameOver 
 y si en esa posicion está la meta devolverá un valor que haga que salte una pantalla de Victoria
 
--Metodo pantallaGameOver:
+-Metodo pantallaDerrota:
 será la pantalla que salte si el jugador se da contra un muro o si se acaba el tiempo
 
 -Metodo pantallaVictoria:

@@ -14,7 +14,7 @@ y esto me permite usarlo, lo he sacado de internet*/
 #endif
 
 #define TamPantalla 120
-#define AnchoLaberinto 60
+#define AnchoLaberinto 20
 #define AltoLaberinto 20
 #define Jugador '*'
 #define Meta '$'
@@ -28,7 +28,9 @@ y esto me permite usarlo, lo he sacado de internet*/
 #define ColorMenu ORANGE
 #define ColorVictoria LGREEN
 #define ColorDerrota RED
-#define CentrarLaberinto 1 /*1 para centrar laberinto y 0 para no centrarlo*/
+#define CentrarLaberinto 0 /*1 para centrar laberinto y 0 para no centrarlo*/
+#define Tiempo 60	
+
 
 void pintarMargen(int max);
 void mostrarMapa(int laberinto[AltoLaberinto][AnchoLaberinto], int dificultad);
@@ -44,7 +46,16 @@ int moverJugador(int laberinto[AltoLaberinto][AnchoLaberinto]);
 int validarMovimiento(int laberinto[AltoLaberinto][AnchoLaberinto],char direccion);
 void pantallaVictoria();
 void pantallaDerrota();
+void cuentaRegresiva();
 
+void cuentaRegresiva(max){
+	
+	int i;
+	/*Esto lo que hace es pintar un caracter, y esperar un segundo en bucle hasta que llegue al limite de segundos*/
+	for(i=0;i<max;i++){ 
+		printf("/");
+	}
+}
 void pintarMargen(int max){
 	
 	int i;
@@ -107,7 +118,6 @@ void mostrarMapa(int laberinto[AltoLaberinto][AnchoLaberinto], int dificultad){
 	for(i=0;i<=AnchoLaberinto+1;i++) /*esto pinta la parte de abajo del marco*/
 		printf(ColorMarco "%c" RESET,Marco);
 	puts("");
-	
 }
 void generarMapa(int laberinto[AltoLaberinto][AnchoLaberinto],int dificultad){
 	
@@ -202,7 +212,7 @@ int cambiarMapa(){
 int moverJugador(int laberinto[AltoLaberinto][AnchoLaberinto]){
 	
 	int i,j,posX,posY,movimientoValido;
-	char direccion;
+	char direccion='o';
 	
 	for(i=0;i<AltoLaberinto;i++){
 		for(j=0;j<AnchoLaberinto;j++){
@@ -212,9 +222,13 @@ int moverJugador(int laberinto[AltoLaberinto][AnchoLaberinto]){
 			}
 		}
 	}
-	do{
+	
+/*	do{*/
+/*		direccion=getch();*/
+/*	} while(direccion!=tolower('a') && direccion!=tolower('d') && direccion!=tolower('w') && direccion!=tolower('s'));*/
+	
+	if(kbhit())
 		direccion=getch();
-	} while(direccion!=tolower('a') && direccion!=tolower('d') && direccion!=tolower('w') && direccion!=tolower('s'));
 	
 	movimientoValido=validarMovimiento(laberinto,direccion);
 	
@@ -437,9 +451,8 @@ void pantallaDerrota(){
 void jugar(dificultad){
 	
 	int quieroCambiar,terminaPartida;
-	
-	
 	int laberinto[AltoLaberinto][AnchoLaberinto];
+	int cont=0;
 	
 	srand(time(NULL)); /*esto enteoria genera una semilla para que cuando se llame a rand 
 	a la hora de generar muros, genere un numero aleatorio en base a una semilla nueva cada vez*/
@@ -452,44 +465,39 @@ void jugar(dificultad){
 			system("cls");
 	} while(quieroCambiar==2);
 	
-	
-	system("cls");
-	mostrarMapa(laberinto,dificultad);
-	if (CentrarLaberinto==1){
-		pintarCentrado("Usa W,A,S,D para moverte");
-	}else{
-		printf("Usa W,A,S,D para moverte");
-	}
-	
 	do{
-	terminaPartida=moverJugador(laberinto);
-	system("cls");
-	if(terminaPartida==0){
+		system("cls");
 		mostrarMapa(laberinto,dificultad);
-		if (CentrarLaberinto==1){
-		pintarCentrado("Usa W,A,S,D para moverte");
-		}else{
-		printf("Usa W,A,S,D para moverte");
-		}
-	
-	
-	}
-	}while(terminaPartida==0);
-	
-/*	si terminPartida vale 1 quiere decir que ha intentado moverse a donde había un muro, y
-	si terminaPartida vale 2, quiere decir que el jugador ha llegado a la meta*/
-	if(terminaPartida==1) {
-		pantallaDerrota();
-		sleep(2); /*he metido una espera de 2 segundos para que no vuelvas al menu sin querer*/
-		getch();}
-	else{
-		if (terminaPartida==2){
-		pantallaVictoria();
-		sleep(2);
-		getch();}
 		
-	}
-
+		do{
+			terminaPartida=moverJugador(laberinto);
+			system("cls");
+			
+			if(terminaPartida==0){
+				mostrarMapa(laberinto,dificultad);
+				cuentaRegresiva(cont);
+				cont++;
+			}
+		
+		}while(terminaPartida==0);
+		
+	/*	si terminPartida vale 1 quiere decir que ha intentado moverse a donde había un muro, y
+		si terminaPartida vale 2, quiere decir que el jugador ha llegado a la meta*/
+		
+		
+		
+		if(terminaPartida==1) {
+			pantallaDerrota();
+			sleep(2); /*he metido una espera de 2 segundos para que no vuelvas al menu sin querer*/
+			getch();}
+		else{
+			if (terminaPartida==2){
+			pantallaVictoria();
+			sleep(2);
+			getch();}
+			
+		}
+	}while(terminaPartida!=1 && terminaPartida!=2 );
 }
 int main(int argc, char *argv[]) {
 	
@@ -516,7 +524,7 @@ int main(int argc, char *argv[]) {
 				salir=1;
 				break;
 			
-		/*	default: break;*/
+			default: break;
 		}
 	} while(salir==0); /*esto hace que el programa no termine a no ser que selecciones la opcion "Salir" del menú*/
 	

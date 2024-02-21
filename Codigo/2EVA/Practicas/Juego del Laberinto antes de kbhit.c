@@ -107,7 +107,6 @@ void mostrarMapa(int laberinto[AltoLaberinto][AnchoLaberinto], int dificultad){
 	for(i=0;i<=AnchoLaberinto+1;i++) /*esto pinta la parte de abajo del marco*/
 		printf(ColorMarco "%c" RESET,Marco);
 	puts("");
-	
 }
 void generarMapa(int laberinto[AltoLaberinto][AnchoLaberinto],int dificultad){
 	
@@ -455,25 +454,12 @@ void jugar(dificultad){
 	
 	system("cls");
 	mostrarMapa(laberinto,dificultad);
-	if (CentrarLaberinto==1){
-		pintarCentrado("Usa W,A,S,D para moverte");
-	}else{
-		printf("Usa W,A,S,D para moverte");
-	}
 	
 	do{
 	terminaPartida=moverJugador(laberinto);
 	system("cls");
 	if(terminaPartida==0){
-		mostrarMapa(laberinto,dificultad);
-		if (CentrarLaberinto==1){
-		pintarCentrado("Usa W,A,S,D para moverte");
-		}else{
-		printf("Usa W,A,S,D para moverte");
-		}
-	
-	
-	}
+		mostrarMapa(laberinto,dificultad);}
 	}while(terminaPartida==0);
 	
 /*	si terminPartida vale 1 quiere decir que ha intentado moverse a donde había un muro, y
@@ -516,7 +502,7 @@ int main(int argc, char *argv[]) {
 				salir=1;
 				break;
 			
-		/*	default: break;*/
+			default: break;
 		}
 	} while(salir==0); /*esto hace que el programa no termine a no ser que selecciones la opcion "Salir" del menú*/
 	

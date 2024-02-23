@@ -434,7 +434,7 @@ void pantallaDerrota(){
 	
 	
 }
-void jugar(dificultad){
+void jugar(int dificultad){
 	
 	int quieroCambiar,terminaPartida;
 	

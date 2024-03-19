@@ -21,10 +21,27 @@ public class Empleado extends Persona {
     
     this.sucursal = s.getId();
     }
+
+    public int getSucursal() {
+        return sucursal;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+    
     
     @Override
     public String toString() {
-        return "Empleado: " + super.toString() ;
+        return "Empleado: " + super.toString() + " Trabaja en la sucursal: " + sucursal ;
     }
     
     

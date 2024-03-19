@@ -17,7 +17,7 @@ public class Sucursal {
     private int numEmpleados;
     
     public Sucursal(String localidad) {
-        this.id = numSucursales+100;
+        this.id = numSucursales+1;
         numSucursales++;
         this.empleadosSucursales = new Empleado[3];
         this.localidad= localidad;
@@ -25,11 +25,50 @@ public class Sucursal {
 
     public void addEmpleadoASucursal(Empleado e){
     
-    this.empleadosSucursales[numEmpleados]= e;
-    numEmpleados++;
+        int posicion;
+        
+    posicion=buscarPrimerHueco(empleadosSucursales);
+    
+        //System.out.println("la posicion es"+posicion);
+       
+        if (posicion>=0 && posicion<=2){
+            this.empleadosSucursales[posicion]= e;
+            numEmpleados++; 
+        }
+    }
+    
+    
+    public int buscarPrimerHueco(Empleado [] empleadosSucursales){
+        
+        int posicion=-1,i=0;
+        
+        do{
+            if (this.empleadosSucursales[i]==null){
+                posicion=i;
+            }
+            i++;
+        }while(this.empleadosSucursales[i-1]!=null);
+        
+        return posicion;
+    }
+    
+
+       public void eliminarEmpleadoDeSucursal(Empleado e){
+    
+        int posicion=-1;
+        
+           for (int i = 0; i < empleadosSucursales.length; i++) {
+              if (this.empleadosSucursales[i]!=null){
+                if (e.getDni().equals(this.empleadosSucursales[i].getDni()))
+                    posicion = i;
+                 }
+                }
+           
+            this.empleadosSucursales[posicion]= null;
+            numEmpleados--; 
         
     }
-
+    
     public int getId() {
         return id;
     }

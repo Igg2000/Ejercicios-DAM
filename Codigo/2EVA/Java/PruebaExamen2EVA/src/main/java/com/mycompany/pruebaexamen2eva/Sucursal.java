@@ -29,6 +29,27 @@ public class Sucursal {
     numEmpleados++;
         
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public Empleado[] getEmpleadosSucursales() {
+        return empleadosSucursales;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public static int getNumSucursales() {
+        return numSucursales;
+    }
+
+    public int getNumEmpleados() {
+        return numEmpleados;
+    }
+    
     
     @Override
     public String toString() {
@@ -36,7 +57,5 @@ public class Sucursal {
         return "Sucursal: " + "id=" + id + ", localidad=" + localidad + 
                 "\n Empleado1= " + empleadosSucursales[0] + "\n Empleado2= " + empleadosSucursales[1] + "\n Empleado3= " + empleadosSucursales[2];
     }
-    
-    
-    
+
 }

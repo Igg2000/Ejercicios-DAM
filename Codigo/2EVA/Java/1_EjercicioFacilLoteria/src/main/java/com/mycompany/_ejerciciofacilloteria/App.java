@@ -4,6 +4,7 @@
 
 package com.mycompany._ejerciciofacilloteria;
 
+import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -28,7 +29,7 @@ public class App {
         int []numRandom = new int[CantidadNumAleatorios];
         boolean hasAcertado=false;
         
-            //Esto es para inicializar el array
+            //Esto es para rellenar el array
             for (int i = 0; i < CantidadNumAleatorios ; i++) {
             numRandom[i]=r1.nextInt(1,101); 
         }
@@ -38,6 +39,9 @@ public class App {
                  hasAcertado=true;
              }   
         }
+            //Esto ordena el array en orden 
+            Arrays.sort(numRandom);
+            
             
              String resultados="";
              
@@ -45,9 +49,8 @@ public class App {
              for (int i = 0; i < numRandom.length; i++) {
                  resultados+=(numRandom[i]+" ");
             
+            //Otra forma de hacer esto es directamente mostrando: Arrays.toString(numRandom)
         }
-             
-            // JOptionPane.showMessageDialog(null, resultados);
              
              
         if (hasAcertado==true){

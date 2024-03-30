@@ -93,6 +93,11 @@ public class Sucursal {
     @Override
     public String toString() {
         
+        return "Sucursal: " + "id=" + id + ", localidad=" + localidad + " Numero de empleados = "+ numEmpleados + "/3";
+    }
+    
+     public String toString(int a) {
+        if (a==1);
         return "Sucursal: " + "id=" + id + ", localidad=" + localidad + " Numero de empleados = "+ numEmpleados + "/3"+
                 "\n Empleado1= " + empleadosSucursales[0] + "\n Empleado2= " + empleadosSucursales[1] + "\n Empleado3= " + empleadosSucursales[2];
     }

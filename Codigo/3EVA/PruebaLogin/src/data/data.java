@@ -35,6 +35,7 @@ public class data {
         u.add(new Usuarios("Admin","123"));
         u.add(new Usuarios("nacho","1245"));
         u.add(new Usuarios("miguel","12456"));
-    
+        u.add(new Usuarios("Elsa","perrogato"));
+        u.add(new Usuarios("Cristina","1234"));
     }
 }

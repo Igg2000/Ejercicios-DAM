@@ -5,6 +5,7 @@
 package GUI;
 
 import data.App;
+import static data.Main.crearVentanaDeJuego;
 
 /**
  *
@@ -200,6 +201,9 @@ public class VentanaResultados extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        crearVentanaDeJuego(a);
+        this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -259,5 +263,22 @@ public class VentanaResultados extends javax.swing.JFrame {
     puntosJ1.setText(a.getJ1().sumarPuntos()+" puntos");
     puntosJ2.setText(a.getJ2().sumarPuntos()+" puntos");
     
+    mostrarGanador();
+    
+    }
+
+    private void mostrarGanador() {
+        
+        int r=a.decidirGanador();
+        
+        switch(r){
+            case 1: resultadoRonda.setText("El ganador es " +a.getJ1().getNombre()+ " con " +a.getJ1().sumarPuntos()+" puntos");
+                break;
+            case 2: resultadoRonda.setText("El ganador es " +a.getJ2().getNombre()+ " con " +a.getJ2().sumarPuntos()+" puntos");
+                break;
+            case 3: resultadoRonda.setText(" Empate ");
+                    break;    
+        }
+        
     }
 }

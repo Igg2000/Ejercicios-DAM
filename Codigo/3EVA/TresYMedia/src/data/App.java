@@ -3,13 +3,15 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class App {
 	
         private boolean esTurnoDeJug1;
         private List<Carta> baraja = new ArrayList<>();
-        private Jugador J1 = new Jugador("J1");
-        private Jugador J2 = new Jugador("J2");
+        private Jugador j1 = new Jugador("J1");
+        private Jugador j2 = new Jugador("J2");
+        private final float MaximoDePuntosParaGanar= 3.5f ;
         //se puede añadir que cada jugador introduzca su nombre mas adelante
 
     public boolean GetEsTurnoJ1() {
@@ -18,17 +20,17 @@ public class App {
     
      public Jugador getJ() {
         if (esTurnoDeJug1==true)
-         return J1;
+         return j1;
         else
-         return J2;
+         return j2;
     }
      
     public Jugador getJ1() {
-        return J1;
+        return j1;
     }
 
     public Jugador getJ2() {
-        return J2;
+        return j2;
     }
 
     public void setEsTurnoDeJug1(boolean esTurnoDeJug1) {
@@ -63,8 +65,40 @@ public class App {
             return turno;
 	}
 	
-	public void decidirGanador() {
-	}
+	public int decidirGanador() {
+            
+            // Devuelve un 1 si gana el J1, un 2 si gana el J2 y un 3 si hay empate
+            
+            float ptsJ1=0;
+            float ptsJ2=0;
+            
+            int resultado=0;
+            
+            if(j1.sumarPuntos()*1000>MaximoDePuntosParaGanar*1000)
+                ptsJ1=0;
+            else
+                ptsJ1=j1.sumarPuntos();
+            
+            if(j2.sumarPuntos()*1000>MaximoDePuntosParaGanar*1000)
+                ptsJ2=0;
+            else
+                ptsJ2=j2.sumarPuntos();
+            
+                
+             if (ptsJ1>ptsJ2)
+                 resultado=1;
+             else if (ptsJ1<ptsJ2)
+                 resultado=2;
+             else if (ptsJ1==ptsJ2)
+                 resultado=3;
+             
+             /*JOptionPane.showMessageDialog(null,"el resultado es "+resultado+" los puntosfinales de j1 son "+  ptsJ1+
+                                            " y los de j2 son " +ptsJ2);*/
+             
+             return resultado;
+             
+        
+        }
         
         public void rellenarBaraja() {
         //aqui hay que hacer un for por cada valor y palo

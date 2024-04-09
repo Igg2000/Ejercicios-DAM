@@ -76,7 +76,7 @@ public class Main {
     }
 */
 
-    private static void crearVentanaDeJuego(App a) {
+    public static void crearVentanaDeJuego(App a) {
         VentanaJuego v = new VentanaJuego(a);
         v.setVisible(true);
         v.setResizable(false);

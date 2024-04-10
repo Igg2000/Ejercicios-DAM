@@ -5,6 +5,7 @@
 package data;
 
 import GUI.VentanaJuego;
+import GUI.VentanaMenuPrincipal;
 import java.util.List;
 
 /**
@@ -23,8 +24,8 @@ public class Main {
         //rellenarBaraja(a.getBaraja());
         
         
-        crearVentanaDeJuego(a);
-        
+        //crearVentanaDeJuego(a);
+        crearVentanaMenuPrincipal(a);
         
         
         //Esto indica las cartas que tiene la baraja
@@ -82,5 +83,14 @@ public class Main {
         v.setResizable(false);
         v.setLocationRelativeTo(null);
         v.setSize(850, 550);    
+    }
+    
+    
+     public static void crearVentanaMenuPrincipal(App a) {
+        VentanaMenuPrincipal v = new VentanaMenuPrincipal(a);
+        v.setVisible(true);
+        v.setResizable(false);
+        v.setLocationRelativeTo(null);
+        v.setSize(400, 400);    
     }
 }

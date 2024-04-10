@@ -16,6 +16,10 @@ public class Jugador {
         return plantado;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setPlantado(boolean seHaPlantado) {
         this.plantado = seHaPlantado;
     }

@@ -10,9 +10,9 @@ import java.util.List;
 
 public class Academia {
     
-    List<Asignatura> AsignaturasAcademia = new ArrayList<>();
-    List<Aula> AulasAcademia = new ArrayList<>();
-    List<Alumno> AlmunosAcademia = new ArrayList<>();
+    private List<Asignatura> AsignaturasAcademia = new ArrayList<>();
+    private List<Aula> AulasAcademia = new ArrayList<>();
+    private List<Alumno> AlumnosAcademia = new ArrayList<>();
 
     //Constructor
     public Academia() {
@@ -26,6 +26,18 @@ public class Academia {
         this.AulasAcademia.add(new Aula(3));
         this.AulasAcademia.add(new Aula(3));
         this.AulasAcademia.add(new Aula(3));
+    }
+
+    public List<Asignatura> getAsignaturasAcademia() {
+        return AsignaturasAcademia;
+    }
+
+    public List<Aula> getAulasAcademia() {
+        return AulasAcademia;
+    }
+
+    public List<Alumno> getAlumnosAcademia() {
+        return AlumnosAcademia;
     }
     
 }

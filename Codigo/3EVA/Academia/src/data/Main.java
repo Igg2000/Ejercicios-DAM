@@ -18,7 +18,7 @@ public class Main {
         
         Academia a = new Academia();
         
-        System.out.println(""+a.AulasAcademia);
+        System.out.println(""+a.getAulasAcademia());
     }
     
 }

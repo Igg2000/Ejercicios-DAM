@@ -16,7 +16,9 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        App a = new App(new Humano("Paco"),new CPU("Bot"),3);
         
+        a.iniciarJuego();
         
     }
     

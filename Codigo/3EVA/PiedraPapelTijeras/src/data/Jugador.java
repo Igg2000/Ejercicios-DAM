@@ -4,6 +4,8 @@ public abstract class Jugador {
     
     private String nombre;
 
+    public abstract Mano elegirMano();
+    
     public String getNombre() {
         return nombre;
     }

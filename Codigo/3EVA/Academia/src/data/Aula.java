@@ -14,6 +14,7 @@ public class Aula {
     
     static private int contP1=0;
     static private int contP2=0;
+    static private int contP3=0;
     
     //getters y setters
 
@@ -72,7 +73,6 @@ public class Aula {
     public static void setContP3(int contP3) {
         Aula.contP3 = contP3;
     }
-    static private int contP3=0;
 
     //constructor
     public Aula(int planta) {

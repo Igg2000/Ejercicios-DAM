@@ -1,11 +1,11 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package data;
 
-import GUI.VentanaPrincipal;
+import GUI.*;
+import javax.swing.JFrame;
 
 /**
  *
@@ -19,16 +19,13 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        App a = new App(new Humano("Cris"),new CPU("Bot"),3);
+        MiVentana v= new MiVentana();
+        Panel1 p = new Panel1();
         
-        VentanaPrincipal v = new VentanaPrincipal(a);
-        
-        v.setVisible(true);
-        v.setLocationRelativeTo(null);
-        
-        
-        //a.iniciarJuego();
+        v.ponPanel(p);
         
     }
+
+
     
 }

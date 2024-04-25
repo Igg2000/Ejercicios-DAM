@@ -5,8 +5,6 @@
  */
 package data;
 
-import GUI.VentanaPrincipal;
-
 /**
  *
  * @author Nacho
@@ -21,13 +19,7 @@ public class Main {
         
         App a = new App(new Humano("Cris"),new CPU("Bot"),3);
         
-        VentanaPrincipal v = new VentanaPrincipal(a);
-        
-        v.setVisible(true);
-        v.setLocationRelativeTo(null);
-        
-        
-        //a.iniciarJuego();
+        a.iniciarJuego();
         
     }
     

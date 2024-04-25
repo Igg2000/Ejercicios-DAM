@@ -13,12 +13,17 @@ public class Asignatura {
         this.nombre = nombre;
     }
 
-    public Asignaturas getNombre() {
-        return nombre;
+    public String getNombre() {
+        return nombre+"";
     }
 
     public void setNombre(Asignaturas nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return nombre+"";
     }
     
     

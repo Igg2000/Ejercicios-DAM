@@ -6,7 +6,6 @@ package GUI;
 
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -30,11 +29,4 @@ public class MiVentana extends JFrame{
        this.revalidate();
     }
     
-    
-    @Override
-    public void dispose() {
-        JOptionPane.showMessageDialog(null,"bye");
-        super.dispose(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
 }

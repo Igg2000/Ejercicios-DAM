@@ -26,19 +26,25 @@ class MiBoton extends JButton{
     protected void paintComponent(Graphics g) {
         //super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
 
+        int anchoRaya=this.getWidth()/this.numRayas;
+        
+        
+        g.setColor(Color.red.darker());
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
                
         for (int i = 0; i < numRayas; i++) {
             if (i%2==0){
-                g.setColor(Color.red);
+                g.setColor(Color.red.darker());
             } else{
                 g.setColor(Color.blue.darker());
             }
             
-            g.fillRect(i*this.getWidth()/this.numRayas, 0, this.getWidth()/this.numRayas, this.getHeight());
+            g.fillRect(i*anchoRaya, 0, anchoRaya, this.getHeight());
         }
-        g.setColor(Color.white);
+        g.setColor(Color.yellow.darker());
         //g.drawLine(0, 50,50, 50);
-        g.drawString("MESSI", 10, 15);
+        
+        g.drawString(this.getText(), this.getWidth()/2-this.getText().length(), 15);
         
     }
     

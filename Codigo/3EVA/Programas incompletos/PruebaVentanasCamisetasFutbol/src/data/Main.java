@@ -5,7 +5,6 @@
 package data;
 
 import GUI.*;
-import javax.swing.JFrame;
 
 /**
  *

@@ -5,6 +5,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JButton;
 
@@ -16,8 +17,8 @@ class MiBoton extends JButton{
     
     int numRayas=5;
 
-    public MiBoton(int x,int y,int WIDTH,int HEIGHT) {
-        this.setBounds(x , y, WIDTH, HEIGHT);
+    public MiBoton(String nombre) {
+        super(nombre);
         
     }
 
@@ -29,14 +30,15 @@ class MiBoton extends JButton{
         for (int i = 0; i < numRayas; i++) {
             if (i%2==0){
                 g.setColor(Color.red);
-                g.fill3DRect(i*this.getWidth()/this.numRayas, 0, this.getWidth()/this.numRayas, this.getHeight(), true);
             } else{
                 g.setColor(Color.blue.darker());
-                g.fill3DRect(i*this.getWidth()/this.numRayas, 0, this.getWidth()/this.numRayas, this.getHeight(), true);
             }
+            
+            g.fillRect(i*this.getWidth()/this.numRayas, 0, this.getWidth()/this.numRayas, this.getHeight());
         }
-       
-        
+        g.setColor(Color.white);
+        //g.drawLine(0, 50,50, 50);
+        g.drawString("MESSI", 10, 15);
         
     }
     

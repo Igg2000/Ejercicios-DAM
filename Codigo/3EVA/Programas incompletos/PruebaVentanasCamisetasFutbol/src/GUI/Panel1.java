@@ -5,6 +5,7 @@
 package GUI;
 
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -14,11 +15,11 @@ import javax.swing.JPanel;
  */
 public class Panel1 extends JPanel{
 
-    MiBoton boton= new MiBoton(50,50,150,100);
+    MiBoton boton= new MiBoton("Pepe");
     
     public Panel1() {
     
-        this.setLayout(null);
+        //this.setLayout(new GridLayout());
         this.add(boton);
         //pintarBoton(boton);
     }

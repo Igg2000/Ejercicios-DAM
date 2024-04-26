@@ -4,48 +4,41 @@
  */
 package GUI;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridLayout;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 /**
  *
- * @author Nacho
+ * @author grovy
  */
-public class Panel1 extends JPanel{
+class Tortuga extends JLabel {
 
-    public Panel1() {
-    
-        Tortuga t1= new Tortuga(10,10,150,150);
-        //Tortuga t1= new Tortuga();
-        //this.setLayout(new GridLayout());
-        
-         this.setLayout(new BorderLayout());
-         this.setPreferredSize(new Dimension(400, 300));
-         
-        //this.setLayout(null);
-        //this.add(t1);
-        this.add(t1, BorderLayout.CENTER);
-    
+    int x;
+    int y;
+    int ancho;
+    int alto;
+
+    public Tortuga(int x, int y, int ancho, int alto) {
+        this.x = x;
+        this.y = y;
+        this.ancho = ancho;
+        this.alto = alto;
     }
+    
+
     
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-        
-        
-        pintarTortuga(g,50,50,300,150);
-
     
+        
+        pintaTortuga(g);
     }
 
-    private void pintarTortuga(Graphics g, int x, int y, int ancho, int alto) {
-
-     /*
-        //patas
+    private void pintaTortuga(Graphics g) {
+            
+         //patas
         
         //separacionEntrePatas
         int sp=60;
@@ -62,17 +55,11 @@ public class Panel1 extends JPanel{
         //cabeza
         g.setColor(Color.green.brighter());
         g.fillOval(20, 20, 100, 100);
-
-       //ojos
+        
+        //ojos
            g.setColor(Color.black);
            g.fillOval(40, 45, 20, 20);
            g.fillOval(80, 45, 20, 20);
-        
-     */
-        
-
     }
-
-    
-    
 }
+

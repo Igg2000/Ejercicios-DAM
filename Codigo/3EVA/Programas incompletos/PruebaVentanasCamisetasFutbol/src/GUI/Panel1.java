@@ -18,8 +18,10 @@ public class Panel1 extends JPanel{
     
     public Panel1() {
     
-        //boton.setBounds(10,10, 200, 150);
-        //this.setLayout(null);
+        /*
+        boton.setBounds(this.getWidth()+100,this.getHeight()+100, 200, 100);
+        this.setLayout(null);
+        */
         
         this.setBorder(new EmptyBorder(100,100,100,100));
         this.setLayout(new GridLayout());

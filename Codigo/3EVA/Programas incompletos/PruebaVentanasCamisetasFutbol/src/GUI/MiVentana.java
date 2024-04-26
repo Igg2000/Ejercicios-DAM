@@ -33,7 +33,7 @@ public class MiVentana extends JFrame{
     
     @Override
     public void dispose() {
-        JOptionPane.showMessageDialog(null,"bye");
+       // JOptionPane.showMessageDialog(null,"bye");
         super.dispose(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 

@@ -29,8 +29,8 @@ class MiBoton extends JButton{
         int anchoRaya=this.getWidth()/this.numRayas;
         
         
-        g.setColor(Color.red.darker());
-        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        //g.setColor(Color.red.darker());
+        //g.fillRect(0, 0, this.getWidth(), this.getHeight());
                
         for (int i = 0; i < numRayas; i++) {
             if (i%2==0){
@@ -39,12 +39,14 @@ class MiBoton extends JButton{
                 g.setColor(Color.blue.darker());
             }
             
-            g.fillRect(i*anchoRaya, 0, anchoRaya, this.getHeight());
+            g.fillRect(i*anchoRaya, 0, anchoRaya+2, this.getHeight());
         }
         g.setColor(Color.yellow.darker());
         //g.drawLine(0, 50,50, 50);
         
-        g.drawString(this.getText(), this.getWidth()/2-this.getText().length(), 15);
+        Font miFuente= new Font("Arial", Font.PLAIN, this.getWidth()/5);
+        this.setFont(miFuente);
+        g.drawString(this.getText(), this.getWidth()/5-(this.getText().length()), this.getHeight()/2);
         
     }
     

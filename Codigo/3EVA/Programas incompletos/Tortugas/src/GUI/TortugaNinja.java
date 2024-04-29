@@ -6,39 +6,27 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 /**
  *
- * @author grovy
+ * @author Nacho
  */
-class Tortuga extends JLabel {
+public class TortugaNinja extends Tortuga{
 
-    float escalado;
-
-    public Tortuga(float escalado) {
-        this.escalado = escalado;
-    }
+    Color color;
     
-    
-    public Tortuga() {
-
-       this.escalado= 1.0f;
+    public TortugaNinja(float escalado, Color color) {
+        super(escalado);
+        this.color=color;
     }
 
+    public TortugaNinja() {
+    }
 
-    
     @Override
-    protected void paintComponent(Graphics g) {
-    
-        
-        pintaTortuga(g,this.escalado);
-    }
-
     protected void pintaTortuga(Graphics g, float escalado) {
-            
-         //patas
+        
+        //patas
         
         //separacionEntrePatas
         int sp=60;
@@ -56,10 +44,20 @@ class Tortuga extends JLabel {
         g.setColor(Color.green.brighter());
         g.fillOval((int)(escalado*20), (int)(escalado*20), (int)(escalado*100), (int)(escalado*100));
         
+        //cinta
+        g.setColor(color);
+        g.fillRect((int)(escalado*22), (int)(escalado*45), (int)(escalado*95), (int)(escalado*20));
+        
+        
         //ojos
         g.setColor(Color.black);
         g.fillOval((int)(escalado*40), (int)(escalado*45), (int)(escalado*20),(int)(escalado* 20));
         g.fillOval((int)(escalado*80), (int)(escalado*45), (int)(escalado*20), (int)(escalado*20));
+        
     }
-}
 
+    
+    
+    
+    
+}

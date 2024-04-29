@@ -18,11 +18,15 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        App a= new App();
         
         MiVentana v= new MiVentana();
-        Panel1 p = new Panel1();
+        Panel1 p = new Panel1(a);
         
         v.ponPanel(p);
+        
+        
+        
         
     }
 

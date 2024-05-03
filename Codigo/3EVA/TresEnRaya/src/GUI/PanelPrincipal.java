@@ -6,7 +6,9 @@
 package GUI;
 
 import data.App;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -34,14 +36,17 @@ public class PanelPrincipal extends javax.swing.JPanel {
         jPanel1 = new PanelJuego(a);
         jLabel1 = new javax.swing.JLabel();
         volverAJugar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(600, 600));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 400));
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
+        jLabel1.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(79, 46, 212));
         jLabel1.setText("Tres en raya");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         volverAJugar.setText("Volver a Jugar");
         volverAJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -50,11 +55,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("Salir");
-        jButton2.setPreferredSize(new java.awt.Dimension(89, 24));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonSalir.setText("Salir");
+        botonSalir.setPreferredSize(new java.awt.Dimension(89, 24));
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonSalirActionPerformed(evt);
             }
         });
 
@@ -68,33 +73,41 @@ public class PanelPrincipal extends javax.swing.JPanel {
                         .addGap(100, 100, 100)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel1))
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(75, 75, 75))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addComponent(volverAJugar)
                         .addGap(50, 50, 50)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(100, 100, 100))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(volverAJugar)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+        //como no le he pasado que ventana lo va a poner no puedo hacer un .dispose
+            //System.exit(0);
+        
+        //o tambien esta esta opcion que he visto en chatgpt
+           JFrame ventana = (JFrame) SwingUtilities.getWindowAncestor(this);
+           ventana.dispose();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     private void volverAJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAJugarActionPerformed
         // TODO add your handling code here:
@@ -104,7 +117,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton volverAJugar;
@@ -115,9 +128,16 @@ public class PanelPrincipal extends javax.swing.JPanel {
         int[][] nuevoTablero={{0,0,0},{0,0,0},{0,0,0}};
         a.setTablero(nuevoTablero);
         
-        //tengo que crear el JPanel mio aparte o hacer que lo que se ve en pantalla dependa de data
+        //hay que hacer un casting a PanelJuego de jPanel1 para poder acceder a los metodos de su clase
+        PanelJuego p = (PanelJuego)jPanel1;
         
+        for (int i = 0; i < p.getTablero().size(); i++) {
+            p.getTablero().get(i).setEstado(0);
+        }
     
+        p.setJuegoFinalizado(false);
+        
+        repaint();
     }
 
 }

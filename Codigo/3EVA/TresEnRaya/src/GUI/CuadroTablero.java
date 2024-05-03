@@ -10,6 +10,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.plaf.BorderUIResource;
+import javax.swing.plaf.metal.MetalBorders;
 
 /**
  *
@@ -34,7 +38,7 @@ public class CuadroTablero extends JLabel{
         this.estado = estado;
         this.setSize(50,50);
         this.setOpaque(true);
-        this.setBackground(Color.red);
+        this.setBackground(Color.lightGray);
     }
 
     public CuadroTablero(String text) {
@@ -58,6 +62,13 @@ public class CuadroTablero extends JLabel{
             pintaCirculo(g);
          else if (estado==2)
             pintaX(g);
+         
+         //Border b = new BevelBorder(1);
+         //Border b = new MetalBorders.Flush3DBorder();
+         Color c= new Color(79,46,212);
+         Border b = new BorderUIResource.EtchedBorderUIResource(c,c);
+         
+         this.setBorder(b);
     }
 
     public void setEstado(int estado) {

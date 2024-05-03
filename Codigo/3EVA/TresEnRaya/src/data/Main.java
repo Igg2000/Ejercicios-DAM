@@ -21,7 +21,7 @@ public class Main {
         App a= new App();
         
         MiVentana v= new MiVentana();
-        PanelJuego p = new PanelJuego(a);
+        //PanelJuego p = new PanelJuego(a);
         
         PanelPrincipal p1 = new PanelPrincipal(a);
         

@@ -20,10 +20,15 @@ import javax.swing.JPanel;
 public class PanelJuego extends JPanel{
 
     App a;
-    public ArrayList<CuadroTablero> tablero; 
+    public ArrayList<CuadroTablero> tablero;
+    boolean juegoFinalizado= false;
 
     public ArrayList<CuadroTablero> getTablero() {
         return tablero;
+    }
+
+    public void setJuegoFinalizado(boolean juegoFinalizado) {
+        this.juegoFinalizado = juegoFinalizado;
     }
     
     public PanelJuego(App a) {
@@ -39,7 +44,7 @@ public class PanelJuego extends JPanel{
         
         
         for (int i = 0; i < numCuadros; i++) {
-            tablero.add(new CuadroTablero("Cuadro "+(i+1))); //añado un nuevo cuadro al tablero
+            tablero.add(new CuadroTablero()); //añado un nuevo cuadro al tablero
             this.add(tablero.get(i)); //añado el tablero al panel
         
        
@@ -51,11 +56,11 @@ public class PanelJuego extends JPanel{
                     
                     int ganador;
 
-                    if (a.getTurnoJ1() && tablero.get(index).getEstado()==0){
+                    if (a.getTurnoJ1() && tablero.get(index).getEstado()==0 && juegoFinalizado==false){
                         apuntarCuadro(index,1);
                         tablero.get(index).setEstado(1); //esto cambia el estado del panel, por lo que cambia su contenido
                         a.setTurnoJ1(!a.getTurnoJ1());
-                    }else if (tablero.get(index).getEstado()==0){
+                    }else if (tablero.get(index).getEstado()==0 && juegoFinalizado==false){
                         apuntarCuadro(index,2);
                         tablero.get(index).setEstado(2);
                         a.setTurnoJ1(!a.getTurnoJ1());
@@ -69,6 +74,9 @@ public class PanelJuego extends JPanel{
                         JOptionPane.showMessageDialog(null, "Gana el J1");
                     else if (ganador==2)
                         JOptionPane.showMessageDialog(null, "Gana el J2");
+                    
+                    if (ganador!=0)
+                        juegoFinalizado=true;
 
                 }                
             });

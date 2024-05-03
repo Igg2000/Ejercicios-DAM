@@ -17,7 +17,7 @@ public class MiVentana extends JFrame{
     public MiVentana() throws HeadlessException {
         
         this.setVisible(true);
-        this.setSize(400, 400);
+        this.setSize(600, 600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     

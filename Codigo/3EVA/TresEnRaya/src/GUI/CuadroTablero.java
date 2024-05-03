@@ -64,6 +64,10 @@ public class CuadroTablero extends JLabel{
         this.estado = estado;
     }
 
+    public int getEstado() {
+        return estado;
+    }
+
     private void pintaCirculo(Graphics g) {
         
         Graphics2D g2d = (Graphics2D) g;

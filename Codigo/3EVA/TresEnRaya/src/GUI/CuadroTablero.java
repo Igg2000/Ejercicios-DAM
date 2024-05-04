@@ -8,6 +8,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
@@ -67,8 +68,10 @@ public class CuadroTablero extends JLabel{
          //Border b = new MetalBorders.Flush3DBorder();
          Color c= new Color(79,46,212);
          Border b = new BorderUIResource.EtchedBorderUIResource(c,c);
+         Border b2=BorderFactory.createSoftBevelBorder(TOP, c,c); //BorderFactory es una clase muy util para hacer bordes
+         Border b3=BorderFactory.createEtchedBorder(c, c);
          
-         this.setBorder(b);
+         this.setBorder(b3);
     }
 
     public void setEstado(int estado) {
@@ -94,8 +97,8 @@ public class CuadroTablero extends JLabel{
             //esto dibuja la x azul
             g.setColor(Color.blue);
             g2d.setStroke(new BasicStroke(5));
-            g2d.drawLine(10, 10, this.getWidth()-20, this.getHeight()-20);
-            g2d.drawLine(10, this.getHeight()-20, this.getWidth()-20, 10);    }
+            g2d.drawLine(20, 20, this.getWidth()-20, this.getHeight()-20);
+            g2d.drawLine(20, this.getHeight()-20, this.getWidth()-20, 20);    }
     
    
     

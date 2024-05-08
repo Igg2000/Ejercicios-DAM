@@ -21,11 +21,14 @@ public class Main {
         
         Tienda t=new Tienda("Sports CEN");
         
-        añadirDatosDePrueba(t);
+        agregarDatosDePrueba(t);
         
     }
 
-    private static void añadirDatosDePrueba(Tienda t) {
+    
+    
+    
+    private static void agregarDatosDePrueba(Tienda t) {
     
         //@Nacho
         
@@ -39,40 +42,27 @@ public class Main {
         addDependienteATienda(new Dependiente("Carlos","25678465J",90347523),t);
         
         //articulos
-        t.getArticulosTienda().add(new Articulo(Gorra,Pulga));
-        t.getArticulosTienda().add(new Articulo(Gorra,Kike));
-        t.getArticulosTienda().add(new Articulo(Camiseta,Pulga));
-        t.getArticulosTienda().add(new Articulo(Camiseta,Suprememe));
-        t.getArticulosTienda().add(new Articulo(Camiseta,Adidos));
-        t.getArticulosTienda().add(new Articulo(Camiseta,Pulga));
-        t.getArticulosTienda().add(new Articulo(Camiseta,Kike));
-        t.getArticulosTienda().add(new Articulo(Chaqueta,Suprememe));
-        t.getArticulosTienda().add(new Articulo(Chaqueta,Adidos));
-        t.getArticulosTienda().add(new Articulo(Sudadera,Kike));
-        t.getArticulosTienda().add(new Articulo(Sudadera,Pulga));
-        t.getArticulosTienda().add(new Articulo(Pantalon,Pulga));
-        t.getArticulosTienda().add(new Articulo(Pantalon,Kike));
-        t.getArticulosTienda().add(new Articulo(Pantalon,Suprememe));
-        t.getArticulosTienda().add(new Articulo(Pantalon,Adidos));
-        t.getArticulosTienda().add(new Articulo(Zapatillas,Adidos));
-        t.getArticulosTienda().add(new Articulo(Zapatillas,Kike));
-        t.getArticulosTienda().add(new Articulo(Zapatillas,Pulga));
+        
+        agregarArticulos(t);
        
  
         
         //ejemplares
         
-        addEjemplar(t.getArticulosTienda(),1,Color.red,XL,null,15.5f,8);
-        addEjemplar(t.getArticulosTienda(),1,Color.red,L,null,15.5f,7);
-        addEjemplar(t.getArticulosTienda(),1,Color.red,M,null,15.5f,6);
-        addEjemplar(t.getArticulosTienda(),1,Color.red,S,null,15.5f,3);
-        addEjemplar(t.getArticulosTienda(),1,Color.red,XS,null,15.5f,1);
+        agregarEjemplares(t);
         
                
         
-        //prueba
-        System.out.println(t.getArticulosTienda());
+        //pruebas
+        
+        //System.out.println(t.getArticulosTienda());
+        //System.out.println(""+t.getArticulosTienda().get(1).getEjemplaresArticulo());
     
+        for (int i = 0; i < t.getArticulosTienda().size(); i++) {
+            System.out.println(""+t.getArticulosTienda().get(i).getEjemplaresArticulo());
+        }
+        
+        
     }
 
     private static void addGerenteATienda(Tienda t, Gerente g) {
@@ -95,13 +85,14 @@ public class Main {
        si no son zapatillas en tallazapatilla hay que pasarle un null*/
        
         for (Articulo a : articulosTienda) {
-            if (a.getIdArticulo()==idArticulo)
+            if (a.getIdArticulo()==idArticulo){
                 if (talla!=null) //esto significaria que son zapatillas
                     a.getEjemplaresArticulo().add(new Ejemplar(color,talla,precio,a));
                 else
                     a.getEjemplaresArticulo().add(new Ejemplar(color,tallaZapas,precio,a));
+            }
         }
-    }
+     }
 
     private static void addEjemplar(List<Articulo> articulosTienda, int idArticulo, Color color, Tallas talla, TallasZapatillas tallaZapas, float precio, int cantidad) {
         //@Nacho
@@ -111,6 +102,89 @@ public class Main {
              addEjemplar(articulosTienda, idArticulo, color, talla, tallaZapas, precio);
         }
         
+    }
+
+    private static void agregarArticulos(Tienda t) {
+        
+        //@Nacho
+        
+        t.getArticulosTienda().add(new Articulo(Gorra,Pulga));
+        t.getArticulosTienda().add(new Articulo(Gorra,Kike));
+        t.getArticulosTienda().add(new Articulo(Camiseta,Pulga));
+        t.getArticulosTienda().add(new Articulo(Camiseta,Suprememe));
+        t.getArticulosTienda().add(new Articulo(Camiseta,Adidos));
+        t.getArticulosTienda().add(new Articulo(Camiseta,Pulga));
+        t.getArticulosTienda().add(new Articulo(Camiseta,Kike));
+        t.getArticulosTienda().add(new Articulo(Chaqueta,Suprememe));
+        t.getArticulosTienda().add(new Articulo(Chaqueta,Adidos));
+        t.getArticulosTienda().add(new Articulo(Sudadera,Kike));
+        t.getArticulosTienda().add(new Articulo(Sudadera,Pulga));
+        t.getArticulosTienda().add(new Articulo(Pantalon,Pulga));
+        t.getArticulosTienda().add(new Articulo(Pantalon,Kike));
+        t.getArticulosTienda().add(new Articulo(Pantalon,Suprememe));
+        t.getArticulosTienda().add(new Articulo(Pantalon,Adidos));
+        t.getArticulosTienda().add(new Articulo(Zapatillas,Adidos));
+        t.getArticulosTienda().add(new Articulo(Zapatillas,Kike));
+        t.getArticulosTienda().add(new Articulo(Zapatillas,Pulga));
+       
+    }
+
+    private static void agregarEjemplares(Tienda t) {
+
+        //@Nacho
+        
+        //Esto es para añadir un numeros fijos de articulos o precio de cada prenda para hacer pruebas
+        int nXL=5;
+        int nL=4;
+        int nM=5;
+        int nS=3;
+        int nXS=2;
+        float precioID1= 17.99f;
+        float precioID2= 20.99f;
+        float precioID3= 14.99f;
+        float precioID4= 24.99f;
+        
+        //Ejemplares del articulo de ID 1
+        
+        crearSetDeEjemplares(t,1,Color.red,XL,null,precioID1,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,1,Color.blue,XL,null,precioID1,nXL,nL,nM,nS,nXS);
+        
+        //Ejemplares del articulo de ID 2
+
+        crearSetDeEjemplares(t,2,Color.white,XL,null,precioID2,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,2,Color.black,XL,null,precioID2,nXL,nL,nM,nS,nXS);
+        
+        //Ejemplares del articulo de ID 3
+
+        crearSetDeEjemplares(t,3,Color.yellow,XL,null,precioID3,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,3,Color.blue,XL,null,precioID3,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,3,Color.green,XL,null,precioID3,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,3,Color.orange,XL,null,precioID3,nXL,nL,nM,nS,nXS);
+        
+        //Ejemplares del articulo de ID 4
+
+        crearSetDeEjemplares(t,4,Color.white,XL,null,precioID4,nXL,nL,nM,nS,nXS);
+        crearSetDeEjemplares(t,4,Color.black,XL,null,precioID4,nXL,nL,nM,nS,nXS);
+
+        
+    }
+
+    private static void crearSetDeEjemplares(Tienda t,int i, Color red, Tallas tallas, Object object, float precio, int nXL, int nL, int nM, int nS, int nXS) {
+      
+        //@Nacho
+        /*
+        *Como estaba repitiendo estas 5 lineas constantemente cada vez que quería cambiar el color
+        *he preferido tenerlas en un metodo aparte para ahorrar tiempo y espacio
+        *
+        * Este metodo crea la cantidad de ejemplares que tu le mandes de cada talla
+        */
+        
+        addEjemplar(t.getArticulosTienda(),i,Color.red,XL,null,precio,nXL);
+        addEjemplar(t.getArticulosTienda(),i,Color.red,L,null,precio,nL);
+        addEjemplar(t.getArticulosTienda(),i,Color.red,M,null,precio,nM);
+        addEjemplar(t.getArticulosTienda(),i,Color.red,S,null,precio,nS);
+        addEjemplar(t.getArticulosTienda(),i,Color.red,XS,null,precio,nXS);   
+    
     }
     
 }

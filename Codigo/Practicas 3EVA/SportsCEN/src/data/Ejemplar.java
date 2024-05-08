@@ -35,6 +35,7 @@ public class Ejemplar {
         this.precio = precio;
         articuloReferenciado.aumentarCantidadEjemplares();
         this.articuloReferenciado = articuloReferenciado;
+        idEjemplar= articuloReferenciado.getCantidadEjemplares();
     }
 
     public Ejemplar(Color color, TallasZapatillas tallaZapatillas, float precio, Articulo articuloReferenciado) {
@@ -44,18 +45,53 @@ public class Ejemplar {
         this.precio = precio;
         articuloReferenciado.aumentarCantidadEjemplares();
         this.articuloReferenciado = articuloReferenciado;
+        idEjemplar= articuloReferenciado.getCantidadEjemplares();
         
     }
 
     @Override
     public String toString() {
-        if (articuloReferenciado.getTipoPrenda()==Prendas.Zapatillas)
-            return "Ejemplar{" + "idEjemplar=" + idEjemplar + ", color=" + color + ", talla=" + tallaZapatillas + ", precio=" + precio + '}';
+        
+        String cadColor="";
+        if (obtenerNombreColor()!=null)
+            cadColor=obtenerNombreColor();
         else
-            return "Ejemplar{" + "idEjemplar=" + idEjemplar + ", color=" + color + ", talla=" + talla + ", precio=" + precio + '}';
+            cadColor=color.toString();
+        
+        
+        if (articuloReferenciado.getTipoPrenda()==Prendas.Zapatillas)
+            return "\n" + articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + tallaZapatillas + ", precio=" + precio;
+        else
+            return "\n" + articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + talla + ", precio=" + precio;
     }
-    
-    
+
+    private String obtenerNombreColor() {
+        //@Nacho
+        //es la unica forma que se me ha ocurrido de sacar el nombre del color
+        //si tiene un color predefinido en la clase Color devuelve una String con su nombre en español
+        
+        if (color.equals(Color.RED)) {
+            return "Rojo";
+        } else if (color.equals(Color.BLUE)) {
+            return "Azul";
+        } else if (color.equals(Color.GREEN)) {
+            return "Verde";
+        } else if (color.equals(Color.WHITE)) {
+            return "Blanco";
+        } else if (color.equals(Color.BLACK)) {
+            return "Negro";
+        } else if (color.equals(Color.GRAY)) {
+            return "Gris";
+        } else if (color.equals(Color.ORANGE)) {
+            return "Naranja";
+        } else if (color.equals(Color.YELLOW)) {
+            return "Amarillo";
+        }
+        // En caso de no poder, devuelvo null
+        else {
+            return null;
+        }
+    }
     
     //hacia abajo getters y setters
 

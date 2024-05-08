@@ -11,8 +11,11 @@ public class Tienda {
     /**
      * Default constructor
      */
-    public Tienda() {
+    public Tienda(String nombre) {
+        this.nombre = nombre;
     }
+
+
 
     private String nombre;
 
@@ -20,7 +23,7 @@ public class Tienda {
 
     private List<Dependiente> dependientesTienda = new ArrayList<>();
 
-    private List<Ejemplar> ejemplaresTienda= new ArrayList<>();
+    //private List<Ejemplar> ejemplaresTienda= new ArrayList<>();
 
     private List<Articulo> articulosTienda= new ArrayList<>();
 
@@ -53,14 +56,6 @@ public class Tienda {
 
     public void setDependientesTienda(List<Dependiente> dependientesTienda) {
         this.dependientesTienda = dependientesTienda;
-    }
-
-    public List<Ejemplar> getEjemplaresTienda() {
-        return ejemplaresTienda;
-    }
-
-    public void setEjemplaresTienda(List<Ejemplar> ejemplaresTienda) {
-        this.ejemplaresTienda = ejemplaresTienda;
     }
 
     public List<Articulo> getArticulosTienda() {

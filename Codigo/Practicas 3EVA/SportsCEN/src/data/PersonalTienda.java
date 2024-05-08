@@ -11,8 +11,13 @@ public abstract class PersonalTienda {
     /**
      * Default constructor
      */
-    public PersonalTienda() {
+    public PersonalTienda(String nombreCompleto, String dni, int telefono) {
+        this.nombreCompleto = nombreCompleto;
+        this.dni = dni;
+        this.telefono = telefono;
     }
+
+  
 
     protected String nombreCompleto;
 

@@ -30,7 +30,9 @@ public class PanelLogin extends javax.swing.JPanel {
     public PanelLogin(VentanaPrincipal v, Tienda t) {
         this.t=t;
         this.v=v;
+        v.setSize(400,450);
         initComponents();
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,23 +46,27 @@ public class PanelLogin extends javax.swing.JPanel {
         espacioDerecha = new javax.swing.JLabel();
         espacioAbajo = new javax.swing.JLabel();
         espacioIzquierda = new javax.swing.JLabel();
+        espacioArriba = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         labelUsuario = new javax.swing.JLabel();
         textoUsuario = new javax.swing.JTextField();
         labelPassword = new javax.swing.JLabel();
         textopassword = new javax.swing.JPasswordField();
+        jPanel2 = new javax.swing.JPanel();
         Login = new javax.swing.JButton();
-        espacioIzquierdaBoton = new javax.swing.JLabel();
-        espacioderechaboton = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 800));
         setMinimumSize(new java.awt.Dimension(200, 200));
-        setPreferredSize(new java.awt.Dimension(400, 400));
-        setLayout(new java.awt.BorderLayout(50, 130));
+        setPreferredSize(new java.awt.Dimension(400, 420));
+        setLayout(new java.awt.BorderLayout(60, 110));
         add(espacioDerecha, java.awt.BorderLayout.LINE_END);
         add(espacioAbajo, java.awt.BorderLayout.PAGE_END);
         add(espacioIzquierda, java.awt.BorderLayout.LINE_START);
+
+        espacioArriba.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(espacioArriba, java.awt.BorderLayout.NORTH);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 255), null), javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 102, 102))));
@@ -84,7 +90,9 @@ public class PanelLogin extends javax.swing.JPanel {
         jPanel3.add(labelPassword);
         jPanel3.add(textopassword);
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_START);
+        jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         Login.setText("Iniciar Sesion");
         Login.addActionListener(new java.awt.event.ActionListener() {
@@ -92,13 +100,15 @@ public class PanelLogin extends javax.swing.JPanel {
                 LoginActionPerformed(evt);
             }
         });
-        jPanel1.add(Login, java.awt.BorderLayout.CENTER);
+        jPanel2.add(Login);
 
-        espacioIzquierdaBoton.setText("                         ");
-        jPanel1.add(espacioIzquierdaBoton, java.awt.BorderLayout.LINE_START);
+        jPanel1.add(jPanel2, java.awt.BorderLayout.SOUTH);
 
-        espacioderechaboton.setText("                         ");
-        jPanel1.add(espacioderechaboton, java.awt.BorderLayout.LINE_END);
+        jLabel1.setFont(new java.awt.Font("FOT-Cezanne Pro B", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Sports CEN");
+        jPanel1.add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -157,11 +167,12 @@ public class PanelLogin extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Login;
     private javax.swing.JLabel espacioAbajo;
+    private javax.swing.JLabel espacioArriba;
     private javax.swing.JLabel espacioDerecha;
     private javax.swing.JLabel espacioIzquierda;
-    private javax.swing.JLabel espacioIzquierdaBoton;
-    private javax.swing.JLabel espacioderechaboton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelUsuario;

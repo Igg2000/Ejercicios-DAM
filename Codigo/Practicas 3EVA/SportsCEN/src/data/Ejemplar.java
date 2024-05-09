@@ -9,7 +9,11 @@ import java.util.*;
  */
 public class Ejemplar {
 
-
+    //esto es para tener otro tipo de id respecto a la tienda, y no respecto al articulo
+    private int idGlobalEjemplar;
+    static private int contIdGlobal=1;
+    
+    //este id es respecto al articulo
     private int idEjemplar;
 
     private Color color;
@@ -29,6 +33,8 @@ public class Ejemplar {
      */
     
     public Ejemplar(Color color, Tallas talla, float precio, Articulo articuloReferenciado) {
+        //@Nacho
+
         //constructor Ropa
         this.color = color;
         this.talla = talla;
@@ -36,9 +42,14 @@ public class Ejemplar {
         articuloReferenciado.aumentarCantidadEjemplares();
         this.articuloReferenciado = articuloReferenciado;
         idEjemplar= articuloReferenciado.getCantidadEjemplares();
+        
+        this.idGlobalEjemplar= contIdGlobal;
+        contIdGlobal++;
     }
 
     public Ejemplar(Color color, TallasZapatillas tallaZapatillas, float precio, Articulo articuloReferenciado) {
+       //@Nacho
+        
         //constructor Zapatillas
         this.color = color;
         this.tallaZapatillas = tallaZapatillas;
@@ -47,10 +58,14 @@ public class Ejemplar {
         this.articuloReferenciado = articuloReferenciado;
         idEjemplar= articuloReferenciado.getCantidadEjemplares();
         
+        
+        this.idGlobalEjemplar= contIdGlobal;
+        contIdGlobal++;
     }
 
     @Override
     public String toString() {
+        //@Nacho
         
         String cadColor="";
         if (obtenerNombreColor()!=null)
@@ -60,9 +75,9 @@ public class Ejemplar {
         
         
         if (articuloReferenciado.getTipoPrenda()==Prendas.Zapatillas)
-            return "\n" + articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + tallaZapatillas + ", precio=" + precio;
+            return "\n" +idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + tallaZapatillas + ", precio=" + precio;
         else
-            return "\n" + articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + talla + ", precio=" + precio;
+            return "\n" +idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + talla + ", precio=" + precio;
     }
 
     private String obtenerNombreColor() {
@@ -86,6 +101,10 @@ public class Ejemplar {
             return "Naranja";
         } else if (color.equals(Color.YELLOW)) {
             return "Amarillo";
+        }else if (color.equals(Color.MAGENTA)) {
+            return "Morado";
+        }else if (color.equals(Color.CYAN)) {
+            return "Azul Celeste";
         }
         // En caso de no poder, devuelvo null
         else {

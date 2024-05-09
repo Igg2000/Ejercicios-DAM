@@ -12,11 +12,16 @@ public class Dependiente extends PersonalTienda {
         super(nombreCompleto, dni, telefono);
     }
 
+    public Dependiente(String nombreCompleto, String dni, int telefono, Usuario u) {
+        super(nombreCompleto, dni, telefono, u);
+    }
+
 
 
     private int idDependiente;
 
     private Tienda tiendaDependiente;
+    
     
     //de aqui hacia abajo getters y setters
 
@@ -59,6 +64,15 @@ public class Dependiente extends PersonalTienda {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
+    public Usuario getCredenciales() {
+        return credenciales;
+    }
+
+    public void setCredenciales(Usuario credenciales) {
+        this.credenciales = credenciales;
+    }
+    
     
     
 

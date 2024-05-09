@@ -8,6 +8,17 @@ import java.util.*;
  */
 public abstract class PersonalTienda {
 
+  
+
+    protected String nombreCompleto;
+
+    protected String dni;
+
+    protected int telefono;
+    
+    protected Usuario credenciales;
+    
+    
     /**
      * Default constructor
      */
@@ -16,14 +27,24 @@ public abstract class PersonalTienda {
         this.dni = dni;
         this.telefono = telefono;
     }
+    
+    public PersonalTienda(String nombreCompleto, String dni, int telefono, Usuario u) {
+        this.nombreCompleto = nombreCompleto;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.credenciales = u;
+    }
+    
+    
 
-  
+    public Usuario getCredenciales() {
+        return credenciales;
+    }
 
-    protected String nombreCompleto;
+    public void setCredenciales(Usuario credenciales) {
+        this.credenciales = credenciales;
+    }
 
-    protected String dni;
-
-    protected int telefono;
 
     public void VerMenu(List PersonalTienda) {
         // TODO implement here
@@ -37,4 +58,11 @@ public abstract class PersonalTienda {
         // TODO implement here
     }
 
+    @Override
+    public String toString() {
+        return nombreCompleto + " dni=" + dni + " telefono=" + telefono;
+    }
+
+    
+    
 }

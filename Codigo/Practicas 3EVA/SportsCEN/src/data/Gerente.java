@@ -12,6 +12,10 @@ public class Gerente extends PersonalTienda {
         super(nombreCompleto, dni, telefono);
     }
 
+    public Gerente(String nombreCompleto, String dni, int telefono, Usuario u) {
+        super(nombreCompleto, dni, telefono, u);
+    }
+
   
 
 

@@ -44,6 +44,7 @@ public class Articulo {
     }
 
     public Articulo(Prendas tipoPrenda, Marcas marca, String modelo) {
+        //@Nacho
         
         this.idArticulo = this.cont;
         cont++;
@@ -53,11 +54,13 @@ public class Articulo {
     }
     
     public void aumentarCantidadEjemplares(){
+        //@Nacho
         this.cantidadEjemplares++;
     }
     
     
     public void disminuirCantidadEjemplares(){
+        //@Nacho
         this.cantidadEjemplares--;
     }
     

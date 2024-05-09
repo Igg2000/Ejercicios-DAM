@@ -67,7 +67,7 @@ public class Articulo {
     //toString
     @Override
     public String toString() {
-        return "\nArticulo{" + "idArticulo=" + idArticulo + ", tipoPrenda=" + tipoPrenda + ", marca=" + marca + ", modelo=" + modelo + ", stock=" + cantidadEjemplares + '}';
+        return "Articulo{" + "idArticulo=" + idArticulo + ", tipoPrenda=" + tipoPrenda + ", marca=" + marca + ", modelo=" + modelo + ", stock=" + cantidadEjemplares + '}';
     }
 
     //aqui abajo getters y setters

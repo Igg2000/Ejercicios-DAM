@@ -20,16 +20,14 @@ public class VentanaPrincipal extends JFrame{
     public VentanaPrincipal(Tienda t) throws HeadlessException {
         
         this.t=t;
-                
         this.setVisible(true);
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setResizable(false);
         
-        PanelLogin pl= new PanelLogin(t);
+        PanelLogin pl= new PanelLogin(this,t);
         this.ponPanel(pl);
-    
     }
 
     public void ponPanel(JPanel p){

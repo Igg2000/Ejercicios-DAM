@@ -23,10 +23,16 @@ public class Main {
     
     public static void main(String[] args) {
         
+        //Datos
         Tienda t=new Tienda("Sports CEN");
-        
         agregarDatosDePrueba(t);
         
+        //Modo Texto
+        
+        
+        //t.getGerenteTienda().gestionarArticulos(t.getArticulosTienda()); //prueba
+        
+        //Modo Grafico
         VentanaPrincipal v; 
         if(modoTexto==false)
             v= new VentanaPrincipal(t);

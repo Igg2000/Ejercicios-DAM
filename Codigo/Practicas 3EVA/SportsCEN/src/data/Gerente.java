@@ -28,8 +28,33 @@ public class Gerente extends PersonalTienda {
     }
 
 
-    public void gestionarArticulos(List articulosTienda) {
+    public void gestionarArticulos(List<Articulo> articulosTienda) {
+     
+        /*
+        *aqui iría el menu de gestionarArticulos
+        *a la hora de elegir la opcion en un switch 
+        *puedes pintar la funcion en el case
+        *
+        *           Mucho animo
+        */
+        System.out.println(mostrarArticulos(articulosTienda));
+        
  
+    }
+    
+    
+    private String mostrarArticulos(List<Articulo> a) {
+        /*
+        *Añade todos los articulos a una cadena, añadiendo un salto de linea entre ellos
+        *una vez estan todos los articulos devuelve la cadena
+        */
+        
+        String cad="";
+        for (int i = 0; i < a.size(); i++) {
+            cad+=a.get(i)+"\n";
+        }
+        
+        return cad;
     }
 
     public void gestionarDependientes(List dependientesTienda) {
@@ -77,6 +102,7 @@ public class Gerente extends PersonalTienda {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
 
     
     

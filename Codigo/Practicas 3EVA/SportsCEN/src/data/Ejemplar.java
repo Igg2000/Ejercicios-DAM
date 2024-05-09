@@ -75,9 +75,9 @@ public class Ejemplar {
         
         
         if (articuloReferenciado.getTipoPrenda()==Prendas.Zapatillas)
-            return "\n" +idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + tallaZapatillas + ", precio=" + precio;
+            return idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + tallaZapatillas + ", precio=" + precio;
         else
-            return "\n" +idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + talla + ", precio=" + precio;
+            return idGlobalEjemplar+". "+ articuloReferenciado.getModelo() +" ID." + idEjemplar + " color=" + cadColor + " talla=" + talla + ", precio=" + precio;
     }
 
     private String obtenerNombreColor() {

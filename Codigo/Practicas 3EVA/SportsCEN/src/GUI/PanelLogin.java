@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import ExcepcionesPropias.InicioSesionFallido;
+import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -20,16 +22,15 @@ import javax.swing.JOptionPane;
  */
 public class PanelLogin extends javax.swing.JPanel {
 
-    
+    VentanaPrincipal v;
     Tienda t;
     /**
      * Creates new form PanelLogin
      */
-    public PanelLogin(Tienda t) {
+    public PanelLogin(VentanaPrincipal v, Tienda t) {
         this.t=t;
+        this.v=v;
         initComponents();
-        
-        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +44,6 @@ public class PanelLogin extends javax.swing.JPanel {
         espacioDerecha = new javax.swing.JLabel();
         espacioAbajo = new javax.swing.JLabel();
         espacioIzquierda = new javax.swing.JLabel();
-        espacioArriba = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         labelUsuario = new javax.swing.JLabel();
@@ -61,20 +61,24 @@ public class PanelLogin extends javax.swing.JPanel {
         add(espacioDerecha, java.awt.BorderLayout.LINE_END);
         add(espacioAbajo, java.awt.BorderLayout.PAGE_END);
         add(espacioIzquierda, java.awt.BorderLayout.LINE_START);
-        add(espacioArriba, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 255), null), javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 102, 102))));
         jPanel1.setLayout(new java.awt.BorderLayout(0, 5));
 
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(10, 10, 10, 10, new java.awt.Color(0, 102, 102)));
         jPanel3.setLayout(new java.awt.GridLayout(2, 2, 5, 5));
 
+        labelUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        labelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         labelUsuario.setText("Usuario");
         labelUsuario.setPreferredSize(new java.awt.Dimension(40, 16));
         jPanel3.add(labelUsuario);
         jPanel3.add(textoUsuario);
 
+        labelPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        labelPassword.setForeground(new java.awt.Color(255, 255, 255));
         labelPassword.setText("Contraseña");
         labelPassword.setPreferredSize(new java.awt.Dimension(40, 16));
         jPanel3.add(labelPassword);
@@ -101,12 +105,25 @@ public class PanelLogin extends javax.swing.JPanel {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         
+        
         String user;
         String pass;
 
         user= textoUsuario.getText();
         pass= String.valueOf(textopassword.getPassword()); //get password lo devuelve como un array de caracteres
         
+        PersonalTienda p = null;
+        // si no te devuelve el usuario muestras con un JOptionPane el mensaje de la excepcion
+        try {
+            p = t.dameElEmpleadoLogueado(user,pass);
+        } catch (InicioSesionFallido ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        
+        if(p!=null)
+            JOptionPane.showMessageDialog(this, p);
+        
+    /*    
         //esto compara si el usuario y contraseña introducidos coincide con los del gerente
         if(user.equals(t.getGerenteTienda().getCredenciales().getNombreUsuario()) && pass.equals(t.getGerenteTienda().getCredenciales().getContraseña()))
             JOptionPane.showMessageDialog(this, "Bro eres el gerente");
@@ -117,6 +134,7 @@ public class PanelLogin extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Eres el dependiente "+ t.getDependientesTienda().get(i));
             
         }
+*/
     }//GEN-LAST:event_LoginActionPerformed
 
     
@@ -139,7 +157,6 @@ public class PanelLogin extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Login;
     private javax.swing.JLabel espacioAbajo;
-    private javax.swing.JLabel espacioArriba;
     private javax.swing.JLabel espacioDerecha;
     private javax.swing.JLabel espacioIzquierda;
     private javax.swing.JLabel espacioIzquierdaBoton;

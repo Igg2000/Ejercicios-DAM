@@ -132,19 +132,7 @@ public class PanelLogin extends javax.swing.JPanel {
         
         if(p!=null)
             JOptionPane.showMessageDialog(this, p);
-        
-    /*    
-        //esto compara si el usuario y contraseña introducidos coincide con los del gerente
-        if(user.equals(t.getGerenteTienda().getCredenciales().getNombreUsuario()) && pass.equals(t.getGerenteTienda().getCredenciales().getContraseña()))
-            JOptionPane.showMessageDialog(this, "Bro eres el gerente");
-        
-        for (int i = 0; i < t.getDependientesTienda().size(); i++) {
-            if(user.equals(t.getDependientesTienda().get(i).getCredenciales().getNombreUsuario()) && 
-                    pass.equals(t.getDependientesTienda().get(i).getCredenciales().getContraseña()) )
-                JOptionPane.showMessageDialog(this, "Eres el dependiente "+ t.getDependientesTienda().get(i));
-            
-        }
-*/
+
     }//GEN-LAST:event_LoginActionPerformed
 
     

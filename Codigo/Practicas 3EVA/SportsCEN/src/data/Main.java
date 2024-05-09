@@ -4,6 +4,7 @@
  */
 package data;
 
+import GUI.PanelMenuGerente;
 import GUI.VentanaPrincipal;
 import static data.Marcas.*;
 import static data.Prendas.*;
@@ -12,10 +13,7 @@ import static data.TallasZapatillas.*;
 import java.awt.Color;
 import java.util.List;
 
-/**
- *
- * @author Nacho
- */
+
 public class Main {
 
     
@@ -33,9 +31,13 @@ public class Main {
         //t.getGerenteTienda().gestionarArticulos(t.getArticulosTienda()); //prueba
         
         //Modo Grafico
-        VentanaPrincipal v; 
+        VentanaPrincipal v = null; 
         if(modoTexto==false)
             v= new VentanaPrincipal(t);
+        
+       //v.ponPanel(new PanelMenuGerente());
+        
+        
         
     }
 
@@ -72,17 +74,18 @@ public class Main {
         addClientes(t);
         
         //pruebas
-    /*    
-        System.out.println(t.getGerenteTienda().getCredenciales());
     
-        System.out.println(t.getArticulosTienda());
-        System.out.println(""+t.getArticulosTienda().get(1).getEjemplaresArticulo());
+        //System.out.println(t.getGerenteTienda().getCredenciales());
     
+       //System.out.println(t.getArticulosTienda());
+      //  System.out.println(""+t.getArticulosTienda().get(1).getEjemplaresArticulo());
+    /*
         for (int i = 0; i < t.getArticulosTienda().size(); i++) {
             System.out.println(""+t.getArticulosTienda().get(i).getEjemplaresArticulo());
         }
-         System.out.println(t.getClientesTienda());
     */
+    //     System.out.println(t.getClientesTienda());
+    
     }
 
     private static void addGerenteATienda(Tienda t, Gerente g) {
@@ -106,7 +109,7 @@ public class Main {
        
         for (Articulo a : articulosTienda) {
             if (a.getIdArticulo()==idArticulo){
-                if (talla!=null) //esto significaria que son zapatillas
+                if (talla!=null) //esto significaria que no son zapatillas
                     a.getEjemplaresArticulo().add(new Ejemplar(color,talla,precio,a));
                 else
                     a.getEjemplaresArticulo().add(new Ejemplar(color,tallaZapas,precio,a));
@@ -270,7 +273,7 @@ public class Main {
         
     }
 
-    private static void crearSetDeEjemplares(Tienda t,int i, Color c, Boolean sonZapatillas, float precio, int nXL, int nL, int nM, int nS, int nXS) {
+    private static void crearSetDeEjemplares(Tienda t,int id, Color c, Boolean sonZapatillas, float precio, int nXL, int nL, int nM, int nS, int nXS) {
       
         //@Nacho
         /*
@@ -280,23 +283,23 @@ public class Main {
         * Este metodo crea la cantidad de ejemplares que tu le mandes de cada talla
         */
         if (sonZapatillas){
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_47,precio,1);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_46,precio,2);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_45,precio,3);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_44,precio,5);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_43,precio,4);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_42,precio,3);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_41,precio,2);
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_40,precio,2);   
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_39,precio,2);   
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_38,precio,1);   
-            addEjemplar(t.getArticulosTienda(),i,c,null,EU_37,precio,1);   
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_47,precio,1);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_46,precio,2);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_45,precio,3);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_44,precio,5);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_43,precio,4);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_42,precio,3);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_41,precio,2);
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_40,precio,2);   
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_39,precio,2);   
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_38,precio,1);   
+            addEjemplar(t.getArticulosTienda(),id,c,null,EU_37,precio,1);   
         }else{
-            addEjemplar(t.getArticulosTienda(),i,c,XL,null,precio,nXL);
-            addEjemplar(t.getArticulosTienda(),i,c,L,null,precio,nL);
-            addEjemplar(t.getArticulosTienda(),i,c,M,null,precio,nM);
-            addEjemplar(t.getArticulosTienda(),i,c,S,null,precio,nS);
-            addEjemplar(t.getArticulosTienda(),i,c,XS,null,precio,nXS); 
+            addEjemplar(t.getArticulosTienda(),id,c,XL,null,precio,nXL);
+            addEjemplar(t.getArticulosTienda(),id,c,L,null,precio,nL);
+            addEjemplar(t.getArticulosTienda(),id,c,M,null,precio,nM);
+            addEjemplar(t.getArticulosTienda(),id,c,S,null,precio,nS);
+            addEjemplar(t.getArticulosTienda(),id,c,XS,null,precio,nXS); 
         }
     }
     

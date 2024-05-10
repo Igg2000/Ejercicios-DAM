@@ -36,7 +36,7 @@ public class Main {
         VentanaPrincipal v = null; 
         if(modoTexto==false){
             v= new VentanaPrincipal(t);
-            v.ponPanel(Paneles.PLogin,null);
+            //v.ponPanel(Paneles.PLogin,null);
         }
         
         //Pruebas Grafico
@@ -47,6 +47,7 @@ public class Main {
         *el atributo Gerente g por Dependiente g
         */
         //v.ponPanel(new PanelMenuGerente(v,t,t.getGerenteTienda()));
+        v.ponPanel(Paneles.PMostrarArticulosPorMarca, t.getGerenteTienda());
         
         
         

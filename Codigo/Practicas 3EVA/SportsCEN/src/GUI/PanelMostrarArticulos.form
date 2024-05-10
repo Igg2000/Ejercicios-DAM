@@ -68,22 +68,25 @@
         <Property name="verticalGap" type="int" value="20"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bA&#xf1;adirArticulos">
+        <Component class="javax.swing.JButton" name="bMostrarTodo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A&#xf1;adir Articulos"/>
+            <Property name="text" type="java.lang.String" value="Mostrar Todo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="bEliminarArticulos">
+        <Component class="javax.swing.JButton" name="bMostrarPorMarca">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar Articulos"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="bMostrarArticulos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mostrar Articulos"/>
+            <Property name="text" type="java.lang.String" value="Mostrar Por Marca"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarArticulosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarPorMarcaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bMostrarPorTipoPrenda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mostrar por tipo de prenda"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarPorTipoPrendaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bVolver">

@@ -10,6 +10,6 @@ package GUI;
  */
 public enum Paneles {
     
-    PLogin,PMenuGerente,PMenuDependiente,PGestionarArticulos
+    PLogin,PMenuGerente,PMenuDependiente,PGestionarArticulos,PMostrarArticulos,PMostrarArticulosPorMarca
     
 }

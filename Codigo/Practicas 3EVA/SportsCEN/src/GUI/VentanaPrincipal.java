@@ -62,6 +62,16 @@ public class VentanaPrincipal extends JFrame{
                 this.setContentPane(new PanelGestionarArticulos(this,t, ptLogueado));
                 break;
                 
+            case p.PMostrarArticulos:
+            
+                this.setContentPane(new PanelMostrarArticulos(this,t, ptLogueado));
+                break;
+                
+            case p.PMostrarArticulosPorMarca:
+            
+                this.setContentPane(new PanelMostrarArticulosPorMarca(this,t, ptLogueado));
+                break;
+                
         }
         
        

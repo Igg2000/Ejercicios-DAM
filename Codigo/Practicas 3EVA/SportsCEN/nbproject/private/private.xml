@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Ejemplar.java</file>
-            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Articulo.java</file>
-            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Tienda.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelGestionarArticulos.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMostrarArticulos.java</file>
             <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMenuGerente.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMostrarArticulosPorMarca.java</file>
             <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Main.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/Paneles.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Marcas.java</file>
+            <file>file:/C:/Users/grovy/OneDrive/Escritorio/Clase/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelLogin.java</file>
         </group>
     </open-files>
 </project-private>

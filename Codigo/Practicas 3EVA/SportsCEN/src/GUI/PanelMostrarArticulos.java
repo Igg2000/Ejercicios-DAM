@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
  *
  * @author grovy
  */
-public class PanelGestionarArticulos extends javax.swing.JPanel {
+public class PanelMostrarArticulos extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -28,7 +28,7 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     
-    public PanelGestionarArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelMostrarArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
         this.pt=pt;
@@ -54,9 +54,9 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bAñadirArticulos = new javax.swing.JButton();
-        bEliminarArticulos = new javax.swing.JButton();
-        bMostrarArticulos = new javax.swing.JButton();
+        bMostrarTodo = new javax.swing.JButton();
+        bMostrarPorMarca = new javax.swing.JButton();
+        bMostrarPorTipoPrenda = new javax.swing.JButton();
         bVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
@@ -76,19 +76,24 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
-        bAñadirArticulos.setText("Añadir Articulos");
-        jPanel1.add(bAñadirArticulos);
+        bMostrarTodo.setText("Mostrar Todo");
+        jPanel1.add(bMostrarTodo);
 
-        bEliminarArticulos.setText("Eliminar Articulos");
-        jPanel1.add(bEliminarArticulos);
-
-        bMostrarArticulos.setText("Mostrar Articulos");
-        bMostrarArticulos.addActionListener(new java.awt.event.ActionListener() {
+        bMostrarPorMarca.setText("Mostrar Por Marca");
+        bMostrarPorMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMostrarArticulosActionPerformed(evt);
+                bMostrarPorMarcaActionPerformed(evt);
             }
         });
-        jPanel1.add(bMostrarArticulos);
+        jPanel1.add(bMostrarPorMarca);
+
+        bMostrarPorTipoPrenda.setText("Mostrar por tipo de prenda");
+        bMostrarPorTipoPrenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrarPorTipoPrendaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bMostrarPorTipoPrenda);
 
         bVolver.setText("Volver");
         bVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -127,13 +132,19 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
             
     }//GEN-LAST:event_bVolverActionPerformed
 
-    private void bMostrarArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarArticulosActionPerformed
+    private void bMostrarPorTipoPrendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorTipoPrendaActionPerformed
         // TODO add your handling code here:
         
-        if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PMostrarArticulos, pt);
         
-    }//GEN-LAST:event_bMostrarArticulosActionPerformed
+        
+    }//GEN-LAST:event_bMostrarPorTipoPrendaActionPerformed
+
+    private void bMostrarPorMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorMarcaActionPerformed
+        // TODO add your handling code here:
+                if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PMostrarArticulosPorMarca, pt);
+        
+    }//GEN-LAST:event_bMostrarPorMarcaActionPerformed
 
    
     @Override
@@ -155,9 +166,9 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAñadirArticulos;
-    private javax.swing.JButton bEliminarArticulos;
-    private javax.swing.JButton bMostrarArticulos;
+    private javax.swing.JButton bMostrarPorMarca;
+    private javax.swing.JButton bMostrarPorTipoPrenda;
+    private javax.swing.JButton bMostrarTodo;
     private javax.swing.JButton bVolver;
     private javax.swing.JLabel espacioAbajo;
     private javax.swing.JLabel jLabel3;

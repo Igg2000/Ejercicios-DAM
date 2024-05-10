@@ -137,10 +137,10 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         
     }//GEN-LAST:event_BGestionarArticulosActionPerformed
 
-  /*  
+    
     @Override
-    public void paint(Graphics g) {
-        super.paint(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         
         Image fondo = null;
         try {
@@ -154,7 +154,7 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         this.repaint();
         this.revalidate();
     }
-   */
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BCerrar;

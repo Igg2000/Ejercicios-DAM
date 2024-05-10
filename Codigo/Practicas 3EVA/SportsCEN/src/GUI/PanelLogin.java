@@ -142,8 +142,8 @@ public class PanelLogin extends javax.swing.JPanel {
     
 
     @Override
-    public void paint(Graphics g) {
-        super.paint(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
         
         Image fondo = null;
         try {
@@ -154,6 +154,8 @@ public class PanelLogin extends javax.swing.JPanel {
         Image fondoEscalado = fondo.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
         
         g.drawImage(fondoEscalado, 0, 0, this);
+       
+     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

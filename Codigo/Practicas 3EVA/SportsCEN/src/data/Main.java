@@ -43,7 +43,7 @@ public class Main {
             else
                 v.ponPanel(Paneles.PMenuGerente,t.getGerenteTienda());
         }
-        
+     
         //Pruebas Grafico
          
         /*
@@ -53,8 +53,6 @@ public class Main {
         */
         //v.ponPanel(new PanelMenuGerente(v,t,t.getGerenteTienda()));
         //v.ponPanel(Paneles.PMostrarArticulosPorMarca, t.getGerenteTienda());
-        
-        
         
     }
 

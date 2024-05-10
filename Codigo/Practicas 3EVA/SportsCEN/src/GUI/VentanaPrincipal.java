@@ -94,6 +94,11 @@ public class VentanaPrincipal extends JFrame{
                 
                 this.ponPanel(new PanelEliminarArticulos(this,t, ptLogueado));
                 break;
+           
+            case p.PMostrarTodosLosArticulos:
+                
+                this.ponPanel(new PanelMostrarTodosLosArticulos(this,t, ptLogueado));
+                break;
                 
         }
         

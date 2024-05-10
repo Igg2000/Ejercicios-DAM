@@ -36,8 +36,10 @@ public class PanelMostrarDependientes extends javax.swing.JPanel {
         v.setLocationRelativeTo(null);
         
         initComponents();
-        
+        Gerente g= (Gerente)pt;
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
+        //recibo la lista de dependientes y la pongo en el cuadro de texto
+        jTextArea1.setText(g.mostrarDependientes(t.getDependientesTienda()));
     }
 
     /**

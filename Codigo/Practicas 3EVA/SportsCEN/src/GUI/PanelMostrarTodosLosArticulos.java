@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
  *
  * @author grovy
  */
-public class PanelMostrarArticulos extends javax.swing.JPanel {
+public class PanelMostrarTodosLosArticulos extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -28,7 +28,7 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     
-    public PanelMostrarArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelMostrarTodosLosArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
         this.pt=pt;
@@ -36,8 +36,10 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
         v.setLocationRelativeTo(null);
         
         initComponents();
-        
+        Gerente g= (Gerente)pt;
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
+        //recibo la lista de dependientes y la pongo en el cuadro de texto
+        jTextArea1.setText(g.mostrarArticulos(t.getArticulosTienda()));
     }
 
     /**
@@ -50,46 +52,62 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        espacioAbajo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bMostrarTodo = new javax.swing.JButton();
-        bMostrarPorMarca = new javax.swing.JButton();
-        bMostrarPorTipoPrenda = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        nombreGerente = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         bVolverAtras = new javax.swing.JButton();
-        bVolver = new javax.swing.JButton();
+        bVolverMenu = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        nombreGerente = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 150, 100, 150));
+        espacioAbajo.setText("     ");
+        add(espacioAbajo, java.awt.BorderLayout.PAGE_END);
+
+        jLabel3.setText("                                    ");
+        add(jLabel3, java.awt.BorderLayout.LINE_START);
+
+        jLabel4.setText("                                    ");
+        add(jLabel4, java.awt.BorderLayout.LINE_END);
+
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 0, 50));
+        jPanel1.setLayout(new java.awt.BorderLayout(0, 10));
 
-        bMostrarTodo.setText("Mostrar Todo");
-        bMostrarTodo.addActionListener(new java.awt.event.ActionListener() {
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 51, 51));
+        jTextArea1.setColumns(19);
+        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jPanel3.setOpaque(false);
+
+        bVolverAtras.setText("Volver atras");
+        bVolverAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMostrarTodoActionPerformed(evt);
+                bVolverAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(bMostrarTodo);
+        jPanel3.add(bVolverAtras);
 
-        bMostrarPorMarca.setText("Mostrar Por Marca");
-        bMostrarPorMarca.addActionListener(new java.awt.event.ActionListener() {
+        bVolverMenu.setText("Volver al menu");
+        bVolverMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMostrarPorMarcaActionPerformed(evt);
+                bVolverMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(bMostrarPorMarca);
+        jPanel3.add(bVolverMenu);
 
-        bMostrarPorTipoPrenda.setText("Mostrar por tipo de prenda");
-        bMostrarPorTipoPrenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMostrarPorTipoPrendaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bMostrarPorTipoPrenda);
+        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -109,62 +127,21 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
         jPanel2.add(nombreGerente, gridBagConstraints);
 
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
-
-        jPanel3.setOpaque(false);
-
-        bVolverAtras.setText("Volver atras");
-        bVolverAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVolverAtrasActionPerformed(evt);
-            }
-        });
-        jPanel3.add(bVolverAtras);
-
-        bVolver.setText("Volver al Menu");
-        bVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVolverActionPerformed(evt);
-            }
-        });
-        jPanel3.add(bVolver);
-
-        add(jPanel3, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverActionPerformed
+    private void bVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverMenuActionPerformed
         // TODO add your handling code here:
         //esto vuelve al menu principal
         if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
-        
-            
-    }//GEN-LAST:event_bVolverActionPerformed
 
-    private void bMostrarPorTipoPrendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorTipoPrendaActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-    }//GEN-LAST:event_bMostrarPorTipoPrendaActionPerformed
-
-    private void bMostrarPorMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorMarcaActionPerformed
-        // TODO add your handling code here:
-        if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PMostrarArticulosPorMarca, pt);
-        
-    }//GEN-LAST:event_bMostrarPorMarcaActionPerformed
+    }//GEN-LAST:event_bVolverMenuActionPerformed
 
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-            if(pt.getClass()==Gerente.class)
-                this.v.ponPanel(Paneles.PGestionarArticulos, pt);
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PGestionarDependientes, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
-
-    private void bMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarTodoActionPerformed
-        // TODO add your handling code here:
-            if(pt.getClass()==Gerente.class)
-                this.v.ponPanel(Paneles.PMostrarTodosLosArticulos, pt);
-    }//GEN-LAST:event_bMostrarTodoActionPerformed
 
    
     @Override
@@ -186,14 +163,16 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bMostrarPorMarca;
-    private javax.swing.JButton bMostrarPorTipoPrenda;
-    private javax.swing.JButton bMostrarTodo;
-    private javax.swing.JButton bVolver;
     private javax.swing.JButton bVolverAtras;
+    private javax.swing.JButton bVolverMenu;
+    private javax.swing.JLabel espacioAbajo;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
 }

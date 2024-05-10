@@ -8,19 +8,32 @@ import java.util.*;
  */
 public class Dependiente extends PersonalTienda {
 
+    
+    
+    private int idDependiente;
+
+    private Tienda tiendaDependiente;
+    private static int numDependientes=0; //lleva la cuenta de los dependientes para generar la id
+
+    
     public Dependiente(String nombreCompleto, String dni, int telefono) {
         super(nombreCompleto, dni, telefono);
+        
+        numDependientes++;
+        this.idDependiente=numDependientes;
+
     }
 
     public Dependiente(String nombreCompleto, String dni, int telefono, Usuario u) {
         super(nombreCompleto, dni, telefono, u);
+    
+        numDependientes++;
+        this.idDependiente=numDependientes;
+
     }
 
 
 
-    private int idDependiente;
-
-    private Tienda tiendaDependiente;
     
     
     //de aqui hacia abajo getters y setters

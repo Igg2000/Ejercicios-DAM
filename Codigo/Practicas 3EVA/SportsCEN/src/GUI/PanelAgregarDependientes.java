@@ -7,6 +7,7 @@ package GUI;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
+import data.Usuario;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,12 +28,12 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
      */
     VentanaPrincipal v;
     Tienda t;
-    PersonalTienda pt;
+    Gerente pt;
     
     public PanelAgregarDependientes(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
-        this.pt=pt;
+        this.pt=(Gerente)pt;
         v.setSize(600, 600);
         v.setLocationRelativeTo(null);
         
@@ -59,15 +61,15 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        tDNI = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tTelefono = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tUsuario = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        tPassword = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -79,10 +81,10 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 102, 153));
         setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setText("                                    ");
+        jLabel3.setText("                               ");
         add(jLabel3, java.awt.BorderLayout.LINE_START);
 
-        jLabel4.setText("                                    ");
+        jLabel4.setText("                               ");
         add(jLabel4, java.awt.BorderLayout.LINE_END);
 
         jPanel1.setOpaque(false);
@@ -92,6 +94,11 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
 
         bAgregarDependiente.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         bAgregarDependiente.setText("Agregar Dependiente");
+        bAgregarDependiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAgregarDependienteActionPerformed(evt);
+            }
+        });
         jPanel5.add(bAgregarDependiente);
 
         jPanel1.add(jPanel5, java.awt.BorderLayout.SOUTH);
@@ -112,10 +119,10 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         jLabel1.setText("Nombre Completo");
         jPanel6.add(jLabel1);
 
-        jTextField1.setBackground(new java.awt.Color(154, 219, 219));
-        jTextField1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel6.add(jTextField1);
+        tNombre.setBackground(new java.awt.Color(154, 219, 219));
+        tNombre.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        tNombre.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel6.add(tNombre);
 
         jLabel2.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,9 +130,10 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         jLabel2.setText("DNI");
         jPanel6.add(jLabel2);
 
-        jTextField2.setBackground(new java.awt.Color(154, 219, 219));
-        jTextField2.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jPanel6.add(jTextField2);
+        tDNI.setBackground(new java.awt.Color(154, 219, 219));
+        tDNI.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        tDNI.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel6.add(tDNI);
 
         jLabel5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,29 +141,32 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         jLabel5.setText("Telefono");
         jPanel6.add(jLabel5);
 
-        jTextField3.setBackground(new java.awt.Color(154, 219, 219));
-        jTextField3.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jPanel6.add(jTextField3);
+        tTelefono.setBackground(new java.awt.Color(154, 219, 219));
+        tTelefono.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        tTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel6.add(tTelefono);
 
         jLabel6.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Usuario");
+        jLabel6.setText("Usuario (opcional)");
         jPanel6.add(jLabel6);
 
-        jTextField4.setBackground(new java.awt.Color(154, 219, 219));
-        jTextField4.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jPanel6.add(jTextField4);
+        tUsuario.setBackground(new java.awt.Color(154, 219, 219));
+        tUsuario.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        tUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel6.add(tUsuario);
 
-        jLabel7.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Contraseña");
+        jLabel7.setText("Contraseña (opcional)");
         jPanel6.add(jLabel7);
 
-        jTextField5.setBackground(new java.awt.Color(154, 219, 219));
-        jTextField5.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        jPanel6.add(jTextField5);
+        tPassword.setBackground(new java.awt.Color(154, 219, 219));
+        tPassword.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        tPassword.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel6.add(tPassword);
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.CENTER);
 
@@ -222,6 +233,24 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
             this.v.ponPanel(Paneles.PGestionarDependientes, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
+    private void bAgregarDependienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarDependienteActionPerformed
+        // TODO add your handling code here:
+        
+        String nom=tNombre.getText();
+        String dni=tDNI.getText();
+        int tel= Integer.parseInt(tTelefono.getText());
+        String user=tUsuario.getText();
+        String pass=tPassword.getText();
+        
+        
+        pt.agregarDependienteATienda(t.getDependientesTienda(), nom, dni, tel, new Usuario(user,pass));
+        
+        
+        JOptionPane.showMessageDialog(this, "Usuario agregado con exito");
+        
+        
+    }//GEN-LAST:event_bAgregarDependienteActionPerformed
+
    
     @Override
     public void paintComponent(Graphics g) {
@@ -261,11 +290,11 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel nombreGerente;
+    private javax.swing.JTextField tDNI;
+    private javax.swing.JTextField tNombre;
+    private javax.swing.JTextField tPassword;
+    private javax.swing.JTextField tTelefono;
+    private javax.swing.JTextField tUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,9 @@
  */
 package GUI;
 
+import data.Dependiente;
+import data.Gerente;
+import data.PersonalTienda;
 import data.Tienda;
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
@@ -25,14 +28,48 @@ public class VentanaPrincipal extends JFrame{
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setResizable(false);
-        
-        PanelLogin pl= new PanelLogin(this,t);
-        this.ponPanel(pl);
+
     }
 
     public void ponPanel(JPanel p){
         
        this.setContentPane(p);
+       this.revalidate();
+    }
+    
+    public void ponPanel(Paneles p, PersonalTienda ptLogueado){
+        
+        //@Nacho
+        //esto es para controlar mejor que panel se le pasa a la ventana
+        
+        switch(p){
+            case p.PLogin:
+                this.setContentPane(new PanelLogin(this,t));
+                break;
+                
+            case p.PMenuGerente:
+                this.setContentPane(new PanelMenuGerente(this,t,(Gerente)ptLogueado));
+                
+                break;
+                              
+            case p.PMenuDependiente:
+                this.setContentPane(new PanelMenuDependiente(this,t,(Dependiente)ptLogueado));
+                
+                break;
+                              
+            case p.PGestionarArticulos:
+            
+                this.setContentPane(new PanelGestionarArticulos(this,t, ptLogueado));
+                break;
+                
+        }
+        
+       
+       
+       
+       
+       
+       
        this.revalidate();
     }
     

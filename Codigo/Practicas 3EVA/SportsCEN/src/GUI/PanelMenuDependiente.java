@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import data.Dependiente;
 import data.Gerente;
 import data.Tienda;
 import java.awt.Graphics;
@@ -18,25 +19,25 @@ import javax.imageio.ImageIO;
  *
  * @author grovy
  */
-public class PanelMenuGerente extends javax.swing.JPanel {
+public class PanelMenuDependiente extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
      */
     VentanaPrincipal v;
     Tienda t;
-    Gerente g;
+    Dependiente d;
     
-    public PanelMenuGerente(VentanaPrincipal v, Tienda t, Gerente g) {
+    public PanelMenuDependiente(VentanaPrincipal v, Tienda t, Dependiente d) {
         this.t=t;
         this.v=v;
-        this.g=g;
+        this.d=d;
         v.setSize(600, 600);
         v.setLocationRelativeTo(null);
         
         initComponents();
         
-        nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+g.getNombreCompleto());
+        nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+d.getNombreCompleto());
     }
 
     /**
@@ -53,8 +54,6 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        BGestionarDependientes = new javax.swing.JButton();
-        BGestionarArticulos = new javax.swing.JButton();
         BGestionarEjemplares = new javax.swing.JButton();
         BGestionarClientes = new javax.swing.JButton();
         BGestionarVentas = new javax.swing.JButton();
@@ -76,17 +75,6 @@ public class PanelMenuGerente extends javax.swing.JPanel {
 
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
-
-        BGestionarDependientes.setText("Gestionar Dependientes");
-        jPanel1.add(BGestionarDependientes);
-
-        BGestionarArticulos.setText("Gestionar Articulos");
-        BGestionarArticulos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BGestionarArticulosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BGestionarArticulos);
 
         BGestionarEjemplares.setText("Gestionar Ejemplares");
         jPanel1.add(BGestionarEjemplares);
@@ -131,12 +119,6 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         v.dispose();
     }//GEN-LAST:event_BCerrarActionPerformed
 
-    private void BGestionarArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarArticulosActionPerformed
-        // TODO add your handling code here:
-        this.v.ponPanel(Paneles.PGestionarArticulos, g);
-        
-    }//GEN-LAST:event_BGestionarArticulosActionPerformed
-
   /*  
     @Override
     public void paint(Graphics g) {
@@ -158,9 +140,7 @@ public class PanelMenuGerente extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BCerrar;
-    private javax.swing.JButton BGestionarArticulos;
     private javax.swing.JButton BGestionarClientes;
-    private javax.swing.JButton BGestionarDependientes;
     private javax.swing.JButton BGestionarEjemplares;
     private javax.swing.JButton BGestionarVentas;
     private javax.swing.JLabel espacioAbajo;

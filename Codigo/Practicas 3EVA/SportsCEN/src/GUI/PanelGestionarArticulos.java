@@ -5,6 +5,7 @@
 package GUI;
 
 import data.Gerente;
+import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -18,25 +19,25 @@ import javax.imageio.ImageIO;
  *
  * @author grovy
  */
-public class PanelMenuGerente extends javax.swing.JPanel {
+public class PanelGestionarArticulos extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
      */
     VentanaPrincipal v;
     Tienda t;
-    Gerente g;
+    PersonalTienda pt;
     
-    public PanelMenuGerente(VentanaPrincipal v, Tienda t, Gerente g) {
+    public PanelGestionarArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
-        this.g=g;
+        this.pt=pt;
         v.setSize(600, 600);
         v.setLocationRelativeTo(null);
         
         initComponents();
         
-        nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+g.getNombreCompleto());
+        nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
     }
 
     /**
@@ -53,12 +54,10 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        BGestionarDependientes = new javax.swing.JButton();
-        BGestionarArticulos = new javax.swing.JButton();
-        BGestionarEjemplares = new javax.swing.JButton();
-        BGestionarClientes = new javax.swing.JButton();
-        BGestionarVentas = new javax.swing.JButton();
-        BCerrar = new javax.swing.JButton();
+        bAñadirArticulos = new javax.swing.JButton();
+        bEliminarArticulos = new javax.swing.JButton();
+        bMostrarArticulos = new javax.swing.JButton();
+        bVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
 
@@ -77,33 +76,22 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
-        BGestionarDependientes.setText("Gestionar Dependientes");
-        jPanel1.add(BGestionarDependientes);
+        bAñadirArticulos.setText("Añadir Articulos");
+        jPanel1.add(bAñadirArticulos);
 
-        BGestionarArticulos.setText("Gestionar Articulos");
-        BGestionarArticulos.addActionListener(new java.awt.event.ActionListener() {
+        bEliminarArticulos.setText("Eliminar Articulos");
+        jPanel1.add(bEliminarArticulos);
+
+        bMostrarArticulos.setText("Mostrar Articulos");
+        jPanel1.add(bMostrarArticulos);
+
+        bVolver.setText("Volver");
+        bVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BGestionarArticulosActionPerformed(evt);
+                bVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(BGestionarArticulos);
-
-        BGestionarEjemplares.setText("Gestionar Ejemplares");
-        jPanel1.add(BGestionarEjemplares);
-
-        BGestionarClientes.setText("Gestionar Clientes");
-        jPanel1.add(BGestionarClientes);
-
-        BGestionarVentas.setText("Gestionar Ventas");
-        jPanel1.add(BGestionarVentas);
-
-        BCerrar.setText("Cerrar Aplicacion");
-        BCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BCerrarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BCerrar);
+        jPanel1.add(bVolver);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -125,17 +113,14 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCerrarActionPerformed
-        
-        //este boton cierra la ventana
-        v.dispose();
-    }//GEN-LAST:event_BCerrarActionPerformed
-
-    private void BGestionarArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarArticulosActionPerformed
+    private void bVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverActionPerformed
         // TODO add your handling code here:
-        this.v.ponPanel(Paneles.PGestionarArticulos, g);
+        //esto vuelve al menu principal
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PMenuGerente, pt);
         
-    }//GEN-LAST:event_BGestionarArticulosActionPerformed
+            
+    }//GEN-LAST:event_bVolverActionPerformed
 
   /*  
     @Override
@@ -157,12 +142,10 @@ public class PanelMenuGerente extends javax.swing.JPanel {
    */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BCerrar;
-    private javax.swing.JButton BGestionarArticulos;
-    private javax.swing.JButton BGestionarClientes;
-    private javax.swing.JButton BGestionarDependientes;
-    private javax.swing.JButton BGestionarEjemplares;
-    private javax.swing.JButton BGestionarVentas;
+    private javax.swing.JButton bAñadirArticulos;
+    private javax.swing.JButton bEliminarArticulos;
+    private javax.swing.JButton bMostrarArticulos;
+    private javax.swing.JButton bVolver;
     private javax.swing.JLabel espacioAbajo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

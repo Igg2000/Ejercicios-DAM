@@ -5,6 +5,7 @@
 package data;
 
 import GUI.PanelMenuGerente;
+import GUI.Paneles;
 import GUI.VentanaPrincipal;
 import static data.Marcas.*;
 import static data.Prendas.*;
@@ -31,11 +32,21 @@ public class Main {
         //t.getGerenteTienda().gestionarArticulos(t.getArticulosTienda()); //prueba
         
         //Modo Grafico
+
         VentanaPrincipal v = null; 
-        if(modoTexto==false)
+        if(modoTexto==false){
             v= new VentanaPrincipal(t);
+            v.ponPanel(Paneles.PLogin,null);
+        }
         
-       //v.ponPanel(new PanelMenuGerente());
+        //Pruebas Grafico
+         
+        /*
+        *cuando PanelMenuGerente tenga toda su funcionalidad hay que copiarlo y
+        *unicamente borrar los botones que no tienen los empleados, ademas de cambiar
+        *el atributo Gerente g por Dependiente g
+        */
+        //v.ponPanel(new PanelMenuGerente(v,t,t.getGerenteTienda()));
         
         
         

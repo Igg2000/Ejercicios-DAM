@@ -63,6 +63,11 @@ public abstract class PersonalTienda {
         return nombreCompleto + " dni=" + dni + " telefono=" + telefono;
     }
 
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    
     
     
 }

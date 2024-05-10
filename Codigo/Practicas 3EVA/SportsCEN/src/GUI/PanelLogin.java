@@ -5,6 +5,7 @@
 package GUI;
 
 import ExcepcionesPropias.InicioSesionFallido;
+import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
@@ -24,6 +25,7 @@ public class PanelLogin extends javax.swing.JPanel {
 
     VentanaPrincipal v;
     Tienda t;
+    PersonalTienda pLogueado = null;
     /**
      * Creates new form PanelLogin
      */
@@ -121,17 +123,19 @@ public class PanelLogin extends javax.swing.JPanel {
 
         user= textoUsuario.getText();
         pass= String.valueOf(textopassword.getPassword()); //get password lo devuelve como un array de caracteres
-        
-        PersonalTienda p = null;
+
         // si no te devuelve el usuario muestras con un JOptionPane el mensaje de la excepcion
         try {
-            p = t.dameElEmpleadoLogueado(user,pass);
+            this.pLogueado = t.dameElEmpleadoLogueado(user,pass);
         } catch (InicioSesionFallido ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
-        
-        if(p!=null)
-            JOptionPane.showMessageDialog(this, p);
+        //Si hay usuario logueado, si es dependiente se pondra el panel de menu de dependiente y si es gerente el de gerente
+        if(this.pLogueado !=null)
+            if(this.pLogueado.getClass().equals(Gerente.class))
+                v.ponPanel(Paneles.PMenuGerente,this.pLogueado);
+            else
+                v.ponPanel(Paneles.PMenuDependiente,this.pLogueado);
 
     }//GEN-LAST:event_LoginActionPerformed
 

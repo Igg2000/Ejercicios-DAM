@@ -68,27 +68,33 @@
         <Property name="verticalGap" type="int" value="20"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="BGestionarEjemplares">
+        <Component class="javax.swing.JButton" name="bA&#xf1;adirDependientes">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ejemplares"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BGestionarClientes">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Clientes"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BGestionarVentas">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ventas"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BCerrar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cerrar Aplicacion"/>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir Dependientes"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BCerrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bA&#xf1;adirDependientesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bEliminarDependientes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Eliminar Dependientes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="bMostrarDependientes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mostrar Dependientes"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarDependientesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bVolver">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Volver"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVolverActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

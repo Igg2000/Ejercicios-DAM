@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame{
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setResizable(false);
+        //this.setResizable(false);
 
     }
 
@@ -70,6 +70,21 @@ public class VentanaPrincipal extends JFrame{
             case p.PMostrarArticulosPorMarca:
             
                 this.setContentPane(new PanelMostrarArticulosPorMarca(this,t, ptLogueado));
+                break;
+                
+            case p.PGestionarDependientes:
+            
+                this.setContentPane(new PanelGestionarDependientes(this,t, ptLogueado));
+                break;
+                
+            case p.PMostrarDependientes:
+                
+                this.setContentPane(new PanelMostrarDependientes(this,t, ptLogueado));
+                break;
+            
+            case p.PAgregarDependientes:
+                
+                this.setContentPane(new PanelAgregarDependientes(this,t, ptLogueado));
                 break;
                 
         }

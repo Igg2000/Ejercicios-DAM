@@ -9,20 +9,17 @@ import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  *
  * @author grovy
  */
-public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
+public class PanelMostrarDependientes extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -31,7 +28,7 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     
-    public PanelMostrarArticulosPorMarca(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelMostrarDependientes(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
         this.pt=pt;
@@ -39,7 +36,6 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         v.setLocationRelativeTo(null);
         
         initComponents();
-        
         
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
     }
@@ -58,11 +54,11 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bPulga = new javax.swing.JButton();
-        bAdidos = new javax.swing.JButton();
-        bKike = new javax.swing.JButton();
-        bSuprememe = new javax.swing.JButton();
-        bVolver = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        bVolverAtras = new javax.swing.JButton();
+        bVolverMenu = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
 
@@ -79,31 +75,37 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         add(jLabel4, java.awt.BorderLayout.LINE_END);
 
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
+        jPanel1.setLayout(new java.awt.BorderLayout(0, 10));
 
-        bPulga.addActionListener(new java.awt.event.ActionListener() {
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 51, 51));
+        jTextArea1.setColumns(19);
+        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jPanel3.setOpaque(false);
+
+        bVolverAtras.setText("Volver atras");
+        bVolverAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bPulgaActionPerformed(evt);
+                bVolverAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(bPulga);
-        jPanel1.add(bAdidos);
+        jPanel3.add(bVolverAtras);
 
-        bKike.addActionListener(new java.awt.event.ActionListener() {
+        bVolverMenu.setText("Volver al menu");
+        bVolverMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKikeActionPerformed(evt);
+                bVolverMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(bKike);
-        jPanel1.add(bSuprememe);
+        jPanel3.add(bVolverMenu);
 
-        bVolver.setText("Volver");
-        bVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVolverActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bVolver);
+        jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -125,25 +127,19 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverActionPerformed
+    private void bVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverMenuActionPerformed
         // TODO add your handling code here:
         //esto vuelve al menu principal
         if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
-        
-            
-    }//GEN-LAST:event_bVolverActionPerformed
 
-    private void bKikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKikeActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-    }//GEN-LAST:event_bKikeActionPerformed
+    }//GEN-LAST:event_bVolverMenuActionPerformed
 
-    private void bPulgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPulgaActionPerformed
+    private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bPulgaActionPerformed
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PGestionarDependientes, pt);
+    }//GEN-LAST:event_bVolverAtrasActionPerformed
 
    
     @Override
@@ -159,53 +155,22 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         Image fondoEscalado = fondo.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
         
         g.drawImage(fondoEscalado, 0, 0, this);
-        
-        
-        pintarBotones();
-        
-        //this.repaint();
-        //this.revalidate();
+        this.repaint();
+        this.revalidate();
     }
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAdidos;
-    private javax.swing.JButton bKike;
-    private javax.swing.JButton bPulga;
-    private javax.swing.JButton bSuprememe;
-    private javax.swing.JButton bVolver;
+    private javax.swing.JButton bVolverAtras;
+    private javax.swing.JButton bVolverMenu;
     private javax.swing.JLabel espacioAbajo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
-
-   
-    private void pintarBotones() {
-        //@Nacho
-        //esto pinta los logos en los botones
-        
-        //aqui no entiendo por que no puedo recibir la anchura y altura de boton, me dan un error que dice que valen 0
-        
-        ImageIcon logoAdidos = new ImageIcon("src/IMG/Logo_adidos.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bAdidos.setIcon(new ImageIcon(logoAdidos.getImage().getScaledInstance
-        (bAdidos.getWidth(), bAdidos.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoPulga = new ImageIcon("src/IMG/Logo_Pulga.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bPulga.setIcon(new ImageIcon(logoPulga.getImage().getScaledInstance
-        (bPulga.getWidth(), bPulga.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoSuprememe = new ImageIcon("src/IMG/Logo_Suprememe.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bSuprememe.setIcon(new ImageIcon(logoSuprememe.getImage().getScaledInstance
-        (bSuprememe.getWidth(), bSuprememe.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoKike = new ImageIcon("src/IMG/Logo_Kike.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bKike.setIcon(new ImageIcon(logoKike.getImage().getScaledInstance
-        (bKike.getWidth(), bKike.getHeight(), Image.SCALE_SMOOTH))); 
-    
-                
-       }
-
 }

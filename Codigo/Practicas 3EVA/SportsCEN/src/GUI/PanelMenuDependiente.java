@@ -76,13 +76,13 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
-        BGestionarEjemplares.setText("Gestionar Ejemplares");
+        BGestionarEjemplares.setText("Ejemplares");
         jPanel1.add(BGestionarEjemplares);
 
-        BGestionarClientes.setText("Gestionar Clientes");
+        BGestionarClientes.setText("Clientes");
         jPanel1.add(BGestionarClientes);
 
-        BGestionarVentas.setText("Gestionar Ventas");
+        BGestionarVentas.setText("Ventas");
         jPanel1.add(BGestionarVentas);
 
         BCerrar.setText("Cerrar Aplicacion");

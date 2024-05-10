@@ -77,10 +77,15 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
-        BGestionarDependientes.setText("Gestionar Dependientes");
+        BGestionarDependientes.setText("Dependientes");
+        BGestionarDependientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BGestionarDependientesActionPerformed(evt);
+            }
+        });
         jPanel1.add(BGestionarDependientes);
 
-        BGestionarArticulos.setText("Gestionar Articulos");
+        BGestionarArticulos.setText("Articulos");
         BGestionarArticulos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BGestionarArticulosActionPerformed(evt);
@@ -88,13 +93,13 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         });
         jPanel1.add(BGestionarArticulos);
 
-        BGestionarEjemplares.setText("Gestionar Ejemplares");
+        BGestionarEjemplares.setText("Ejemplares");
         jPanel1.add(BGestionarEjemplares);
 
-        BGestionarClientes.setText("Gestionar Clientes");
+        BGestionarClientes.setText("Clientes");
         jPanel1.add(BGestionarClientes);
 
-        BGestionarVentas.setText("Gestionar Ventas");
+        BGestionarVentas.setText("Ventas");
         jPanel1.add(BGestionarVentas);
 
         BCerrar.setText("Cerrar Aplicacion");
@@ -136,6 +141,11 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         this.v.ponPanel(Paneles.PGestionarArticulos, g);
         
     }//GEN-LAST:event_BGestionarArticulosActionPerformed
+
+    private void BGestionarDependientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarDependientesActionPerformed
+        // TODO add your handling code here:
+        this.v.ponPanel(Paneles.PGestionarDependientes, g);
+    }//GEN-LAST:event_BGestionarDependientesActionPerformed
 
     
     @Override

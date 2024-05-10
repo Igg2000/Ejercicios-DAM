@@ -19,6 +19,8 @@ public class Main {
 
     
     static boolean modoTexto = false;
+    static boolean modoDebug = true;
+    
     
     public static void main(String[] args) {
         
@@ -34,9 +36,12 @@ public class Main {
         //Modo Grafico
 
         VentanaPrincipal v = null; 
-        if(modoTexto==false){
+        if(!modoTexto){
             v= new VentanaPrincipal(t);
-            //v.ponPanel(Paneles.PLogin,null);
+            if(!modoDebug) //sin el modo debug empiezas en el login, con el modo debug te lo saltas
+                v.ponPanel(Paneles.PLogin,null);
+            else
+                v.ponPanel(Paneles.PMenuGerente,t.getGerenteTienda());
         }
         
         //Pruebas Grafico
@@ -47,7 +52,7 @@ public class Main {
         *el atributo Gerente g por Dependiente g
         */
         //v.ponPanel(new PanelMenuGerente(v,t,t.getGerenteTienda()));
-        v.ponPanel(Paneles.PMostrarArticulosPorMarca, t.getGerenteTienda());
+        //v.ponPanel(Paneles.PMostrarArticulosPorMarca, t.getGerenteTienda());
         
         
         

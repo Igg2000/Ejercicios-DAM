@@ -9,20 +9,17 @@ import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  *
  * @author grovy
  */
-public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
+public class PanelGestionarDependientes extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -31,7 +28,7 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     
-    public PanelMostrarArticulosPorMarca(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelGestionarDependientes(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
         this.pt=pt;
@@ -39,7 +36,6 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         v.setLocationRelativeTo(null);
         
         initComponents();
-        
         
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
     }
@@ -58,10 +54,9 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bPulga = new javax.swing.JButton();
-        bAdidos = new javax.swing.JButton();
-        bKike = new javax.swing.JButton();
-        bSuprememe = new javax.swing.JButton();
+        bAñadirDependientes = new javax.swing.JButton();
+        bEliminarDependientes = new javax.swing.JButton();
+        bMostrarDependientes = new javax.swing.JButton();
         bVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
@@ -81,21 +76,24 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
-        bPulga.addActionListener(new java.awt.event.ActionListener() {
+        bAñadirDependientes.setText("Añadir Dependientes");
+        bAñadirDependientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bPulgaActionPerformed(evt);
+                bAñadirDependientesActionPerformed(evt);
             }
         });
-        jPanel1.add(bPulga);
-        jPanel1.add(bAdidos);
+        jPanel1.add(bAñadirDependientes);
 
-        bKike.addActionListener(new java.awt.event.ActionListener() {
+        bEliminarDependientes.setText("Eliminar Dependientes");
+        jPanel1.add(bEliminarDependientes);
+
+        bMostrarDependientes.setText("Mostrar Dependientes");
+        bMostrarDependientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKikeActionPerformed(evt);
+                bMostrarDependientesActionPerformed(evt);
             }
         });
-        jPanel1.add(bKike);
-        jPanel1.add(bSuprememe);
+        jPanel1.add(bMostrarDependientes);
 
         bVolver.setText("Volver");
         bVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -134,16 +132,20 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
             
     }//GEN-LAST:event_bVolverActionPerformed
 
-    private void bKikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKikeActionPerformed
+    private void bMostrarDependientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarDependientesActionPerformed
         // TODO add your handling code here:
         
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PMostrarDependientes, pt);
         
-        
-    }//GEN-LAST:event_bKikeActionPerformed
+    }//GEN-LAST:event_bMostrarDependientesActionPerformed
 
-    private void bPulgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPulgaActionPerformed
+    private void bAñadirDependientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirDependientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bPulgaActionPerformed
+          
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PAgregarDependientes, pt);
+    }//GEN-LAST:event_bAñadirDependientesActionPerformed
 
    
     @Override
@@ -159,20 +161,15 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         Image fondoEscalado = fondo.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
         
         g.drawImage(fondoEscalado, 0, 0, this);
-        
-        
-        pintarBotones();
-        
-        //this.repaint();
-        //this.revalidate();
+        this.repaint();
+        this.revalidate();
     }
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAdidos;
-    private javax.swing.JButton bKike;
-    private javax.swing.JButton bPulga;
-    private javax.swing.JButton bSuprememe;
+    private javax.swing.JButton bAñadirDependientes;
+    private javax.swing.JButton bEliminarDependientes;
+    private javax.swing.JButton bMostrarDependientes;
     private javax.swing.JButton bVolver;
     private javax.swing.JLabel espacioAbajo;
     private javax.swing.JLabel jLabel3;
@@ -181,31 +178,4 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
-
-   
-    private void pintarBotones() {
-        //@Nacho
-        //esto pinta los logos en los botones
-        
-        //aqui no entiendo por que no puedo recibir la anchura y altura de boton, me dan un error que dice que valen 0
-        
-        ImageIcon logoAdidos = new ImageIcon("src/IMG/Logo_adidos.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bAdidos.setIcon(new ImageIcon(logoAdidos.getImage().getScaledInstance
-        (bAdidos.getWidth(), bAdidos.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoPulga = new ImageIcon("src/IMG/Logo_Pulga.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bPulga.setIcon(new ImageIcon(logoPulga.getImage().getScaledInstance
-        (bPulga.getWidth(), bPulga.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoSuprememe = new ImageIcon("src/IMG/Logo_Suprememe.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bSuprememe.setIcon(new ImageIcon(logoSuprememe.getImage().getScaledInstance
-        (bSuprememe.getWidth(), bSuprememe.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoKike = new ImageIcon("src/IMG/Logo_Kike.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bKike.setIcon(new ImageIcon(logoKike.getImage().getScaledInstance
-        (bKike.getWidth(), bKike.getHeight(), Image.SCALE_SMOOTH))); 
-    
-                
-       }
-
 }

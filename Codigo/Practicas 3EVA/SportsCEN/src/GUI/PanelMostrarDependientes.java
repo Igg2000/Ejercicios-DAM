@@ -80,7 +80,7 @@ public class PanelMostrarDependientes extends javax.swing.JPanel {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(0, 51, 51));
         jTextArea1.setColumns(19);
-        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);

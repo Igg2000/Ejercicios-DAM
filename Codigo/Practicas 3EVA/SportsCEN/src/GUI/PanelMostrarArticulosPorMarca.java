@@ -54,30 +54,20 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        espacioAbajo = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         bPulga = new javax.swing.JButton();
         bAdidos = new javax.swing.JButton();
         bKike = new javax.swing.JButton();
         bSuprememe = new javax.swing.JButton();
-        bVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        bVolver = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new java.awt.BorderLayout());
 
-        espacioAbajo.setText("     ");
-        add(espacioAbajo, java.awt.BorderLayout.PAGE_END);
-
-        jLabel3.setText("                                    ");
-        add(jLabel3, java.awt.BorderLayout.LINE_START);
-
-        jLabel4.setText("                                    ");
-        add(jLabel4, java.awt.BorderLayout.LINE_END);
-
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 75, 50, 75));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
 
@@ -97,14 +87,6 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         jPanel1.add(bKike);
         jPanel1.add(bSuprememe);
 
-        bVolver.setText("Volver");
-        bVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bVolverActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bVolver);
-
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jPanel2.setOpaque(false);
@@ -123,6 +105,18 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         jPanel2.add(nombreGerente, gridBagConstraints);
 
         add(jPanel2, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setOpaque(false);
+
+        bVolver.setText("Volver");
+        bVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVolverActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bVolver);
+
+        add(jPanel3, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverActionPerformed
@@ -174,11 +168,9 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     private javax.swing.JButton bPulga;
     private javax.swing.JButton bSuprememe;
     private javax.swing.JButton bVolver;
-    private javax.swing.JLabel espacioAbajo;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
 

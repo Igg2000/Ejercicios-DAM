@@ -50,9 +50,6 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        espacioAbajo = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         BGestionarEjemplares = new javax.swing.JButton();
         BGestionarClientes = new javax.swing.JButton();
@@ -64,17 +61,9 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new java.awt.BorderLayout());
 
-        espacioAbajo.setText("     ");
-        add(espacioAbajo, java.awt.BorderLayout.PAGE_END);
-
-        jLabel3.setText("                                    ");
-        add(jLabel3, java.awt.BorderLayout.LINE_START);
-
-        jLabel4.setText("                                    ");
-        add(jLabel4, java.awt.BorderLayout.LINE_END);
-
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 150, 100, 150));
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 20, 50));
 
         BGestionarEjemplares.setText("Ejemplares");
         jPanel1.add(BGestionarEjemplares);
@@ -143,9 +132,6 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
     private javax.swing.JButton BGestionarClientes;
     private javax.swing.JButton BGestionarEjemplares;
     private javax.swing.JButton BGestionarVentas;
-    private javax.swing.JLabel espacioAbajo;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel nombreGerente;

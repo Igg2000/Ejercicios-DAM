@@ -44,47 +44,55 @@ public class VentanaPrincipal extends JFrame{
         
         switch(p){
             case p.PLogin:
-                this.setContentPane(new PanelLogin(this,t));
+                this.ponPanel(new PanelLogin(this,t));
                 break;
                 
             case p.PMenuGerente:
-                this.setContentPane(new PanelMenuGerente(this,t,(Gerente)ptLogueado));
-                
+                this.ponPanel(new PanelMenuGerente(this,t,(Gerente)ptLogueado));
                 break;
                               
             case p.PMenuDependiente:
-                this.setContentPane(new PanelMenuDependiente(this,t,(Dependiente)ptLogueado));
-                
+                this.ponPanel(new PanelMenuDependiente(this,t,(Dependiente)ptLogueado));
                 break;
                               
             case p.PGestionarArticulos:
             
-                this.setContentPane(new PanelGestionarArticulos(this,t, ptLogueado));
+                this.ponPanel(new PanelGestionarArticulos(this,t, ptLogueado));
                 break;
                 
             case p.PMostrarArticulos:
             
-                this.setContentPane(new PanelMostrarArticulos(this,t, ptLogueado));
+                this.ponPanel(new PanelMostrarArticulos(this,t, ptLogueado));
                 break;
                 
             case p.PMostrarArticulosPorMarca:
             
-                this.setContentPane(new PanelMostrarArticulosPorMarca(this,t, ptLogueado));
+                this.ponPanel(new PanelMostrarArticulosPorMarca(this,t, ptLogueado));
                 break;
                 
             case p.PGestionarDependientes:
             
-                this.setContentPane(new PanelGestionarDependientes(this,t, ptLogueado));
+                this.ponPanel(new PanelGestionarDependientes(this,t, ptLogueado));
                 break;
                 
             case p.PMostrarDependientes:
                 
-                this.setContentPane(new PanelMostrarDependientes(this,t, ptLogueado));
+                this.ponPanel(new PanelMostrarDependientes(this,t, ptLogueado));
                 break;
             
             case p.PAgregarDependientes:
                 
-                this.setContentPane(new PanelAgregarDependientes(this,t, ptLogueado));
+                this.ponPanel(new PanelAgregarDependientes(this,t, ptLogueado));
+                break;
+                
+            case p.PEliminarDependientes:
+                
+                this.ponPanel(new PanelEliminarDependientes(this,t, ptLogueado));
+                break;
+           
+            case p.PEliminarArticulos:
+                
+                this.ponPanel(new PanelEliminarArticulos(this,t, ptLogueado));
                 break;
                 
         }

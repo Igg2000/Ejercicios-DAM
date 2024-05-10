@@ -14,10 +14,12 @@ public enum Paneles {
     PMenuGerente,
     PMenuDependiente,
     PGestionarArticulos,
+    PEliminarArticulos,
     PMostrarArticulos,
     PMostrarArticulosPorMarca,
     PGestionarDependientes,
     PMostrarDependientes,
-    PAgregarDependientes
+    PAgregarDependientes,
+    PEliminarDependientes
     
 }

@@ -175,11 +175,12 @@ public abstract class PersonalTienda {
         colorMap.put("cian", Color.CYAN);
       
       Color colorzap=colorMap.get(color);
-        if (colorzap != null) {
+      /*  if (colorzap != null) {
             System.out.println("El color elegido es: " + color);
         } else {
             System.out.println("El color especificado no está en la lista de colores");
            }
+      */
         return colorzap;   
       }
       

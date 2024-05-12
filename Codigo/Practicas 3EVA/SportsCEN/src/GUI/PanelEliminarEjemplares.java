@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import data.Articulo;
+import data.Ejemplar;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
@@ -11,9 +13,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import static data.Ejemplar.getContIdGlobalEjemplares;
 
 /**
  *
@@ -33,20 +37,21 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
         this.t=t;
         this.v=v;
         this.pt=pt;
-        v.setSize(600, 600);
-        v.setLocationRelativeTo(null);
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
         
         initComponents();
         
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
         
-        //lo de abajo añade a la lista los dependientes
-        Gerente g= (Gerente) pt;
-
-        int cont=0;
-
+        
         //por algun motivo no me funcionaba usando un split como en articulos
         //o en dependientes, asique he tenido que idear esto
+    
+        actualizarListaEjemplares();
+        
+    /*
+        int cont=0;
 
         this.ejemplaresLista= new String[t.getArticulosTienda().getLast().getEjemplaresArticulo().getLast().getIdGlobalEjemplar()+1];
 
@@ -59,6 +64,8 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
 
         }   
         lista.setListData(ejemplaresLista);
+        
+    */
     }
 
     /**
@@ -180,36 +187,42 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
 
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
        
-        int elegidoLista=lista.getSelectedIndex();
-        
-        int cont=0;
-        
-        //borra de la lista de ejemplares el ejemplar que esté en la posicion que tu hayas elegido
-        for (int i = 0; i < t.getArticulosTienda().size(); i++) {
-            for (int j = 0; j < t.getArticulosTienda().get(i).getEjemplaresArticulo().size(); j++) {
-                
-                if(elegidoLista==cont)
-                    t.getArticulosTienda().get(i).getEjemplaresArticulo().remove(j);
-                    //System.out.println("Cont."+cont+" "+t.getArticulosTienda().get(i).getEjemplaresArticulo().get(j));
-                cont++;
+        int indiceSeleccionado = lista.getSelectedIndex(); 
+
+        if (indiceSeleccionado != -1) { //esto es para verificar que se ha seleccionado un elemento
+            int cont = 0;
+            for (int i = 0; i < t.getArticulosTienda().size(); i++) {
+                Articulo articulo = t.getArticulosTienda().get(i);
+                for (int j = 0; j < articulo.getEjemplaresArticulo().size(); j++) {
+                    if (cont == indiceSeleccionado) { 
+                        //si el contador coincide con lo seleccionado, lo borra de mis datos y de la lista
+                        articulo.getEjemplaresArticulo().remove(j);
+                        actualizarListaEjemplares();
+                        return; //esto es para que deje de buscar
+                    }
+                    cont++;
+                }
             }
-            
         }
-    /*
-        //y copio lo que he hecho para meterlo para actualizar la lista
-        this.ejemplaresLista= new String[t.getArticulosTienda().getLast().getEjemplaresArticulo().getLast().getIdGlobalEjemplar()];
-
-               for (int i = 0; i < t.getArticulosTienda().size(); i++) {
-                  for (int j = 0; j < t.getArticulosTienda().get(i).getEjemplaresArticulo().size(); j++) {
-                      if(t.getArticulosTienda().get(i).getEjemplaresArticulo().get(j)!=null)
-                          this.ejemplaresLista[cont]=t.getArticulosTienda().get(i).getEjemplaresArticulo().get(j).toString()+"\n";
-                      cont++;
-                  }
-
-               } 
-*/
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    private void actualizarListaEjemplares() {
+        String[] ejemplaresLista = generarListaEjemplares();
+        lista.setListData(ejemplaresLista);
+    }
+
+    private String[] generarListaEjemplares() {
+        
+        int cont = 0;
+        String[] ejemplaresLista = new String[getContIdGlobalEjemplares()]; 
+        for (Articulo articulo : t.getArticulosTienda()) {
+            for (Ejemplar ejemplar : articulo.getEjemplaresArticulo()) {
+                ejemplaresLista[cont] = ejemplar.toString();
+                cont++;}
+        }
+        // Devolver la lista de ejemplares
+        return Arrays.copyOf(ejemplaresLista, cont); // Recortar el arreglo al tamaño actualizado
+    }
    
     @Override
     public void paintComponent(Graphics g) {

@@ -34,8 +34,8 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
         this.t=t;
         this.v=v;
         this.pt=(Gerente)pt;
-        v.setSize(600, 600);
-        v.setLocationRelativeTo(null);
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
         
         initComponents();
         

@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import data.Articulo;
 import data.Dependiente;
 import data.Gerente;
 import data.PersonalTienda;
@@ -109,6 +110,11 @@ public class VentanaPrincipal extends JFrame{
                 
                 this.ponPanel(new PanelMostrarEjemplaresPorArticulo(this,t, ptLogueado));
                 break;
+      
+            case p.PAgregarEJemplares1:
+                
+                this.ponPanel(new PanelAgregarEjemplares1(this,t, ptLogueado));
+                break;
 
                 
         }
@@ -118,14 +124,16 @@ public class VentanaPrincipal extends JFrame{
     
     public void ponPanelMostrarLista(Paneles p, PersonalTienda ptLogueado, Paneles panelAnterior, String lista){
         //@Nacho    
-        //pongo el switch por si acabo haciendo algun panel que muestre listas de forma especial
-        switch(p){
-            case p.PMostrarListas:
-                this.ponPanel(new PanelMostrarListas(this, t, ptLogueado, panelAnterior,lista));
-                break;
+        //paneles p es innecesario pero lo puse por si hubiese varios tipos de paneles que muestren listas
+ 
+        this.ponPanel(new PanelMostrarListas(this, t, ptLogueado, panelAnterior,lista));
                 
-        }
+        
     }
        
+    public void ponPanelAgregarEjemplares2(PersonalTienda ptLogueado,Articulo articuloElegido){
+        
+        this.ponPanel(new PanelAgregarEjemplares2(this,t,ptLogueado,articuloElegido));
+    }
     
 }

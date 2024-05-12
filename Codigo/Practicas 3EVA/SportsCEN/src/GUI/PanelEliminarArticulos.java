@@ -33,8 +33,8 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
         this.t=t;
         this.v=v;
         this.pt=pt;
-        v.setSize(600, 600);
-        v.setLocationRelativeTo(null);
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
         
         initComponents();
         

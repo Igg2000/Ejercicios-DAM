@@ -22,6 +22,8 @@ public enum Paneles {
     PMostrarEjemplares,
     PMostrarEjemplaresPorArticulo,
     PMostrarEjemplaresPorMarca,
+    PAgregarEJemplares1,
+    PAgregarEJemplares2,
     PGestionarDependientes,
     PAgregarDependientes,
     PEliminarDependientes

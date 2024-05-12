@@ -32,8 +32,8 @@ public class PanelGestionarEjemplares extends javax.swing.JPanel {
         this.t=t;
         this.v=v;
         this.pt=pt;
-        v.setSize(600, 600);
-        v.setLocationRelativeTo(null);
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
         
         initComponents();
         
@@ -151,6 +151,7 @@ public class PanelGestionarEjemplares extends javax.swing.JPanel {
 
     private void bAñadirEjemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirEjemplaresActionPerformed
         // TODO add your handling code here:
+        this.v.ponPanel(Paneles.PAgregarEJemplares1, pt);
         
     }//GEN-LAST:event_bAñadirEjemplaresActionPerformed
 

@@ -35,8 +35,8 @@ public class PanelMostrarListas extends javax.swing.JPanel {
         this.pt=pt;
         this.panelAnterior=panelAnterior;
         
-        v.setSize(600, 600);
-        v.setLocationRelativeTo(null);
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
         
         initComponents();
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());

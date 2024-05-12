@@ -84,7 +84,7 @@ public class Ejemplar {
         //@Nacho
         //es la unica forma que se me ha ocurrido de sacar el nombre del color
         //si tiene un color predefinido en la clase Color devuelve una String con su nombre en español
-        
+
         if (color.equals(Color.RED)) {
             return "Rojo";
         } else if (color.equals(Color.BLUE)) {
@@ -105,6 +105,8 @@ public class Ejemplar {
             return "Morado";
         }else if (color.equals(Color.CYAN)) {
             return "Azul Celeste";
+        }else if (color.equals(Color.PINK)) {
+            return "Rosa";
         }
         // En caso de no poder, devuelvo null
         else {
@@ -172,6 +174,10 @@ public class Ejemplar {
 
     public int getIdGlobalEjemplar() {
         return idGlobalEjemplar;
+    }
+
+    public static int getContIdGlobalEjemplares() {
+        return contIdGlobal;
     }
 
 

@@ -24,9 +24,10 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
     /**
      * Creates new form PanelMenuGerente
      */
-    VentanaPrincipal v;
-    Tienda t;
-    PersonalTienda pt;
+    private VentanaPrincipal v;
+    private Tienda t;
+    private PersonalTienda pt;
+    private String[] articulosSplit;
     
     public PanelEliminarArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
@@ -38,6 +39,16 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
         initComponents();
         
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
+        
+            //lo de abajo añade a la lista los dependientes
+            Gerente g= (Gerente) pt;
+            
+            String cad=g.mostrarArticulos(t.getArticulosTienda());
+            //como mostrar dependientes te los da todos juntos separados por saltos de linea , 
+            //y setlistdata nos pide un array de String con un split del salto de linea lo convertimos a array
+            String[] articulosSplit = cad.split("\n");
+            lista.setListData(articulosSplit);
+            this.articulosSplit= articulosSplit;
     }
 
     /**
@@ -54,9 +65,9 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        bEliminar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lista = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -78,26 +89,26 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
 
         jPanel3.setOpaque(false);
 
-        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
-        jButton1.setText("Eliminar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bEliminar.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        bEliminar.setText("Eliminar");
+        bEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bEliminarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1);
+        jPanel3.add(bEliminar);
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.PAGE_END);
 
-        jList1.setBackground(new java.awt.Color(0, 51, 51));
-        jList1.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jList1.setForeground(new java.awt.Color(255, 255, 255));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        lista.setBackground(new java.awt.Color(0, 51, 51));
+        lista.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        lista.setForeground(new java.awt.Color(255, 255, 255));
+        lista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(lista);
 
         jPanel1.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
@@ -155,9 +166,23 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
             this.v.ponPanel(Paneles.PGestionarArticulos, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
+        
+        Gerente g= (Gerente) pt;
+        int elegidoLista=lista.getSelectedIndex();
+        
+        //borra de la lista de dependientes el dependiente que esté en la posicion que tu hayas elegido
+        t.getArticulosTienda().remove((t.getArticulosTienda().get(elegidoLista)));
+
+        
+        //copaindo lo que he hecho al principio consigo actualizar la lista    
+           String cad=g.mostrarArticulos(t.getArticulosTienda());
+            //como mostrar dependientes te los da todos juntos separados por saltos de linea , 
+            //y setlistdata nos pide un array de String con un split del salto de linea lo convertimos a array
+            this.articulosSplit = cad.split("\n");
+            lista.setListData(articulosSplit);
+        
+    }//GEN-LAST:event_bEliminarActionPerformed
 
    
     @Override
@@ -179,17 +204,17 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bEliminar;
     private javax.swing.JButton bVolverAtras;
     private javax.swing.JButton bVolverMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> lista;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
 }

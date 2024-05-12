@@ -181,7 +181,7 @@ public class Gerente extends PersonalTienda {
     public String mostrarDependientes(List<Dependiente> a) {
          String cad="";
         for (int i = 0; i < a.size(); i++) {
-            cad+=a.get(i)+" id="+ a.get(i).getIdDependiente()+ "\n";
+            cad+=a.get(i)+ "\n";
                     
             
         }
@@ -189,6 +189,7 @@ public class Gerente extends PersonalTienda {
         return cad;
          }
 
+    
 
     //de aqui hacia abajo getters y setters 
     

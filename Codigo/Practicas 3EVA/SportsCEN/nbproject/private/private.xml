@@ -4,9 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMostrarArticulosPorMarca.java</file>
-            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelAgregarDependientes.java</file>
             <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/Paneles.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMostrarArticulos.java</file>
             <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Dependiente.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/PersonalTienda.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelEliminarDependientes.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Gerente.java</file>
+            <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelMostrarListas.java</file>
             <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/GUI/PanelGestionarDependientes.java</file>
             <file>file:/C:/Users/Nacho/OneDrive/Escritorio/1º%20DAM/RepositorioGitHub/Codigo/Practicas%203EVA/SportsCEN/src/data/Main.java</file>
         </group>

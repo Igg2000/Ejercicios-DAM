@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
  *
  * @author grovy
  */
-public class PanelMostrarTodosLosArticulos extends javax.swing.JPanel {
+public class PanelMostrarListas extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -27,19 +27,22 @@ public class PanelMostrarTodosLosArticulos extends javax.swing.JPanel {
     VentanaPrincipal v;
     Tienda t;
     PersonalTienda pt;
+    Paneles panelAnterior;
     
-    public PanelMostrarTodosLosArticulos(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelMostrarListas(VentanaPrincipal v, Tienda t, PersonalTienda pt, Paneles panelAnterior,String cadAMostrar) {
         this.t=t;
         this.v=v;
         this.pt=pt;
+        this.panelAnterior=panelAnterior;
+        
         v.setSize(600, 600);
         v.setLocationRelativeTo(null);
         
         initComponents();
-        Gerente g= (Gerente)pt;
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
-        //recibo la lista de dependientes y la pongo en el cuadro de texto
-        jTextArea1.setText(g.mostrarArticulos(t.getArticulosTienda()));
+        
+        //recibo la lista  y la pongo en el cuadro de texto
+        jTextArea1.setText(cadAMostrar);
     }
 
     /**
@@ -140,7 +143,7 @@ public class PanelMostrarTodosLosArticulos extends javax.swing.JPanel {
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
         if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PGestionarDependientes, pt);
+            this.v.ponPanel(panelAnterior, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
    

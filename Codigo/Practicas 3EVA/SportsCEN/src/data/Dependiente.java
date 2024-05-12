@@ -32,6 +32,11 @@ public class Dependiente extends PersonalTienda {
 
     }
 
+    @Override
+    public String toString() {
+        return idDependiente+". "+ super.toString();
+    }
+
 
 
     

@@ -11,15 +11,14 @@ package GUI;
 public enum Paneles {
     
     PLogin,
+    PMostrarListas,
     PMenuGerente,
     PMenuDependiente,
     PGestionarArticulos,
     PEliminarArticulos,
     PMostrarArticulos,
-    PMostrarTodosLosArticulos,
     PMostrarArticulosPorMarca,
     PGestionarDependientes,
-    PMostrarDependientes,
     PAgregarDependientes,
     PEliminarDependientes
     

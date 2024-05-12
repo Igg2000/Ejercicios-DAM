@@ -133,9 +133,11 @@ public class PanelGestionarDependientes extends javax.swing.JPanel {
 
     private void bMostrarDependientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarDependientesActionPerformed
         // TODO add your handling code here:
+        Gerente g= (Gerente)pt;
         
         if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PMostrarDependientes, pt);
+            //this.v.ponPanel(Paneles.PMostrarDependientes, pt);
+            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PGestionarDependientes,g.mostrarDependientes(t.getDependientesTienda()));
         
     }//GEN-LAST:event_bMostrarDependientesActionPerformed
 

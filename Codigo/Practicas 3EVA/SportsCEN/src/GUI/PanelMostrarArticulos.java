@@ -162,8 +162,11 @@ public class PanelMostrarArticulos extends javax.swing.JPanel {
 
     private void bMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarTodoActionPerformed
         // TODO add your handling code here:
-            if(pt.getClass()==Gerente.class)
-                this.v.ponPanel(Paneles.PMostrarTodosLosArticulos, pt);
+        
+        Gerente g= (Gerente)pt;
+        
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarArticulos,g.mostrarArticulos(t.getArticulosTienda()));
     }//GEN-LAST:event_bMostrarTodoActionPerformed
 
    

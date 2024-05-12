@@ -74,11 +74,6 @@ public class VentanaPrincipal extends JFrame{
             
                 this.ponPanel(new PanelGestionarDependientes(this,t, ptLogueado));
                 break;
-                
-            case p.PMostrarDependientes:
-                
-                this.ponPanel(new PanelMostrarDependientes(this,t, ptLogueado));
-                break;
             
             case p.PAgregarDependientes:
                 
@@ -94,21 +89,23 @@ public class VentanaPrincipal extends JFrame{
                 
                 this.ponPanel(new PanelEliminarArticulos(this,t, ptLogueado));
                 break;
-           
-            case p.PMostrarTodosLosArticulos:
-                
-                this.ponPanel(new PanelMostrarTodosLosArticulos(this,t, ptLogueado));
-                break;
+
                 
         }
-        
-       
-       
-       
-       
-       
        
        this.revalidate();
     }
+    
+    public void ponPanelMostrarLista(Paneles p, PersonalTienda ptLogueado, Paneles panelAnterior, String lista){
+        //@Nacho    
+        //pongo el switch por si acabo haciendo algun panel que muestre listas de forma especial
+        switch(p){
+            case p.PMostrarListas:
+                this.ponPanel(new PanelMostrarListas(this, t, ptLogueado, panelAnterior,lista));
+                break;
+                
+        }
+    }
+       
     
 }

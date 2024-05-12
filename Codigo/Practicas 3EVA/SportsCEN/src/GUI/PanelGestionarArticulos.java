@@ -67,6 +67,11 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.GridLayout(0, 1, 0, 50));
 
         bAñadirArticulos.setText("Añadir Articulos");
+        bAñadirArticulos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAñadirArticulosActionPerformed(evt);
+            }
+        });
         jPanel1.add(bAñadirArticulos);
 
         bEliminarArticulos.setText("Eliminar Articulos");
@@ -129,8 +134,10 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
     private void bMostrarArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarArticulosActionPerformed
         // TODO add your handling code here:
         
+          
         if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PMostrarArticulos, pt);
+            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PGestionarArticulos, pt.mostrarArticulos(t.getArticulosTienda()));
+       
         
     }//GEN-LAST:event_bMostrarArticulosActionPerformed
 
@@ -141,6 +148,13 @@ public class PanelGestionarArticulos extends javax.swing.JPanel {
             this.v.ponPanel(Paneles.PEliminarArticulos, pt);
         
     }//GEN-LAST:event_bEliminarArticulosActionPerformed
+
+    private void bAñadirArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAñadirArticulosActionPerformed
+        // TODO add your handling code here:
+        
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PAgregarArticulos, pt);
+    }//GEN-LAST:event_bAñadirArticulosActionPerformed
 
    
     @Override

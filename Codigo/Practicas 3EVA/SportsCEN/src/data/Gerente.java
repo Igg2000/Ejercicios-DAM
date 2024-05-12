@@ -93,6 +93,11 @@ public class Gerente extends PersonalTienda {
     public String mostrarArticulos(List<Articulo> a) {
         //@Elsa
         /*
+        *Este metodo originalmente estaba aqui, pero si lo cambiamos a PersonalTienda
+        *es posible que se rompa gran parte del codigo, por eso simplemente lo replicamos
+        */
+                
+        /*
         *Añade todos los articulos a una cadena, añadiendo un salto de linea entre ellos
         *una vez estan todos los articulos devuelve la cadena
         */

@@ -53,7 +53,23 @@ public abstract class PersonalTienda {
         // TODO implement here
     }
 
-    public void gestionarEjemplares(List<Ejemplar> ejemplaresArticulo,List <Articulo> articulosTienda, Gerente a) {
+    
+    public String mostrarArticulos(List<Articulo> a) {
+        //@Elsa
+        /*
+        *Añade todos los articulos a una cadena, añadiendo un salto de linea entre ellos
+        *una vez estan todos los articulos devuelve la cadena
+        */
+        
+        String cad="";
+        for (int i = 0; i < a.size(); i++) {
+            cad+=a.get(i)+"\n";
+        }
+        
+        return cad;
+    }
+    
+    public void gestionarEjemplares(List<Ejemplar> ejemplaresArticulo,List <Articulo> articulosTienda) {
         //@Elsa
         Opcion[] opcionese={
             new Opcion('1',"Agregar ejemplar"),
@@ -68,20 +84,20 @@ public abstract class PersonalTienda {
        
      switch(opcione){
          case 1:
-                addEjemplarModoTexto(ejemplaresArticulo, articulosTienda, a);
+                addEjemplarModoTexto(ejemplaresArticulo, articulosTienda);
                 break;
         case 2:
-                eliminarEjemplarModoTexto(articulosTienda,a);
+                eliminarEjemplarModoTexto(articulosTienda);
                 break;
         case 3:
                 
-                mostrarEjemplarArt(articulosTienda,a);
+                mostrarEjemplarArt(articulosTienda);
                 break;}
     }
     
-    public void addEjemplarModoTexto(List<Ejemplar> ejemplaresArticulo,List<Articulo> articulosTienda,Gerente a) {
+    public void addEjemplarModoTexto(List<Ejemplar> ejemplaresArticulo,List<Articulo> articulosTienda) {
         System.out.println("Introduce el ID del articulo al que le quieres añadir un ejemplar");
-        System.out.println(a.mostrarArticulos(articulosTienda));
+        System.out.println(mostrarArticulos(articulosTienda));
         Scanner scanner= new Scanner(System.in);
         int id_articulo=scanner.nextInt();
         /*tenía un problema ya que colocaba un nextInt seguido de un NextLine y el NextLine
@@ -164,8 +180,8 @@ public abstract class PersonalTienda {
         return colorzap;   
       }
       
- public void eliminarEjemplarModoTexto( List<Articulo> articulosTienda, Gerente a) {
-         System.out.println(a.mostrarArticulos(articulosTienda));
+ public void eliminarEjemplarModoTexto( List<Articulo> articulosTienda) {
+         System.out.println(mostrarArticulos(articulosTienda));
         System.out.println("Introduzca el id del articulo del cual desea eliminar algún ejemplar");
         Scanner scanner= new Scanner(System.in);
         int id_articulo=scanner.nextInt();
@@ -188,7 +204,7 @@ public abstract class PersonalTienda {
                    a.getEjemplaresArticulo().remove(i);
         }
     }
-    public void mostrarEjemplarArt(List<Articulo> articulosTienda, Gerente a) {
+    public void mostrarEjemplarArt(List<Articulo> articulosTienda) {
         
         Opcion[] opcionese={
             new Opcion('1',"Marca"),
@@ -210,7 +226,7 @@ public abstract class PersonalTienda {
                 mostrarEjemPrendaModoTexto(articulosTienda);
                 break;
          case 3:
-                mostrarEjemTodoModoTexto(articulosTienda,a);
+                mostrarEjemTodoModoTexto(articulosTienda);
                 break;
         }   
   }
@@ -275,11 +291,11 @@ public abstract class PersonalTienda {
         return cad;
     }
 
-    public void mostrarEjemTodoModoTexto(List<Articulo> articulosTienda, Gerente a) {
+    public void mostrarEjemTodoModoTexto(List<Articulo> articulosTienda) {
         Scanner scanner= new Scanner(System.in);
           
           
-          System.out.println(a.mostrarArticulos(articulosTienda)
+          System.out.println(mostrarArticulos(articulosTienda)
            );
           int id_articulo=scanner.nextInt();
           

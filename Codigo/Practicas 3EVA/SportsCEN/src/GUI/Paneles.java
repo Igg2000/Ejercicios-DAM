@@ -16,8 +16,9 @@ public enum Paneles {
     PMenuDependiente,
     PGestionarArticulos,
     PEliminarArticulos,
-    PMostrarArticulos,
-    PMostrarArticulosPorMarca,
+    PAgregarArticulos,
+    PMostrarEjemplares,
+    PMostrarEjemplaresPorMarca,
     PGestionarDependientes,
     PAgregarDependientes,
     PEliminarDependientes

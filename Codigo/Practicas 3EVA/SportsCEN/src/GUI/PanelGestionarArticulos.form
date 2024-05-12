@@ -46,6 +46,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;adir Articulos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bA&#xf1;adirArticulosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bEliminarArticulos">
           <Properties>

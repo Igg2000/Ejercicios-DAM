@@ -9,20 +9,17 @@ import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  *
  * @author grovy
  */
-public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
+public class PanelMostrarEjemplares extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelMenuGerente
@@ -31,7 +28,7 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     
-    public PanelMostrarArticulosPorMarca(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
+    public PanelMostrarEjemplares(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
         this.pt=pt;
@@ -39,7 +36,6 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         v.setLocationRelativeTo(null);
         
         initComponents();
-        
         
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
     }
@@ -55,37 +51,45 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        bPulga = new javax.swing.JButton();
-        bAdidos = new javax.swing.JButton();
-        bKike = new javax.swing.JButton();
-        bSuprememe = new javax.swing.JButton();
+        bMostrarTodo = new javax.swing.JButton();
+        bMostrarPorMarca = new javax.swing.JButton();
+        bMostrarPorTipoPrenda = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        bVolverAtras = new javax.swing.JButton();
         bVolver = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 75, 50, 75));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 150, 100, 150));
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 0, 50));
 
-        bPulga.addActionListener(new java.awt.event.ActionListener() {
+        bMostrarTodo.setText("Mostrar Todo");
+        bMostrarTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bPulgaActionPerformed(evt);
+                bMostrarTodoActionPerformed(evt);
             }
         });
-        jPanel1.add(bPulga);
-        jPanel1.add(bAdidos);
+        jPanel1.add(bMostrarTodo);
 
-        bKike.addActionListener(new java.awt.event.ActionListener() {
+        bMostrarPorMarca.setText("Mostrar Por Marca");
+        bMostrarPorMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bKikeActionPerformed(evt);
+                bMostrarPorMarcaActionPerformed(evt);
             }
         });
-        jPanel1.add(bKike);
-        jPanel1.add(bSuprememe);
+        jPanel1.add(bMostrarPorMarca);
+
+        bMostrarPorTipoPrenda.setText("Mostrar por tipo de prenda");
+        bMostrarPorTipoPrenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrarPorTipoPrendaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bMostrarPorTipoPrenda);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -108,7 +112,15 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
 
         jPanel3.setOpaque(false);
 
-        bVolver.setText("Volver");
+        bVolverAtras.setText("Volver atras");
+        bVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVolverAtrasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bVolverAtras);
+
+        bVolver.setText("Volver al Menu");
         bVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bVolverActionPerformed(evt);
@@ -128,16 +140,34 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
             
     }//GEN-LAST:event_bVolverActionPerformed
 
-    private void bKikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKikeActionPerformed
+    private void bMostrarPorTipoPrendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorTipoPrendaActionPerformed
         // TODO add your handling code here:
         
         
         
-    }//GEN-LAST:event_bKikeActionPerformed
+    }//GEN-LAST:event_bMostrarPorTipoPrendaActionPerformed
 
-    private void bPulgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPulgaActionPerformed
+    private void bMostrarPorMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bPulgaActionPerformed
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanel(Paneles.PMostrarEjemplaresPorMarca, pt);
+        
+    }//GEN-LAST:event_bMostrarPorMarcaActionPerformed
+
+    private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
+        // TODO add your handling code here:
+            if(pt.getClass()==Gerente.class)
+                this.v.ponPanel(Paneles.PGestionarArticulos, pt);
+    }//GEN-LAST:event_bVolverAtrasActionPerformed
+
+    private void bMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarTodoActionPerformed
+        // TODO add your handling code here:
+        
+        Gerente g= (Gerente)pt;
+        
+        if(pt.getClass()==Gerente.class)
+            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplares,g.mostrarArticulos(t.getArticulosTienda()));
+    }//GEN-LAST:event_bMostrarTodoActionPerformed
 
    
     @Override
@@ -153,51 +183,20 @@ public class PanelMostrarArticulosPorMarca extends javax.swing.JPanel {
         Image fondoEscalado = fondo.getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH);
         
         g.drawImage(fondoEscalado, 0, 0, this);
-        
-        
-        pintarBotones();
-        
-        //this.repaint();
-        //this.revalidate();
+        this.repaint();
+        this.revalidate();
     }
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAdidos;
-    private javax.swing.JButton bKike;
-    private javax.swing.JButton bPulga;
-    private javax.swing.JButton bSuprememe;
+    private javax.swing.JButton bMostrarPorMarca;
+    private javax.swing.JButton bMostrarPorTipoPrenda;
+    private javax.swing.JButton bMostrarTodo;
     private javax.swing.JButton bVolver;
+    private javax.swing.JButton bVolverAtras;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel nombreGerente;
     // End of variables declaration//GEN-END:variables
-
-   
-    private void pintarBotones() {
-        //@Nacho
-        //esto pinta los logos en los botones
-        
-        //aqui no entiendo por que no puedo recibir la anchura y altura de boton, me dan un error que dice que valen 0
-        
-        ImageIcon logoAdidos = new ImageIcon("src/IMG/Logo_adidos.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bAdidos.setIcon(new ImageIcon(logoAdidos.getImage().getScaledInstance
-        (bAdidos.getWidth(), bAdidos.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoPulga = new ImageIcon("src/IMG/Logo_Pulga.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bPulga.setIcon(new ImageIcon(logoPulga.getImage().getScaledInstance
-        (bPulga.getWidth(), bPulga.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoSuprememe = new ImageIcon("src/IMG/Logo_Suprememe.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bSuprememe.setIcon(new ImageIcon(logoSuprememe.getImage().getScaledInstance
-        (bSuprememe.getWidth(), bSuprememe.getHeight(), Image.SCALE_SMOOTH))); 
-    
-        ImageIcon logoKike = new ImageIcon("src/IMG/Logo_Kike.png"); //creamos un icono de imagen a partir de la imagen seleccionada
-        bKike.setIcon(new ImageIcon(logoKike.getImage().getScaledInstance
-        (bKike.getWidth(), bKike.getHeight(), Image.SCALE_SMOOTH))); 
-    
-                
-       }
-
 }

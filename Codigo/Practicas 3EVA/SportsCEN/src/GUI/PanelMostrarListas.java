@@ -137,12 +137,14 @@ public class PanelMostrarListas extends javax.swing.JPanel {
         //esto vuelve al menu principal
         if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
-
+        else
+            this.v.ponPanel(Paneles.PMenuDependiente, pt);
+        
     }//GEN-LAST:event_bVolverMenuActionPerformed
 
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-        if(pt.getClass()==Gerente.class)
+        
             this.v.ponPanel(panelAnterior, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 

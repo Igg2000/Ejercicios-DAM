@@ -95,6 +95,21 @@ public class VentanaPrincipal extends JFrame{
                 this.ponPanel(new PanelEliminarArticulos(this,t, ptLogueado));
                 break;
 
+            case p.PEliminarEjemplares:
+                
+                this.ponPanel(new PanelEliminarEjemplares(this,t, ptLogueado));
+                break;
+
+            case p.PGestionarEjemplares:
+                
+                this.ponPanel(new PanelGestionarEjemplares(this,t, ptLogueado));
+                break;
+
+            case p.PMostrarEjemplaresPorArticulo:
+                
+                this.ponPanel(new PanelMostrarEjemplaresPorArticulo(this,t, ptLogueado));
+                break;
+
                 
         }
        

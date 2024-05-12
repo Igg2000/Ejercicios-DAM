@@ -42,12 +42,12 @@
         <Property name="verticalGap" type="int" value="50"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bMostrarTodo">
+        <Component class="javax.swing.JButton" name="bMostrarPorArticulo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mostrar Todo"/>
+            <Property name="text" type="java.lang.String" value="Mostrar Por Articulo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarTodoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarPorArticuloActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bMostrarPorMarca">

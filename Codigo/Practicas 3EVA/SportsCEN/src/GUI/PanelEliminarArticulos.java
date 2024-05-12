@@ -44,7 +44,7 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
             Gerente g= (Gerente) pt;
             
             String cad=g.mostrarArticulos(t.getArticulosTienda());
-            //como mostrar dependientes te los da todos juntos separados por saltos de linea , 
+            //como esta funcion  te los da todos juntos separados por saltos de linea , 
             //y setlistdata nos pide un array de String con un split del salto de linea lo convertimos a array
             String[] articulosSplit = cad.split("\n");
             lista.setListData(articulosSplit);

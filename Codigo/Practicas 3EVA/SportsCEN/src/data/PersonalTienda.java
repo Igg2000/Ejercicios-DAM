@@ -96,6 +96,7 @@ public abstract class PersonalTienda {
     }
     
     public void addEjemplarModoTexto(List<Ejemplar> ejemplaresArticulo,List<Articulo> articulosTienda) {
+        //@Elsa
         System.out.println("Introduce el ID del articulo al que le quieres añadir un ejemplar");
         System.out.println(mostrarArticulos(articulosTienda));
         Scanner scanner= new Scanner(System.in);
@@ -143,6 +144,7 @@ public abstract class PersonalTienda {
         
        }
      private void addEjemplarRopa(List<Articulo> articulosTienda, Color colorRopa, Tallas tallaRopa, float precioRopa, Articulo a) {
+         //@Elsa
          Ejemplar newEjemRopa= new Ejemplar(colorRopa, tallaRopa,precioRopa,a);
                 a.getEjemplaresArticulo().add(newEjemRopa);
                 a.aumentarCantidadEjemplares();
@@ -150,14 +152,15 @@ public abstract class PersonalTienda {
       }
 
       public void addEjemplarZap(List<Articulo> articulosTienda,Color colorZap, TallasZapatillas tallaZap, float precioZap, Articulo a) {
-        Ejemplar newEjemZap= new Ejemplar(colorZap, tallaZap,precioZap,a);
+          //@Elsa
+          Ejemplar newEjemZap= new Ejemplar(colorZap, tallaZap,precioZap,a);
                a.getEjemplaresArticulo().add(newEjemZap);
                a.aumentarCantidadEjemplares();
                
       }
       
       public Color validarColor(String color) {
-          
+        //@Elsa  
       Map<String, Color> colorMap = new HashMap<>();
         colorMap.put("blanco", Color.WHITE);
         colorMap.put("negro", Color.BLACK);
@@ -181,13 +184,14 @@ public abstract class PersonalTienda {
       }
       
  public void eliminarEjemplarModoTexto( List<Articulo> articulosTienda) {
-         System.out.println(mostrarArticulos(articulosTienda));
+        //@Elsa
+        System.out.println(mostrarArticulos(articulosTienda));
         System.out.println("Introduzca el id del articulo del cual desea eliminar algún ejemplar");
         Scanner scanner= new Scanner(System.in);
         int id_articulo=scanner.nextInt();
         for (int i = 0; i < articulosTienda.size(); i++) {
             if (id_articulo==articulosTienda.get(i).getIdArticulo()) {
-                System.out.println(mostrarEjemTodo(articulosTienda.get(i).getIdArticulo(), articulosTienda));
+                System.out.println(mostrarEjemPorArticulo(articulosTienda.get(i).getIdArticulo(), articulosTienda));
                 System.out.println("Introduzca el id del ejemplar que desea eliminar");
                 scanner.nextLine(); 
                 int id_ejemplar=scanner.nextInt();
@@ -199,13 +203,14 @@ public abstract class PersonalTienda {
         
       
     private void eliminarEjemplar(List<Articulo> articulosTienda, Articulo a, int id_ejemplar) {
+        //@Elsa
         for (int i = 0; i < a.getEjemplaresArticulo().size(); i++) {
                if (id_ejemplar==a.getEjemplaresArticulo().get(i).getIdEjemplar())
                    a.getEjemplaresArticulo().remove(i);
         }
     }
     public void mostrarEjemplarArt(List<Articulo> articulosTienda) {
-        
+        //@Elsa
         Opcion[] opcionese={
             new Opcion('1',"Marca"),
             new Opcion('2',"Prenda"),
@@ -226,12 +231,13 @@ public abstract class PersonalTienda {
                 mostrarEjemPrendaModoTexto(articulosTienda);
                 break;
          case 3:
-                mostrarEjemTodoModoTexto(articulosTienda);
+                mostrarEjemPorArticuloModoTexto(articulosTienda);
                 break;
         }   
   }
 
     private void mostrarEjemMarcaModoTexto( List<Articulo> articulosTienda) {
+        //@Elsa
         Scanner scanner= new Scanner(System.in);
         System.out.println("Marcas disponibles");
        
@@ -251,7 +257,8 @@ public abstract class PersonalTienda {
         
        }
     public String mostrarEjemMarca(Marcas marcaDeseada, List<Articulo> articulosTienda){
-         String cad="";
+        //@Elsa
+        String cad="";
         for (int i = 0; i <articulosTienda.size() ; i++) {
             if(marcaDeseada == articulosTienda.get(i).getMarca()){
                 for (int j = 0; j < articulosTienda.get(i).getEjemplaresArticulo().size(); j++) {
@@ -263,7 +270,8 @@ public abstract class PersonalTienda {
     }
 
     private void mostrarEjemPrendaModoTexto(List<Articulo> articulosTienda) {
-         Scanner scanner= new Scanner(System.in);
+        //@Elsa
+        Scanner scanner= new Scanner(System.in);
         System.out.println("Tipo de prendas disponibles");
        
         for (Prendas prenda : Prendas.values()) {
@@ -280,6 +288,7 @@ public abstract class PersonalTienda {
        }
     
     public String mostrarEjemPrenda(Prendas prendaDeseada, List <Articulo> articulosTienda){
+        //@Elsa
         String cad="";
         for (int i = 0; i <articulosTienda.size(); i++) {
             if(prendaDeseada == articulosTienda.get(i).getTipoPrenda()){
@@ -291,7 +300,8 @@ public abstract class PersonalTienda {
         return cad;
     }
 
-    public void mostrarEjemTodoModoTexto(List<Articulo> articulosTienda) {
+    public void mostrarEjemPorArticuloModoTexto(List<Articulo> articulosTienda) {
+        //@Elsa
         Scanner scanner= new Scanner(System.in);
           
           
@@ -299,11 +309,12 @@ public abstract class PersonalTienda {
            );
           int id_articulo=scanner.nextInt();
           
-          System.out.println(mostrarEjemTodo(id_articulo, articulosTienda));
+          System.out.println(mostrarEjemPorArticulo(id_articulo, articulosTienda));
    
         }
-    public String mostrarEjemTodo(int id_articulo, List <Articulo> articulosTienda){
-          String cad="";
+    public String mostrarEjemPorArticulo(int id_articulo, List <Articulo> articulosTienda){
+        //@Elsa  
+        String cad="";
           for (int i = 0; i < articulosTienda.size() ; i++) {
           if(id_articulo == articulosTienda.get(i).getIdArticulo()){
               for (int j = 0; j < articulosTienda.get(i).getEjemplaresArticulo().size(); j++) {
@@ -312,6 +323,15 @@ public abstract class PersonalTienda {
          
           }
          
+        }
+        return cad;
+    } 
+    
+    public String mostrarEjemplaresTodos( List <Articulo> articulosTienda){
+        //@Nacho  
+        String cad="";
+          for (int i = 0; i < articulosTienda.size(); i++) {
+            cad+=mostrarEjemPorArticulo(articulosTienda.get(i).getIdArticulo(), articulosTienda)+"\n";
         }
         return cad;
     } 

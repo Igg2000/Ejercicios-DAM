@@ -87,6 +87,11 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jPanel1.add(BGestionarArticulos);
 
         BGestionarEjemplares.setText("Ejemplares");
+        BGestionarEjemplares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BGestionarEjemplaresActionPerformed(evt);
+            }
+        });
         jPanel1.add(BGestionarEjemplares);
 
         BGestionarClientes.setText("Clientes");
@@ -139,6 +144,11 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.v.ponPanel(Paneles.PGestionarDependientes, g);
     }//GEN-LAST:event_BGestionarDependientesActionPerformed
+
+    private void BGestionarEjemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarEjemplaresActionPerformed
+        // TODO add your handling code here:
+        this.v.ponPanel(Paneles.PGestionarEjemplares, g);
+    }//GEN-LAST:event_BGestionarEjemplaresActionPerformed
 
     
     @Override

@@ -5,6 +5,7 @@
 package GUI;
 
 import data.Gerente;
+import data.Marcas;
 import data.PersonalTienda;
 import data.Tienda;
 import java.awt.Graphics;
@@ -62,6 +63,7 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         nombreGerente = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        bVolverAtras = new javax.swing.JButton();
         bVolver = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 102, 102));
@@ -77,6 +79,12 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
             }
         });
         jPanel1.add(bPulga);
+
+        bAdidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAdidosActionPerformed(evt);
+            }
+        });
         jPanel1.add(bAdidos);
 
         bKike.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +93,12 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
             }
         });
         jPanel1.add(bKike);
+
+        bSuprememe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSuprememeActionPerformed(evt);
+            }
+        });
         jPanel1.add(bSuprememe);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -108,7 +122,15 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
 
         jPanel3.setOpaque(false);
 
-        bVolver.setText("Volver");
+        bVolverAtras.setText("Volver atras");
+        bVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVolverAtrasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bVolverAtras);
+
+        bVolver.setText("Volver al menu");
         bVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bVolverActionPerformed(evt);
@@ -130,14 +152,36 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
 
     private void bKikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKikeActionPerformed
         // TODO add your handling code here:
-        
-        
+        this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplaresPorMarca,
+                pt.mostrarEjemMarca(Marcas.Kike, t.getArticulosTienda()));
         
     }//GEN-LAST:event_bKikeActionPerformed
 
     private void bPulgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPulgaActionPerformed
         // TODO add your handling code here:
+                this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplaresPorMarca,
+                pt.mostrarEjemMarca(Marcas.Pulga, t.getArticulosTienda()));
+
     }//GEN-LAST:event_bPulgaActionPerformed
+
+    private void bAdidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAdidosActionPerformed
+        // TODO add your handling code here:
+                this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplaresPorMarca,
+                pt.mostrarEjemMarca(Marcas.Adidos, t.getArticulosTienda()));
+
+    }//GEN-LAST:event_bAdidosActionPerformed
+
+    private void bSuprememeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSuprememeActionPerformed
+        // TODO add your handling code here:
+                this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplaresPorMarca,
+                pt.mostrarEjemMarca(Marcas.Suprememe, t.getArticulosTienda()));
+
+    }//GEN-LAST:event_bSuprememeActionPerformed
+
+    private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
+        // TODO add your handling code here:
+        this.v.ponPanel(Paneles.PMostrarEjemplares, pt);
+    }//GEN-LAST:event_bVolverAtrasActionPerformed
 
    
     @Override
@@ -168,6 +212,7 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
     private javax.swing.JButton bPulga;
     private javax.swing.JButton bSuprememe;
     private javax.swing.JButton bVolver;
+    private javax.swing.JButton bVolverAtras;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

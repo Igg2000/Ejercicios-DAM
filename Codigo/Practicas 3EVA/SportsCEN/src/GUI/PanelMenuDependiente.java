@@ -51,6 +51,7 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
+        bMostrarArticulos = new javax.swing.JButton();
         BGestionarEjemplares = new javax.swing.JButton();
         BGestionarClientes = new javax.swing.JButton();
         BGestionarVentas = new javax.swing.JButton();
@@ -63,9 +64,22 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 150, 100, 150));
         jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 20, 50));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1, 20, 25));
+
+        bMostrarArticulos.setText("Mostrar Articulos");
+        bMostrarArticulos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMostrarArticulosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bMostrarArticulos);
 
         BGestionarEjemplares.setText("Ejemplares");
+        BGestionarEjemplares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BGestionarEjemplaresActionPerformed(evt);
+            }
+        });
         jPanel1.add(BGestionarEjemplares);
 
         BGestionarClientes.setText("Clientes");
@@ -108,6 +122,18 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
         v.dispose();
     }//GEN-LAST:event_BCerrarActionPerformed
 
+    private void bMostrarArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarArticulosActionPerformed
+        // TODO add your handling code here:
+
+            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, d, Paneles.PMenuDependiente, d.mostrarArticulos(t.getArticulosTienda()));
+      
+    }//GEN-LAST:event_bMostrarArticulosActionPerformed
+
+    private void BGestionarEjemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarEjemplaresActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_BGestionarEjemplaresActionPerformed
+
    
     @Override
     public void paintComponent(Graphics g) {
@@ -132,6 +158,7 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
     private javax.swing.JButton BGestionarClientes;
     private javax.swing.JButton BGestionarEjemplares;
     private javax.swing.JButton BGestionarVentas;
+    private javax.swing.JButton bMostrarArticulos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel nombreGerente;

@@ -40,13 +40,24 @@
         <Property name="columns" type="int" value="1"/>
         <Property name="horizontalGap" type="int" value="20"/>
         <Property name="rows" type="int" value="0"/>
-        <Property name="verticalGap" type="int" value="50"/>
+        <Property name="verticalGap" type="int" value="25"/>
       </Layout>
       <SubComponents>
+        <Component class="javax.swing.JButton" name="bMostrarArticulos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mostrar Articulos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMostrarArticulosActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="BGestionarEjemplares">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ejemplares"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BGestionarEjemplaresActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BGestionarClientes">
           <Properties>

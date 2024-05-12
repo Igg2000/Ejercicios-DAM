@@ -51,7 +51,7 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        bMostrarTodo = new javax.swing.JButton();
+        bMostrarPorArticulo = new javax.swing.JButton();
         bMostrarPorMarca = new javax.swing.JButton();
         bMostrarPorTipoPrenda = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -67,13 +67,13 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 1, 0, 50));
 
-        bMostrarTodo.setText("Mostrar Todo");
-        bMostrarTodo.addActionListener(new java.awt.event.ActionListener() {
+        bMostrarPorArticulo.setText("Mostrar Por Articulo");
+        bMostrarPorArticulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bMostrarTodoActionPerformed(evt);
+                bMostrarPorArticuloActionPerformed(evt);
             }
         });
-        jPanel1.add(bMostrarTodo);
+        jPanel1.add(bMostrarPorArticulo);
 
         bMostrarPorMarca.setText("Mostrar Por Marca");
         bMostrarPorMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -157,17 +157,17 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
             if(pt.getClass()==Gerente.class)
-                this.v.ponPanel(Paneles.PGestionarArticulos, pt);
+                this.v.ponPanel(Paneles.PGestionarDependientes, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
-    private void bMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarTodoActionPerformed
+    private void bMostrarPorArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorArticuloActionPerformed
         // TODO add your handling code here:
         
         Gerente g= (Gerente)pt;
         
         if(pt.getClass()==Gerente.class)
-            this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PMostrarEjemplares,g.mostrarArticulos(t.getArticulosTienda()));
-    }//GEN-LAST:event_bMostrarTodoActionPerformed
+            this.v.ponPanel(Paneles.PMostrarEjemplaresPorArticulo, pt);
+    }//GEN-LAST:event_bMostrarPorArticuloActionPerformed
 
    
     @Override
@@ -189,9 +189,9 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bMostrarPorArticulo;
     private javax.swing.JButton bMostrarPorMarca;
     private javax.swing.JButton bMostrarPorTipoPrenda;
-    private javax.swing.JButton bMostrarTodo;
     private javax.swing.JButton bVolver;
     private javax.swing.JButton bVolverAtras;
     private javax.swing.JPanel jPanel1;

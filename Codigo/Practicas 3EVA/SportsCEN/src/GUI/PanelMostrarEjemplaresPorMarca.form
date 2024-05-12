@@ -49,6 +49,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bAdidos">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAdidosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bKike">
           <Events>
@@ -56,6 +59,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bSuprememe">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSuprememeActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -101,9 +107,17 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
       <SubComponents>
+        <Component class="javax.swing.JButton" name="bVolverAtras">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Volver atras"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVolverAtrasActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="bVolver">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Volver"/>
+            <Property name="text" type="java.lang.String" value="Volver al menu"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVolverActionPerformed"/>

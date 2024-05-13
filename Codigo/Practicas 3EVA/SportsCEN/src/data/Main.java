@@ -19,7 +19,13 @@ public class Main {
 
     
     static boolean modoTexto = false;
-    static boolean modoDebug = true;
+    static boolean modoDebug = !true;
+    
+    /*
+    *                 Usuarios Login
+    *Gerente=      nom= admin pass= admin
+    *Dependiente=  nom= Pepe  pass= 12345
+    */
     
     
     public static void main(String[] args) {
@@ -45,13 +51,7 @@ public class Main {
         }
      
         //Pruebas Grafico
-         
-        /*
-        *cuando PanelMenuGerente tenga toda su funcionalidad hay que copiarlo y
-        *unicamente borrar los botones que no tienen los empleados, ademas de cambiar
-        *el atributo Gerente g por Dependiente g
-        */
-        //v.ponPanel(new PanelMenuGerente(v,t,t.getGerenteTienda()));
+ 
         //v.ponPanel(Paneles.PMostrarEjemplaresPorMarca, t.getGerenteTienda());
         
     }

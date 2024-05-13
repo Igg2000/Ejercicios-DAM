@@ -162,10 +162,7 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
 
     private void bMostrarPorArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorArticuloActionPerformed
         // TODO add your handling code here:
-        
-        Gerente g= (Gerente)pt;
-        
-        if(pt.getClass()==Gerente.class)
+
             this.v.ponPanel(Paneles.PMostrarEjemplaresPorArticulo, pt);
     }//GEN-LAST:event_bMostrarPorArticuloActionPerformed
 

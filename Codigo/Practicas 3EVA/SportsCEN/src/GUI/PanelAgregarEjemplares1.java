@@ -42,9 +42,8 @@ public class PanelAgregarEjemplares1 extends javax.swing.JPanel {
         nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
         
             //lo de abajo añade a la lista los dependientes
-            Gerente g= (Gerente) pt;
             
-            String cad=g.mostrarArticulos(t.getArticulosTienda());
+            String cad=pt.mostrarArticulos(t.getArticulosTienda());
             //como esta funcion  te los da todos juntos separados por saltos de linea , 
             //y setlistdata nos pide un array de String con un split del salto de linea lo convertimos a array
             String[] articulosSplit = cad.split("\n");
@@ -180,7 +179,6 @@ public class PanelAgregarEjemplares1 extends javax.swing.JPanel {
 
     private void bAgregarEjemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarEjemplarActionPerformed
         
-        Gerente g= (Gerente) pt;
         int elegidoLista=lista.getSelectedIndex();
         
         Articulo articuloElegido=t.getArticulosTienda().get(elegidoLista);

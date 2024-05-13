@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -167,6 +168,12 @@ public class PanelEliminarArticulos extends javax.swing.JPanel {
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
+        
+        //si no seleccionas ningun elemento te salta el mensaje y no ejecuta el resto del codigo
+        if(lista.getSelectedIndex()==-1){
+            JOptionPane.showMessageDialog(this, "Debes elegir un elemento de la lista");
+            return;
+        }
         
         Gerente g= (Gerente) pt;
         int elegidoLista=lista.getSelectedIndex();

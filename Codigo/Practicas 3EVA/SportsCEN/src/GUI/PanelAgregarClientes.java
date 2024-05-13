@@ -4,6 +4,10 @@
  */
 package GUI;
 
+import ExcepcionesPropias.CorreoException;
+import static ExcepcionesPropias.CorreoException.validarCorreo;
+import ExcepcionesPropias.NombreException;
+import static ExcepcionesPropias.NombreException.validarNombre;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
@@ -28,12 +32,12 @@ public class PanelAgregarClientes extends javax.swing.JPanel {
      */
     VentanaPrincipal v;
     Tienda t;
-    Gerente pt;
+    PersonalTienda pt;
     
     public PanelAgregarClientes(VentanaPrincipal v, Tienda t, PersonalTienda pt) {
         this.t=t;
         this.v=v;
-        this.pt=(Gerente)pt;
+        this.pt=pt;
         //v.setSize(600, 600);
         //v.setLocationRelativeTo(null);
         
@@ -198,10 +202,29 @@ public class PanelAgregarClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
     private void bAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarClienteActionPerformed
-        // TODO add your handling code here:
+       
+        String nom=null;
+        String correo=null;
         
-        String nom=tNombre.getText();
-        String correo=tCorreo.getText();
+        //si el nombre no es valido lo notifica y deja de ejecutar codigo
+        try {
+               validarNombre(tNombre.getText());
+            } catch (NombreException ex) {
+               JOptionPane.showMessageDialog(this, ex.getMessage());
+               return;
+            }
+        
+         //si el correo no es valido lo notifica y deja de ejecutar codigo
+        try {
+            validarCorreo(tCorreo.getText());
+        } catch (CorreoException ex) {
+          JOptionPane.showMessageDialog(this, ex.getMessage());
+               return;
+        }
+        
+        
+        nom=tNombre.getText();
+        correo=tCorreo.getText();
         
         pt.addCliente(nom, correo, t);
         

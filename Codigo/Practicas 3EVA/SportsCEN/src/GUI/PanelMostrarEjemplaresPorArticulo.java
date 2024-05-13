@@ -164,8 +164,8 @@ public class PanelMostrarEjemplaresPorArticulo extends javax.swing.JPanel {
 
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-        if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PMostrarEjemplares, pt);
+        
+        this.v.ponPanel(Paneles.PMostrarEjemplares, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
     private void bMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarActionPerformed

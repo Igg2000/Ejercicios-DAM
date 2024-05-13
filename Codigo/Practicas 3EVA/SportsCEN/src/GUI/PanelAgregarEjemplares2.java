@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import ExcepcionesPropias.PrecioException;
+import static ExcepcionesPropias.PrecioException.validarYConvertirPrecio;
 import data.Articulo;
 import data.Ejemplar;
 import data.Gerente;
@@ -36,13 +38,13 @@ public class PanelAgregarEjemplares2 extends javax.swing.JPanel {
      */
     VentanaPrincipal v;
     Tienda t;
-    Gerente pt;
     Articulo articuloElegido;
+    PersonalTienda pt;
     
     public PanelAgregarEjemplares2(VentanaPrincipal v, Tienda t, PersonalTienda pt, Articulo articuloElegido) {
         this.t=t;
         this.v=v;
-        this.pt=(Gerente)pt;
+        this.pt=pt;
         this.articuloElegido=articuloElegido;
         //v.setSize(600, 60);
         //v.setLocationRelativeTo(null);
@@ -167,7 +169,6 @@ public class PanelAgregarEjemplares2 extends javax.swing.JPanel {
         tPrecio.setBackground(new java.awt.Color(154, 219, 219));
         tPrecio.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         tPrecio.setForeground(new java.awt.Color(0, 0, 0));
-        tPrecio.setToolTipText("Los decimales se tienen que poner con un punto en vez de con coma");
         jPanel6.add(tPrecio);
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -240,7 +241,17 @@ public class PanelAgregarEjemplares2 extends javax.swing.JPanel {
     private void bAgregarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarArticuloActionPerformed
         // genero un ejemplar con los datos dados por el usuario
         
-        Float precio= Float.parseFloat(tPrecio.getText());
+        Float precio;
+        
+        try {
+            precio = validarYConvertirPrecio(tPrecio.getText());
+            //Float.parseFloat(tPrecio.getText());
+        } catch (PrecioException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return;
+        }
+        
+        
         Tallas talla = null;
         TallasZapatillas tallaZapas= null;
         Color color=pt.validarColor(cbColor.getSelectedItem().toString().toLowerCase());

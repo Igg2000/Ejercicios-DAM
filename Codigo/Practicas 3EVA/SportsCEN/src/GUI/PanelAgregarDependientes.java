@@ -4,6 +4,10 @@
  */
 package GUI;
 
+import ExcepcionesPropias.*;
+import static ExcepcionesPropias.DNIException.validarDNI;
+import static ExcepcionesPropias.NombreException.validarNombre;
+import static ExcepcionesPropias.TelefonoException.validarTelefono;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
@@ -236,18 +240,48 @@ public class PanelAgregarDependientes extends javax.swing.JPanel {
     private void bAgregarDependienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarDependienteActionPerformed
         // TODO add your handling code here:
         
-        String nom=tNombre.getText();
-        String dni=tDNI.getText();
-        int tel= Integer.parseInt(tTelefono.getText());
+        String nom=null;
+        int tel=0;
+        String dni=null;
+                
+
+        try {
+            //si el nombre no es valido se notificará y no se podra crear el dependiente
+            validarNombre(tNombre.getText());
+        } catch (NombreException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return;
+        }
+        
+        try {
+            //si el DNI no es valido se notificará y no se podra crear el dependiente
+            validarDNI(tDNI.getText());
+        } catch (DNIException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return;
+        }
+ 
+        try {
+            //si el telefono no es valido de notificará al usuario y no se podra crear el dependiente
+            validarTelefono(tTelefono.getText());
+        } catch (TelefonoException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            return;
+        }
+      
+        
+        
+        nom=tNombre.getText();
+        tel= Integer.parseInt(tTelefono.getText());
+        dni=tDNI.getText();
+
+        
         String user=tUsuario.getText();
         String pass=tPassword.getText();
-        
-        
+       
         pt.agregarDependienteATienda(t.getDependientesTienda(), nom, dni, tel, new Usuario(user,pass));
-        
-        
         JOptionPane.showMessageDialog(this, "Usuario agregado con exito");
-        
+
         
     }//GEN-LAST:event_bAgregarDependienteActionPerformed
 

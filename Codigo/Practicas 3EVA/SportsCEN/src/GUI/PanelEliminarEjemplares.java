@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import static data.Ejemplar.getContIdGlobalEjemplares;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -186,6 +187,12 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
 
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
        
+        //si no seleccionas ningun elemento te salta el mensaje y no ejecuta el resto del codigo
+        if(lista.getSelectedIndex()==-1){
+            JOptionPane.showMessageDialog(this, "Debes elegir un elemento de la lista");
+            return;
+        }
+        
         int indiceSeleccionado = lista.getSelectedIndex(); 
 
         if (indiceSeleccionado != -1) { //esto es para verificar que se ha seleccionado un elemento

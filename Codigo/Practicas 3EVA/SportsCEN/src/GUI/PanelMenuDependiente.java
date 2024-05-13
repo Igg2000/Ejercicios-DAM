@@ -62,7 +62,7 @@ public class PanelMenuDependiente extends javax.swing.JPanel {
         setBackground(new java.awt.Color(0, 102, 102));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 150, 100, 150));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(70, 150, 70, 150));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(0, 1, 20, 25));
 

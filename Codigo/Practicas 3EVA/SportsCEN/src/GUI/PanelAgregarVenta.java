@@ -200,6 +200,12 @@ public class PanelAgregarVenta extends javax.swing.JPanel {
 
     private void bAgregarCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarCarritoActionPerformed
        
+        //si no seleccionas ningun elemento te salta el mensaje y no ejecuta el resto del codigo
+        if(lista.getSelectedIndex()==-1){
+            JOptionPane.showMessageDialog(this, "Debes elegir un elemento de la lista");
+            return;
+        }
+        
         int indiceSeleccionado = lista.getSelectedIndex(); 
        
 
@@ -225,6 +231,8 @@ public class PanelAgregarVenta extends javax.swing.JPanel {
 
     private void bCrearVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearVentaActionPerformed
         // Reemplaza los articulos de la tienda por la copia de articulos en la que ya se han borrado
+        
+        
         t.setArticulosTienda(this.copiaArticulos);
         clienteElegido.getVentasCliente().add(new Venta(carrito,clienteElegido));
         JOptionPane.showMessageDialog(this, " La venta ha sido realizada con exito ");

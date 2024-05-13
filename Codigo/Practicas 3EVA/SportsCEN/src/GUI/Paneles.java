@@ -27,6 +27,12 @@ public enum Paneles {
     PAgregarEJemplares2,
     PGestionarDependientes,
     PAgregarDependientes,
-    PEliminarDependientes
-    
+    PEliminarDependientes,
+    PGestionarClientes,
+    PAgregarClientes,
+    PEliminarClientes,
+    PPreGestionarVentas,  
+    PGestionarVentas,    
+    PAgregarVentas,    
+    PMostrarVentas    
 }

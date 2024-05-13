@@ -95,9 +95,19 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         jPanel1.add(BGestionarEjemplares);
 
         BGestionarClientes.setText("Clientes");
+        BGestionarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BGestionarClientesActionPerformed(evt);
+            }
+        });
         jPanel1.add(BGestionarClientes);
 
         BGestionarVentas.setText("Ventas");
+        BGestionarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BGestionarVentasActionPerformed(evt);
+            }
+        });
         jPanel1.add(BGestionarVentas);
 
         BCerrar.setText("Cerrar Aplicacion");
@@ -149,6 +159,17 @@ public class PanelMenuGerente extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.v.ponPanel(Paneles.PGestionarEjemplares, g);
     }//GEN-LAST:event_BGestionarEjemplaresActionPerformed
+
+    private void BGestionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarClientesActionPerformed
+        // TODO add your handling code here:
+        this.v.ponPanel(Paneles.PGestionarClientes, g);
+    }//GEN-LAST:event_BGestionarClientesActionPerformed
+
+    private void BGestionarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BGestionarVentasActionPerformed
+        // TODO add your handling code here:
+        
+        this.v.ponPanel(Paneles.PPreGestionarVentas, g);
+    }//GEN-LAST:event_BGestionarVentasActionPerformed
 
     
     @Override

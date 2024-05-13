@@ -181,8 +181,7 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
 
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-        if(pt.getClass()==Gerente.class)
-            this.v.ponPanel(Paneles.PGestionarEjemplares, pt);
+        this.v.ponPanel(Paneles.PGestionarEjemplares, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
@@ -221,7 +220,7 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
                 cont++;}
         }
         // Devolver la lista de ejemplares
-        return Arrays.copyOf(ejemplaresLista, cont); // Recortar el arreglo al tamaño actualizado
+        return Arrays.copyOf(ejemplaresLista, cont); // Recortar el array al tamaño actualizado
     }
    
     @Override

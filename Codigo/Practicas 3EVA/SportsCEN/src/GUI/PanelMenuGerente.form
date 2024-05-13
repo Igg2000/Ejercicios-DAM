@@ -80,11 +80,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clientes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BGestionarClientesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BGestionarVentas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ventas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BGestionarVentasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BCerrar">
           <Properties>

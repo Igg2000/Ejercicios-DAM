@@ -27,8 +27,6 @@ public class Tienda {
     
     private List<Articulo> articulosTienda= new ArrayList<>();
 
-    private List<Venta> ventasTienda= new ArrayList<>();
-
     private List<Cliente> clientesTienda= new ArrayList<>();
     
     
@@ -65,14 +63,6 @@ public class Tienda {
 
     public void setArticulosTienda(List<Articulo> articulosTienda) {
         this.articulosTienda = articulosTienda;
-    }
-
-    public List<Venta> getVentasTienda() {
-        return ventasTienda;
-    }
-
-    public void setVentasTienda(List<Venta> ventasTienda) {
-        this.ventasTienda = ventasTienda;
     }
 
     public List<Cliente> getClientesTienda() {

@@ -203,7 +203,7 @@ public abstract class PersonalTienda {
         
         
       
-    private void eliminarEjemplar(List<Articulo> articulosTienda, Articulo a, int id_ejemplar) {
+    public void eliminarEjemplar(List<Articulo> articulosTienda, Articulo a, int id_ejemplar) {
         //@Elsa
         for (int i = 0; i < a.getEjemplaresArticulo().size(); i++) {
                if (id_ejemplar==a.getEjemplaresArticulo().get(i).getIdEjemplar())
@@ -386,12 +386,12 @@ public abstract class PersonalTienda {
                 addCliente(nombre, correo,b);
                 
           }
-     private void addCliente(String nombre, String correo, Tienda b) {
+     public void addCliente(String nombre, String correo, Tienda b) {
          Cliente a= new Cliente(nombre,correo);
          b.getClientesTienda().add(a);
         }
      
-    private String mostrarClientes(List<Cliente> clientesTienda) {
+    public String mostrarClientes(List<Cliente> clientesTienda) {
         String cad="";
         for (int i = 0; i < clientesTienda.size(); i++) {
             cad+="id:"+ clientesTienda.get(i).getIdCliente()+" "+clientesTienda.get(i)+"\n";

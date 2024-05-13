@@ -11,7 +11,7 @@ public class Cliente {
 
     private String correo;
 
-    private List<Venta> ventasCliente;
+    private List<Venta> ventasCliente= new ArrayList<>();
 
     
     /**
@@ -37,7 +37,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente N." + idCliente + " Nombre: " + nombreCompleto + " Correo: " + correo;
+        return "Nombre: " + nombreCompleto + " Correo: " + correo;
     }
     
     

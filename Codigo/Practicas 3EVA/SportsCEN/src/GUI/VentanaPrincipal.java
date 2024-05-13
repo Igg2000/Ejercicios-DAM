@@ -5,6 +5,7 @@
 package GUI;
 
 import data.Articulo;
+import data.Cliente;
 import data.Dependiente;
 import data.Gerente;
 import data.PersonalTienda;
@@ -120,6 +121,26 @@ public class VentanaPrincipal extends JFrame{
                 
                 this.ponPanel(new PanelAgregarEjemplares1(this,t, ptLogueado));
                 break;
+           
+            case p.PGestionarClientes:
+                
+                this.ponPanel(new PanelGestionarClientes(this,t, ptLogueado));
+                break;
+            
+            case p.PAgregarClientes:
+                
+                this.ponPanel(new PanelAgregarClientes(this,t, ptLogueado));
+                break;
+            
+            case p.PEliminarClientes:
+                
+                this.ponPanel(new PanelEliminarClientes(this,t, ptLogueado));
+                break;
+                
+            case p.PPreGestionarVentas:
+                
+                this.ponPanel(new PanelPreGestionarVentas(this,t, ptLogueado));
+                break;
 
                 
         }
@@ -139,6 +160,22 @@ public class VentanaPrincipal extends JFrame{
     public void ponPanelAgregarEjemplares2(PersonalTienda ptLogueado,Articulo articuloElegido){
         
         this.ponPanel(new PanelAgregarEjemplares2(this,t,ptLogueado,articuloElegido));
+    }
+    
+       
+    public void ponPanelVentas(Paneles p, PersonalTienda ptLogueado, Cliente clienteElegido){
+        
+         switch(p){
+            case p.PGestionarVentas:
+                this.ponPanel(new PanelGestionarVentas(this,t,ptLogueado,clienteElegido));
+                break;
+            case p.PAgregarVentas:
+                this.ponPanel(new PanelAgregarVenta(this,t,ptLogueado,clienteElegido));
+                break;
+            case p.PMostrarVentas:
+                break;
+         
+         }
     }
     
 }

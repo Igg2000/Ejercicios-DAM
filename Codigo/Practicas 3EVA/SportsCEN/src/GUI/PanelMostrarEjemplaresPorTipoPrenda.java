@@ -163,7 +163,8 @@ public class PanelMostrarEjemplaresPorTipoPrenda extends javax.swing.JPanel {
         //esto vuelve al menu principal
         if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
-        
+        else
+            this.v.ponPanel(Paneles.PMenuDependiente, pt);
             
     }//GEN-LAST:event_bVolverActionPerformed
 

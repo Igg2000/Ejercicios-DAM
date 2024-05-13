@@ -144,8 +144,10 @@ public class PanelMostrarEjemplaresPorMarca extends javax.swing.JPanel {
     private void bVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverActionPerformed
         // TODO add your handling code here:
         //esto vuelve al menu principal
-        if(pt.getClass()==Gerente.class)
+          if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
+        else
+            this.v.ponPanel(Paneles.PMenuDependiente, pt);
         
             
     }//GEN-LAST:event_bVolverActionPerformed

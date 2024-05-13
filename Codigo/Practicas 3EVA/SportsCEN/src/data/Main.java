@@ -87,6 +87,9 @@ public class Main {
         //clientes
         
         addClientes(t);
+
+
+        
         
         //pruebas
     
@@ -324,5 +327,6 @@ public class Main {
         t.getClientesTienda().add(new Cliente("Marta Lopez","mlope95@gmail.com"));
         t.getClientesTienda().add(new Cliente("Miguel Hernandez","miguelitohdz@gmail.com"));
     }
-    
+
+
 }

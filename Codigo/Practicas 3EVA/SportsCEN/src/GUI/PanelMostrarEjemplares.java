@@ -136,6 +136,8 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
         //esto vuelve al menu principal
         if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMenuGerente, pt);
+        else
+            this.v.ponPanel(Paneles.PMenuDependiente, pt);
         
             
     }//GEN-LAST:event_bVolverActionPerformed
@@ -143,21 +145,19 @@ public class PanelMostrarEjemplares extends javax.swing.JPanel {
     private void bMostrarPorTipoPrendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorTipoPrendaActionPerformed
         // TODO add your handling code here:
         
-        
+        this.v.ponPanel(Paneles.PMostrarEjemplaresPorPrenda, pt);
         
     }//GEN-LAST:event_bMostrarPorTipoPrendaActionPerformed
 
     private void bMostrarPorMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorMarcaActionPerformed
         // TODO add your handling code here:
-        if(pt.getClass()==Gerente.class)
             this.v.ponPanel(Paneles.PMostrarEjemplaresPorMarca, pt);
         
     }//GEN-LAST:event_bMostrarPorMarcaActionPerformed
 
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
-            if(pt.getClass()==Gerente.class)
-                this.v.ponPanel(Paneles.PGestionarDependientes, pt);
+                this.v.ponPanel(Paneles.PGestionarEjemplares, pt);
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
     private void bMostrarPorArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarPorArticuloActionPerformed

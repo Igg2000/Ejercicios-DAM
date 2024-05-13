@@ -70,7 +70,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft New Tai Lue" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Agregar Articulo"/>
+                <Property name="text" type="java.lang.String" value="Agregar Ejemplar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAgregarArticuloActionPerformed"/>

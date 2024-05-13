@@ -108,7 +108,7 @@ public class PanelAgregarEjemplares2 extends javax.swing.JPanel {
         jPanel5.setOpaque(false);
 
         bAgregarArticulo.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        bAgregarArticulo.setText("Agregar Articulo");
+        bAgregarArticulo.setText("Agregar Ejemplar");
         bAgregarArticulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAgregarArticuloActionPerformed(evt);

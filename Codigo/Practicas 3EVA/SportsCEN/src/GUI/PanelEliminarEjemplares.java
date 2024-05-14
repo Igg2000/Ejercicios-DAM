@@ -126,6 +126,7 @@ public class PanelEliminarEjemplares extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lista.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(lista);
 
         jPanel1.add(jScrollPane2, java.awt.BorderLayout.CENTER);

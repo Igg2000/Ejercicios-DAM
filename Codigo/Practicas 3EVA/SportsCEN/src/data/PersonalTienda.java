@@ -399,6 +399,15 @@ public abstract class PersonalTienda {
         return cad;
     }
     
+    public String visHistorialVentas( Cliente clienteVenta) {
+        String cad="";
+        for (int i = 0; i <clienteVenta.getVentasCliente().size(); i++) {
+                 cad+=clienteVenta.getVentasCliente().get(i)+"\n";
+                }
+        
+         return cad;
+    }
+
     
 
     @Override

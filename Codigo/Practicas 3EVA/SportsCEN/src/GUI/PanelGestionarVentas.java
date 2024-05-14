@@ -137,7 +137,7 @@ public class PanelGestionarVentas extends javax.swing.JPanel {
     private void bHistorialVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHistorialVentasActionPerformed
         // TODO add your handling code here:
  
-        this.v.ponPanelMostrarLista(Paneles.PMostrarListas, pt, Paneles.PGestionarVentas,pt.visHistorialVentas(cl));
+        this.v.ponPanelMostrarListaVentas(Paneles.PMostrarListas, pt, Paneles.PGestionarVentas,pt.visHistorialVentas(cl),cl);
         
     }//GEN-LAST:event_bHistorialVentasActionPerformed
 

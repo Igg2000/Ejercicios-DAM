@@ -18,8 +18,6 @@ public class Ejemplar {
 
     private Color color;
 
-    private static int cantidad;
-
     private TallasZapatillas tallaZapatillas;
 
     private Tallas talla;
@@ -130,14 +128,6 @@ public class Ejemplar {
 
     public void setColor(Color color) {
         this.color = color;
-    }
-
-    public static int getCantidad() {
-        return cantidad;
-    }
-
-    public static void setCantidad(int cantidad) {
-        Ejemplar.cantidad = cantidad;
     }
 
     public TallasZapatillas getTallaZapatillas() {

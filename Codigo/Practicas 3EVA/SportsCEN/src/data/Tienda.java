@@ -1,6 +1,6 @@
 package data;
 
-import ExcepcionesPropias.InicioSesionFallido;
+import ExcepcionesPropias.LoginException;
 import java.io.*;
 import java.util.*;
 import javax.swing.JOptionPane;
@@ -73,7 +73,7 @@ public class Tienda {
         this.clientesTienda = clientesTienda;
     }
 
-    public PersonalTienda dameElEmpleadoLogueado(String user, String pass) throws InicioSesionFallido {
+    public PersonalTienda dameElEmpleadoLogueado(String user, String pass) throws LoginException {
        
     //@Nacho
         
@@ -90,6 +90,6 @@ public class Tienda {
         }
  
         //en caso de no haberlo encontrado lanza una excepcion propia
-        throw new InicioSesionFallido("El usuario y contraseña no coincide con ningun empleado");
+        throw new LoginException("El usuario y contraseña no coincide con ningun empleado");
     }
 }

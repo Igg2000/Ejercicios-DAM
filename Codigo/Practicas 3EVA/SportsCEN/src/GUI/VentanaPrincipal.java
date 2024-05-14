@@ -177,5 +177,11 @@ public class VentanaPrincipal extends JFrame{
          
          }
     }
+
+    void ponPanelMostrarListaVentas(Paneles p, PersonalTienda ptLogueado, Paneles panelAnterior, String lista, Cliente cl) {
+        
+        this.ponPanel(new PanelMostrarListas(this, t, ptLogueado, panelAnterior,lista,cl));
+                
+    }
     
 }

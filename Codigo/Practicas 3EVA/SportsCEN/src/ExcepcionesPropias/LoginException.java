@@ -5,10 +5,10 @@
 package ExcepcionesPropias;
 
 
-public class InicioSesionFallido extends Exception {
+public class LoginException extends Exception {
     //@Nacho
     //es una clase de tipo excepcion para tratar los login fallidos
-    public InicioSesionFallido(String mensaje) {
+    public LoginException(String mensaje) {
         super(mensaje);
     }
 }

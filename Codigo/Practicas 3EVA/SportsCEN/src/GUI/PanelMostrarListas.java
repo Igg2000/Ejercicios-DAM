@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import data.Cliente;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
@@ -28,6 +29,7 @@ public class PanelMostrarListas extends javax.swing.JPanel {
     Tienda t;
     PersonalTienda pt;
     Paneles panelAnterior;
+    Cliente cl;
     
     public PanelMostrarListas(VentanaPrincipal v, Tienda t, PersonalTienda pt, Paneles panelAnterior,String cadAMostrar) {
         this.t=t;
@@ -43,6 +45,26 @@ public class PanelMostrarListas extends javax.swing.JPanel {
         
         //recibo la lista  y la pongo en el cuadro de texto
         jTextArea1.setText(cadAMostrar);
+    }
+
+    PanelMostrarListas(VentanaPrincipal v, Tienda t, PersonalTienda pt, Paneles panelAnterior,String cadAMostrar, Cliente cl) {
+        //este constructor es para el historial de ventas, que necesita devolver el cliente
+        
+        this.t=t;
+        this.v=v;
+        this.pt=pt;
+        this.panelAnterior=panelAnterior;
+        this.cl=cl;
+        
+        //v.setSize(600, 600);
+        //v.setLocationRelativeTo(null);
+        
+        initComponents();
+        nombreGerente.setText("Bienvenido a "+ t.getNombre()+", "+pt.getNombreCompleto());
+        
+        //recibo la lista  y la pongo en el cuadro de texto
+        jTextArea1.setText(cadAMostrar);    
+    
     }
 
     /**
@@ -145,7 +167,11 @@ public class PanelMostrarListas extends javax.swing.JPanel {
     private void bVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverAtrasActionPerformed
         // TODO add your handling code here:
         
+        if(panelAnterior==Paneles.PGestionarVentas)
+            this.v.ponPanelVentas(panelAnterior, pt,cl);
+        else
             this.v.ponPanel(panelAnterior, pt);
+            
     }//GEN-LAST:event_bVolverAtrasActionPerformed
 
    

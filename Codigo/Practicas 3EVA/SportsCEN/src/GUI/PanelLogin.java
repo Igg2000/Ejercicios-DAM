@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import ExcepcionesPropias.InicioSesionFallido;
+import ExcepcionesPropias.LoginException;
 import data.Gerente;
 import data.PersonalTienda;
 import data.Tienda;
@@ -127,7 +127,7 @@ public class PanelLogin extends javax.swing.JPanel {
         // si no te devuelve el usuario muestras con un JOptionPane el mensaje de la excepcion
         try {
             this.pLogueado = t.dameElEmpleadoLogueado(user,pass);
-        } catch (InicioSesionFallido ex) {
+        } catch (LoginException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
         //Si hay usuario logueado, si es dependiente se pondra el panel de menu de dependiente y si es gerente el de gerente

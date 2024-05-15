@@ -4,6 +4,8 @@
  */
 package data;
 
+import ExcepcionesPropias.LoginException;
+import ExcepcionesPropias.OpcionInvalidaException;
 import GUI.PanelMenuGerente;
 import GUI.Paneles;
 import GUI.VentanaPrincipal;
@@ -13,18 +15,23 @@ import static data.Tallas.*;
 import static data.TallasZapatillas.*;
 import java.awt.Color;
 import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Main {
 
     
     static boolean modoTexto = false;
-    static boolean modoDebug = !true;
+    static boolean modoDebug = false;
     
     /*
     *                 Usuarios Login
     *Gerente=      nom= admin pass= admin
     *Dependiente=  nom= Pepe  pass= 12345
+    *Dependiente=  nom= Pepa  pass= 12345
+    *Dependiente=  nom= Carlos pass= 12345
     */
     
     
@@ -36,8 +43,16 @@ public class Main {
         
         //Modo Texto
         
-        
-        //t.getGerenteTienda().gestionarArticulos(t.getArticulosTienda()); //prueba
+        if(modoTexto){
+            if(modoDebug)
+                try {
+                    t.getGerenteTienda().verMenu(t);
+            } catch (OpcionInvalidaException ex) {
+                    System.out.println(""+ex.getMessage());    
+            }
+            else
+                iniciarAppModoTexto(t);
+        }
         
         //Modo Grafico
 
@@ -49,10 +64,7 @@ public class Main {
             else
                 v.ponPanel(Paneles.PMenuGerente,t.getGerenteTienda());
         }
-     
-        //Pruebas Grafico
- 
-        //v.ponPanel(Paneles.PMostrarEjemplaresPorMarca, t.getGerenteTienda());
+
         
     }
 
@@ -327,6 +339,42 @@ public class Main {
         t.getClientesTienda().add(new Cliente("Marta Lopez","mlope95@gmail.com"));
         t.getClientesTienda().add(new Cliente("Miguel Hernandez","miguelitohdz@gmail.com"));
     }
+
+    private static void iniciarAppModoTexto(Tienda t) {
+        Scanner scanner= new Scanner(System.in);
+        
+        System.out.println("Ingrese su nombre de usuario");
+         String nom_usuario=scanner.nextLine();
+        System.out.println("Ingrese su contraseña");
+        String contraseña_usuario=scanner.nextLine();
+        
+        PersonalTienda e=null;
+        try {
+            e = t.dameElEmpleadoLogueado(nom_usuario, contraseña_usuario);
+        } catch (LoginException ex) {
+           System.out.println(""+ex.getMessage());
+        }
+        
+            if(e.getCredenciales().equals(t.getGerenteTienda().getCredenciales())){
+            try {
+                t.getGerenteTienda().verMenu(t);
+            } catch (OpcionInvalidaException ex) {
+                System.out.println(""+ex.getMessage());
+            }
+        }
+            else{
+                
+                for (int j = 0; j < t.getDependientesTienda().size(); j++) {
+                    if(e.getCredenciales().equals(t.getDependientesTienda().get(j).getCredenciales())){
+                        try {
+                            t.getDependientesTienda().get(j).verMenu(t);
+                        } catch (OpcionInvalidaException ex) {
+                            System.out.println(""+ex.getMessage());
+                        }
+                    }
+                }
+            }
+         }
 
 
 }

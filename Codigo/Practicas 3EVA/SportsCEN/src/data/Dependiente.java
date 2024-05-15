@@ -1,5 +1,10 @@
 package data;
 
+import Apoyo.Menu;
+import Apoyo.Opcion;
+import ExcepcionesPropias.OpcionInvalidaException;
+import data.Tienda;
+import data.Usuario;
 import java.io.*;
 import java.util.*;
 
@@ -32,14 +37,11 @@ public class Dependiente extends PersonalTienda {
 
     }
 
+
     @Override
     public String toString() {
         return idDependiente+". "+ super.toString();
     }
-
-
-
-    
     
     //de aqui hacia abajo getters y setters
 

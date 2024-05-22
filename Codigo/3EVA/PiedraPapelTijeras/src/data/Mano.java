@@ -5,8 +5,8 @@
 package data;
 
 /**
- *
- * @author Nacho
+ * Son las posibles opciones que puede tener cada jugada
+ * @author Nacho y Jesus
  */
 public enum Mano {
     

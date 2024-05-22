@@ -5,29 +5,26 @@
  */
 package data;
 
-import GUI.VentanaPrincipal;
 
 /**
- *
- * @author Nacho
+ * Esta es la clase principal del programa
+ * @author Nacho y Jesus
  */
 public class Main {
 
     /**
-     * @param args the command line arguments
+     * Este es el metodo que se ejecuta al inicio de la aplicacion,
+     * se encarga de iniciar una partida a 3 rondas de un Humano llamado Javi
+     * contra una CPU llamado Bot
+     * @param args Son los argumentos que recibe el Main
      */
     public static void main(String[] args) {
         // TODO code application logic here
         
-        App a = new App(new Humano("Cris"),new CPU("Bot"),3);
+        App a = new App(new Humano("Javi"),new CPU("Bot"),3);
+ 
         
-        VentanaPrincipal v = new VentanaPrincipal(a);
-        
-        v.setVisible(true);
-        v.setLocationRelativeTo(null);
-        
-        
-        //a.iniciarJuego();
+        a.iniciarJuego();
         
     }
     

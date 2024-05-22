@@ -2,6 +2,14 @@ package data;
 
 import javax.swing.JOptionPane;
 
+
+/**
+ * Esta clase guarda los siguientes datos de la partida: <br>
+ * 2 Jugadores <br>
+ * numero de rondas <br>
+ * puntos de cada jugador<br>
+ * @author Nacho y Jesus
+ */
 public class App {
 
         private Jugador J1;
@@ -10,13 +18,29 @@ public class App {
 	private int puntosJ1=0;
 	private int puntosJ2=0;
 
-        //constructor
+        /**
+         * 
+         * @param J1 es el primer jugador de la partida, y es el que elige primero
+         * @param J2 es el segundo jugador de la partida y por lo tanto elige despues
+         * @param numRondas es el numero de rondas que va a tener la partida
+         */
     public App(Jugador J1, Jugador J2, int numRondas) {
         this.J1 = J1;
         this.J2 = J2;
         this.numRondas= numRondas;
     }
 
+        /**
+       * Es el método que inicia el juego. Le pide a cada jugador elegir una opción entre:
+       * <ul>
+       *   <li>Piedra</li>
+       *   <li>Papel</li>
+       *   <li>Tijera</li>
+       * </ul>
+       * También comprueba quién es el ganador, lo muestra por pantalla, y repite todo esto durante<br>
+       * el número de rondas que reciba la aplicación. Una vez terminado, muestra quién es el ganador<br>
+       * y enseña los puntos de los jugadores.
+       */
     public void iniciarJuego(){
             
         // si el tamaño del array es menor o igual al numero de rondas se crea una nueva ronda
@@ -53,8 +77,18 @@ public class App {
             " veces \n"+ J2.getNombre() + " ha ganado "+ victoriasJ2+" veces");
         }
     
-
-    private byte decidirGanador(Mano manoJ1, Mano manoJ2) {
+    /**
+    * Decide quien es el ganador de cada ronda en base a que ha sacado cada jugador
+    * @param manoJ1 Es un enumerado, que contiene la eleccion del jugador1
+    * @param manoJ2 Es un enumerado, que contiene la eleccion del jugador2
+    * @return Devuelve en forma de byte quien es el ganador, las posibles opciones son: 
+    * <ul>
+    *   <li>1 - Gana el Jugador 1</li>
+    *   <li>2 - Gana el Jugador 2</li>
+    *   <li>3 - Empate</li>
+    * </ul>
+    */
+    public byte decidirGanador(Mano manoJ1, Mano manoJ2) {
     
         byte Resultado=0;
         

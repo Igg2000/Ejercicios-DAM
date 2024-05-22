@@ -1,9 +1,21 @@
 package data;
 
 import javax.swing.JOptionPane;
-
+/**
+ * Es una clase que hereda de Jugador, representa a un usuario que quiere jugar una partida interactuando con la aplicacion
+ * @author Nacho y Jesus
+ */
 public class Humano extends Jugador {
     
+    /**
+    * Le pide al usuario mediante un JOptionPane con opciones que elija que Mano va a sacar
+    * @return devuelve la mano del usuario en forma de enumerado, puede ser:
+    * <ul>
+    *   <li>Piedra</li>
+    *   <li>Papel</li>
+    *   <li>Tijera</li>
+    * </ul>
+    */
         @Override
 	public Mano elegirMano() {
             

@@ -1,9 +1,21 @@
 package data;
 
 import java.util.Random;
-
+/**
+ * Es una clase que hereda de Jugador y representa un jugador controlado por la aplicacion
+ * @author Nacho y Jesus
+ */
 public class CPU extends Jugador {
     
+    /**
+    * Genera de forma aleatoria un numero del 1 al 3 y segun la opcion elegida selecciona una de las posibles jugadas
+    * @return devuelve la mano del usuario en forma de enumerado, puede ser:
+    * <ul>
+    *   <li>Piedra</li>
+    *   <li>Papel</li>
+    *   <li>Tijera</li>
+    * </ul>
+    */
         @Override
 	public Mano elegirMano() {
 	    

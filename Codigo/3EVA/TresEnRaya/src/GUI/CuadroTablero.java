@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
@@ -20,7 +21,7 @@ import javax.swing.plaf.metal.MetalBorders;
  *
  * @author Nacho
  */
-public class CuadroTablero extends JLabel{
+public class CuadroTablero extends JButton{
 
     
     /*

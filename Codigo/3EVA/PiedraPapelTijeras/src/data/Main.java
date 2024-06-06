@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        App a = new App(new Humano("Javi"),new CPU("Bot"),3);
+        App a = new App(new CPU("Javi"),new CPU("Bot"),3);
  
         
         a.iniciarJuego();

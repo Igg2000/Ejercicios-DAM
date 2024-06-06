@@ -19,21 +19,6 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        /*
-        
-        String cad=JOptionPane.showInputDialog("Introduce 3 numeros separados por coma");
-        
-        String[] nums=cad.split(",");
-        
-        int[] n = {0,0,0};
-         
-        for (int i = 0; i < nums.length; i++) {
-             n[i] = Integer.parseInt(nums[i]);
-            
-             System.out.println("n= " + n[i]);
-        }   
-        
-           */
         int n1=0,n2=0,n3=0;
         boolean todoOk=true;
         

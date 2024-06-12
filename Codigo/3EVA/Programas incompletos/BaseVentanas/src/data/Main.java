@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        MiVentana v= new MiVentana();
+        Vppal v= new Vppal();
         Panel1 p = new Panel1();
         
         v.ponPanel(p);

@@ -12,9 +12,9 @@ import javax.swing.JPanel;
  *
  * @author Nacho
  */
-public class MiVentana extends JFrame{
+public class Vppal extends JFrame{
 
-    public MiVentana() throws HeadlessException {
+    public Vppal() throws HeadlessException {
         
         this.setVisible(true);
         this.setSize(400, 400);

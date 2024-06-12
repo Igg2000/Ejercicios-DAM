@@ -37,8 +37,8 @@ public class Main {
         
         
         v.ponPanel(p);
-        
-        
     }
+    
+    
     
 }

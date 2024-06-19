@@ -1,6 +1,6 @@
 package GUI;
 
-import java.awt.Color;
+import java.awt.*;
 
 /**
  *
@@ -21,8 +21,8 @@ public class Main {
         
         String[] cad={"Opcion 1","Opcion 2","Opcion 3","Salir"};
         pm p1= new pm (cad,"Prueba menu con botones",new Color(13, 65, 225),new Color(88, 239, 236 ));
-        PMenuConNBotones p2= new PMenuConNBotones(cad,"Prueba menu con botones",Color.red,Color.orange);
-        v.ponPanel(p1);
+        PMenuConNBotones p2= new PMenuConNBotones(cad,"Prueba menu con botones",Color.red,Color.orange, Color.black, new Font("Arial",Font.ITALIC,20),Color.white, new Font("Arial",Font.ITALIC,20),Color.BLUE);
+        v.ponPanel(p2);
     }
     
 }

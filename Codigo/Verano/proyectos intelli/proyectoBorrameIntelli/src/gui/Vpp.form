@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Vpp">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="10">
+    <constraints>
+      <xy x="20" y="20" width="423" height="400"/>
+    </constraints>
+    <properties>
+      <autoscrolls value="false"/>
+      <background color="-9724289"/>
+      <minimumSize width="400" height="400"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="6099b" class="javax.swing.JButton" binding="soyUnBotonButton" default-binding="true">
+        <constraints border-constraint="South"/>
+        <properties>
+          <text value="Soy un boton"/>
+        </properties>
+      </component>
+      <component id="d1359" class="javax.swing.JLabel">
+        <constraints border-constraint="North"/>
+        <properties>
+          <background color="-15711988"/>
+          <font name="Brush Script MT" size="48" style="1"/>
+          <foreground color="-13218117"/>
+          <horizontalAlignment value="0"/>
+          <opaque value="true"/>
+          <text value="Bienvenido"/>
+        </properties>
+      </component>
+      <component id="c49c7" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-14465718"/>
+          <font name="Consolas" size="16" style="1"/>
+          <foreground color="-1"/>
+          <lineWrap value="false"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <rows value="0"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

@@ -17,7 +17,9 @@ import javax.swing.*;
 public class PanelJuego extends JPanel {
 
     Vppal v;
-    Figura jugador= new Figura(0, 0, 10 , 10 , Color.blue);
+    int anchoLaberinto = 1280;
+    int altoLaberinto = 720;
+    Figura jugador= new Figura(100, 50, 50 , 50 , Color.blue);
 
     public PanelJuego(Vppal v) {
         this.v = v;
@@ -25,10 +27,12 @@ public class PanelJuego extends JPanel {
     }
 
     private void initComponents() {
-        ajustarFiguraAlTamDeLaPantalla(jugador);
         habilitarMovimientoDelJugador();
 
+
     }
+
+
 
     private void habilitarMovimientoDelJugador() {
         v.requestFocus();
@@ -52,29 +56,22 @@ public class PanelJuego extends JPanel {
         });
     }
 
-    private void ajustarFiguraAlTamDeLaPantalla(Figura f) {
-        int ancho= f.getAncho();
-        int alto= f.getAlto();
-
-        f.setAncho(f.getAncho()* v.getWidth() /100);
-        f.setAlto(f.getAlto()* v.getHeight() /100);
-
-        v.requestFocus();
-        v.addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                super.componentResized(e);
-                f.setAncho(ancho* v.getWidth() /100);
-                f.setAlto(alto* v.getHeight() /100);
-            }
-        });
-
-    }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        jugador.pintar(g);
+
+        Graphics2D g2d = (Graphics2D) g.create();
+
+        // Escala el gráfico según el tamaño actual del panel
+        double widthRatio = (double) getWidth() / anchoLaberinto;
+        double heightRatio = (double) getHeight() / altoLaberinto;
+        g2d.scale(widthRatio, heightRatio);
+/*
+        for (Figura figura : figuras) {
+            figura.pintar(g2d);
+        }*/
+        jugador.pintar(g2d);
+        g2d.dispose();
 
     }
 

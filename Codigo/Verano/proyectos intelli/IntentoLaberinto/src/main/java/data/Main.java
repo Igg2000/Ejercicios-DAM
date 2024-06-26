@@ -5,11 +5,14 @@ import GUI.Vppal;
 
 import java.awt.*;
 
+import static data.Dificultades.*;
+
 public class Main {
+
+    public static Dificultades dificultad= Facil;
     public static void main(String[] args) {
 
         AbrirVentanaMenu();
-
     }
 
     /**
@@ -21,4 +24,5 @@ public class Main {
         v.ponPanel(new MenuPrincipal(v,opsMenu, "Juego de laberinto", Color.red, Color.orange, new Color(255, 184, 51), new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.red));
 
     }
+
 }

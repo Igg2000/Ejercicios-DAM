@@ -39,7 +39,7 @@ public class Figura {
             g.drawImage(image, x, y, ancho, alto, null);
         } else {
             g.setColor(color);
-            g.fill3DRect(x, y, ancho, alto, true);
+            g.fillRect(x, y, ancho, alto);
         }
     }
 

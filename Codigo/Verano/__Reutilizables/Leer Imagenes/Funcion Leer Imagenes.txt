@@ -1,0 +1,13 @@
+    private Image leerImagenJugador(String rutaImagen) {
+
+        // Lee la imagen
+        File archivoImagen = new File(rutaImagen);
+        BufferedImage imagen = null;
+        try {
+            imagen = ImageIO.read(archivoImagen);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar la imagen");
+        }
+
+        return imagen;
+    }

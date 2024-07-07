@@ -1,6 +1,5 @@
 package GUI;
 
-import data.Main;
 import data.Mapa;
 
 import javax.swing.*;
@@ -8,8 +7,6 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static data.Dificultades.*;
 
 /**
  * Este es el menu principal de la aplicacion
@@ -32,17 +29,15 @@ public class MenuPrincipal extends PMenuConNBotones{
     }
 
     private void inicializar() {
-        eventoBotonJugar();
-        eventoBotonCambiarNivel();
+        //eventoBotonJugar();
+        eventoBotonJugarConElegirNivel();
         elUltimoBotonCierraLaVentana(getOpciones());
     }
 
-    private void eventoBotonCambiarNivel() {
+    private void eventoBotonJugarConElegirNivel() {
 
-        getBotones()[1].addActionListener(e -> {
+        getBotones()[0].addActionListener(e -> {
             String[] opsMenu = leerMapasDeCarpeta(rutaCarpetaMapas);
-                    //new String[]{"Facil", "Normal", "Dificil"};
-
             PMenuConNBotones p = new PMenuConNBotones(opsMenu,"Menu de Dificultad", color1, color2, colorFondo,fuenteTitulo, colorLetraTitulo);
             MenuPrincipal.this.v.ponPanel(p);
 
@@ -94,6 +89,7 @@ public class MenuPrincipal extends PMenuConNBotones{
     }
 
     private void eventoBotonJugar() {
+        //es para hacer pruebas
         getBotones()[0].addActionListener(e -> {
             ponerPanelDeJuego(leerMapasDeCarpeta(rutaCarpetaMapas)[0]+".txt");
         });

@@ -1,3 +1,0 @@
-El formato es x,y,ancho,alto
-Las dos primeras lineas se dejarán para el jugador y para la meta, en ese orden
-El jugador es mejor dejarle con 50,50 de tamaño

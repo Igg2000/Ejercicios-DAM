@@ -20,7 +20,7 @@ public class Main {
      */
     private static void AbrirVentanaMenu() {
         Vppal v = new Vppal();
-        String[] opsMenu = new String[]{"Jugar", "Cambiar dificultad", "Crear Mapas ", "Salir"};
+        String[] opsMenu = new String[]{"Jugar", "Crear Mapas ","Opciones", "Salir"};
         v.ponPanel(new MenuPrincipal(v,opsMenu, "Juego de laberinto", Color.red, Color.orange, new Color(255, 184, 51), new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.red));
 
     }

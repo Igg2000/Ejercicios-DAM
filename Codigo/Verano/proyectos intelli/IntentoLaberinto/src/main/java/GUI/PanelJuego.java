@@ -11,7 +11,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.awt.event.*;
@@ -19,7 +18,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import static GUI.MenuPrincipal.rutaCarpetaMapas;
+import static GUI.MenuPrincipal.*;
 
 /**
  * Este es el panel en el que se juega cada partida
@@ -29,6 +28,7 @@ public class PanelJuego extends JPanel {
 
     private final Mapa mapa;
     Vppal v;
+    MenuPrincipal mp;
     int anchoLaberinto = 1280;
     int altoLaberinto = 720;
     int xInicialJugador;
@@ -42,17 +42,17 @@ public class PanelJuego extends JPanel {
     List<Figura> muros = new ArrayList<>();
     Color colorMuros = Color.red;
 
-    public PanelJuego(Vppal v, Mapa mapa) throws Exception {
+    public PanelJuego(Vppal v, MenuPrincipal mp, Mapa mapa) throws Exception {
         this.v = v;
+        this.mp= mp;
         this.mapa = mapa;
         initComponents();
 
     }
 
     private void initComponents() throws Exception {
-        habilitarMovimientoDelJugador();
+        habilitarFuncionesDeTeclado();
         cargarMapa();
-
     }
 
     private void cargarMapa() throws Exception {
@@ -61,7 +61,7 @@ public class PanelJuego extends JPanel {
 
         //lee el archivo
         System.out.println(mapa.getNombreArchivo());
-        BufferedReader br = new BufferedReader(new java.io.FileReader(rutaCarpetaMapas+"\\"+mapa.getNombreArchivo()));
+        BufferedReader br = new BufferedReader(new java.io.FileReader(mp.getRutaCarpetaMapas()+"\\"+mapa.getNombreArchivo()));
         String cad;
         String[] datosLinea;
 
@@ -97,29 +97,45 @@ public class PanelJuego extends JPanel {
     }
 
 
-    private void habilitarMovimientoDelJugador() {
+    private void habilitarFuncionesDeTeclado() {
         v.requestFocus();
 
         v.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
 
-                int saltoPixeles=saltoJugador;
-                char tecla= Character.toLowerCase(e.getKeyChar());
+                habilitarLogicaMovimientoJugador(e);
+                habilitarMenuPausa(e);
 
-                switch (tecla) {
-                    case 'w':jugador.setY(jugador.getY() - saltoPixeles);break;
-                    case 's':jugador.setY(jugador.getY() + saltoPixeles);break;
-                    case 'a':jugador.setX(jugador.getX() - saltoPixeles);break;
-                    case 'd':jugador.setX(jugador.getX() + saltoPixeles);break;
-                }
-
-                comprobarColisiones();
 
                 repaint();
                 revalidate();
 
             }
         });
+    }
+
+    private void habilitarMenuPausa(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            MenuPausa pauseMenu = new MenuPausa(v,mp);
+            pauseMenu.setSize(300, 200);
+            pauseMenu.setLocationRelativeTo(v);
+            pauseMenu.setVisible(true);
+            pauseMenu.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        }
+    }
+
+    private void habilitarLogicaMovimientoJugador(KeyEvent e) {
+        int saltoPixeles=saltoJugador;
+        char tecla= Character.toLowerCase(e.getKeyChar());
+
+        switch (tecla) {
+            case 'w':jugador.setY(jugador.getY() - saltoPixeles);break;
+            case 's':jugador.setY(jugador.getY() + saltoPixeles);break;
+            case 'a':jugador.setX(jugador.getX() - saltoPixeles);break;
+            case 'd':jugador.setX(jugador.getX() + saltoPixeles);break;
+        }
+
+        comprobarColisiones();
     }
 
     private void comprobarColisiones() {

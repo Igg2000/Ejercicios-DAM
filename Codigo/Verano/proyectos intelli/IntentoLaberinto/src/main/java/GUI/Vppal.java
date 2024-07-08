@@ -4,7 +4,8 @@
  */
 package GUI;
 
-import java.awt.HeadlessException;
+import java.awt.*;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -24,9 +25,14 @@ public class Vppal extends JFrame{
     }
 
     public void ponPanel(JPanel p){
-        
-       this.setContentPane(p);
-       this.revalidate();
+        this.setContentPane(p);
+        this.revalidate();
     }
-    
+
+
+    public void ponerPanelPrincipal() {
+        String[] opsMenu = new String[]{"Jugar", "Crear Mapas ","Opciones", "Salir"};
+        MenuPrincipal mp = new MenuPrincipal(this,opsMenu, "Juego de laberinto", Color.red, Color.orange, new Color(255, 184, 51), new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.red);
+        ponPanel(mp);
+    }
 }

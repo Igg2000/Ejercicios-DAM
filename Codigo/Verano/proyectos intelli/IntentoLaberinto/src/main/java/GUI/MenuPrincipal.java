@@ -13,10 +13,14 @@ import java.io.IOException;
  */
 public class MenuPrincipal extends PMenuConNBotones{
 
+
     Vppal v;
-    Color color1,color2,colorFondo,colorLetraTitulo;
-    Font fuenteTitulo;
-    public static String rutaCarpetaMapas="src\\main\\java\\res\\mapas";
+    private String nombreTitulo;
+    private String[] opciones;
+    private Color color1,color2,colorFondo,colorLetraTitulo;
+    private Font fuenteTitulo;
+    private String rutaCarpetaMapas="src\\main\\java\\res\\mapas";
+
     public MenuPrincipal(Vppal v,String[] opciones, String nombreTitulo, Color color1, Color color2, Color colorFondo, Font fuenteTitulo, Color colorLetraTitulo) {
         super(opciones, nombreTitulo, color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo);
         this.v=v;
@@ -25,6 +29,8 @@ public class MenuPrincipal extends PMenuConNBotones{
         this.colorFondo=colorFondo;
         this.fuenteTitulo=fuenteTitulo;
         this.colorLetraTitulo=colorLetraTitulo;
+        this.opciones = opciones;
+        this.nombreTitulo = nombreTitulo;
         inicializar();
     }
 
@@ -45,7 +51,7 @@ public class MenuPrincipal extends PMenuConNBotones{
                 //no entiendo el sentido de esto
                 int iQueFunciona = i;
                 p.getBotones()[i].addActionListener(e1 -> {
-                   JOptionPane.showMessageDialog(this, "Mapa elegido "+ p.getBotones()[iQueFunciona].getText());
+                   //JOptionPane.showMessageDialog(this, "Mapa elegido "+ p.getBotones()[iQueFunciona].getText());
                     ponerPanelDeJuego(leerMapasDeCarpeta(rutaCarpetaMapas)[iQueFunciona]+".txt");
                 });
             }
@@ -56,7 +62,7 @@ public class MenuPrincipal extends PMenuConNBotones{
     private void ponerPanelDeJuego(String nombreArchivo) {
         //este metodo es el que recoge todas las excepciones en caso de que el mapa no se pueda cargar
         try {
-            MenuPrincipal.this.v.ponPanel(new PanelJuego(v,new Mapa(nombreArchivo)));
+            MenuPrincipal.this.v.ponPanel(new PanelJuego(v,this,new Mapa(nombreArchivo)));
         } catch (FileNotFoundException e) {
             JOptionPane.showMessageDialog(this, "Error al cargar el mapa");
         } catch (IOException e) {
@@ -96,6 +102,29 @@ public class MenuPrincipal extends PMenuConNBotones{
 
     }
 
+    //de aqui hacia abajo getters y setters
 
+    public Color getColorLetraTitulo() {
+        return colorLetraTitulo;
+    }
 
+    public void setColorLetraTitulo(Color colorLetraTitulo) {
+        this.colorLetraTitulo = colorLetraTitulo;
+    }
+
+    public Font getFuenteTitulo() {
+        return fuenteTitulo;
+    }
+
+    public void setFuenteTitulo(Font fuenteTitulo) {
+        this.fuenteTitulo = fuenteTitulo;
+    }
+
+    public String getRutaCarpetaMapas() {
+        return rutaCarpetaMapas;
+    }
+
+    public void setRutaCarpetaMapas(String rutaCarpetaMapas) {
+        this.rutaCarpetaMapas = rutaCarpetaMapas;
+    }
 }

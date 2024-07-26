@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--Estas tres lineas son dos formas para usar iconos-->
+        <script src="https://kit.fontawesome.com/c522413463.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <title>Mi primera pagina</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            body{
+                background-color: rgb(161, 197, 161);
+                background-image: url(fondo1.jpg);
+                background-attachment: fixed;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            h1{
+                text-align: center;
+                text-decoration:underline;
+                text-decoration-color: rgb(247, 178, 17);
+                text-decoration-thickness: 2px;
+                color: cornflowerblue;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+
+            p{
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            #id1{
+                color: rgb(19, 174, 122);
+                
+            }
+
+
+            .clase1{
+
+                color: red;
+                background-color:beige;
+                
+
+            }
+
+            .azul{
+                color: rgb(44, 44, 224);
+
+            }
+
+            .izquierda{
+                text-align: left;
+            }
+                /* Esto se aplica a toda la pagina*/
+            *{
+                font-weight: bold;
+                color:aliceblue
+                
+            }
+
+            .borde{
+                text-align: center; 
+                border: 2px solid rgb(138, 242, 78);
+                border-radius: 5px; /* Esto es para redondearlo*/
+                /*border-style: dashed;*/
+                border-inline-color: rgb(245, 245, 244);
+                margin: auto; /* Esto lo centra automaticamente */
+                width: 300px; 
+                outline: rgb(0, 68, 255) solid 2px;
+            }
+
+            .contornoNegro{
+                text-shadow: 
+                1px  0px 0px black,
+                0px  1px 0px black,
+                -1px 0px 0px black,
+                0px -1px 0px black;
+            }
+
+            .bordeIzquierdo{
+                border-left: 6px solid rgb(24, 202, 152);
+                text-indent: 3px;
+                
+            }
+
+            .fondoGris{
+                color: black;
+                background-color: lightcyan;
+            }
+
+            .bordeBajo{
+                border-bottom: 6px solid red;
+            }
+
+            .anotacion{
+                                
+                border: 1px solid black;
+                width: fit-content;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                margin-right: 150px;
+                margin-left: 80px;
+                background-color: lightblue;
+                display: inline-block;
+            }
+
+            .textoNeonRojo{
+                text-shadow: 0 0 3px #FF0000;
+            }
+
+            .textoNeonRojoAzul{
+                text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+            }
+
+            .textoNeonAzulOscuro{
+                color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            }
+
+            div.marcoIconos{
+                border: solid 4px rgb(117, 230, 106);
+                border-radius: 40px;
+                outline: dashed 2px gold;
+                background: #92909040;
+                margin: 10px 10%;
+                padding: 2% 1%;
+                text-align: center;
+
+            }
+
+            .marcoLinks{
+                border: solid 4px rgb(106, 112, 230);
+                border-radius: 40px;
+                outline: solid 2px rgb(0, 255, 191);
+                background: #92909040;
+                margin: 10px 10%;
+                padding: 2% 1%;
+                text-align: center;
+            }
+
+            a.boton1{
+                font-weight: normal;
+                color: white;
+            }
+
+            a.boton1:hover{
+                text-decoration: none;
+                background-color: #ffffff;
+                color: black;
+            }
+
+            a.boton2{
+                background-color: red;
+                color: white;
+                border: solid 2px white;
+                margin:2px;
+                padding: 9px 2px;
+                display: inline-block;
+            }
+
+            a.boton2:hover, a.boton2:active{
+                background-color: white;
+                color:red;
+                border: solid 2px red;
+                text-decoration: none;
+                cursor:crosshair; /* esto es para probar los distintos cursores*/
+            }
+
+            ol.lista{
+                list-style-type: katakana;
+                 /* se puede ordenar por un monton de caracteres o incluso imagenes*/
+            }
+        </style> <!-- -->
+
+    </head>
+    <body>
+            <h1 class="contornoNegro">Mi primera pagina</h1>
+        <p class="contornoNegro"> Hola mundo <br>
+            Esta es mi primera pagina <br>
+            y no se ni que hacer
+        </p>
+        <p id="id1 " class="contornoNegro"> No entiendo esto de las id y las clases</p>
+
+        <h1 id="id1">son lo mismo no?</h1>
+
+        <h1  class="clase1 te"> no entiendo nada</h1>
+
+        <p class="clase1 textoNeonAzulOscuro">me quiero salir del grado</p>
+        <p class="azul izquierda contornoNegro">mi unica motivacion es no currar en un burger</p>
+        <div class="borde contornoNegro te">aunque tampoco estaría tan mal</div>
+        <br>
+        <div class="bordeIzquierdo textoNeonRojo"> Es decir, piensalo</div>
+        <br>
+        <div class="bordeIzquierdo fondoGris"> Lo que no me paguen me lo como </div>
+        <br>
+        <div class="bordeIzquierdo fondoGris borde"> Aunque no se si me pueden echar <br>
+        por comerme las hamburguesas que sobren</div>
+        <br>
+        <p class="bordeBajo">No pueden no?</p>
+        <br>
+        <div class="bordeBajo">Yo creo que vale la pena intentarlo</div>
+
+        <div class="anotacion ">Voy a dejar el grado</div>
+        <div class="marcoIconos">
+            <h2>Iconos AwesomeFonts</h2>
+            <div>
+                <i class="fa-solid fa-user textoNeonRojo"></i>
+                <i style="background: #2f2e2e82; ">Hola, estoy probando iconos</i>
+                <i class="fab fa-discord" style="color:rgb(11, 222, 158); font-size: x-large;" ></i>
+            </div>
+        </div>
+
+        <div class="marcoIconos">
+            <h2>Iconos BootStrap</h2>
+
+            <p>Estos son algunos iconos:</p>
+            <i class="glyphicon glyphicon-cloud"></i>
+            <i class="glyphicon glyphicon-remove"></i>
+            <i class="glyphicon glyphicon-user"></i>
+            <i class="glyphicon glyphicon-envelope"></i>
+            <i class="glyphicon glyphicon-thumbs-up"></i>
+            <br><br>
+            
+            <p>Y se les puede variar el tamaño y el color:</p>
+            <i class="glyphicon glyphicon-cloud" style="font-size:24px;"></i>
+            <i class="glyphicon glyphicon-cloud textoNeonAzulOscuro" style="font-size:36px;"></i>
+            <i class="glyphicon glyphicon-cloud" style="font-size:48px;color:red;"></i>
+            <i class="glyphicon glyphicon-cloud" style="font-size:60px;color:lightblue;"></i>
+            
+        </div>
+
+        <div class="marcoIconos">
+            <h2>Iconos google</h2>
+            <i class="material-icons">cloud</i>
+            <i class="material-icons">favorite</i>
+            <i class="material-icons">attachment</i>
+            <i class="material-icons">computer</i>
+            <i class="material-icons">traffic</i>
+        </div>
+
+        <div class="marcoLinks">
+
+            <p>Esto de poder hacer links como quieras esta guapo</p>
+            <a href="">Por defecto</a> 
+            <br>
+            <a href="" class="boton1">Cambiando el fondo al pasar por encima</a>
+            <br><br>
+            <a href="" class="boton2">O como un boton</a>
+        </div>
+<br>
+        <div class="bordeIzquierdo">
+            <ol class="lista">
+                <li>manzanas</li>
+                <li>sandias</li>
+                <li>malacatone</li>
+            </ol>
+        </div>
+    </body>
+</html>

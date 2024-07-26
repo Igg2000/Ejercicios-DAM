@@ -1,0 +1,168 @@
+#cabecera{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    background-color: rgb(68, 119, 102);
+    border-bottom: solid black 2px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body{
+    margin: 0px;
+    background-color: #bed4df;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#cabecera #indice ul li{
+   /* background-color: brown; */
+    display: inline;
+    border-right: solid 2px black;
+    padding-right: 10px;
+    margin-right: 4px;
+}
+
+#cabecera #indice ul li:last-child{
+    border: 0px;
+}
+
+#cabecera #indice ul li a:hover{
+    color: rgb(68, 119, 102);
+    background-color: white;
+}
+
+#cabecera #indice ul li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#cabecera h1{
+    margin-left: 6px;
+    /*background-color: blanchedalmond;*/
+    
+    display: flex;
+    align-items: center;
+}
+#cabecera #indice{
+    display: flex;
+    top: 2em;
+   /* background-color: rgb(0, 255, 55); */
+}
+
+#inicio{
+    margin-top: 20px;
+    background-color: rgb(209, 86, 86);
+    text-align: center;
+    padding: 10px;
+    border: solid white 5px;
+    outline: solid gold 2px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#inicio p{
+    margin: 0px;
+}
+
+table, tr, th, td{
+    border: 0px solid;
+    border-collapse: collapse;
+}
+
+
+#inicio #tablas table{
+    margin-top: 10px;
+    border: 0px solid;
+    background-color: gold;
+}
+
+#inicio #tablas table tr th{
+    width: 80px;
+}
+
+#inicio #tablas table tr:nth-child(odd){
+    background-color: goldenrod;
+}
+
+#inicio #tablas table tr:hover{
+    background-color: #ac8219;
+}
+
+#inicio #tablas table tr:first-child{
+    background-color: rgb(191, 29, 206) !important;
+}
+
+#inicio #tablas table th:nth-child(odd){
+    background-color: rgb(147, 9, 178) !important;
+}
+
+.diaChamba{
+    font-weight: bold;
+    color: rgb(244, 213, 213);
+    text-shadow: 0 0 3px #FF0000;
+}
+
+.diaFestivo{
+    font-weight: bold;
+    color: rgb(178, 234, 251);
+    text-shadow: 0 0 3px #00d9ff;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sobremi{
+    border: solid 5px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    width: 70%;
+}
+
+#sobremi h1{
+    color: rgb(19, 111, 123);
+}
+
+#sobremi ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   /* background-color: blue; */
+    padding-left: 0px;
+}
+
+#sobremi ul li{
+    
+    display:inline;
+    background-color: aliceblue;
+    padding: 0% 10%;
+    margin: 0px 5%;
+    border: solid 2px red;
+}
+
+#sobremi ul li:hover{
+
+    background-color: #ced5db;
+}
+
+#final{
+    border-top: solid rgb(171, 11, 11) ;
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgb(79, 79, 79);
+    color: white;
+}
+
+#final p{
+    padding-left: 40px;
+}

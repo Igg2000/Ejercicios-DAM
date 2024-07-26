@@ -15,6 +15,8 @@ import javax.swing.JPanel;
  */
 public class Vppal extends JFrame{
 
+
+
     public Vppal() throws HeadlessException {
         
         this.setVisible(true);
@@ -24,7 +26,8 @@ public class Vppal extends JFrame{
     
     }
 
-    public void ponPanel(JPanel p){
+    public void ponPanel(JPanel p){;
+        this.getContentPane().removeAll();
         this.setContentPane(p);
         this.revalidate();
     }

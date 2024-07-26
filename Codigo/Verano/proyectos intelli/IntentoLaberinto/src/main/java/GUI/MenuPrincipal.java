@@ -37,7 +37,17 @@ public class MenuPrincipal extends PMenuConNBotones{
     private void inicializar() {
         //eventoBotonJugar();
         eventoBotonJugarConElegirNivel();
+        eventoBotonCrearMapas();
         elUltimoBotonCierraLaVentana(getOpciones());
+    }
+
+    private void eventoBotonCrearMapas() {
+
+        getBotones()[1].addActionListener(e -> {
+            PanelCrearMapas panel = new PanelCrearMapas();
+            MenuPrincipal.this.v.ponPanel(panel);
+        }
+        );
     }
 
     private void eventoBotonJugarConElegirNivel() {

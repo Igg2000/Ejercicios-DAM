@@ -1,0 +1,3 @@
+alt+click: multicursor
+control+alt+flechas: multicursor también
+alt+flechas: mover bloques

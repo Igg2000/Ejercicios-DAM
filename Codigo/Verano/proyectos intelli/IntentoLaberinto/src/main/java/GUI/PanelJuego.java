@@ -60,7 +60,6 @@ public class PanelJuego extends JPanel {
         List<Figura> figurasMapa = new ArrayList<>();
 
         //lee el archivo
-        System.out.println(mapa.getNombreArchivo());
         BufferedReader br = new BufferedReader(new java.io.FileReader(mp.getRutaCarpetaMapas()+"\\"+mapa.getNombreArchivo()));
         String cad;
         String[] datosLinea;
@@ -102,13 +101,21 @@ public class PanelJuego extends JPanel {
 
         v.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
+                /**
+                 * Este es el parche cutre a un problema que no he podido resolver en 2 dias
+                 * Al añadir el key listener a la ventana, el key listener sigue funcionando aunque cambie de panel
+                 * lo cual significa que se ejecutaria el menu de pausa en cualquier panel
+                 * y no he encontrado forma de darle el foco al panel para que funcionase directamente
+                 */
+                if(PanelJuego.this.v.getContentPane()!=PanelJuego.this) {
+                    return;
+                }
+                    System.out.println("has pulsado una tecla");
+                    habilitarLogicaMovimientoJugador(e);
+                    habilitarMenuPausa(e);
 
-                habilitarLogicaMovimientoJugador(e);
-                habilitarMenuPausa(e);
-
-
-                repaint();
-                revalidate();
+                    repaint();
+                    revalidate();
 
             }
         });

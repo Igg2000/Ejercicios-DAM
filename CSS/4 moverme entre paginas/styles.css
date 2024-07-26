@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(40, 71, 61);
+    margin: 0px;
+    color: whitesmoke;
+}
+
+body>header>h1{
+    text-align: center;
+    margin: auto;
+    color: whitesmoke;
+}
+
+body>header{
+    background-color: rgb(64, 64, 64);
+    border-bottom: 20px solid  rgb(16, 205, 142);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: whitesmoke;
+}
+
+
+body>header li.liSeleccionadoEnCabecera{
+    border-color: rgb(16, 205, 142);
+}
+
+body>header li{
+    border-left: 10px solid  ;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+body>header a:hover{
+    background-color: gray;
+    color: rgb(101, 255, 93);
+}
+
+body>header a{
+    color: rgb(16, 205, 142);
+}
+
+body main{
+    margin: 20px;
+    padding: 20px;
+    border: solid rgb(16, 205, 142) ;
+    border-radius: 20px;
+}
+
+body main footer{
+
+    border-top: rgb(16, 205, 142) solid 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-top: 2px;
+}
+
+.imagenJose{
+    image-rendering: optimizeQuality;
+    height: 200px;
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+}
+
+main dl{
+    border-left: 5px dotted rgba(16, 205, 142, 0.659);
+    padding-left: 10px;
+}
+
+main dl dt{
+    font-weight: bold;
+    text-decoration: underline rgb(16, 205, 142) ;
+}
+
+main dl dd{
+    margin-left: 20px;
+    
+}

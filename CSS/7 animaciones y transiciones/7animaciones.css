@@ -1,0 +1,137 @@
+body{
+    margin: 0px;
+    background: lightslategrey;
+    background: #212121;
+    color: #9d9d9d;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    
+    background: lightseagreen;
+    background: linear-gradient(lightseagreen,50%,#212121);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+main section{
+    margin: 5rem 2rem;
+    padding: 2rem 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 10px;
+    background: linear-gradient(black,10%,#212121);
+}
+
+.figuras{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.pelota{
+    background: red;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    /* animacion */
+
+    /* esto es por si quiero limitar la transicion a una o varias propiedades */
+    /* transition-property: background,box-shadow;  */ 
+
+    transition-duration: 1.5s;
+}
+
+.pelota:hover{
+    scale: 1.5;
+    background: darkslateblue;
+    box-shadow: 0 0 10px magenta;
+}
+
+.cuadrado{
+    background: royalblue;
+    width: 3rem;
+    height: 3rem;
+
+    transition-duration: 2s;
+    /* esto es otra forma de hacerlo, se llama css anidado */
+    &:hover{
+        background: whitesmoke;
+        scale: 1.5;
+        transform: skewX(25deg);
+    }
+}
+
+.triangulo{
+    width: 3rem;
+    height: 3rem;
+    background: url(triangulo.svg);
+    scale: 1.5;
+
+    transition-duration: 2s;
+    &:hover{
+        scale: 2;
+        transform: rotate(360deg);
+    }
+}
+
+.triangulo2{
+    font-size: 3rem;
+    color: green;
+
+    transition-duration: 2s;
+    &:hover{
+        scale: 1.5;
+        transform: rotate(360deg);
+    }
+}
+
+.animaciones{
+    border-radius: 10px;
+    max-width: 600px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pelota2{
+    background: #e2b84e;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: red 2px solid;
+
+    animation: moverse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes moverse {
+    to{
+        transform: translateX(540px);
+    }
+}
+
+.pelota2:first-child{
+    animation-timing-function: ease-in-out;
+}
+.pelota2:nth-child(2){
+    animation-timing-function: ease-in;
+}
+.pelota2:last-child{
+    animation-timing-function: linear;
+}
+
+.movil{
+    font-size: 3rem;
+    align-self: center;
+}

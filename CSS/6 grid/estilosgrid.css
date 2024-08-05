@@ -1,0 +1,111 @@
+body{
+    margin: 0px;
+    background: rgb(173, 235, 173);
+}
+
+header{
+    display: flex;
+    background: radial-gradient(rgb(78, 210, 45) , #e2ed05 ) no-repeat;
+    justify-content: center;
+}
+
+main{
+    margin: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main>p{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main>ul{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+main>ul li{
+    list-style: none;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 5px;
+}
+
+main>ul li a{
+    color: green;
+    text-decoration: none;
+}
+
+main>ul li a:hover{
+    color: black;
+    text-decoration:underline solid;
+}
+
+.liactual{
+    border-left: solid 5px green;
+    background:rgb(101, 184, 101);
+    padding: 5px 2px;
+}
+
+@media screen and(max-width: 800px) {
+    body{
+        background: red;
+    }
+}
+
+.marcoGrid{
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2fr 5fr 1fr;
+    gap: 20px;
+    /* grid-template: 1fr 2fr 1fr / 2fr 5fr 2fr; Esta seria la forma abreviada */
+
+}
+
+.card{
+    /* Esto centra el texto */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    border: #514e46 solid;
+    border-radius: 10px;
+    background: #e2ed05;
+    box-shadow: rgb(45, 174, 73) 0px 0px 10px;
+    /* grid-column: 2/span1;
+    grid-row: 2/span2; */
+}
+
+.carddoble{
+    /* inicios fila y columna / finales fila y columna */
+    grid-area: 3/2/span 1/span 2; 
+}
+
+.cardcuadruple{
+    grid-row: 1/ span 2 ;
+    grid-column: 1/ span 2;    
+}
+
+.doblealto{
+    grid-row: 1 /span 2;
+}
+.card:hover{
+    background: red;
+    transform: rotate(360deg) scale(130%);
+    color: white;
+    font-weight: bold;
+    transition: 2s;
+}
+
+footer{
+    color: grey;
+    margin: 20px 20px;
+}

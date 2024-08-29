@@ -9,6 +9,9 @@ import data.Serpiente;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -57,7 +60,33 @@ public class PanelJuego extends JPanel{
                 if(verificarColisiones())
                     System.out.println("has chocado con algo");
 
+                if(comerManzana()){
+                    recolocarManzana();
+                    s.crecer();
+                }
+
                 repaint();
+            }
+
+            private void recolocarManzana() {
+                Random random = new Random();
+                int rx= random.nextInt(PanelJuego.this.getWidth());
+                int ry= random.nextInt(PanelJuego.this.getHeight());
+                
+                System.out.println("rx: "+rx+" ry: "+ry+"rxfloordiv "+ Math.floorDiv(rx,50));
+                //m.setX();
+                //m.setY();
+            }
+
+            private boolean comerManzana() {
+
+                Rectangle rectCabeza = new Rectangle(s.getCabeza().getX(), s.getCabeza().getY(), s.getTamanio(), s.getTamanio());
+                Rectangle rectManzana = new Rectangle(m.getX(), m.getY(), s.getTamanio(), s.getTamanio());
+
+                if (rectCabeza.intersects(rectManzana)) {
+                    return true;
+                }
+                return false;
             }
         });
 
@@ -67,15 +96,22 @@ public class PanelJuego extends JPanel{
     private boolean verificarColisiones() {
 
         Rectangle rectCabeza = new Rectangle(s.getCabeza().getX(), s.getCabeza().getY(), s.getTamanio(), s.getTamanio());
-        Rectangle []rectCuerpo = new Rectangle[s.getCuerpo().getX().length];
+        /*
+        Rectangle []rectCuerpo = new Rectangle[s.getCuerpos().getX().length];
         for (int i = 0; i < rectCuerpo.length; i++) {
-            rectCuerpo[i] = new Rectangle(s.getCuerpo().getX()[i], s.getCuerpo().getY()[i], s.getTamanio(), s.getTamanio());
+            rectCuerpo[i] = new Rectangle(s.getCuerpos().getX()[i], s.getCuerpos().getY()[i], s.getTamanio(), s.getTamanio());
+        }
+        */
+        List <Rectangle> rectCuerpos= new ArrayList<>();
+
+        for (int i = 0; i < s.getCuerpos().size(); i++) {
+            rectCuerpos.add(new Rectangle(s.getCuerpos().get(i).getX(), s.getCuerpos().get(i).getY(), s.getTamanio(), s.getTamanio()));
         }
 
 
         //verificar si la serpiente choca consigo misma
-        for (int i = 1; i < rectCuerpo.length; i++) {
-            if(rectCabeza.intersects(rectCuerpo[i]))
+        for (int i = 1; i < rectCuerpos.size(); i++) {
+            if(rectCabeza.intersects(rectCuerpos.get(i)))
                 return true;
         }
 
@@ -88,7 +124,7 @@ public class PanelJuego extends JPanel{
 
     private void movimientoAutomaticoDeLaSerpienteEnMilisegundos(int ms) {
         Timer t = new Timer(ms, e -> {
-            s.mover(s.getDireccionSerpiente());
+            s.mover(s.getDireccionCabeza());
             repaint();
         });
         t.start();

@@ -22,4 +22,24 @@ public class Manzana {
     public void pintar(Graphics g){
         g.drawImage(imagen,x,y,tamanio,tamanio,null);
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getTamanio() {
+        return tamanio;
+    }
 }

@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    background: #1c1c1c;
+    background: linear-gradient(#1c1c1c,90%,rgb(106, 12, 12));
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    height: 100vh;
+   
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background: gray;
+
+    background: linear-gradient(rgb(106, 12, 12),50%,#1c1c1c);
+}
+
+main{
+    margin: 10px 200px;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#cartas{
+display: flex;
+justify-content: space-around;
+gap: 20px;
+}
+
+#cartas img{
+width: 250px;
+height: 400px;
+border-radius: 20px;
+filter: grayscale();
+transition: .5s;
+transition-timing-function: cubic-bezier(.56,-0.91,.5,2.04);
+}
+
+#cartas img:hover{
+    filter: none;
+    width: 300px;
+}

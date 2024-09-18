@@ -1,4 +1,0 @@
-para resolver este ejercicio le pediremos al usuario que introduzca un numero por teclado
-que luego eliga entre las opciones de sumar, restar, multiplicar o dividir
-que introduzca otro numero por teclado
-y dependiendo del tipo de operacion que hayamos seleccionado aparecera el resultado de la operacion

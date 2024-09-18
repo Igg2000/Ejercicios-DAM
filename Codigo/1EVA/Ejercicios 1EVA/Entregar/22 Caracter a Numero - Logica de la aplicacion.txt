@@ -1,9 +1,0 @@
-Para resolver este ejercicio he empezado creando un array de enteros
-luego, he escrito que introduzcas un numero digito a digito, y en un bucle he puesto que lea un caracter por teclado
-si ese caracter es un guion en el primer ciclo del bucle (se sabe gracias a un contador) o un numero del 0 al 9 te vuelve a preguntar
-si es un guion en el primer ciclo del bucle, cambio el valor de una variable que he creado para indicar que es un numero negativo
-si no lo es convierte el caracter a numero y lo añade al array en la posicion del contador del bucle, aparte de sumar 1 al contador
-si por el contrario, no se introduce un guion en el primer ciclo o un numero del 1 al 9, se altera una variable que hace que termine el bucle
-
-al salir del bucle el programa comprueba la variable que hemos usado para comprobar si hay guion y en ese caso la escribe sin salto de linea
-y despues de esa comprobacion se crea un bucle hasta el ultimo numero introducido en el que se recorra todo el array que contiene el numero digito a digito

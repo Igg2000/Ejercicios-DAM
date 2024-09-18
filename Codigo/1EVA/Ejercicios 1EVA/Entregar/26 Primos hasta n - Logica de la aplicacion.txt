@@ -1,9 +1,0 @@
-para resolver este problema pediremos al usuario que introduzca un numero por teclado menor a 500
-y le obligaremos a que sea menor que 500 mediante un bucle
-
-ese numero será el numero maximo hasta el cual nos va a dar numeros primos
-
-haremos un bucle que vaya escribiendonos los numeros primos hasta que lleguemos a ese numero que ha introducido el usuario
-
-la forma para saber si un numero es primo o no que he usado ha sido preguntar si el resto de todos sus multiplos era 0 en cuyo caso sumaría 1 al contador
-si al terminar de contar los multiplos, el contador es 2, significará que es un numero primo, ya que solo es divisible entre si mismo y 1

@@ -1,5 +1,0 @@
-Para este ejercicio escogí la forma C
-para esto hice dos bucles, de forma que el segundo bucle llegase solo hasta la posicion actual del primero
-de esta forma se pueden probar todas las combinaciones de numeros posibles hasta llegar al maximo, que en este caso era 50
-si la suma de los contadores de estos dos bucles entre 5 daba de resto 0 significaba que eran multiplos de 5
-por lo cual solo habría que escribir ese numero tras comprobar que ese numero fuera menor que 50

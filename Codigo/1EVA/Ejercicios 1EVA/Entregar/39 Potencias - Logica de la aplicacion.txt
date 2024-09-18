@@ -1,5 +1,0 @@
-para resolver este ejercicio he creado una variable de base, otra de exponente y otra de resultado
-creamos un bucle que vaya desde 2 hasta el exponente que esté variando constantemente el valor del resultado, multiplicando el resultado anterior por la base
-antes de empezar deberemos inicializar el resultado en la base, para hacer la primera multiplicacion
-
-una vez hecho esto simplemente escribiremos el resultado

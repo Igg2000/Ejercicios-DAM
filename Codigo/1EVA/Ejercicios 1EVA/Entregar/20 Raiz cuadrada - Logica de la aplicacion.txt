@@ -1,8 +1,0 @@
-Para resolver este ejercicio tenemos que empezar declarando las 3 variables que van a contener los coeficientes de la ecuacion como enteros
-lo segundo que he hecho ha sido declarar los dos resultados de las operaciones como numero, ya que los resultados podian ser decimales y por ello
-no se les puede declarar como enteros
-
-una vez tengamos todo declarado vamos a comprobar si el calculo que contiene la raiz cuadrada da como resultado 0 o mayor que 0
-ya que no se puede realizar una raiz cuadrada de un numero negativo
-si cumple esa condicion, escribiremos la formula y daremos como resultado, el resultado de la formula
-si no la cumple escribiremos por pantalla que la raiz cuadrada da como resultado un numero negativo y por lo tanto la ecuacion no tiene solucion

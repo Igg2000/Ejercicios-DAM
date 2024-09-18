@@ -1,6 +1,0 @@
-para resolver este problema le pediremos al usuario que introduzca por teclado un numero menor que 300 del cual haremos el factorial
-
-hacemos un acumulador que multiplique todos los numeros hasta el numero introducido para sacar el factorial del numero introducido
-
-ponemos la formula de fibonacci y comprobamos que el factorial introducido sea igual a cualquiera de los numeros de fibonacci
-si es el caso lo escribiremos por pantalla

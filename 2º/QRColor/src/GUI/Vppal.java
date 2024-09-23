@@ -17,7 +17,7 @@ public class Vppal extends JFrame{
     public Vppal() throws HeadlessException {
         
         this.setVisible(true);
-        this.setSize(400, 400);
+        this.setSize(1280, 720);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     

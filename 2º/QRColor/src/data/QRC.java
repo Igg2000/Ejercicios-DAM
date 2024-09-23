@@ -83,6 +83,14 @@ public class QRC {
             return;
         }
         
+         
+        if (c[c.length-1][c.length-1]!=null){
+            c[c.length-1][c.length-1]= null;
+            return;
+        }
+        
+        
+        
          for (int i = 0; i < c.length; i++) {
              for (int j = 0; j < c[i].length; j++) {
                 if (c[i][j] == null) {
@@ -92,5 +100,15 @@ public class QRC {
             }
         }
     }
+    
+    public void borrarTodo(){
+    
+        for (int i = 0; i < c.length; i++) {
+             for (int j = 0; j < c[i].length; j++) {
+                c[i][j] = null;
+            }
+        }
+    }
+    
     
 }

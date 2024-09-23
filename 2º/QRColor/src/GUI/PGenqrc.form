@@ -80,6 +80,11 @@
             <Property name="text" type="java.lang.String" value="Borrar"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="bBorrarTodo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Borrar Todo"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

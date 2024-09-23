@@ -47,6 +47,7 @@ public class PGenqrc extends javax.swing.JPanel {
         bNegro = new javax.swing.JButton();
         bBlanco = new javax.swing.JButton();
         bBorrar = new javax.swing.JButton();
+        bBorrarTodo = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -84,6 +85,9 @@ public class PGenqrc extends javax.swing.JPanel {
         bBorrar.setText("Borrar");
         jPanel2.add(bBorrar);
 
+        bBorrarTodo.setText("Borrar Todo");
+        jPanel2.add(bBorrarTodo);
+
         add(jPanel2, java.awt.BorderLayout.NORTH);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -97,7 +101,8 @@ private void minitComponents() {
         bAmarillo = new NBoton("Amarillo", Color.orange.darker(),Color.yellow);
         bNegro = new NBoton("Negro", Color.black,Color.lightGray);
         bBlanco = new NBoton("Blanco", Color.gray,Color.white);
-        bBorrar = new NBoton("Blanco", Color.white,Color.pink);
+        bBorrar = new NBoton("Borrar", Color.white,Color.pink);
+        bBorrarTodo = new NBoton("Borrar", Color.white,Color.pink);
         
         setLayout(new java.awt.BorderLayout());
 
@@ -134,6 +139,9 @@ private void minitComponents() {
         
         bBorrar.setText("Borrar");
         jPanel2.add(bBorrar);
+        
+        bBorrarTodo.setText("Borrar Todo");
+        jPanel2.add(bBorrarTodo);
 
         add(jPanel2, java.awt.BorderLayout.NORTH);
     }
@@ -142,6 +150,7 @@ private void minitComponents() {
     private javax.swing.JButton bAzul;
     private javax.swing.JButton bBlanco;
     private javax.swing.JButton bBorrar;
+    private javax.swing.JButton bBorrarTodo;
     private javax.swing.JButton bNegro;
     private javax.swing.JButton bRojo;
     private javax.swing.JButton bVerde;
@@ -177,6 +186,10 @@ private void minitComponents() {
         });
         bBorrar.addActionListener(e ->{
             PGenqrc.this.jPanel1.getQrc().borrarUltimoColor();
+            PGenqrc.this.jPanel1.repaint();
+        });
+        bBorrarTodo.addActionListener(e ->{
+            PGenqrc.this.jPanel1.getQrc().borrarTodo();
             PGenqrc.this.jPanel1.repaint();
         });
     }

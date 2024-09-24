@@ -44,15 +44,25 @@ public class QRC {
     
     public void visQRC(Graphics g){
         
-
-        int tamCuadro =30;
+        int x;
+        int y;
+        int tamCuadro=30;
+        
+        switch(this.tam){
+            case tam.Pequeño: x=300; y=200; tamCuadro=40; break;
+            case tam.Mediano: x=200; y=100; tamCuadro=40; break;
+            case tam.Grande: x=180; y=80; tamCuadro=30; break;
+            default: x=250; y=250; tamCuadro=30; break;
+        }
+        
+        
  
         for (int i = 0; i < c.length; i++) {
             for (int j = 0; j < c[i].length; j++) {
                     g.setColor(c[i][j]);
                     if(c[i][j]==null)
                         g.setColor(Color.gray);
-                    g.fillRect(5+tamCuadro*i, 5+tamCuadro*j, tamCuadro, tamCuadro);    
+                    g.fillRect(x+tamCuadro*j, y+tamCuadro*i, tamCuadro, tamCuadro);    
             }
             
         }
@@ -76,7 +86,7 @@ public class QRC {
         }
     }
     
-    public void borrarUltimoColor(){
+    public void borrarUltimoColor() throws Exception{
         
         if (c[0][0]==null){
             JOptionPane.showMessageDialog(null, "El qrc ya está vacio");
@@ -91,11 +101,15 @@ public class QRC {
         
         
         
-         for (int i = 0; i < c.length; i++) {
-             for (int j = 0; j < c[i].length; j++) {
-                if (c[i][j] == null) {
-                    c[i][j-1] = null;  // borrar el anterior color en el primer hueco null
-                    return;  // Salir del método inmediatamente
+         for (int i = c.length-1; i >=0; i--) {
+             for (int j = c.length-1; j >= 0; j--) {
+                if (c[i][j] != null) {
+                    if(c[i][j]==Color.white){
+                        c[i][j] = null;
+                        throw new Exception("Color Blanco");
+                    }
+                    c[i][j] = null;  // borrar el anterior color en el primer hueco null
+                    return;  // Salir del método inmediatamente 
                 }
             }
         }

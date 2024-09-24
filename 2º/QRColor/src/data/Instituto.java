@@ -30,13 +30,12 @@ public class Instituto {
         this.nombre = nombre;
     }
     
-    public void addCiclos(Color c){
+    public void addCiclos(Color c) throws Exception{
         //si coincide el color y no esta en la lista lo añade
         for (CursoColor ciclo : CursoColor.values()) {
             if(ciclo.color==c){
                 if(ciclos.contains(ciclo)){
-                    JOptionPane.showMessageDialog(null, "Error al añadir ciclo \nEl instituto " + this.nombre +" ya tiene el ciclo de "+ciclo.name());
-                    return;
+                    throw new Exception("Error al añadir ciclo \nEl instituto " + this.nombre +" ya tiene el ciclo de "+ciclo.name());
                 }
                 ciclos.add(ciclo);
                 return;

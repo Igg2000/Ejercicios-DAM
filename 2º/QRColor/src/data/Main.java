@@ -30,16 +30,11 @@ public class Main {
 
     private static void agregarDatosDePrueba(App a) {
         
-        Instituto ipv = new Instituto("Palomeras");
-        
-        ipv.addCiclos(Color.red);
-        ipv.addCiclos(Color.blue);
-        ipv.addCiclos(Color.green);
-        ipv.addCiclos(Color.yellow);
-        
+        Instituto ipv = new Instituto("IES Palomeras");        
         a.addInstis(ipv);
-        a.addInstis(new Instituto("Pacifico"));
-        a.addInstis(new Instituto("Juan de la Cierva"));
+        a.addInstis(new Instituto("IES Pacifico"));
+        a.addInstis(new Instituto("IES Juan de la Cierva"));
+        a.addInstis(new Instituto("IES Moratalaz"));
     }
     
 }

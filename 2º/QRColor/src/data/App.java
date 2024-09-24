@@ -48,7 +48,7 @@ public class App {
             PVisqrc p= new PVisqrc(this.qrc);
             v.ponPanel(p);
         }else{
-            PGenqrc p= new PGenqrc(this.qrc);
+            PGenqrc p= new PGenqrc(this.qrc,this);
             v.ponPanel(p);
         }    
             

@@ -12,7 +12,7 @@ import java.awt.Color;
  */
 public enum CursoColor {
     
-    Dam(Color.red),Daw(Color.blue),Asir(Color.green),Comercio(Color.yellow);
+    Dam(Color.red),Daw(Color.blue),Asir(Color.green),Comercio(Color.yellow),STI(Color.BLACK);
     
     public Color color;
 

@@ -28,16 +28,23 @@ public class App {
     public App() {
     }
 
-    void addInstis(Instituto ins) {
+    public void addInstis(Instituto ins) {
         instis.add(ins);
     }
 
-    void visInstisEnVentana() {
+    public void visInstisEnVentana() {
         
         PInstis p= new PInstis(this);
         v.ponPanel(p);
     }
     
+    public void borrarTodosLosCiclosDeLosInstis(){
+        
+        for (Instituto ins : instis) {
+            ins.getCiclos().clear();
+        }
+    }
+            
     public void visQRC(TamQRC t,Boolean random){
         qrc= new QRC(t);
         if(random)

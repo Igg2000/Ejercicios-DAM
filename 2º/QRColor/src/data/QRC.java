@@ -35,7 +35,7 @@ public class QRC {
         }
     }
 
-    void rellenar() {
+    public void rellenar() {
         //metodo incompleto
         String[] ops={"Rojo","Azul","Verde","Amarillo","Blanco","Negro"};
         JOptionPane.showOptionDialog(null, "Elige un color", "Elige colores", 0, 0, null, ops, ops[0]);
@@ -86,17 +86,19 @@ public class QRC {
         }
     }
     
-    public void borrarUltimoColor() throws Exception{
+    public Color borrarUltimoColor(){
+        
+        Color colorBorrado;
         
         if (c[0][0]==null){
             JOptionPane.showMessageDialog(null, "El qrc ya está vacio");
-            return;
+            return null;
         }
         
          
         if (c[c.length-1][c.length-1]!=null){
             c[c.length-1][c.length-1]= null;
-            return;
+            return null;
         }
         
         
@@ -104,15 +106,13 @@ public class QRC {
          for (int i = c.length-1; i >=0; i--) {
              for (int j = c.length-1; j >= 0; j--) {
                 if (c[i][j] != null) {
-                    if(c[i][j]==Color.white){
-                        c[i][j] = null;
-                        throw new Exception("Color Blanco");
-                    }
+                    colorBorrado=c[i][j];
                     c[i][j] = null;  // borrar el anterior color en el primer hueco null
-                    return;  // Salir del método inmediatamente 
+                    return colorBorrado;  // Salir del método inmediatamente 
                 }
             }
         }
+        return null;
     }
     
     public void borrarTodo(){

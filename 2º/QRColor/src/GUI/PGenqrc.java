@@ -10,6 +10,7 @@ import data.Instituto;
 import data.QRC;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.List;
 import java.util.logging.Level;
@@ -143,6 +144,7 @@ private void minitComponents() {
         panelQueContieneQReInstiActual.setLayout(new java.awt.BorderLayout());
         panelQueContieneQReInstiActual.add(jPanel1, java.awt.BorderLayout.CENTER);
 
+        textoAgregarCiclo.setFont(new Font("Segoe UI",1,28));
         textoAgregarCiclo.setText("Estas añadiendo ciclos al instituto: "+a.getInstis().get(numeroInstiActual).getNombre());
         panelInstiActual.add(textoAgregarCiclo);
 
@@ -226,30 +228,41 @@ private void minitComponents() {
             PGenqrc.this.jPanel1.repaint();
         });
         bBorrar.addActionListener(e ->{
-            try {
-                PGenqrc.this.jPanel1.getQrc().borrarUltimoColor();
-            } catch (Exception ex) {
+            Color colorBorrado=null;
+
+            colorBorrado=PGenqrc.this.jPanel1.getQrc().borrarUltimoColor();
+            if(colorBorrado==null)
+                return;
+
+            if(colorBorrado==Color.white){
                 PGenqrc.this.numeroInstiActual--;
                 textoAgregarCiclo.setText("Estas añadiendo ciclos al instituto: "+a.getInstis().get(numeroInstiActual).getNombre());
             }
+            
+            a.getInstis().get(numeroInstiActual).borrarCiclo(colorBorrado);
             
             PGenqrc.this.panelVisInstis.crearListaDeInstis();
             PGenqrc.this.jPanel1.repaint();
         });
         bBorrarTodo.addActionListener(e ->{
+            PGenqrc.this.numeroInstiActual=0;
+            textoAgregarCiclo.setText("Estas añadiendo ciclos al instituto: "+a.getInstis().get(numeroInstiActual).getNombre());
+            PGenqrc.this.a.borrarTodosLosCiclosDeLosInstis();
+            PGenqrc.this.panelVisInstis.crearListaDeInstis();
             PGenqrc.this.jPanel1.getQrc().borrarTodo();
             PGenqrc.this.jPanel1.repaint();
         });
     }
 
     private void funcionBotonColor(Color c) {
-                PGenqrc.this.jPanel1.getQrc().agregaColor(c);
-            try {          
+                
+            try {  
                 PGenqrc.this.a.getInstis().get(numeroInstiActual).addCiclos(c);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(PGenqrc.this, ex);
                 return;
             }
+            PGenqrc.this.jPanel1.getQrc().agregaColor(c);
             PGenqrc.this.panelVisInstis.crearListaDeInstis();
             PGenqrc.this.jPanel1.repaint();
     }

@@ -43,6 +43,15 @@ public class Instituto {
         }
         JOptionPane.showMessageDialog(null, "Error al añadir ciclo \nEl instituto " + this.nombre +" no tiene ningun ciclo asociado a ese color ");
     }
+    public void borrarCiclo(Color c){
+        //si coincide el color y no esta en la lista lo añade
+        for (CursoColor ciclo : ciclos) {
+            if(ciclo.color==c){
+                ciclos.remove(ciclo);
+                return;
+            }
+        }
+    }
 
     public List<CursoColor> getCiclos() {
         return ciclos;

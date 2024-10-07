@@ -8,7 +8,7 @@ package data;
  * Esta clase representa el funcionamiento de una pila haciendo uso de Arrays normales
  * @author Nacho
  */
-public class PilaConArray {
+public class PilaConArray implements Pila{
     int [] numeros;
     int tam=0;
 
@@ -19,9 +19,9 @@ public class PilaConArray {
     /**
      * Crea un array con uno mas de tamaño, copia el contenido del anterior, añade el nuevo numero
      * y sustituye el array por el nuevo
-     * @param numero numero que quieres agregar a la pila
+     * @param numero numero que quieres apilar a la pila
      */
-    public void agregar(int numero){
+    public void apilar(int numero){
         
         int [] nuevaLista = new int[tam+1];
         
@@ -37,7 +37,7 @@ public class PilaConArray {
      * Creo un array con uno menos de tamaño que el actual, y copio en el todo el contenido menos el ultimo numero
      * despues de eso sustituyo el Array viejo por el que acabo de crear
      */
-    public void borrarUltimo(){
+    public void desapilar(){
         
         tam--;
         int [] nuevaLista = new int[tam];
@@ -56,5 +56,7 @@ public class PilaConArray {
             System.out.println(numeros[i]);
         }
     }
+
+
     
 }

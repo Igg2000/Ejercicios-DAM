@@ -10,6 +10,7 @@ import GUI.PMenuConNBotones;
 import GUI.PVisqrc;
 import GUI.Vppal;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -114,6 +115,8 @@ public class App {
     void sacarMenuPrincipal() {
         String[] ops= {"Ver lista de institutos", "Generar qrc automatico", "Generar qrc manual"," Salir"};
         PMenuConNBotones menuPpal= new PMenuConNBotones(ops, "Escoge una opcion", Color.blue, Color.cyan);
+        //nt fuente= new Font("Segoe UI",1,24);
+        //PMenuConNBotones menuPpal= new PMenuConNBotones(ops, "Hola soy un titulo", Color.yellow, Color.magenta, Color.orange, fuente, Color.cyan, fuente, Color.orange);
         hacerQueFuncioneElMenuPpal(menuPpal,ops);
         v.ponPanel(menuPpal);
     }

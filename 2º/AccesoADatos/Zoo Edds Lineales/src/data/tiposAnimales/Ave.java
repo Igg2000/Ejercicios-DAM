@@ -1,0 +1,16 @@
+package data.tiposAnimales;
+
+import data.Animal;
+import java.io.*;
+import java.util.*;
+
+/**
+ * 
+ */
+public abstract class Ave extends Animal {
+
+    public Ave(String nombre, int edad, float peso) {
+        super(nombre, edad, peso);
+    }
+
+}

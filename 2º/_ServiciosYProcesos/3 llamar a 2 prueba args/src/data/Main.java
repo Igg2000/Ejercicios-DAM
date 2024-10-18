@@ -24,22 +24,16 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        
-        /*
-        * Esto me funciona en el cmd
-        * java "C:\Users\Nacho\OneDrive\Escritorio\1º DAM\RepositorioGitHub\2º\Librerias\1 prueba args\src\data\Main.java" hola
-        */
-        
-        //ProcessBuilder pb = new ProcessBuilder("cmd","/c","dir");
         List<String> comando= new ArrayList();
-        //comando.add("cmd");
-        //comando.add("/c");
+
+        //cosasQueNuncaFuncionaron();
         comando.add("java");
-        comando.add("-cp");
-        //comando.add("\"C:\\Users\\Nacho\\OneDrive\\Escritorio\\10 DAM\\RepositorioGitHub\\20\\Librerias\\1 prueba args\\src\\data\\Main.java\"");
-        comando.add("\"C:\\Users\\Nacho\\OneDrive\\Escritorio\\1º DAM\\RepositorioGitHub\\2º\\Librerias\\1 prueba args\\build\\classes\\data\"");
-        comando.add("Main");
-        comando.add("hola");
+        comando.add("-jar");
+        comando.add("C:\\Users\\Nacho\\OneDrive\\Escritorio\\1º DAM\\RepositorioGitHub\\2º\\_ServiciosYProcesos\\2 prueba args\\dist\\1_prueba_args.jar");
+        comando.add("buenos");
+        comando.add("dias");
+        
+        //java -jar C:\Users\Nacho\OneDrive\Escritorio\1º DAM\RepositorioGitHub\2º\_ServiciosYProcesos\2 prueba args\dist\1_prueba_args.jar hola buenos dias
 
         ProcessBuilder pb = new ProcessBuilder(comando);
         leerProceso(pb);
@@ -57,6 +51,27 @@ public class Main {
         } catch (IOException ex) {
             System.out.println("Hay un error: "+ex.getMessage());
         }
+    }
+
+    private static void cosasQueNuncaFuncionaron() {
+                
+        /*
+        * Esto me funciona en el cmd
+        * java "C:\Users\Nacho\OneDrive\Escritorio\1º DAM\RepositorioGitHub\2º\_ServiciosYProcesos\2 prueba args\src\data\Main.java" hola
+        */
+        
+        /*
+        //ProcessBuilder pb = new ProcessBuilder("cmd","/c","dir");
+        
+        //comando.add("cmd");
+        //comando.add("/c");
+        comando.add("java");
+        comando.add("-cp");
+        //comando.add("\"C:\\Users\\Nacho\\OneDrive\\Escritorio\\10 DAM\\RepositorioGitHub\\20\\Librerias\\1 prueba args\\src\\data\\Main.java\"");
+        comando.add("\"C:\\Users\\Nacho\\OneDrive\\Escritorio\\1º DAM\\RepositorioGitHub\\2º\\Librerias\\1 prueba args\\build\\classes\\data\"");
+        comando.add("Main");
+        comando.add("hola");
+        */
     }
     
 }

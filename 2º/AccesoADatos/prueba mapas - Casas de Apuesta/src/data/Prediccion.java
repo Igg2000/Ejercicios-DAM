@@ -19,7 +19,7 @@ public class Prediccion {
 
     @Override
     public String toString() {
-        return "Prediccion: "+ puntosEquipo1 + "-" + puntosEquipo2;
+        return puntosEquipo1 + "-" + puntosEquipo2;
     }
     
     

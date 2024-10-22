@@ -5,6 +5,8 @@
 package data;
 
 import ListaObjetos.PanelElegirObjeto;
+import PanelesTexto.PanelPaginaDeTexto;
+import Ventana.Vppal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -17,50 +19,68 @@ import java.util.Map;
  */
 public class Main {
     
-    static Map<Partido,Prediccion> prediccionesPartido= new HashMap();
+   
     
     public static void main(String[] args) {
-        
-        datosprueba();
-        System.out.println(getTodasLasPredicciones());
-        
-        
-    }
-
-    private static void datosprueba() {
-        //CasaDeApuestas casa= new CasaDeApuestas("casa1");
+        List<CasaDeApuestas> casas = new ArrayList<>();
         List<Partido> partidos = new ArrayList();
-        partidos.add(new Partido("Real Madrid", "Valencia"));
-        partidos.add(new Partido("Betis", "Rayo Vallecano"));
-        partidos.add(new Partido("Barcelona", "Villareal"));
         
-        List<Prediccion> prediccionesPartido1= new ArrayList();
+        hacerCasasYPartidos(casas,partidos);
         
-        hacerPrediccion(partidos.get(0), new Prediccion(3, 2));
-        hacerPrediccion(partidos.get(1), new Prediccion(2, 0));
-        hacerPrediccion(partidos.get(2), new Prediccion(1, 2));
-
-    }
-    
-    public static void hacerPrediccion(Partido par,Prediccion pre){
-        prediccionesPartido.put(par,pre);
-    }
-    
-    public static String getPrediccionPartido(Partido par){
-        return prediccionesPartido.get(par).toString();
-    }
-
-    
-    private static String getTodasLasPredicciones() {
-        String cad="";
         
-        Iterator it = prediccionesPartido.entrySet().iterator();
-
-        while(it.hasNext()){
-            cad +=it.next()+"\n";
+        for (CasaDeApuestas casa : casas) {
+            hacerPredicciones(casa,partidos);
         }
         
-        return cad;
+        pintarPorVentana(casas);
+        
+        
+        
+        
     }
+
+    private static void hacerPredicciones(CasaDeApuestas c, List<Partido> partidos) {
+        //CasaDeApuestas casa= new CasaDeApuestas("casa1");
+
+        List<Prediccion> prediccionesPartido1= new ArrayList();
+        
+        
+        for (Partido pa : partidos) {
+            c.hacerPrediccion(pa, c.generarPrediccionRandom());
+        }
+
+
+    }
+
+    private static void pintarPorVentana(List<CasaDeApuestas> casas) {
     
+        String cad="";
+        
+        for (CasaDeApuestas casa : casas) {
+            cad+=casa+"\n";
+        }
+        
+        Vppal v = new Vppal();
+        PanelesTexto.PanelPaginaDeTexto pan = new PanelPaginaDeTexto("Predicciones Jornada 1", cad);
+        v.ponPanel(pan);
+    }
+
+    private static void hacerCasasYPartidos(List<CasaDeApuestas> casas, List<Partido> partidos) {
+            
+        casas.add(new CasaDeApuestas("Casa Nacho"));
+        casas.add(new CasaDeApuestas("Casa Paco"));
+        casas.add(new CasaDeApuestas("Casa Pepe"));
+        casas.add(new CasaDeApuestas("Casa Luis"));
+
+        partidos.add(new Partido("Real Betis", "Elche"));
+        partidos.add(new Partido("Cádiz", "Real Madrid"));
+        partidos.add(new Partido("Celta", "Atlético de Madrid"));
+        partidos.add(new Partido("Mallorca", "Osasuna"));
+        partidos.add(new Partido("Espanyol", "Valencia"));
+        partidos.add(new Partido("Athletic", "Girona"));
+        partidos.add(new Partido("Sevilla", "Villarreal"));
+        partidos.add(new Partido("Getafe", "Granada"));
+        partidos.add(new Partido("Barcelona", "Rayo Vallecano"));
+        partidos.add(new Partido("Real Sociedad", "Almería"));}
+
 }

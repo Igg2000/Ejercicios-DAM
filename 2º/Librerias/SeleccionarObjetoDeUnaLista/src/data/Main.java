@@ -44,7 +44,7 @@ public class Main {
         pruebaPanel p6 = new pruebaPanel(perros,"Mi lista de perros",Color.CYAN,Color.orange, 
                 new Font("Segoe UI",1,30),new Font("Arial",1,20), Color.white, Color.blue);
         
-        p6.setBotonConfirmar(new NBoton("Eliminar", Color.black, Color.green));
+        p6.setBotonConfirmar(new NBoton("Eliminar", Color.white, Color.green));
         //p6.setBotonConfirmar(new JButton("Eliminar"));
         //p6.getBotonConfirmar().setBackground(Color.red);
         //p6.add(new NBoton("Eliminar", Color.black, Color.green));

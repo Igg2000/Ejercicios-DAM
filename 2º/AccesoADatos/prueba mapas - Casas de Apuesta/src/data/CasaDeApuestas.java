@@ -44,6 +44,7 @@ public class CasaDeApuestas {
             cad+=("Partido"+entry.getKey().num+ ": "+entry.getKey().toString())
            +" -> Predicción: "+entry.getValue().toString()
            +"\n";
+            
             //cad +=it.next()+"\n";
         }
         
@@ -69,12 +70,12 @@ public class CasaDeApuestas {
         
         double probabilidad=Math.random(); //de 0 a 1
        
-        if(probabilidad<0.50)
-            return new Prediccion(r1, r2); //50% ganar el local
-        else if(probabilidad<0.90)
-            return new Prediccion(r2, r1); //40% ganar el visitante
+        if(probabilidad<0.45)
+            return new Prediccion(r1, r2); //45% ganar el local
+        else if(probabilidad<0.80)
+            return new Prediccion(r2, r1); //35% ganar el visitante
         else
-            return new Prediccion(r2, r2); //10% empatar
+            return new Prediccion(r2, r2); //20% empatar
     }
 
 

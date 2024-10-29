@@ -72,12 +72,12 @@ public class PintarGrafo extends BasePintar {
             Point posicion = nodo.getCoordenadas();
 
             // Dibujar círculo de borde
-            g.setColor(Color.GRAY); // Color del borde
-            g.fillOval(posicion.x - diametroCirculo / 2 - 5, posicion.y - diametroCirculo / 2 - 5, diametroCirculo + 10, diametroCirculo + 10);
+            g2d.setColor(Color.GRAY); // Color del borde
+            g2d.fillOval(posicion.x - diametroCirculo / 2 - 5, posicion.y - diametroCirculo / 2 - 5, diametroCirculo + 10, diametroCirculo + 10);
 
             // Dibujar círculo para cada nodo
-            g.setColor(Color.BLUE);
-            g.fillOval(posicion.x - diametroCirculo / 2, posicion.y - diametroCirculo / 2, diametroCirculo, diametroCirculo);
+            g2d.setColor(Color.BLUE);
+            g2d.fillOval(posicion.x - diametroCirculo / 2, posicion.y - diametroCirculo / 2, diametroCirculo, diametroCirculo);
 
             // Dibujar el texto del nodo
             g.setColor(Color.WHITE);

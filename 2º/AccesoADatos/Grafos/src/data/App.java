@@ -39,7 +39,7 @@ public class App {
         sol.agregarNodoAdyacente(barajas, 12.1);        // Sol -> Barajas
         sol.agregarNodoAdyacente(moncloa, 5.3);         // Sol -> Moncloa
         sol.agregarNodoAdyacente(vallecas, 8.0);        // Sol -> Vallecas
-        barajas.agregarNodoAdyacente(hortaleza, 65);   // Barajas -> Hortaleza
+        barajas.agregarNodoAdyacente(hortaleza, 6.5);   // Barajas -> Hortaleza
         barajas.agregarNodoAdyacente(sol, 12.3);        // Barajas -> Sol
         moncloa.agregarNodoAdyacente(cuatroCaminos, 3.0); // Moncloa -> Cuatro Caminos
         moncloa.agregarNodoAdyacente(sol, 5.5);         // Moncloa -> Sol

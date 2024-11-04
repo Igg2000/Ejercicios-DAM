@@ -42,20 +42,31 @@ public class ElegirCursoAlQueMatricular extends ListaObjetos.PanelElegirObjeto{
     //matricula al alumno
     @Override
     public void accionConfirmar() {
-        String nombre=JOptionPane.showInputDialog(v,"Introduce el nombre del nuevo Alumno");
+        
+        String nombre=null;
+        Object seleccionado=null;
+        try {
+            seleccionado=getObjetoSeleccionado();
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(v, "Debes elegir un curso");
+           return;
+        }
+        
+        
+        nombre=JOptionPane.showInputDialog(v,"Introduce el nombre del nuevo Alumno");
+
+        //si le das a cancelar, o a la x de JOptionPane o lo dejas en blanco, no se añade
+        if(nombre==null || "".equals(nombre)){
+            return;
+        }
         
         TreeSet<Curso> cursos = a.getInstituto().getCursos();
-        for (Curso curso : cursos) {
-            try {
-                if(curso.equals(getObjetoSeleccionado())){
+        for (Curso curso : cursos){
+                if(curso.equals(seleccionado)){
                     curso.matricularAlumno(new Alumno(nombre));
                     JOptionPane.showMessageDialog(v, "Se ha matriculado correctamente al alumno \""+nombre+"\" en el curso "+curso.getNombre());
                 }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(v, "Debes elegir un curso");
-            }
         }
-
     }
 
     @Override

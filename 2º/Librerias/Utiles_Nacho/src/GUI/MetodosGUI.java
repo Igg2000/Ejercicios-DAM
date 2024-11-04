@@ -10,6 +10,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -24,7 +25,7 @@ public class MetodosGUI {
      * @param panelEnUso El panel al que le quieres añadir el boton
      * @param panelAnterior El panel al que quieres volver
      */
-    public static void agregarBotonDeVolverAUnPanel(Vppal v, JPanel panelEnUso, JPanel panelAnterior) {
+    public static void agregarBotonDeVolverAUnPanel(JFrame v, JPanel panelEnUso, JPanel panelAnterior) {
 
         // Crear el botón de "volver"
         JButton botonVolver = new JButton("Volver");
@@ -32,7 +33,8 @@ public class MetodosGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Acción para volver a la vista anterior, por ejemplo:
-                v.ponPanel(panelAnterior);
+                v.setContentPane(panelAnterior);
+                v.revalidate();
             }
         });
 

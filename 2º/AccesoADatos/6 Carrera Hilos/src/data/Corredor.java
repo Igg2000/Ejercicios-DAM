@@ -29,6 +29,7 @@ public class Corredor extends Rectangle implements Runnable {
     
     public void mover() {
         x= x+salto;
+        
     }
     
     
@@ -49,6 +50,7 @@ public class Corredor extends Rectangle implements Runnable {
         
         while (corriendo) {  // Por ejemplo, hasta que el corredor llegue a x 800
             mover();  
+            
             try {
                 Thread.sleep(retardo);
             } catch (InterruptedException e) {

@@ -103,6 +103,8 @@ public class SerializadorDeObjetos {
             oos = new MiObjectOutputStream(fos);
         }
         oos.writeObject(objeto);
+        oos.close();
+        fos.close();
 
     }
 
@@ -134,6 +136,9 @@ public class SerializadorDeObjetos {
             }
         }
 
+        fis.close();
+        ois.close();
+        
         return objetos;  // Devuelve la lista con todos los objetos leídos
     }
 

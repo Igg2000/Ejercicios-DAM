@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="7._Leer_XML_con_XStream" default="default" basedir=".">
+    <description>Builds, tests, and runs the project</description>
+<import file="nbproject/build-impl.xml"/>
+<target name="run" depends="compile">
+<java classname="data.Main" fork="true">
+<!--  Agregar opciones de la JVM  -->
+<jvmarg value="--add-opens"/>
+<jvmarg value="java.base/java.util=ALL-UNNAMED"/>
+<jvmarg value="--add-opens"/>
+<jvmarg value="java.base/java.lang=ALL-UNNAMED"/>
+<classpath>
+<pathelement path="${build.classes.dir}"/>
+<fileset dir="lib">
+<include name="*.jar"/>
+</fileset>
+</classpath>
+</java>
+</target>
+</project>

@@ -37,7 +37,7 @@ public class PMenuV2 extends JPanel {
     private Color colorLetraBotones;
     private Font fuenteBotones;
     
-    private Image imagen;
+    private Image imagenFondo;
 
     /**
      * Crea un menú sin titulo con las opciones que le des 
@@ -364,7 +364,7 @@ public class PMenuV2 extends JPanel {
         try {
             Image imagenBase = Metodos.MetodosGUI.leerImagen(rutaImagen);
             if (imagenBase != null) {
-                imagen = imagenBase; // Guardamos la imagen sin redimensionar por ahora
+                imagenFondo = imagenBase; // Guardamos la imagen sin redimensionar por ahora
                 repaint();  // Redibujamos el panel para aplicar la imagen redimensionada
             }
         } catch (IOException e) {
@@ -376,12 +376,20 @@ public class PMenuV2 extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+    /*  forma 1, va lageado
         
-        if (imagen != null) {
+        if (imagenFondo != null) {
             // Redimensionamos la imagen al tamaño del panel
-            Image imagenRedimensionada = imagen.getScaledInstance(getWidth(), getHeight(), Image.SCALE_FAST);
+            Image imagenRedimensionada = imagenFondo.getScaledInstance(getWidth(), getHeight(), Image.SCALE_FAST);
             g.drawImage(imagenRedimensionada, 0, 0, this);  // Dibujamos la imagen redimensionada
         }
+        
+    */
+        
+        if (imagenFondo != null) {
+            g.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);  // Dibujamos la imagen redimensionada
+        }
+        
     }
 
 }

@@ -8,6 +8,8 @@ package PanelesGUI;
  */
 
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 /**
  * Es un panel de texto muestra el texto recibido, no admite HTML
@@ -101,4 +103,15 @@ public class PanelPaginaDeTexto extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    public JTextArea getCuadroTexto() {
+        return cuadroTexto;
+    }
+
+    public JLabel getTitulo() {
+        return titulo;
+    }
+    
+    
+    
 }

@@ -9,6 +9,8 @@ package PanelesGUI;
 
 
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 /**
  * Crea un panel capaz de recibir Strings de HTMLs y los pinta por pantalla
@@ -125,4 +127,14 @@ public class PanelPaginaDeTextoHTML extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    public JTextPane getCuadroTexto() {
+        return cuadroTexto;
+    }
+
+    public JLabel getTitulo() {
+        return titulo;
+    }
+    
+    
 }

@@ -22,7 +22,6 @@ import javax.swing.SwingUtilities;
  */
 public class PMenuV2 extends JPanel {
 
-
     private NBoton []botones;
     private JPanel panelOpciones= new JPanel();
     private JPanel panelTitulo= new JPanel();
@@ -37,7 +36,10 @@ public class PMenuV2 extends JPanel {
     private Color colorLetraBotones;
     private Font fuenteBotones;
     
+    //esto es para hacer doble buffer
     private Image imagenFondo;
+    private Image img;
+    private Graphics gg;
 
     /**
      * Crea un menú sin titulo con las opciones que le des 
@@ -162,6 +164,15 @@ public class PMenuV2 extends JPanel {
     private void minitComponents(){
         botones=new NBoton[opciones.length];
 
+        //doble buffer
+       
+        // Obtener el JFrame padre
+        Container topLevelAncestor = SwingUtilities.getWindowAncestor(this);
+        if (topLevelAncestor != null) {
+            img = topLevelAncestor.createImage(topLevelAncestor.getWidth(), topLevelAncestor.getHeight());
+        }       
+        gg=img.getGraphics();  
+        
         //Esto pone un layout a todo el panel para poner el panel de opciones al centro y el del titulo arriba
         setLayout(new BorderLayout());
 
@@ -376,20 +387,13 @@ public class PMenuV2 extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-    /*  forma 1, va lageado
         
         if (imagenFondo != null) {
-            // Redimensionamos la imagen al tamaño del panel
-            Image imagenRedimensionada = imagenFondo.getScaledInstance(getWidth(), getHeight(), Image.SCALE_FAST);
-            g.drawImage(imagenRedimensionada, 0, 0, this);  // Dibujamos la imagen redimensionada
+            gg.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);  // Dibujamos la imagen redimensionada
         }
         
-    */
-        
-        if (imagenFondo != null) {
-            g.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);  // Dibujamos la imagen redimensionada
-        }
-        
+        //doble buffer
+        g.drawImage(img,0,0, this);
     }
 
 }

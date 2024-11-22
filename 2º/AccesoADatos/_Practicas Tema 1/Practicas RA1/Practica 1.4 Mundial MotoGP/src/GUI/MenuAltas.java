@@ -7,24 +7,26 @@ package GUI;
 import PanelesGUI.PMenuV2;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
- * @author Nacho
+ * @author grovy
  */
-class MenuPrincipal extends PMenuV2{
-
-    private final Ventana v;
+class MenuAltas extends PMenuV2{
     
-    public MenuPrincipal(Ventana v, String[] opciones, String nombreTitulo, Color color1, Color color2, Color colorFondo, Font fuenteTitulo, Color colorLetraTitulo, Font fuenteBotones, Color colorLetraBotones) {
+    private final Ventana v;
+    private final JPanel panelAnterior;
+    
+    public MenuAltas(Ventana v, JPanel panelAnterior, String[] opciones, String nombreTitulo, Color color1, Color color2, Color colorFondo, Font fuenteTitulo, Color colorLetraTitulo, Font fuenteBotones, Color colorLetraBotones) {
         super(opciones, nombreTitulo, color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
         this.v = v;
         ponerImagenDeFondo("src//res//fondoMotoGP.png");
         
         
         funcionalidadBotones(opciones);
+        this.panelAnterior = panelAnterior;
         
         
     }
@@ -34,13 +36,8 @@ class MenuPrincipal extends PMenuV2{
         JButton[] botones;
         botones = super.getBotones();
         
-        //el boton altas te lleva al Menu de altas
         botones[0].addActionListener(e -> {
-            
-            String opcionesSiguienteMenu[]={"Circuitos","Motos","Pilotos","Volver"};
-            MenuAltas menupp = new MenuAltas(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
-            v.ponPanel(menupp);
-            
+
         });
         
         botones[1].addActionListener(e -> {
@@ -51,9 +48,13 @@ class MenuPrincipal extends PMenuV2{
             
         });
         
+        botones[3].addActionListener(e -> {
+            v.ponPanel(panelAnterior);
+        });
         
         
-        elUltimoBotonCierraLaVentana(opciones);
+        
     }
+    
     
 }

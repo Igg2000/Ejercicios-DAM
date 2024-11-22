@@ -4,9 +4,9 @@
  */
 package data;
 
-import GUI.Vista;
+import GUI.Ventana;
 import data.Controlador.App;
-import data.Modelo.Modelo;
+import data.Modelo.Mundial;
 
 /**
  *
@@ -17,12 +17,12 @@ public class Main {
       public static void main(String[] args) {
           
         // Crear el modelo y la vista
-        Modelo modelo = new Modelo();
-        Vista vista = new Vista();
+        Mundial modelo = new Mundial();
+        Ventana vista = new Ventana();
 
         // Crear el controlador y pasarle el modelo y la vista
-        App a=new App(modelo, vista);
-        new Thread(a).start();
+        App controlador=new App(modelo, vista);
+        new Thread(controlador).start();
     }
     
 }

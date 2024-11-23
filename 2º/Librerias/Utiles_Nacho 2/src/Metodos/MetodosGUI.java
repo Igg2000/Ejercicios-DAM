@@ -4,6 +4,7 @@
  */
 package Metodos;
 
+import PanelesGUI.PanelPaginaDeTexto;
 import Ventana.Vppal;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -11,7 +12,9 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -74,5 +77,28 @@ public class MetodosGUI {
         BufferedImage imagen = null;
         imagen = ImageIO.read(archivoImagen);
         return imagen;
+    }
+    
+    public static void pintaArchivo(File archivo) {
+        String cad = "";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+            StringBuilder contenido = new StringBuilder();
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                contenido.append(linea).append("\n");
+            }
+            cad = contenido.toString(); // Convertir el contenido a cadena
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+            cad = "Error al leer el archivo: " + e.getMessage();
+        }
+
+        // Crear el objeto PanelPaginaDeTexto con el contenido del archivo
+        Vppal v = new Vppal();
+        PanelPaginaDeTexto p = new PanelPaginaDeTexto("Contenido de " + archivo.getName(), cad);
+
+        // Agregar el panel a la ventana o mostrarlo según corresponda
+        v.ponPanel(p); // Supuesto método para agregar el panel (ajustar según tu implementación)
     }
 }

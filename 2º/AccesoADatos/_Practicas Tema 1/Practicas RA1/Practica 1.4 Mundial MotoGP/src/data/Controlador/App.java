@@ -16,94 +16,148 @@ public class App implements Runnable{
     Mundial mundial;
     Ventana vista;
     
+    Boolean modoDebug=true;
+    
     public App(Mundial modelo, Ventana vista) {
         this.mundial=modelo;
         this.vista=vista;
-        datosDePrueba();
     }
 
     @Override
     public void run() {
         vista.setVisible(true);
+        
+        if(modoDebug)
+            cargarDatosDePrueba();
+        else
+            agregarCircuitos();
+        
+        mundial.generarPuntos();
     }
     
-    
-     // Método para inicializar datos de prueba
-    private void datosDePrueba() {
-        // Escuderías disponibles en MotoGP 2024
+    public void cargarDatosDePrueba() {
+        // Agregar Escuderías
+        agregarEscuderias();
+
+        // Agregar Circuitos
+        agregarCircuitos();
+
+        // Agregar Pilotos y Motos
+        agregarPilotosYMotos();
+    }
+
+    // Método para agregar las escuderías
+    private void agregarEscuderias() {
+        // Escuderías del MotoGP 2023
         mundial.agregarEscuderia("Ducati Lenovo Team");
+        mundial.agregarEscuderia("Aprilia Racing");
         mundial.agregarEscuderia("Red Bull KTM Factory Racing");
-        mundial.agregarEscuderia("Monster Energy Yamaha MotoGP");
         mundial.agregarEscuderia("Repsol Honda Team");
-        mundial.agregarEscuderia("Aprilia Racing Team");
-        mundial.agregarEscuderia("Gresini Racing MotoGP");
-        mundial.agregarEscuderia("Mooney VR46 Racing Team");
+        mundial.agregarEscuderia("Monster Energy Yamaha MotoGP");
         mundial.agregarEscuderia("Prima Pramac Racing");
+        mundial.agregarEscuderia("Gresini Racing MotoGP");
         mundial.agregarEscuderia("LCR Honda");
-        mundial.agregarEscuderia("GasGas Factory Racing Tech3");
-        mundial.agregarEscuderia("RNF MotoGP Team");
-
-        // Crear circuitos
-        Circuito circuito1 = new Circuito("Circuito de Jerez", "España", 4.428);
-        Circuito circuito2 = new Circuito("Mugello", "Italia", 5.245);
-        mundial.agregarCircuito(circuito1);
-        mundial.agregarCircuito(circuito2);
-
-        // Crear pilotos
-        Piloto piloto1 = new Piloto("Marc Márquez", "España", "Repsol Honda Team", 200);
-        Piloto piloto2 = new Piloto("Fabio Quartararo", "Francia", "Monster Energy Yamaha MotoGP", 150);
-        Piloto piloto3 = new Piloto("Pecco Bagnaia", "Italia", "Ducati Lenovo Team", 250);
-        Piloto piloto4 = new Piloto("Jack Miller", "Australia", "Red Bull KTM Factory Racing", 100);
-        Piloto piloto5 = new Piloto("Aleix Espargaró", "España", "Aprilia Racing Team", 175);
-        Piloto piloto6 = new Piloto("Enea Bastianini", "Italia", "Gresini Racing MotoGP", 90);
-        Piloto piloto7 = new Piloto("Luca Marini", "Italia", "Mooney VR46 Racing Team", 130);
-        Piloto piloto8 = new Piloto("Johann Zarco", "Francia", "Prima Pramac Racing", 140);
-        Piloto piloto9 = new Piloto("Takaaki Nakagami", "Japón", "LCR Honda", 80);
-        Piloto piloto10 = new Piloto("Pol Espargaró", "España", "GasGas Factory Racing Tech3", 60);
-        Piloto piloto11 = new Piloto("Miguel Oliveira", "Portugal", "RNF MotoGP Team", 90);
-
-        mundial.agregarPiloto(piloto1);
-        mundial.agregarPiloto(piloto2);
-        mundial.agregarPiloto(piloto3);
-        mundial.agregarPiloto(piloto4);
-        mundial.agregarPiloto(piloto5);
-        mundial.agregarPiloto(piloto6);
-        mundial.agregarPiloto(piloto7);
-        mundial.agregarPiloto(piloto8);
-        mundial.agregarPiloto(piloto9);
-        mundial.agregarPiloto(piloto10);
-        mundial.agregarPiloto(piloto11);
-
-        // Crear motos
-        Moto moto1 = new Moto(93, "Honda", "RC213V");
-        Moto moto2 = new Moto(20, "Yamaha", "YZR-M1");
-        Moto moto3 = new Moto(63, "Ducati", "Desmosedici GP23");
-        Moto moto4 = new Moto(43, "KTM", "RC16");
-        Moto moto5 = new Moto(41, "Aprilia", "RS-GP");
-
-        mundial.agregarMoto(moto1);
-        mundial.agregarMoto(moto2);
-        mundial.agregarMoto(moto3);
-        mundial.agregarMoto(moto4);
-        mundial.agregarMoto(moto5);
-
-        // Asignar motos a pilotos
-        mundial.asignarMotoAPiloto(piloto1, moto1);
-        mundial.asignarMotoAPiloto(piloto2, moto2);
-        mundial.asignarMotoAPiloto(piloto3, moto3);
-        mundial.asignarMotoAPiloto(piloto4, moto4);
-        mundial.asignarMotoAPiloto(piloto5, moto5);
-        mundial.asignarMotoAPiloto(piloto6, moto3);
-        mundial.asignarMotoAPiloto(piloto7, moto2);
-        mundial.asignarMotoAPiloto(piloto8, moto3);
-        mundial.asignarMotoAPiloto(piloto9, moto1);
-        mundial.asignarMotoAPiloto(piloto10, moto4);
-        mundial.asignarMotoAPiloto(piloto11, moto5);
-
-        System.out.println("Datos de prueba cargados en el Mundial:");
-        System.out.println(mundial);
+        mundial.agregarEscuderia("Mooney VR46 Racing Team");
+        mundial.agregarEscuderia("Tech3 GASGAS Factory Racing");
+    }
+    // Método para agregar los circuitos
+    private void agregarCircuitos() {
+        // Circuitos del MotoGP 2023
+        mundial.agregarCircuito(new Circuito("Losail International Circuit", "Catar", 5.380));
+        mundial.agregarCircuito(new Circuito("Autodromo Internacional do Algarve", "Portugal", 4.684));
+        mundial.agregarCircuito(new Circuito("Termas de Río Hondo", "Argentina", 4.806));
+        mundial.agregarCircuito(new Circuito("Circuit of the Americas", "EE.UU.", 5.513));
+        mundial.agregarCircuito(new Circuito("Autodromo Internazionale del Mugello", "Italia", 5.245));
+        mundial.agregarCircuito(new Circuito("Sachsenring", "Alemania", 3.671));
+        mundial.agregarCircuito(new Circuito("Silverstone", "Reino Unido", 5.891));
+        mundial.agregarCircuito(new Circuito("Red Bull Ring", "Austria", 4.318));
+        mundial.agregarCircuito(new Circuito("Misano World Circuit Marco Simoncelli", "San Marino", 4.226));
+        mundial.agregarCircuito(new Circuito("Motegi", "Japón", 4.801));
+        mundial.agregarCircuito(new Circuito("Phillip Island", "Australia", 4.448));
+        mundial.agregarCircuito(new Circuito("Sepang International Circuit", "Malasia", 5.543));
+        mundial.agregarCircuito(new Circuito("Circuit Ricardo Tormo", "España", 4.005));
     }
 
+    // Método para agregar los pilotos y motos
+    private void agregarPilotosYMotos() {
+        // Motos
+        Moto motoDucati = new Moto(1, "Ducati", "Desmosedici GP23");
+        Moto motoAprilia = new Moto(2, "Aprilia", "RS-GP");
+        Moto motoKTM = new Moto(3, "KTM", "RC16");
+        Moto motoHonda = new Moto(4, "Honda", "RC213V");
+        Moto motoYamaha = new Moto(5, "Yamaha", "YZR-M1");
 
-    
+        // Pilotos con sus respectivas escuderías
+        Piloto bagnaia = new Piloto("Francesco Bagnaia", "Italia", "Ducati Lenovo Team");
+        Piloto bastianini = new Piloto("Enea Bastianini", "Italia", "Ducati Lenovo Team");
+        Piloto aleixEspargaro = new Piloto("Aleix Espargaró", "España", "Aprilia Racing");
+        Piloto maverickVinales = new Piloto("Maverick Viñales", "España", "Aprilia Racing");
+        Piloto bradBinder = new Piloto("Brad Binder", "Sudáfrica", "Red Bull KTM Factory Racing");
+        Piloto jackMiller = new Piloto("Jack Miller", "Australia", "Red Bull KTM Factory Racing");
+        Piloto marcMarquez = new Piloto("Marc Márquez", "España", "Repsol Honda Team");
+        Piloto joanMir = new Piloto("Joan Mir", "España", "Repsol Honda Team");
+        Piloto fabioQuartararo = new Piloto("Fabio Quartararo", "Francia", "Monster Energy Yamaha MotoGP");
+        Piloto francoMorbidelli = new Piloto("Franco Morbidelli", "Italia", "Monster Energy Yamaha MotoGP");
+        Piloto jorgeMartin = new Piloto("Jorge Martín", "España", "Prima Pramac Racing");
+        Piloto johannZarco = new Piloto("Johann Zarco", "Francia", "Prima Pramac Racing");
+        Piloto alexMarquez = new Piloto("Alex Márquez", "España", "Gresini Racing MotoGP");
+        Piloto fabioDiGiannantonio = new Piloto("Fabio Di Giannantonio", "Italia", "Gresini Racing MotoGP");
+        Piloto takaakiNakagami = new Piloto("Takaaki Nakagami", "Japón", "LCR Honda");
+        Piloto alexRins = new Piloto("Álex Rins", "España", "LCR Honda");
+        Piloto lucaMarini = new Piloto("Luca Marini", "Italia", "Mooney VR46 Racing Team");
+        Piloto marcoBezzecchi = new Piloto("Marco Bezzecchi", "Italia", "Mooney VR46 Racing Team");
+        Piloto polEspargaro = new Piloto("Pol Espargaró", "España", "Tech3 GASGAS Factory Racing");
+        Piloto augustoFernandez = new Piloto("Augusto Fernández", "España", "Tech3 GASGAS Factory Racing");
+
+        // Agregar pilotos
+        mundial.agregarPiloto(bagnaia);
+        mundial.agregarPiloto(bastianini);
+        mundial.agregarPiloto(aleixEspargaro);
+        mundial.agregarPiloto(maverickVinales);
+        mundial.agregarPiloto(bradBinder);
+        mundial.agregarPiloto(jackMiller);
+        mundial.agregarPiloto(marcMarquez);
+        mundial.agregarPiloto(joanMir);
+        mundial.agregarPiloto(fabioQuartararo);
+        mundial.agregarPiloto(francoMorbidelli);
+        mundial.agregarPiloto(jorgeMartin);
+        mundial.agregarPiloto(johannZarco);
+        mundial.agregarPiloto(alexMarquez);
+        mundial.agregarPiloto(fabioDiGiannantonio);
+        mundial.agregarPiloto(takaakiNakagami);
+        mundial.agregarPiloto(alexRins);
+        mundial.agregarPiloto(lucaMarini);
+        mundial.agregarPiloto(marcoBezzecchi);
+        mundial.agregarPiloto(polEspargaro);
+        mundial.agregarPiloto(augustoFernandez);
+
+        // Agregar motos
+        mundial.agregarMoto(motoDucati);
+        mundial.agregarMoto(motoAprilia);
+        mundial.agregarMoto(motoKTM);
+        mundial.agregarMoto(motoHonda);
+        mundial.agregarMoto(motoYamaha);
+
+        // Asignar motos a los pilotos
+        mundial.asignarMotoAPiloto(bagnaia, motoDucati);
+        mundial.asignarMotoAPiloto(bastianini, motoDucati);
+        mundial.asignarMotoAPiloto(aleixEspargaro, motoAprilia);
+        mundial.asignarMotoAPiloto(maverickVinales, motoAprilia);
+        mundial.asignarMotoAPiloto(bradBinder, motoKTM);
+        mundial.asignarMotoAPiloto(jackMiller, motoKTM);
+        mundial.asignarMotoAPiloto(marcMarquez, motoHonda);
+        mundial.asignarMotoAPiloto(joanMir, motoHonda);
+        mundial.asignarMotoAPiloto(fabioQuartararo, motoYamaha);
+        mundial.asignarMotoAPiloto(francoMorbidelli, motoYamaha);
+        mundial.asignarMotoAPiloto(jorgeMartin, motoDucati);
+        mundial.asignarMotoAPiloto(johannZarco, motoDucati);
+        mundial.asignarMotoAPiloto(alexMarquez, motoDucati);
+        mundial.asignarMotoAPiloto(fabioDiGiannantonio, motoDucati);
+        mundial.asignarMotoAPiloto(takaakiNakagami, motoHonda);
+        mundial.asignarMotoAPiloto(alexRins, motoHonda);
+        mundial.asignarMotoAPiloto(lucaMarini, motoDucati);
+        mundial.asignarMotoAPiloto(marcoBezzecchi, motoDucati);
+        mundial.asignarMotoAPiloto(polEspargaro, motoKTM);
+        mundial.asignarMotoAPiloto(augustoFernandez, motoKTM);
+    }
 }

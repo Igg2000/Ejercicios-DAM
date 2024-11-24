@@ -38,8 +38,7 @@ public class PMenuV2 extends JPanel {
     
     //esto es para hacer doble buffer
     private Image imagenFondo;
-    private Image img;
-    private Graphics gg;
+
 
     /**
      * Crea un menú sin titulo con las opciones que le des 
@@ -165,13 +164,7 @@ public class PMenuV2 extends JPanel {
         botones=new NBoton[opciones.length];
 
         //doble buffer
-       
-        // Obtener el JFrame padre
-        Container topLevelAncestor = SwingUtilities.getWindowAncestor(this);
-        if (topLevelAncestor != null) {
-            img = topLevelAncestor.createImage(topLevelAncestor.getWidth(), topLevelAncestor.getHeight());
-        }       
-        gg=img.getGraphics();  
+           
         
         //Esto pone un layout a todo el panel para poner el panel de opciones al centro y el del titulo arriba
         setLayout(new BorderLayout());
@@ -389,11 +382,9 @@ public class PMenuV2 extends JPanel {
         super.paintComponent(g);
         
         if (imagenFondo != null) {
-            gg.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);  // Dibujamos la imagen redimensionada
+            g.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);  // Dibujamos la imagen redimensionada
         }
-        
-        //doble buffer
-        g.drawImage(img,0,0, this);
+
     }
 
 }

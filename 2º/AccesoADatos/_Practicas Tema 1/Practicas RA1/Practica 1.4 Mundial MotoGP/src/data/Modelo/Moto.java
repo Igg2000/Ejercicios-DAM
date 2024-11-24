@@ -62,6 +62,6 @@ public class Moto {
 
     @Override
     public String toString() {
-        return "Moto [Número=" + numero + ", Marca=" + marca + ", Modelo=" + modelo + "]";
+        return " Marca: " + marca + ", Modelo: " + modelo;
     }
 }

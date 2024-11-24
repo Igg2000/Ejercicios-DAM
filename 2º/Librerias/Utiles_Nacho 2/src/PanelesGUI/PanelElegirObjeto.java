@@ -223,6 +223,7 @@ public abstract class PanelElegirObjeto extends javax.swing.JPanel {
         
     }
 
+    
     private void funcionBotones() {
     
         botonConfirmar.addActionListener(new ActionListener() {

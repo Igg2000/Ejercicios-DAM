@@ -49,6 +49,7 @@ public class MetodosGUI {
 
         // Crear un panel para el botón con FlowLayout y añadir el botón
         JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelBoton.setOpaque(false);
         panelBoton.add(botonVolver);
 
         // Añadir el panel del botón a la parte inferior del panel HTML

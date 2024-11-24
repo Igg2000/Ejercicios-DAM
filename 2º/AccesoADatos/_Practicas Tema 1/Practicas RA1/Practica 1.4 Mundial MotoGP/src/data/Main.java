@@ -18,7 +18,7 @@ public class Main {
           
         // Crear el modelo y la vista
         Mundial modelo = new Mundial();
-        Ventana vista = new Ventana();
+        Ventana vista = new Ventana(modelo);
 
         // Crear el controlador y pasarle el modelo y la vista
         App controlador=new App(modelo, vista);

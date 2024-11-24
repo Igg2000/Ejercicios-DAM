@@ -37,18 +37,24 @@ class MenuPrincipal extends PMenuV2{
         //el boton altas te lleva al Menu de altas
         botones[0].addActionListener(e -> {
             
-            String opcionesSiguienteMenu[]={"Circuitos","Motos","Pilotos","Volver"};
-            MenuAltas menupp = new MenuAltas(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
-            v.ponPanel(menupp);
+            String opcionesSiguienteMenu[]={"Circuitos","Motos","Pilotos","Asignar motos a pilotos","Volver"};
+            PMenuV2 menu = new MenuAltas(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
+            v.ponPanel(menu);
             
         });
         
+        //el boton de Listados lleva al Menu de Listados
         botones[1].addActionListener(e -> {
-            
+            String opcionesSiguienteMenu[]={"Circuitos","Escuderias","Pilotos","Volver"};
+            PMenuV2 menu = new MenuListados(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
+            v.ponPanel(menu);
         });
         
+        //el boton de clasificacion lleva al Menu de Clasificacion
         botones[2].addActionListener(e -> {
-            
+            String opcionesSiguienteMenu[]={"Clasificacion por Pilotos","Clasificacion por Escudería","Volver"};
+            PMenuV2 menu = new MenuClasificacion(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
+            v.ponPanel(menu);
         });
         
         

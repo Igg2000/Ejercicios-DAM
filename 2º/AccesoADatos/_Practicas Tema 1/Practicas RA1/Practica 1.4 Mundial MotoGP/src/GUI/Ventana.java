@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import data.Modelo.Mundial;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.HeadlessException;
@@ -18,14 +19,15 @@ public class Ventana extends JFrame{
     
     public Color color2=new Color(156, 156, 156);
     public Color color1=new Color(49, 19, 20);
-    public Color colorFondo=Color.LIGHT_GRAY; 
+    public Color colorFondo=new Color(13,16,35); 
     public Font fuenteTitulo=new Font("Segoe UI",1,36);
     public Color colorLetraTitulo=Color.white;
     public Font fuenteBotones=new Font("Segoe UI",0,18); 
     public Color colorLetraBotones=Color.BLACK;
+    public Mundial mundial;
     
 
-    public Ventana() throws HeadlessException {
+    public Ventana(Mundial modelo) throws HeadlessException {
         this.setSize(1280, 720);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -34,6 +36,7 @@ public class Ventana extends JFrame{
         String opciones[]={"Altas","Listados","Clasificaciones","Salir"};
         MenuPrincipal menupp = new MenuPrincipal(this,opciones, "Mundial MotoGP", color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
         ponPanel(menupp);
+        this.mundial = modelo;
         
     }
 

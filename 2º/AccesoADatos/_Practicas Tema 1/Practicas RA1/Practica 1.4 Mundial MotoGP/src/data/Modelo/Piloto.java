@@ -15,11 +15,10 @@ public class Piloto {
     private int puntos;
 
     // Constructor
-    public Piloto(String nombre, String pais, String escuderia, int puntos) {
+    public Piloto(String nombre, String pais, String escuderia) {
         this.nombre = nombre;
         this.pais = pais;
         this.escuderia = escuderia;
-        this.puntos = puntos;
     }
 
     // Getters y Setters
@@ -57,6 +56,6 @@ public class Piloto {
 
     @Override
     public String toString() {
-        return "Piloto [Nombre=" + nombre + ", País=" + pais + ", Escudería=" + escuderia + ", Puntos=" + puntos + "]";
+        return nombre + " (" + pais + ") , Escudería: " + escuderia;
     }
 }

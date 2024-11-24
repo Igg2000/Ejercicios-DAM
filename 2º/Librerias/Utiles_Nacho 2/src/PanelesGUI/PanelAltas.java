@@ -14,6 +14,9 @@ public abstract class PanelAltas extends JPanel {
     private final JPanel inputPanel;
     private final JPanel inputPanelWrapper;
     private final JPanel buttonPanel;
+    private JButton btnVolver;
+    private JButton btnDarAlta;
+        
     private final HashMap<String, JTextField> fields;
     private Image imagenFondo;
 
@@ -49,7 +52,7 @@ public abstract class PanelAltas extends JPanel {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
 
-        JButton btnVolver = new JButton("Volver");
+        btnVolver = new JButton("Volver");
         btnVolver.setPreferredSize(new Dimension(120, 35)); // Tamaño uniforme
         btnVolver.addActionListener(new ActionListener() {
             @Override
@@ -58,7 +61,7 @@ public abstract class PanelAltas extends JPanel {
             }
         });
 
-        JButton btnDarAlta = new JButton("Dar de Alta");
+        btnDarAlta = new JButton("Dar de Alta");
         btnDarAlta.setPreferredSize(new Dimension(120, 35)); // Tamaño uniforme
         btnDarAlta.addActionListener(new ActionListener() {
             @Override
@@ -174,6 +177,7 @@ public abstract class PanelAltas extends JPanel {
     public void setFieldColor(Color color) {
         for (JTextField field : fields.values()) {
             field.setBackground(color);
+            field.setOpaque(true);
         }
     }
 
@@ -186,6 +190,62 @@ public abstract class PanelAltas extends JPanel {
             if (component instanceof JLabel) {
                 component.setForeground(color);
             }
+        }
+    }
+    
+    // Getters y setters para los botones
+
+    /**
+     * Obtiene el botón "Volver".
+     */
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+
+    /**
+     * Reemplaza el botón "Volver".
+     * @param nuevoBtn El nuevo botón para "Volver".
+     */
+    public void setBtnVolver(JButton nuevoBtn) {
+        if (nuevoBtn != null) {
+            buttonPanel.remove(btnVolver); // Quita el botón antiguo
+            btnVolver = nuevoBtn; // Asigna el nuevo botón
+            btnVolver.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onVolver(); // Mantiene la funcionalidad original
+                }
+            });
+            buttonPanel.add(btnVolver); // Añade el nuevo botón
+            buttonPanel.revalidate();
+            buttonPanel.repaint();
+        }
+    }
+
+    /**
+     * Obtiene el botón "Dar de Alta".
+     */
+    public JButton getBtnDarAlta() {
+        return btnDarAlta;
+    }
+
+    /**
+     * Reemplaza el botón "Dar de Alta".
+     * @param nuevoBtn El nuevo botón para "Dar de Alta".
+     */
+    public void setBtnDarAlta(JButton nuevoBtn) {
+        if (nuevoBtn != null) {
+            buttonPanel.remove(btnDarAlta); // Quita el botón antiguo
+            btnDarAlta = nuevoBtn; // Asigna el nuevo botón
+            btnDarAlta.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    onDarAlta(); // Mantiene la funcionalidad original
+                }
+            });
+            buttonPanel.add(btnDarAlta); // Añade el nuevo botón
+            buttonPanel.revalidate();
+            buttonPanel.repaint();
         }
     }
 
@@ -238,4 +298,6 @@ public abstract class PanelAltas extends JPanel {
         buttonPanel.setOpaque(false);
         inputPanelWrapper.setOpaque(false);
     }
+    
+    
 }

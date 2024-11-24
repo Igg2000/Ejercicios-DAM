@@ -62,6 +62,6 @@ public class Moto {
 
     @Override
     public String toString() {
-        return " Marca: " + marca + ", Modelo: " + modelo;
+        return "Nº "+numero + " Marca: " + marca + " Modelo: " + modelo;
     }
 }

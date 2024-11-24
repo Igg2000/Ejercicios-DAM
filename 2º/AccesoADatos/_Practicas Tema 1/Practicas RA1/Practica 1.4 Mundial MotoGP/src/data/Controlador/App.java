@@ -6,6 +6,9 @@ package data.Controlador;
 
 import GUI.Ventana;
 import data.Modelo.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -80,13 +83,6 @@ public class App implements Runnable{
 
     // Método para agregar los pilotos y motos
     private void agregarPilotosYMotos() {
-        // Motos
-        Moto motoDucati = new Moto(1, "Ducati", "Desmosedici GP23");
-        Moto motoAprilia = new Moto(2, "Aprilia", "RS-GP");
-        Moto motoKTM = new Moto(3, "KTM", "RC16");
-        Moto motoHonda = new Moto(4, "Honda", "RC213V");
-        Moto motoYamaha = new Moto(5, "Yamaha", "YZR-M1");
-
         // Pilotos con sus respectivas escuderías
         Piloto bagnaia = new Piloto("Francesco Bagnaia", "Italia", "Ducati Lenovo Team");
         Piloto bastianini = new Piloto("Enea Bastianini", "Italia", "Ducati Lenovo Team");
@@ -109,55 +105,91 @@ public class App implements Runnable{
         Piloto polEspargaro = new Piloto("Pol Espargaró", "España", "Tech3 GASGAS Factory Racing");
         Piloto augustoFernandez = new Piloto("Augusto Fernández", "España", "Tech3 GASGAS Factory Racing");
 
-        // Agregar pilotos
-        mundial.agregarPiloto(bagnaia);
-        mundial.agregarPiloto(bastianini);
-        mundial.agregarPiloto(aleixEspargaro);
-        mundial.agregarPiloto(maverickVinales);
-        mundial.agregarPiloto(bradBinder);
-        mundial.agregarPiloto(jackMiller);
-        mundial.agregarPiloto(marcMarquez);
-        mundial.agregarPiloto(joanMir);
-        mundial.agregarPiloto(fabioQuartararo);
-        mundial.agregarPiloto(francoMorbidelli);
-        mundial.agregarPiloto(jorgeMartin);
-        mundial.agregarPiloto(johannZarco);
-        mundial.agregarPiloto(alexMarquez);
-        mundial.agregarPiloto(fabioDiGiannantonio);
-        mundial.agregarPiloto(takaakiNakagami);
-        mundial.agregarPiloto(alexRins);
-        mundial.agregarPiloto(lucaMarini);
-        mundial.agregarPiloto(marcoBezzecchi);
-        mundial.agregarPiloto(polEspargaro);
-        mundial.agregarPiloto(augustoFernandez);
+        // Lista de pilotos
+        List<Piloto> listaPilotos = Arrays.asList(
+            bagnaia, bastianini, aleixEspargaro, maverickVinales, bradBinder, jackMiller,
+            marcMarquez, joanMir, fabioQuartararo, francoMorbidelli, jorgeMartin,
+            johannZarco, alexMarquez, fabioDiGiannantonio, takaakiNakagami, alexRins,
+            lucaMarini, marcoBezzecchi, polEspargaro, augustoFernandez
+        );
 
-        // Agregar motos
-        mundial.agregarMoto(motoDucati);
-        mundial.agregarMoto(motoAprilia);
-        mundial.agregarMoto(motoKTM);
-        mundial.agregarMoto(motoHonda);
-        mundial.agregarMoto(motoYamaha);
+        // Crear motos con números únicos y asignarlas a los pilotos
+        int numeroMoto = 1;
+        for (Piloto piloto : listaPilotos) {
+            String marca = determinarMarcaPorEscuderia(piloto.getEscuderia());
+            String modelo = generarModeloAleatorio(marca);
+            Moto moto = new Moto(numeroMoto++, marca, modelo);
 
-        // Asignar motos a los pilotos
-        mundial.asignarMotoAPiloto(bagnaia, motoDucati);
-        mundial.asignarMotoAPiloto(bastianini, motoDucati);
-        mundial.asignarMotoAPiloto(aleixEspargaro, motoAprilia);
-        mundial.asignarMotoAPiloto(maverickVinales, motoAprilia);
-        mundial.asignarMotoAPiloto(bradBinder, motoKTM);
-        mundial.asignarMotoAPiloto(jackMiller, motoKTM);
-        mundial.asignarMotoAPiloto(marcMarquez, motoHonda);
-        mundial.asignarMotoAPiloto(joanMir, motoHonda);
-        mundial.asignarMotoAPiloto(fabioQuartararo, motoYamaha);
-        mundial.asignarMotoAPiloto(francoMorbidelli, motoYamaha);
-        mundial.asignarMotoAPiloto(jorgeMartin, motoDucati);
-        mundial.asignarMotoAPiloto(johannZarco, motoDucati);
-        mundial.asignarMotoAPiloto(alexMarquez, motoDucati);
-        mundial.asignarMotoAPiloto(fabioDiGiannantonio, motoDucati);
-        mundial.asignarMotoAPiloto(takaakiNakagami, motoHonda);
-        mundial.asignarMotoAPiloto(alexRins, motoHonda);
-        mundial.asignarMotoAPiloto(lucaMarini, motoDucati);
-        mundial.asignarMotoAPiloto(marcoBezzecchi, motoDucati);
-        mundial.asignarMotoAPiloto(polEspargaro, motoKTM);
-        mundial.asignarMotoAPiloto(augustoFernandez, motoKTM);
+            mundial.agregarPiloto(piloto);
+            mundial.agregarMoto(moto);
+            mundial.asignarMotoAPiloto(piloto, moto);
+        }
     }
+
+    // Método para determinar la marca de moto según la escudería
+    private String determinarMarcaPorEscuderia(String escuderia) {
+        switch (escuderia) {
+            case "Ducati Lenovo Team":
+            case "Prima Pramac Racing":
+            case "Gresini Racing MotoGP":
+            case "Mooney VR46 Racing Team":
+                return "Ducati";
+            case "Aprilia Racing":
+                return "Aprilia";
+            case "Red Bull KTM Factory Racing":
+            case "Tech3 GASGAS Factory Racing":
+                return "KTM";
+            case "Repsol Honda Team":
+            case "LCR Honda":
+                return "Honda";
+            case "Monster Energy Yamaha MotoGP":
+                return "Yamaha";
+            default:
+                throw new IllegalArgumentException("Escudería desconocida: " + escuderia);
+        }
+    }
+    
+    // Método auxiliar para generar un modelo aleatorio basado en la marca
+    private String generarModeloAleatorio(String marca) {
+        List<String> modelos = new ArrayList<>();
+        switch (marca) {
+            case "Ducati":
+                modelos = Arrays.asList("Desmosedici GP22", "Desmosedici GP23", "Desmosedici GP21", "Desmosedici GP19");
+                break;
+            case "Aprilia":
+                modelos = Arrays.asList("RS-GP20", "RS-GP21", "RS-GP22", "RS-GP23", "RS-GP18");
+                break;
+            case "KTM":
+                modelos = Arrays.asList("RC16 2020", "RC16 2021", "RC16 2022", "RC16 2023", "RC16 Prototype");
+                break;
+            case "Honda":
+                modelos = Arrays.asList("RC213V 2020", "RC213V 2021", "RC213V 2022", "RC213V 2023", "RC213V-S");
+                break;
+            case "Yamaha":
+                modelos = Arrays.asList("YZR-M1 2020", "YZR-M1 2021", "YZR-M1 2022", "YZR-M1 2023", "YZR-M1 Prototype");
+                break;
+            case "Pramac Racing":
+                modelos = Arrays.asList("Desmosedici GP21 Pramac", "Desmosedici GP22 Pramac", "Desmosedici GP23 Pramac");
+                break;
+            case "Gresini Racing":
+                modelos = Arrays.asList("Desmosedici GP21 Gresini", "Desmosedici GP22 Gresini", "Desmosedici GP23 Gresini");
+                break;
+            case "LCR Honda":
+                modelos = Arrays.asList("RC213V LCR 2020", "RC213V LCR 2021", "RC213V LCR 2022", "RC213V LCR 2023");
+                break;
+            case "VR46 Racing":
+                modelos = Arrays.asList("Desmosedici GP21 VR46", "Desmosedici GP22 VR46", "Desmosedici GP23 VR46");
+                break;
+            case "Tech3 GASGAS":
+                modelos = Arrays.asList("RC16 GASGAS 2021", "RC16 GASGAS 2022", "RC16 GASGAS 2023");
+                break;
+            default:
+                throw new IllegalArgumentException("Marca desconocida: " + marca);
+        }
+
+        // Seleccionar aleatoriamente un modelo de la lista
+        int randomIndex = (int) (Math.random() * modelos.size());
+        return modelos.get(randomIndex);
+    }
+
 }

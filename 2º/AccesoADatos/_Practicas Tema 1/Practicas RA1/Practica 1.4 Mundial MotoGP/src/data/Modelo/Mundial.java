@@ -215,8 +215,8 @@ public class Mundial {
     }
 
     public String generarHTMLPilotosConMotos() {
-        // Crear una lista de pilotos a partir del mapa y ordenarla por nombre
-        List<Piloto> pilotosOrdenados = new ArrayList<>(pilotosYMotos.keySet());
+        // Crear una lista con todos los pilotos registrados y ordenarlos por nombre
+        List<Piloto> pilotosOrdenados = new ArrayList<>(pilotos); // Cambiado para usar la lista completa de pilotos
         pilotosOrdenados.sort(Comparator.comparing(Piloto::getNombre));
 
         // Construir el HTML
@@ -238,11 +238,12 @@ public class Mundial {
         htmlBuilder.append("</head>");
         htmlBuilder.append("<body>");
 
+        // Generar información de cada piloto
         for (Piloto piloto : pilotosOrdenados) {
-            Moto moto = pilotosYMotos.get(piloto); // Obtener la moto del piloto
+            Moto moto = pilotosYMotos.get(piloto); // Obtener la moto asociada al piloto (si existe)
             htmlBuilder.append("<div class='piloto'>");
             htmlBuilder.append("<strong>").append(piloto.getNombre()).append("</strong>");
-            htmlBuilder.append("<strong> (").append(piloto.getPais()).append(")</strong><br>");
+            htmlBuilder.append(" <strong>(").append(piloto.getPais()).append(")</strong><br>");
             htmlBuilder.append("<span class='moto'>Moto: ")
                 .append(moto != null ? moto.getMarca() + " " + moto.getModelo() : "Sin moto asignada")
                 .append("</span>");

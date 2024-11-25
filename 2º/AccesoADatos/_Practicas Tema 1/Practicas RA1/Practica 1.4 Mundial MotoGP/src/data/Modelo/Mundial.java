@@ -1,5 +1,6 @@
 package data.Modelo;
 
+import data.Controlador.GestorFicherosXML;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -11,6 +12,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Mundial {
+    
+    
     private Set<Circuito> circuitos;  // Uso Set porque no puede haber circuitos iguales
     private List<Piloto> pilotos;    // Uso List porque puede haber pilotos con el mismo nombre y del mismo pais
     private Set<Moto> motos;         // Uso Set porque no puede haber motos iguales, ya que tienen numero de moto
@@ -344,8 +347,6 @@ public class Mundial {
 
         return html.toString();
     }
-
-
 
 
 }

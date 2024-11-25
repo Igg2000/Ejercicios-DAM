@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import data.Controlador.App;
 import data.Modelo.Mundial;
 import java.awt.Color;
 import java.awt.Font;
@@ -27,16 +28,16 @@ public class Ventana extends JFrame{
     public Mundial mundial;
     
 
-    public Ventana(Mundial modelo) throws HeadlessException {
+    public Ventana(Mundial mundial) throws HeadlessException {
         this.setSize(1280, 720);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.mundial = mundial;
         
         
-        String opciones[]={"Altas","Listados","Clasificaciones","Salir"};
+        String opciones[]={"Altas","Listados","Clasificaciones","Importar XML","Exportar XML","Salir"};
         MenuPrincipal menupp = new MenuPrincipal(this,opciones, "Mundial MotoGP", color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
         ponPanel(menupp);
-        this.mundial = modelo;
         
     }
 

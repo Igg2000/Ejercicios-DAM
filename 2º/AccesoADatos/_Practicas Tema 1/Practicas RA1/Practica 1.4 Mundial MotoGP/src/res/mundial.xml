@@ -1,0 +1,387 @@
+<Mundial>
+  <circuitos>
+    <Circuito>
+      <nombre>Silverstone</nombre>
+      <pais>Reino Unido</pais>
+      <longitud>5.891</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Misano World Circuit Marco Simoncelli</nombre>
+      <pais>San Marino</pais>
+      <longitud>4.226</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Sepang International Circuit</nombre>
+      <pais>Malasia</pais>
+      <longitud>5.543</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Autodromo Internazionale del Mugello</nombre>
+      <pais>Italia</pais>
+      <longitud>5.245</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Phillip Island</nombre>
+      <pais>Australia</pais>
+      <longitud>4.448</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Circuit of the Americas</nombre>
+      <pais>EE.UU.</pais>
+      <longitud>5.513</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Red Bull Ring</nombre>
+      <pais>Austria</pais>
+      <longitud>4.318</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Losail International Circuit</nombre>
+      <pais>Catar</pais>
+      <longitud>5.38</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Sachsenring</nombre>
+      <pais>Alemania</pais>
+      <longitud>3.671</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Circuit Ricardo Tormo</nombre>
+      <pais>España</pais>
+      <longitud>4.005</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Termas de Río Hondo</nombre>
+      <pais>Argentina</pais>
+      <longitud>4.806</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Motegi</nombre>
+      <pais>Japón</pais>
+      <longitud>4.801</longitud>
+    </Circuito>
+    <Circuito>
+      <nombre>Autodromo Internacional do Algarve</nombre>
+      <pais>Portugal</pais>
+      <longitud>4.684</longitud>
+    </Circuito>
+  </circuitos>
+  <pilotos>
+    <Piloto>
+      <nombre>Francesco Bagnaia</nombre>
+      <pais>Italia</pais>
+      <escuderia>Ducati Lenovo Team</escuderia>
+      <puntos>138</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Enea Bastianini</nombre>
+      <pais>Italia</pais>
+      <escuderia>Ducati Lenovo Team</escuderia>
+      <puntos>44</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Aleix Espargaró</nombre>
+      <pais>España</pais>
+      <escuderia>Aprilia Racing</escuderia>
+      <puntos>95</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Maverick Viñales</nombre>
+      <pais>España</pais>
+      <escuderia>Aprilia Racing</escuderia>
+      <puntos>136</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Brad Binder</nombre>
+      <pais>Sudáfrica</pais>
+      <escuderia>Red Bull KTM Factory Racing</escuderia>
+      <puntos>103</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Jack Miller</nombre>
+      <pais>Australia</pais>
+      <escuderia>Red Bull KTM Factory Racing</escuderia>
+      <puntos>81</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Marc Márquez</nombre>
+      <pais>España</pais>
+      <escuderia>Repsol Honda Team</escuderia>
+      <puntos>107</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Joan Mir</nombre>
+      <pais>España</pais>
+      <escuderia>Repsol Honda Team</escuderia>
+      <puntos>84</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Fabio Quartararo</nombre>
+      <pais>Francia</pais>
+      <escuderia>Monster Energy Yamaha MotoGP</escuderia>
+      <puntos>133</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Franco Morbidelli</nombre>
+      <pais>Italia</pais>
+      <escuderia>Monster Energy Yamaha MotoGP</escuderia>
+      <puntos>115</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Jorge Martín</nombre>
+      <pais>España</pais>
+      <escuderia>Prima Pramac Racing</escuderia>
+      <puntos>42</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Johann Zarco</nombre>
+      <pais>Francia</pais>
+      <escuderia>Prima Pramac Racing</escuderia>
+      <puntos>70</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Alex Márquez</nombre>
+      <pais>España</pais>
+      <escuderia>Gresini Racing MotoGP</escuderia>
+      <puntos>57</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Fabio Di Giannantonio</nombre>
+      <pais>Italia</pais>
+      <escuderia>Gresini Racing MotoGP</escuderia>
+      <puntos>149</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Takaaki Nakagami</nombre>
+      <pais>Japón</pais>
+      <escuderia>LCR Honda</escuderia>
+      <puntos>64</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Álex Rins</nombre>
+      <pais>España</pais>
+      <escuderia>LCR Honda</escuderia>
+      <puntos>95</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Luca Marini</nombre>
+      <pais>Italia</pais>
+      <escuderia>Mooney VR46 Racing Team</escuderia>
+      <puntos>144</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Marco Bezzecchi</nombre>
+      <pais>Italia</pais>
+      <escuderia>Mooney VR46 Racing Team</escuderia>
+      <puntos>59</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Pol Espargaró</nombre>
+      <pais>España</pais>
+      <escuderia>Tech3 GASGAS Factory Racing</escuderia>
+      <puntos>71</puntos>
+    </Piloto>
+    <Piloto>
+      <nombre>Augusto Fernández</nombre>
+      <pais>España</pais>
+      <escuderia>Tech3 GASGAS Factory Racing</escuderia>
+      <puntos>147</puntos>
+    </Piloto>
+  </pilotos>
+  <motos>
+    <Moto>
+      <numero>1</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP22</modelo>
+    </Moto>
+    <Moto>
+      <numero>2</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP19</modelo>
+    </Moto>
+    <Moto>
+      <numero>3</numero>
+      <marca>Aprilia</marca>
+      <modelo>RS-GP21</modelo>
+    </Moto>
+    <Moto>
+      <numero>4</numero>
+      <marca>Aprilia</marca>
+      <modelo>RS-GP23</modelo>
+    </Moto>
+    <Moto>
+      <numero>5</numero>
+      <marca>KTM</marca>
+      <modelo>RC16 2021</modelo>
+    </Moto>
+    <Moto>
+      <numero>6</numero>
+      <marca>KTM</marca>
+      <modelo>RC16 2021</modelo>
+    </Moto>
+    <Moto>
+      <numero>7</numero>
+      <marca>Honda</marca>
+      <modelo>RC213V-S</modelo>
+    </Moto>
+    <Moto>
+      <numero>8</numero>
+      <marca>Honda</marca>
+      <modelo>RC213V 2020</modelo>
+    </Moto>
+    <Moto>
+      <numero>9</numero>
+      <marca>Yamaha</marca>
+      <modelo>YZR-M1 Prototype</modelo>
+    </Moto>
+    <Moto>
+      <numero>10</numero>
+      <marca>Yamaha</marca>
+      <modelo>YZR-M1 Prototype</modelo>
+    </Moto>
+    <Moto>
+      <numero>11</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP23</modelo>
+    </Moto>
+    <Moto>
+      <numero>12</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP21</modelo>
+    </Moto>
+    <Moto>
+      <numero>13</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP21</modelo>
+    </Moto>
+    <Moto>
+      <numero>14</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP21</modelo>
+    </Moto>
+    <Moto>
+      <numero>15</numero>
+      <marca>Honda</marca>
+      <modelo>RC213V 2022</modelo>
+    </Moto>
+    <Moto>
+      <numero>16</numero>
+      <marca>Honda</marca>
+      <modelo>RC213V-S</modelo>
+    </Moto>
+    <Moto>
+      <numero>17</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP21</modelo>
+    </Moto>
+    <Moto>
+      <numero>18</numero>
+      <marca>Ducati</marca>
+      <modelo>Desmosedici GP22</modelo>
+    </Moto>
+    <Moto>
+      <numero>19</numero>
+      <marca>KTM</marca>
+      <modelo>RC16 2022</modelo>
+    </Moto>
+    <Moto>
+      <numero>20</numero>
+      <marca>KTM</marca>
+      <modelo>RC16 Prototype</modelo>
+    </Moto>
+  </motos>
+  <pilotosYMotos>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[7]"/>
+      <Moto reference="../../../motos/Moto[7]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[17]"/>
+      <Moto reference="../../../motos/Moto[17]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[19]"/>
+      <Moto reference="../../../motos/Moto[19]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[14]"/>
+      <Moto reference="../../../motos/Moto[14]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[9]"/>
+      <Moto reference="../../../motos/Moto[9]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[4]"/>
+      <Moto reference="../../../motos/Moto[4]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[16]"/>
+      <Moto reference="../../../motos/Moto[16]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto"/>
+      <Moto reference="../../../motos/Moto"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[3]"/>
+      <Moto reference="../../../motos/Moto[3]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[18]"/>
+      <Moto reference="../../../motos/Moto[18]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[12]"/>
+      <Moto reference="../../../motos/Moto[12]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[13]"/>
+      <Moto reference="../../../motos/Moto[13]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[15]"/>
+      <Moto reference="../../../motos/Moto[15]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[6]"/>
+      <Moto reference="../../../motos/Moto[6]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[10]"/>
+      <Moto reference="../../../motos/Moto[10]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[5]"/>
+      <Moto reference="../../../motos/Moto[5]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[2]"/>
+      <Moto reference="../../../motos/Moto[2]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[11]"/>
+      <Moto reference="../../../motos/Moto[11]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[8]"/>
+      <Moto reference="../../../motos/Moto[8]"/>
+    </entry>
+    <entry>
+      <Piloto reference="../../../pilotos/Piloto[20]"/>
+      <Moto reference="../../../motos/Moto[20]"/>
+    </entry>
+  </pilotosYMotos>
+  <escuderias>
+    <string>Ducati Lenovo Team</string>
+    <string>Repsol Honda Team</string>
+    <string>Mooney VR46 Racing Team</string>
+    <string>Aprilia Racing</string>
+    <string>Red Bull KTM Factory Racing</string>
+    <string>Tech3 GASGAS Factory Racing</string>
+    <string>Prima Pramac Racing</string>
+    <string>Gresini Racing MotoGP</string>
+    <string>LCR Honda</string>
+    <string>Monster Energy Yamaha MotoGP</string>
+  </escuderias>
+</Mundial>

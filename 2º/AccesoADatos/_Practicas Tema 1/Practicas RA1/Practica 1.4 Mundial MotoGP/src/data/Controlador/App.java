@@ -16,10 +16,11 @@ import java.util.List;
  */
 public class App implements Runnable{
 
-    Mundial mundial;
-    Ventana vista;
+    private Mundial mundial;
+    private Ventana vista;
     
-    Boolean modoDebug=true;
+    private Boolean modoDebug=false;
+    
     
     public App(Mundial modelo, Ventana vista) {
         this.mundial=modelo;
@@ -32,8 +33,6 @@ public class App implements Runnable{
         
         if(modoDebug)
             cargarDatosDePrueba();
-        else
-            agregarCircuitos();
         
         mundial.generarPuntos();
     }
@@ -192,4 +191,22 @@ public class App implements Runnable{
         return modelos.get(randomIndex);
     }
 
+    public Mundial getMundial() {
+        return mundial;
+    }
+
+    public void setMundial(Mundial mundial) {
+        this.mundial = mundial;
+    }
+
+    public Ventana getVista() {
+        return vista;
+    }
+
+    public void setVista(Ventana vista) {
+        this.vista = vista;
+    }
+
+    
+    
 }

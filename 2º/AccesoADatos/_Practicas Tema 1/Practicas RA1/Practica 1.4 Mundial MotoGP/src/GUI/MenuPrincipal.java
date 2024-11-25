@@ -5,6 +5,9 @@
 package GUI;
 
 import PanelesGUI.PMenuV2;
+import data.Controlador.App;
+import data.Controlador.GestorFicherosXML;
+import data.Modelo.Mundial;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -57,6 +60,17 @@ class MenuPrincipal extends PMenuV2{
             v.ponPanel(menu);
         });
         
+        //el boton de importar XML
+        botones[3].addActionListener(e -> {
+            GestorFicherosXML g = new GestorFicherosXML(v.mundial);
+           v.mundial = g.importarXML();
+        });
+        
+        //el boton de exportar XML
+        botones[4].addActionListener(e -> {
+            GestorFicherosXML g = new GestorFicherosXML(v.mundial);
+            g.exportarXML();
+        });
         
         
         elUltimoBotonCierraLaVentana(opciones);

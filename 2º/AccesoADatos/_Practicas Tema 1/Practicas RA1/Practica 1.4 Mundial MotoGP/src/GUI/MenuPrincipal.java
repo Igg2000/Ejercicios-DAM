@@ -4,7 +4,10 @@
  */
 package GUI;
 
+import Metodos.MetodosGUI;
+import PanelesGUI.NBoton;
 import PanelesGUI.PMenuV2;
+import PanelesGUI.PanelPaginaDeTextoHTML;
 import data.Controlador.App;
 import data.Controlador.GestorFicherosXML;
 import data.Modelo.Mundial;
@@ -70,6 +73,26 @@ class MenuPrincipal extends PMenuV2{
         botones[4].addActionListener(e -> {
             GestorFicherosXML g = new GestorFicherosXML(v.mundial);
             g.exportarXML();
+        });
+
+        //el boton de hacer consultas XPATH
+        botones[5].addActionListener(e -> {
+            GestorFicherosXML g = new GestorFicherosXML(v.mundial);
+            String consultas = g.recibirConsultasXPath();
+            
+            PanelesGUI.PanelPaginaDeTextoHTML p = new PanelPaginaDeTextoHTML
+                ("Consultas XPath de ridersMotoGP.xml", consultas, v.fuenteTitulo);
+           //añadir boton volver
+           NBoton bVolver = new NBoton("Volver", v.color1, v.color2);
+           bVolver.setFont(v.fuenteBotones);
+           bVolver.setForeground(v.colorLetraBotones);
+            MetodosGUI.agregarBotonDeVolverAUnPanel(v, p, this, bVolver);
+            //decorar panel
+            p.setBackground(v.colorFondo);
+            p.getjPanel1().setBackground(v.color1);
+            p.getjPanel2().setBackground(v.colorFondo);
+           v.ponPanel(p);
+           
         });
         
         

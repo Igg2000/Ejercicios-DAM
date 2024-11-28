@@ -35,7 +35,7 @@ public class Ventana extends JFrame{
         this.mundial = mundial;
         
         
-        String opciones[]={"Altas","Listados","Clasificaciones","Importar XML","Exportar XML","Salir"};
+        String opciones[]={"Altas","Listados","Clasificaciones","Importar XML","Exportar XML","Consultas XPath","Salir"};
         MenuPrincipal menupp = new MenuPrincipal(this,opciones, "Mundial MotoGP", color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
         ponPanel(menupp);
         

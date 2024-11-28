@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <header>
+    <data0><![CDATA[#]]></data0>
+    <data1><![CDATA[Rider]]></data1>
+    <data2><![CDATA[Team]]></data2>
+    <data3><![CDATA[Car Manufacturer]]></data3>
+    <data4><![CDATA[Véhicule]]></data4>
+    <data5><![CDATA[Tire Manufacturer]]></data5>
+    <data6><![CDATA[GRAN PREMIO RED BULL DE ESPAÑA]]></data6>
+    <data7><![CDATA[Gran Premio Red Bull de Andalucía]]></data7>
+    <data8><![CDATA[Grand Prix de République Tchèque]]></data8>
+    <data9><![CDATA[Grand Prix d'Autriche]]></data9>
+    <data10><![CDATA[Grand Prix von Styria]]></data10>
+    <data11><![CDATA[Grand Prix de Saint-Marin]]></data11>
+    <data12><![CDATA[Gran Premio dell'Emilia Romagna e della Rivie]]></data12>
+    <data13><![CDATA[Gran Premi Monster Energy de Catalunya]]></data13>
+    <data14><![CDATA[Grand Prix de France]]></data14>
+    <data15><![CDATA[Gran Premio Michelin® de Aragon]]></data15>
+    <data16><![CDATA[Gran Premio de Teruel]]></data16>
+    <data17><![CDATA[Gran Premio de Europa]]></data17>
+    <data18><![CDATA[Grand Prix de la Communauté valencienne]]></data18>
+    <data19><![CDATA[Total Points]]></data19>
+  </header>
+  <rows>
+    <row>
+      <data0><![CDATA[1]]></data0>
+      <data1><![CDATA[DOVIZIOSO A. (ITA) ]]></data1>
+      <data2><![CDATA[Ducati Team]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[16]]></data6>
+      <data7><![CDATA[10]]></data7>
+      <data8><![CDATA[5]]></data8>
+      <data9><![CDATA[25]]></data9>
+      <data10><![CDATA[11]]></data10>
+      <data11><![CDATA[9]]></data11>
+      <data12><![CDATA[8]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[84]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[2]]></data0>
+      <data1><![CDATA[VIÑALES M. (ESP) ]]></data1>
+      <data2><![CDATA[Monster Energy Yamaha]]></data2>
+      <data3><![CDATA[Yamaha]]></data3>
+      <data4><![CDATA[Yamaha]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[20]]></data6>
+      <data7><![CDATA[20]]></data7>
+      <data8><![CDATA[2]]></data8>
+      <data9><![CDATA[6]]></data9>
+      <data10><![CDATA[]]></data10>
+      <data11><![CDATA[10]]></data11>
+      <data12><![CDATA[25]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[83]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[2]]></data0>
+      <data1><![CDATA[QUARTARARO F. (FRA) ]]></data1>
+      <data2><![CDATA[Petronas Yamaha SRT]]></data2>
+      <data3><![CDATA[Yamaha]]></data3>
+      <data4><![CDATA[Yamaha]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[25]]></data6>
+      <data7><![CDATA[25]]></data7>
+      <data8><![CDATA[9]]></data8>
+      <data9><![CDATA[8]]></data9>
+      <data10><![CDATA[3]]></data10>
+      <data11><![CDATA[]]></data11>
+      <data12><![CDATA[13]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[83]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[4]]></data0>
+      <data1><![CDATA[MIR J. (eSP) ]]></data1>
+      <data2><![CDATA[Team SUZUKI ECSTAR]]></data2>
+      <data3><![CDATA[Suzuki]]></data3>
+      <data4><![CDATA[Suzuki]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[11]]></data7>
+      <data8><![CDATA[]]></data8>
+      <data9><![CDATA[20]]></data9>
+      <data10><![CDATA[13]]></data10>
+      <data11><![CDATA[16]]></data11>
+      <data12><![CDATA[20]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[80]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[5]]></data0>
+      <data1><![CDATA[MORBIDELLI F. (ITA) ]]></data1>
+      <data2><![CDATA[Petronas Yamaha SRT]]></data2>
+      <data3><![CDATA[Yamaha]]></data3>
+      <data4><![CDATA[Yamaha]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[11]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[20]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[1]]></data10>
+      <data11><![CDATA[25]]></data11>
+      <data12><![CDATA[7]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[64]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[5]]></data0>
+      <data1><![CDATA[MILLER J. (AUS) ]]></data1>
+      <data2><![CDATA[Pramac Racing]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[13]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[7]]></data8>
+      <data9><![CDATA[16]]></data9>
+      <data10><![CDATA[20]]></data10>
+      <data11><![CDATA[8]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[64]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[7]]></data0>
+      <data1><![CDATA[NAKAGAMI T. (JPN) ]]></data1>
+      <data2><![CDATA[LCR Honda IDEMITSU]]></data2>
+      <data3><![CDATA[Honda]]></data3>
+      <data4><![CDATA[Honda]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[6]]></data6>
+      <data7><![CDATA[13]]></data7>
+      <data8><![CDATA[8]]></data8>
+      <data9><![CDATA[10]]></data9>
+      <data10><![CDATA[9]]></data10>
+      <data11><![CDATA[7]]></data11>
+      <data12><![CDATA[10]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[63]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[8]]></data0>
+      <data1><![CDATA[OLIVEIRA M. (PRT) ]]></data1>
+      <data2><![CDATA[Red Bull KTM Tech 3]]></data2>
+      <data3><![CDATA[KTM]]></data3>
+      <data4><![CDATA[KTM]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[8]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[10]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[25]]></data10>
+      <data11><![CDATA[5]]></data11>
+      <data12><![CDATA[11]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[59]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[9]]></data0>
+      <data1><![CDATA[Rossi V. (ITA) ]]></data1>
+      <data2><![CDATA[Monster Energy Yamaha MotoGP]]></data2>
+      <data3><![CDATA[Yamaha]]></data3>
+      <data4><![CDATA[Yamaha]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[16]]></data7>
+      <data8><![CDATA[11]]></data8>
+      <data9><![CDATA[11]]></data9>
+      <data10><![CDATA[7]]></data10>
+      <data11><![CDATA[13]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[58]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[10]]></data0>
+      <data1><![CDATA[ESPARGARO P. (ESP) ]]></data1>
+      <data2><![CDATA[Red Bull KTM Factory Racing]]></data2>
+      <data3><![CDATA[KTM]]></data3>
+      <data4><![CDATA[KTM]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[10]]></data6>
+      <data7><![CDATA[9]]></data7>
+      <data8><![CDATA[]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[16]]></data10>
+      <data11><![CDATA[6]]></data11>
+      <data12><![CDATA[16]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[57]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[11]]></data0>
+      <data1><![CDATA[Binder B. (ZAF) ]]></data1>
+      <data2><![CDATA[Red Bull KTM Factory Racing]]></data2>
+      <data3><![CDATA[KTM]]></data3>
+      <data4><![CDATA[KTM]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[3]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[25]]></data8>
+      <data9><![CDATA[13]]></data9>
+      <data10><![CDATA[8]]></data10>
+      <data11><![CDATA[4]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[53]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[12]]></data0>
+      <data1><![CDATA[RINS A. (ESP) ]]></data1>
+      <data2><![CDATA[Team SUZUKI ECSTAR]]></data2>
+      <data3><![CDATA[Suzuki]]></data3>
+      <data4><![CDATA[Suzuki]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[6]]></data7>
+      <data8><![CDATA[13]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[10]]></data10>
+      <data11><![CDATA[11]]></data11>
+      <data12><![CDATA[4]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[44]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[13]]></data0>
+      <data1><![CDATA[ZARCO J. (FRA) ]]></data1>
+      <data2><![CDATA[Hublot Reale Avintia Racing]]></data2>
+      <data3><![CDATA[KTM]]></data3>
+      <data4><![CDATA[KTM]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[5]]></data6>
+      <data7><![CDATA[7]]></data7>
+      <data8><![CDATA[16]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[2]]></data10>
+      <data11><![CDATA[1]]></data11>
+      <data12><![CDATA[5]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[36]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[14]]></data0>
+      <data1><![CDATA[PETRUCCI D. (ITA) ]]></data1>
+      <data2><![CDATA[Ducati Team]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[7]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[4]]></data8>
+      <data9><![CDATA[9]]></data9>
+      <data10><![CDATA[5]]></data10>
+      <data11><![CDATA[0]]></data11>
+      <data12><![CDATA[6]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[31]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[15]]></data0>
+      <data1><![CDATA[BAGNAIA F. (ITA) ]]></data1>
+      <data2><![CDATA[Pramac Racing]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[9]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[]]></data8>
+      <data9><![CDATA[]]></data9>
+      <data10><![CDATA[]]></data10>
+      <data11><![CDATA[20]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[29]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[16]]></data0>
+      <data1><![CDATA[MARQUEZ A. (ESP) ]]></data1>
+      <data2><![CDATA[REPSOL HONDA TEAM]]></data2>
+      <data3><![CDATA[Honda]]></data3>
+      <data4><![CDATA[Honda]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[4]]></data6>
+      <data7><![CDATA[8]]></data7>
+      <data8><![CDATA[1]]></data8>
+      <data9><![CDATA[2]]></data9>
+      <data10><![CDATA[0]]></data10>
+      <data11><![CDATA[0]]></data11>
+      <data12><![CDATA[9]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[24]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[17]]></data0>
+      <data1><![CDATA[ESPARGARO A. (ESP) ]]></data1>
+      <data2><![CDATA[Aprilia Racing Team Gresini]]></data2>
+      <data3><![CDATA[Aprilia]]></data3>
+      <data4><![CDATA[Aprilia]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[6]]></data8>
+      <data9><![CDATA[5]]></data9>
+      <data10><![CDATA[4]]></data10>
+      <data11><![CDATA[3]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[18]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[18]]></data0>
+      <data1><![CDATA[Lecuona I. (ESP) ]]></data1>
+      <data2><![CDATA[Red Bull KTM Tech 3]]></data2>
+      <data3><![CDATA[KTM]]></data3>
+      <data4><![CDATA[KTM]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[]]></data8>
+      <data9><![CDATA[7]]></data9>
+      <data10><![CDATA[6]]></data10>
+      <data11><![CDATA[2]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[15]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[19]]></data0>
+      <data1><![CDATA[SMITH B. (GBR) ]]></data1>
+      <data2><![CDATA[Aprilia Racing Team Gresini]]></data2>
+      <data3><![CDATA[Aprilia]]></data3>
+      <data4><![CDATA[Aprilia]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[1]]></data6>
+      <data7><![CDATA[4]]></data7>
+      <data8><![CDATA[0]]></data8>
+      <data9><![CDATA[3]]></data9>
+      <data10><![CDATA[0]]></data10>
+      <data11><![CDATA[0]]></data11>
+      <data12><![CDATA[3]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[11]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[20]]></data0>
+      <data1><![CDATA[RABAT T. (ESP) ]]></data1>
+      <data2><![CDATA[Hublot Reale Avintia Racing]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[2]]></data6>
+      <data7><![CDATA[5]]></data7>
+      <data8><![CDATA[0]]></data8>
+      <data9><![CDATA[0]]></data9>
+      <data10><![CDATA[0]]></data10>
+      <data11><![CDATA[]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[7]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[20]]></data0>
+      <data1><![CDATA[CRUTCHLOW C. (GBR) ]]></data1>
+      <data2><![CDATA[LCR Honda Castrol]]></data2>
+      <data3><![CDATA[Honda]]></data3>
+      <data4><![CDATA[Honda]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[3]]></data7>
+      <data8><![CDATA[3]]></data8>
+      <data9><![CDATA[1]]></data9>
+      <data10><![CDATA[0]]></data10>
+      <data11><![CDATA[]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[7]]></data19>
+    </row>
+    <row>
+      <data0><![CDATA[22]]></data0>
+      <data1><![CDATA[PIRRO M. (ITA) ]]></data1>
+      <data2><![CDATA[Pramac Racing]]></data2>
+      <data3><![CDATA[Ducati]]></data3>
+      <data4><![CDATA[Ducati]]></data4>
+      <data5><![CDATA[MICHELIN]]></data5>
+      <data6><![CDATA[]]></data6>
+      <data7><![CDATA[]]></data7>
+      <data8><![CDATA[]]></data8>
+      <data9><![CDATA[4]]></data9>
+      <data10><![CDATA[0]]></data10>
+      <data11><![CDATA[]]></data11>
+      <data12><![CDATA[]]></data12>
+      <data13><![CDATA[]]></data13>
+      <data14><![CDATA[]]></data14>
+      <data15><![CDATA[]]></data15>
+      <data16><![CDATA[]]></data16>
+      <data17><![CDATA[]]></data17>
+      <data18><![CDATA[]]></data18>
+      <data19><![CDATA[4]]></data19>
+    </row>
+  </rows>
+</root>

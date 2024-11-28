@@ -9,6 +9,8 @@ package PanelesGUI;
 
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 /**
@@ -111,6 +113,19 @@ public class PanelPaginaDeTexto extends javax.swing.JPanel {
     public JLabel getTitulo() {
         return titulo;
     }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+    
     
     
     

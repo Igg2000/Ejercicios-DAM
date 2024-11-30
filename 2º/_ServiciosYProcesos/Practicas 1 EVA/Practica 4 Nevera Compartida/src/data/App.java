@@ -19,6 +19,7 @@ public final class App {
     private Nevera nevera;
     private List<Persona> personas;
     private int numeroPersonas=5;
+    private VerificadorBloqueo verificadorBloqueo;
 
     public App() {
         
@@ -57,7 +58,8 @@ public final class App {
         iniciarAnimacion(60000);
 
         // Crear y arrancar el hilo encargado de verificar el bloqueo
-        new VerificadorBloqueo(nevera).start();
+        verificadorBloqueo = new VerificadorBloqueo(nevera);
+        verificadorBloqueo.start();
         
     }
 
@@ -77,19 +79,21 @@ public final class App {
             persona.detener(); // Detener cada persona
         }
         timer.cancel(); // Cancelar el Timer
+        verificadorBloqueo.finalizar();
     }
 
     public class VerificadorBloqueo extends Thread {
         private final Nevera nevera;
+        private boolean fin;
 
         private VerificadorBloqueo(Nevera nevera) {
-            super("Verificador de Bloqueo");
+            super("Jesús");
             this.nevera = nevera;
         }
 
         @Override
         public void run() {
-            while (true) {
+            while (!fin) {
                 try {
                     Thread.sleep(500); // Espera de medio segundo
                     nevera.verificarBloqueo(); // Verificar si todos los hilos están esperando
@@ -98,5 +102,10 @@ public final class App {
                 }
             }
         }
+        
+        public void finalizar(){
+            fin = true;
+        }
+        
     }
 }

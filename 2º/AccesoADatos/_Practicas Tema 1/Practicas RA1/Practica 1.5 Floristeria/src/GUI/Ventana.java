@@ -36,7 +36,7 @@ public class Ventana extends JFrame{
         this.floristeria = floristeria;
         
         
-        String opciones[]={"Agregar Productos","Listados","Vender Productos","Consultar Ganancias","Salir"};
+        String opciones[]={"Agregar Productos","Listados","Vender Productos","Consultar Ganancias","Cargar datos","Guardar datos","Salir"};
         MenuPrincipal menupp = new MenuPrincipal(this,opciones, "Floristeria Nacho", color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
         ponPanel(menupp);
         
@@ -54,6 +54,11 @@ public class Ventana extends JFrame{
     public Floristeria getFloristeria() {
         return floristeria;
     }
+
+    public void setFloristeria(Floristeria floristeria) {
+        this.floristeria = floristeria;
+    }
+    
     
     
     

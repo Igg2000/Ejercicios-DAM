@@ -1,0 +1,47 @@
+{
+  "inventario": [
+    {
+      "color": "Rojo",
+      "nombre": "Rosa",
+      "cantidad": 10,
+      "precio": 1.5,
+      "tipo": "Flor"
+    },
+    {
+      "color": "Blanco",
+      "nombre": "Margarita",
+      "cantidad": 15,
+      "precio": 0.75,
+      "tipo": "Flor"
+    },
+    {
+      "color": "Amarillo",
+      "nombre": "Tulipán",
+      "cantidad": 8,
+      "precio": 2.0,
+      "tipo": "Flor"
+    },
+    {
+      "tamaño": "Grande",
+      "nombre": "Helecho",
+      "cantidad": 5,
+      "precio": 10.0,
+      "tipo": "Planta"
+    },
+    {
+      "tamaño": "Pequeño",
+      "nombre": "Cactus",
+      "cantidad": 12,
+      "precio": 8.5,
+      "tipo": "Planta"
+    },
+    {
+      "tamaño": "Mediano",
+      "nombre": "Bonsái",
+      "cantidad": 3,
+      "precio": 20.0,
+      "tipo": "Planta"
+    }
+  ],
+  "ventas": []
+}

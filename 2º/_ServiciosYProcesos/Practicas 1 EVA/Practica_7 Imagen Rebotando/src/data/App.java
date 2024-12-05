@@ -5,7 +5,6 @@
 package data;
 
 import GUI.PanelAnimacion;
-import GUI.PanelPrincipal;
 import Ventana.Vppal;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,27 +16,26 @@ import java.util.List;
 public class App implements Runnable{
 
     Vppal v;
-    List<Particula> particulas;
+    ImagenRebote imagenRebote;
+    ImagenObstaculo imagenObstaculo;
 
-    
     
     @Override
     public void run() {
         v = new Vppal();
 
+        generarImagenRebote();
+        generarImagenObstaculo();
         
-        particulas = new ArrayList<>();
-        generarParticulas();
-        
-        PanelPrincipal p = new PanelPrincipal(this);
         PanelAnimacion pan = new PanelAnimacion(this);
         v.ponPanel(pan);
+
         
         pan.iniciarAnimacion();
         
     }
 
-    private void generarParticulas() {
+    private void generarImagenRebote() {
         int tam = 100;
         int anchoVentana = v.getWidth();
         int altoVentana = v.getHeight();
@@ -46,15 +44,10 @@ public class App implements Runnable{
         
        
         // Crear la imagen que va a rebotar dentro de los límites de la pantalla
-        int x1 = xVentana + (int) (Math.random() * (anchoVentana - tam));
-        int y1 = yVentana + (int) (Math.random() * (altoVentana - tam));
-        particulas.add(new Particula(x1, y1, tam, tam));
-        
-        
-        //Crea la particula estatica en el medio de la pantalla
-        int x2 = xVentana + (int) (anchoVentana /2 - tam);
-        int y2 = yVentana + (int) (altoVentana /2 - tam);
-        particulas.add(new Particula(x2, y2, tam, tam));
+        int x = xVentana + (int) (Math.random() * (anchoVentana - tam));
+        int y = yVentana + (int) (Math.random() * (altoVentana - tam));
+        imagenRebote = new ImagenRebote(x, y, tam, tam);
+ 
     }
     
     //abajo solo hay getters
@@ -62,11 +55,28 @@ public class App implements Runnable{
         return v;
     }
 
-    public List<Particula> getParticulas() {
-        return particulas;
+    public ImagenRebote getImagenRebote() {
+        return imagenRebote;
+    }
+
+    private void generarImagenObstaculo() {
+        int tam = 100;
+        int anchoVentana = v.getWidth();
+        int altoVentana = v.getHeight();
+        int xVentana = v.getX();
+        int yVentana = v.getY();
+        
+       
+        // Crear la imagen
+        int x = xVentana + (int) ((anchoVentana/2 - tam/2));
+        int y = yVentana + (int) ((altoVentana/2 - tam/2));
+        imagenObstaculo = new ImagenObstaculo(x, y, tam, tam);
+    }
+
+    public ImagenObstaculo getImagenObstaculo() {
+        return imagenObstaculo;
     }
 
     
-    
-    
+
 }

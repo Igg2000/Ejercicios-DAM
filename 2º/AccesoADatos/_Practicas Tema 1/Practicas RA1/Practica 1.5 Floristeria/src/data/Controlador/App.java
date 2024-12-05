@@ -7,7 +7,7 @@ import data.Modelo.Floristeria;
 public class App implements Runnable {
     private Floristeria floristeria;
     private Ventana vista;
-    private boolean modoDebug = !false;
+    private boolean modoDebug = false;
 
     public App(Floristeria floristeria, Ventana vista) {
         this.floristeria = floristeria;

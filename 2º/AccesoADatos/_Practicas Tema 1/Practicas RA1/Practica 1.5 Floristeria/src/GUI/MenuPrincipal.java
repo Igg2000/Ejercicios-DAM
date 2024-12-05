@@ -9,6 +9,7 @@ import Metodos.MetodosGUI;
 import PanelesGUI.NBoton;
 import PanelesGUI.PMenuV2;
 import PanelesGUI.PanelPaginaDeTextoHTML;
+import data.Controlador.GestorFicherosJSON;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -79,6 +80,17 @@ class MenuPrincipal extends PMenuV2{
            v.ponPanel(p);
         });
         
+        //desserializar json
+        botones[4].addActionListener(e -> {
+            GestorFicherosJSON gfj = new GestorFicherosJSON();
+            v.setFloristeria(gfj.deserializarFloristeria()); 
+        });
+
+        //serializar json
+        botones[5].addActionListener(e -> {
+            GestorFicherosJSON gfj = new GestorFicherosJSON();
+            gfj.serializarFloristeria(v.getFloristeria());
+        });
         
         elUltimoBotonCierraLaVentana(opciones);
     }

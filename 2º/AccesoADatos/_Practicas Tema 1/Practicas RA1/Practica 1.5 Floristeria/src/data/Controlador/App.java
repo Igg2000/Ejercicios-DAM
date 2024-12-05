@@ -21,31 +21,30 @@ public class App implements Runnable {
         if (modoDebug) {
             cargarDatosDePrueba();
         }
-        
     }
 
-   private void cargarDatosDePrueba() {
-        // Agregar flores al inventario
-        floristeria.agregarFlor("Rosa", "Rojo", 10);
-        floristeria.agregarFlor("Margarita", "Blanco", 15);
-        floristeria.agregarFlor("Tulipán", "Amarillo", 8);
+    private void cargarDatosDePrueba() {
+        // Agregar flores al inventario con precio
+        floristeria.agregarFlor("Rosa", "Rojo", 10, 1.50);
+        floristeria.agregarFlor("Margarita", "Blanco", 15, 0.75);
+        floristeria.agregarFlor("Tulipán", "Amarillo", 8, 2.00);
 
-        // Agregar plantas al inventario
-        floristeria.agregarPlanta("Helecho", "Grande", 5);
-        floristeria.agregarPlanta("Cactus", "Pequeño", 12);
-        floristeria.agregarPlanta("Bonsái", "Mediano", 3);
+        // Agregar plantas al inventario con precio
+        floristeria.agregarPlanta("Helecho", "Grande", 5, 10.00);
+        floristeria.agregarPlanta("Cactus", "Pequeño", 12, 8.50);
+        floristeria.agregarPlanta("Bonsái", "Mediano", 3, 20.00);
 
         // Mostrar confirmación en consola
         System.out.println("Datos de prueba cargados:");
         floristeria.getInventario().forEach(producto -> 
-            System.out.printf("Producto: %s, Tipo: %s, Cantidad: %d%n",
+            System.out.printf("Producto: %s, Tipo: %s, Cantidad: %d, Precio: %.2f%n",
                 producto.getNombre(),
                 producto instanceof Flor ? "Flor" : "Planta",
-                producto.getCantidad()
+                producto.getCantidad(),
+                producto.getPrecio()
             )
         );
     }
-
 
     public Floristeria getFloristeria() {
         return floristeria;

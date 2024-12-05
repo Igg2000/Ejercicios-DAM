@@ -5,9 +5,14 @@
 package GUI;
 
 
+import Metodos.MetodosGUI;
+import PanelesGUI.NBoton;
 import PanelesGUI.PMenuV2;
+import PanelesGUI.PanelPaginaDeTextoHTML;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 
 /**
@@ -50,13 +55,29 @@ class MenuPrincipal extends PMenuV2{
             v.ponPanel(menu);
         });
         
-        //el boton de clasificacion lleva al Menu de Clasificacion
+        //el boton de ventas lleva al PanelVender
         botones[2].addActionListener(e -> {
-            //String opcionesSiguienteMenu[]={"Clasificacion por Pilotos","Clasificacion por Escudería","Volver"};
-            //PMenuV2 menu = new MenuClasificacion(v,this,opcionesSiguienteMenu, "Mundial MotoGP", v.color1, v.color2, v.colorFondo, v.fuenteTitulo, v.colorLetraTitulo, v.fuenteBotones, v.colorLetraBotones);
-            //v.ponPanel(menu);
+            //hago esto porque que es una lista de productos abstractos, no es una List<Object>
+            List<Object> listaObjetos = new ArrayList<>(v.floristeria.getInventario());
+            PanelesGUI.PanelElegirObjeto p= new PanelVender(v,this,listaObjetos,"Elige el producto a vender");
+            v.ponPanel(p);
         });
        
+        //el boton de ver ganancias muestra las ganancias
+        botones[3].addActionListener(e -> {
+            PanelesGUI.PanelPaginaDeTextoHTML p = new PanelPaginaDeTextoHTML
+                ("Ganancias de la floristeria", v.floristeria.generarHtmlVentas(), v.fuenteTitulo);
+           //añadir boton volver
+           NBoton bVolver = new NBoton("Volver", v.color1, v.color2);
+           bVolver.setFont(v.fuenteBotones);
+           bVolver.setForeground(v.colorLetraBotones);
+            MetodosGUI.agregarBotonDeVolverAUnPanel(v, p, this, bVolver);
+            //decorar panel
+            p.setBackground(v.colorFondo);
+            p.getjPanel1().setBackground(v.color1);
+            p.getjPanel2().setBackground(v.colorFondo);
+           v.ponPanel(p);
+        });
         
         
         elUltimoBotonCierraLaVentana(opciones);

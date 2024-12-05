@@ -40,13 +40,13 @@ class MenuAltas extends PMenuV2{
         
         //alta flor
         botones[0].addActionListener(e -> {
-           PanelesGUI.PanelAltas p= new PanelAltaFlor(v,this,"Introduce una nueva Flor",List.of("Nombre","Color","Cantidad"));
+           PanelesGUI.PanelAltas p= new PanelAltaFlor(v,this,"Introduce una nueva Flor",List.of("Nombre","Color","Cantidad","Precio"));
            v.ponPanel(p);
         });
         
         //alta planta
         botones[1].addActionListener(e -> {
-           PanelesGUI.PanelAltas p= new PanelAltaPlanta(v,this,"Introduce una nueva Planta",List.of("Nombre","Tamaño","Cantidad"));
+           PanelesGUI.PanelAltas p= new PanelAltaPlanta(v,this,"Introduce una nueva Planta",List.of("Nombre","Tamaño","Cantidad","Precio"));
            v.ponPanel(p);
         });
         //reponer

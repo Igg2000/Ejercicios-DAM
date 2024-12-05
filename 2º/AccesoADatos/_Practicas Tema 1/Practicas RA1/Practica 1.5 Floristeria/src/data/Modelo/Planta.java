@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package data.Modelo;
 
-/**
- *
- * @author Nacho
- */
 public class Planta extends Producto {
     private String tamaño;
 
-    public Planta(String nombre, String tamaño) {
-        super(nombre);
+    public Planta(String nombre, String tamaño, double precio) {
+        super(nombre, precio);
         this.tamaño = tamaño;
     }
 
@@ -26,8 +18,6 @@ public class Planta extends Producto {
 
     @Override
     public String toString() {
-        return "Planta: "+super.getNombre() + " | Tama\u00f1o: " + tamaño+ " | Cantidad: "+super.getCantidad();
+        return "Planta: " + super.getNombre() + " | Tamaño: " + tamaño + " | Cantidad: " + super.getCantidad() + " | Precio: " + super.getPrecio() + "€";
     }
-    
-    
 }

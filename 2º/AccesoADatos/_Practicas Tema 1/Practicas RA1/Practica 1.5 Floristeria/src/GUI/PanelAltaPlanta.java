@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package GUI;
 
 import PanelesGUI.NBoton;
@@ -12,11 +8,6 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-
-/**
- *
- * @author Nacho
- */
 public class PanelAltaPlanta extends PanelAltas {
 
     private final Ventana v;
@@ -58,9 +49,13 @@ public class PanelAltaPlanta extends PanelAltas {
             String nombre = getFieldValues().get("Nombre");
             String tamañoTexto = getFieldValues().get("Tamaño");
             String cantidadTexto = getFieldValues().get("Cantidad");
+            String precioTexto = getFieldValues().get("Precio");
+            
+            if(precioTexto.contains(","))
+                precioTexto = precioTexto.replace(",",".");
 
             // Validar campos
-            if (nombre.isEmpty() || tamañoTexto.isEmpty() || cantidadTexto.isEmpty()) {
+            if (nombre.isEmpty() || tamañoTexto.isEmpty() || cantidadTexto.isEmpty() || precioTexto.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -84,8 +79,21 @@ public class PanelAltaPlanta extends PanelAltas {
                 return;
             }
 
+            // Validar y convertir precio
+            double precio;
+            try {
+                precio = Double.parseDouble(precioTexto);
+                if (precio <= 0) {
+                    JOptionPane.showMessageDialog(this, "El precio debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El precio debe ser un número decimal.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             // Usar el método de Floristeria para agregar la planta
-            v.getFloristeria().agregarPlanta(nombre, tamañoTexto.toLowerCase(), cantidad);
+            v.getFloristeria().agregarPlanta(nombre, tamañoTexto.toLowerCase(), cantidad, precio);
             JOptionPane.showMessageDialog(this, "Planta añadida correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             // Limpiar los campos tras un alta exitosa

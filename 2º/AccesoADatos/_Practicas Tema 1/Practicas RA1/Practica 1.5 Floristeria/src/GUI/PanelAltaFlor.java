@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package GUI;
 
 import PanelesGUI.NBoton;
@@ -57,28 +53,31 @@ public class PanelAltaFlor extends PanelAltas {
             String nombre = getFieldValues().get("Nombre");
             String colorTexto = getFieldValues().get("Color");
             String cantidadTexto = getFieldValues().get("Cantidad");
+            String precioTexto = getFieldValues().get("Precio");
 
+            
+            if(precioTexto.contains(","))
+                precioTexto = precioTexto.replace(",",".");
+                        
             // Validar campos
-            if (nombre.isEmpty() || colorTexto.isEmpty() || cantidadTexto.isEmpty()) {
+            if (nombre.isEmpty() || colorTexto.isEmpty() || cantidadTexto.isEmpty() || precioTexto.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            
+
             // Convertir color de texto a objeto Color
             Color color = obtenerColor(colorTexto.toLowerCase());
             if (color == null) {
-                String cadErrorColor="El color ingresado no es válido. Use uno de la siguiente lista:\n";
-                
+                String cadErrorColor = "El color ingresado no es válido. Use uno de la siguiente lista:\n";
+
                 // Recorremos las claves del mapa y las añadimos al StringBuilder
                 for (String c : coloresPredefinidos.keySet()) {
-                    cadErrorColor+=c+"\n";
+                    cadErrorColor += c + "\n";
                 }
 
-                
                 JOptionPane.showMessageDialog(this, cadErrorColor, "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-
 
             // Validar y convertir cantidad
             int cantidad;
@@ -93,8 +92,21 @@ public class PanelAltaFlor extends PanelAltas {
                 return;
             }
 
+            // Validar y convertir precio
+            double precio;
+            try {
+                precio = Double.parseDouble(precioTexto);
+                if (precio <= 0) {
+                    JOptionPane.showMessageDialog(this, "El precio debe ser un número positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "El precio debe ser un número decimal.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             // Usar el método de Floristeria para agregar la flor
-            v.getFloristeria().agregarFlor(nombre, colorTexto, cantidad);
+            v.getFloristeria().agregarFlor(nombre, colorTexto, cantidad, precio);
             JOptionPane.showMessageDialog(this, "Flor añadida correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             // Limpiar los campos tras un alta exitosa
@@ -106,26 +118,24 @@ public class PanelAltaFlor extends PanelAltas {
         }
     }
 
-
     /**
      * Limpia los campos de entrada después de una operación exitosa.
      */
     private void limpiarCampos() {
         getFields().forEach((key, field) -> field.setText(""));
     }
-    
-        /**
+
+    /**
      * Convierte un nombre de color en texto a un objeto Color.
+     * 
      * @param colorTexto Nombre del color en español.
      * @return Objeto Color correspondiente o null si no existe.
      */
     private Color obtenerColor(String colorTexto) {
         return coloresPredefinidos.get(colorTexto);
-        
-        
     }
-    
-     // Mapa de colores predefinidos
+
+    // Mapa de colores predefinidos
     private static final Map<String, Color> coloresPredefinidos = new HashMap<>();
 
     static {

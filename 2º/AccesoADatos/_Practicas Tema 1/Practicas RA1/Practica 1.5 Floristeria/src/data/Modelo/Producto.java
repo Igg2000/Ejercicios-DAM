@@ -1,22 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package data.Modelo;
 
-/**
- *
- * @author Nacho
- */
 import java.util.Objects;
 
 public abstract class Producto {
     private String nombre;
     private int cantidad;
+    private double precio;
 
-    public Producto(String nombre) {
+    public Producto(String nombre, double precio) {
         this.nombre = nombre;
         this.cantidad = 0;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -27,11 +21,28 @@ public abstract class Producto {
         return cantidad;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        if (precio < 0) {
+            throw new IllegalArgumentException("El precio no puede ser negativo.");
+        }
+        this.precio = precio;
+    }
+
     public void incrementarCantidad(int cantidad) {
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException("La cantidad debe ser positiva.");
+        }
         this.cantidad += cantidad;
     }
 
     public void reducirCantidad(int cantidad) {
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException("La cantidad debe ser positiva.");
+        }
         if (this.cantidad >= cantidad) {
             this.cantidad -= cantidad;
         } else {
@@ -50,5 +61,10 @@ public abstract class Producto {
     @Override
     public int hashCode() {
         return Objects.hash(nombre);
+    }
+
+    @Override
+    public String toString() {
+        return "Producto: " + nombre + " | Cantidad: " + cantidad + " | Precio: " + precio + "€";
     }
 }

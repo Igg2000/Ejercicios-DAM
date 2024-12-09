@@ -8,6 +8,8 @@ import data.Semaforo;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Timer;
@@ -43,7 +45,20 @@ public class PP extends JPanel {
                 super.windowClosing(e); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
                 t.cancel();
             }
-            
+        });
+        
+        v.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                super.componentResized(e); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+                
+                img = v.createImage(v.getWidth(),v.getHeight());
+                gg = img.getGraphics();
+        
+                semaforo.x = v.getWidth()/2 - semaforo.width/2;
+                semaforo.y = v.getHeight()/2 - semaforo.height/2;
+                semaforo.actualizarCentroLuces();
+            }
         });
         
     }

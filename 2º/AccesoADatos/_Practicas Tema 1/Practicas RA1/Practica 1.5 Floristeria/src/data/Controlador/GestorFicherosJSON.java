@@ -53,8 +53,9 @@ public class GestorFicherosJSON {
             String json = gson.toJson(floristeria);
             writer.write(json);
             System.out.println("Floristería serializada correctamente en: " + rutaArchivo.getAbsolutePath());
+            JOptionPane.showMessageDialog(null, "Los datos se han guardado correctamente");
         } catch (IOException e) {
-            System.err.println("Error al serializar la floristería: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error, No se ha podido guardar los datos",null,0);
         }
     }
     
@@ -71,9 +72,10 @@ public class GestorFicherosJSON {
         try (FileReader reader = new FileReader(rutaArchivo)) {        
             Floristeria floristeria = gson.fromJson(reader, Floristeria.class);
             System.out.println("Floristería deserializada correctamente desde: " + rutaArchivo.getAbsolutePath());
+            JOptionPane.showMessageDialog(null, "Los datos se han cargado correctamente");
             return floristeria;
         } catch (IOException e) {
-            System.err.println("Error al deserializar la floristería: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error, No se ha podido cargar los datos",null,0);
             return null;
         }
     }

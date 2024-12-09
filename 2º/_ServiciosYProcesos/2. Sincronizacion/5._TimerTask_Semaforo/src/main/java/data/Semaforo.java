@@ -26,13 +26,16 @@ public class Semaforo extends Rectangle {
     Color colorApagado3= Color.green.darker().darker().darker();
     Color colorEncendido3= Color.green.brighter().brighter();
 
+    private int centroX; // Coordenada X centrada horizontalmente dentro del semáforo
+    private int luzDiameter; // Diámetro de las luces, proporcional al menor lado
+    private int espacioVertical; // Espacio entre luces y márgenes superior/inferior
 
     public Semaforo(int x, int y, int width, int height) {
         super(x, y, width, height);
         
-        int luzDiameter = Math.min(width, height / 4); // Diámetro de las luces, proporcional al menor lado
-        int centroX = x + (width - luzDiameter) / 2; // Coordenada X centrada horizontalmente dentro del semáforo
-        int espacioVertical = (height - 3 * luzDiameter) / 4; // Espacio entre luces y márgenes superior/inferior
+        luzDiameter = Math.min(width, height / 4);
+        centroX = x + (width - luzDiameter) / 2;
+        espacioVertical = (height - 3 * luzDiameter) / 4;
 
         luces = new ArrayList<>();
         luces.add(new Luz(centroX, y + espacioVertical, luzDiameter, luzDiameter, colorApagado1 ));
@@ -40,6 +43,15 @@ public class Semaforo extends Rectangle {
         luces.add(new Luz(centroX, y + 3 * espacioVertical + 2 * luzDiameter, luzDiameter, luzDiameter, colorApagado3)); // Luz verde 
     }
 
+    public void actualizarCentroLuces(){
+        luzDiameter = Math.min(width, height / 4);
+        centroX = x + (width - luzDiameter) / 2;
+        espacioVertical = (height - 3 * luzDiameter) / 4;
+        
+        for (int i = 0; i < luces.size(); i++) {
+            luces.get(i).setLocation(centroX, y + (i+1) * espacioVertical + i*luzDiameter);
+        }
+    }
     
     public void pintar(Graphics g){
         

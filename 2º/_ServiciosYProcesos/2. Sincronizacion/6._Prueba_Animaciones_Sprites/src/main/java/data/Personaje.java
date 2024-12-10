@@ -25,7 +25,7 @@ public class Personaje {
     public Personaje(int x, int y, int velocidad) {
         this.ss = new SpriteSheet(".//img//spritesheet_caveman.png");
         this.pixeles=32; //sprites de 32 bits
-        this.sprites = new Sprite[ss.getSpriteCount(pixeles)]; 
+        this.sprites = new Sprite[ss.getNumeroDeSpritesPorFila(pixeles)]; 
         this.spriteActual = 0;
         this.x = x;
         this.y = y;
@@ -33,7 +33,7 @@ public class Personaje {
 
         int fila=pixeles*2;
         
-        for (int i = 0; i < sprites.length; i++) {
+        for (int i = 0; i < ss.getNumeroDeSpritesPorFila(pixeles); i++) {
             sprites[i] = ss.getSprite(i * pixeles, fila , pixeles, pixeles);
         }
     }

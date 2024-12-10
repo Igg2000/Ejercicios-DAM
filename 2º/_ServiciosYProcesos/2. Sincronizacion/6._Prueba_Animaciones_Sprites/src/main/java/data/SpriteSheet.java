@@ -29,7 +29,7 @@ public class SpriteSheet {
         return new Sprite(sprite, x, y, width, height);
     }
     
-    public int getSpriteCount(int px) {
-        return spriteSheet.getWidth() / px; // suponiendo que cada sprite tiene un ancho de 32 píxeles
+    public int getNumeroDeSpritesPorFila(int px) {
+        return spriteSheet.getWidth() / px;
     }
 }

@@ -5,7 +5,7 @@
 package GUI;
 
 import data.App;
-import data.Personaje;
+import data.Coche;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,8 +15,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Timer;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -28,19 +30,27 @@ public class PanelAnimacion extends JPanel{
 
     private final App a;
     private Image img;
+    private Image imagenFondo;
     private Graphics gg;
     private Timer t;
-    private Personaje p;
-    private int fps;
+    private Coche coche;
 
     public PanelAnimacion(App a) {
         this.a=a;   
-        this.p=new Personaje(100, 100, 3);
         
+       
+        try {
+            imagenFondo = ImageIO.read(new File(".//res//fondo.png"));
+        } catch (IOException e) {
+             System.out.println("La imagen del coche no ha podido cargar");
+        }
+
+        coche = new Coche(100, 100, 50, 70, 7);
         t = new Timer("Temporizador Animacion");
-        Animacion anim = new Animacion(this,p);
-        fps = 20;
-        //t.scheduleAtFixedRate(anim,0,1000/fps);
+        
+        
+        Animacion anim = new Animacion(this);
+        t.schedule(anim, 0,1);
         
         JFrame v= a.getV();
         v.addWindowListener(new WindowAdapter() {
@@ -56,10 +66,10 @@ public class PanelAnimacion extends JPanel{
             public void keyPressed(KeyEvent e) {
                 char car = e.getKeyChar();
                 switch(Character.toLowerCase(car)){
-                    case 'w': p.moverArriba(); break;
-                    case 's': p.moverAbajo(); break;
-                    case 'd': p.moverDerecha();break;
-                    case 'a': p.moverIzquierda();break;
+                    case 'w': coche.moverArriba(); break;
+                    case 's': coche.moverAbajo(); break;
+                    case 'd': coche.moverDerecha();break;
+                    case 'a': coche.moverIzquierda();break;
                 }
                 repaint();
             }
@@ -77,26 +87,15 @@ public class PanelAnimacion extends JPanel{
         img=v.createImage(v.getWidth(),v.getHeight());        
         gg=img.getGraphics();  
 
-        //pintar muñeco
-        p.pintar(gg);
-
-
-
-
-        // Escalar la imagen
-        int anchoEscala = (int) (v.getWidth() * 2); // Escala el ancho a 2 veces
-        int altoEscala = (int) (v.getHeight() * 2); // Escala el alto a 2 veces
-
-        // Crea una nueva imagen escalada
-        BufferedImage imgEscala = new BufferedImage(anchoEscala, altoEscala, BufferedImage.TYPE_INT_ARGB);
-
-        // Dibuja la imagen original en la imagen escalada
-        Graphics2D g2d = imgEscala.createGraphics();
-        g2d.drawImage(img, 0, 0, anchoEscala, altoEscala, null);
-        g2d.dispose();
-
-        // Dibuja la imagen escalada en el panel
-        g.drawImage(imgEscala, 0, 0, this);
+        gg.drawImage(imagenFondo, 0, 0, v.getWidth(), v.getHeight(), v);
+        
+        coche.pintar(gg);
+        
+        
+        
+        //doble buffer
+        g.drawImage(img,0,0, this);
     }
+    
     
 }

@@ -19,7 +19,8 @@ import java.util.List;
  */
 public class GestorBD {
       
-
+    private static final String rutaArchivoBD = ".//res//Agenda.accdb";
+    private static Connection conexion;
     
     public static Connection establecerConexionAccess(String rutaArchivoBD) throws ClassNotFoundException, SQLException {
         Connection conn;
@@ -175,5 +176,20 @@ public class GestorBD {
         return valores;
     }
 
+    public static String getRutaArchivoBD() {
+        return rutaArchivoBD;
+    }
+
+    public static Connection getConexion() {
+        return conexion;
+    }
+
+    public static void setConexion(Connection conexion) {
+        GestorBD.conexion = conexion;
+    }
+
+    
+    
+    
     
 }

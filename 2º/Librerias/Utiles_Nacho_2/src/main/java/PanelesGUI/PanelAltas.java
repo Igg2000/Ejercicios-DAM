@@ -281,7 +281,7 @@ public abstract class PanelAltas extends JPanel {
     protected abstract void onDarAlta();
     
     
-       // Método para dibujar la imagen de fondo
+    // Método para dibujar la imagen de fondo
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -33,21 +33,25 @@ public class App extends Thread{
             return;
         
         try {
+            //Me conecto a la base de datos
             Connection con = GestorBD.establecerConexionAccess(rutaArchivoBD);  
+            //hago la consulta de los bancos
             String consulta="Select * from Valores";
             ResultSet resConsulta = GestorBD.hacerConsulta(con, consulta);
-            
             List<String> bancos = GestorBD.sacarValoresDeColumna(resConsulta,2);
+            
+            //pinto los bancos
             System.out.println("Estos son los bancos disponibles\n________________________");
             System.out.println(bancos);
             
+            //hago la consulta de las cotizaciones
             String consultaCotizaciones=
                     "SELECT Cotizaciones.valor\n" +
                     "FROM Cotizaciones\n" +
-                    "WHERE (((Cotizaciones.id)="+BancoDelQueHacerLaQuery+"));";            
-
+                    "WHERE (((Cotizaciones.id)="+BancoDelQueHacerLaQuery+"));";
             ResultSet resConsultaCotizaciones = GestorBD.hacerConsulta(con, consultaCotizaciones);
             
+            //pinto las cotizaciones
             System.out.println("\nEstos son los valores de las cotizaciones del banco con id "+BancoDelQueHacerLaQuery);
             System.out.println("____________________________________________________________");
             while(resConsultaCotizaciones.next()){

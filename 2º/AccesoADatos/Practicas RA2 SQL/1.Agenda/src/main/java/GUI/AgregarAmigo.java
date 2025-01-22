@@ -7,6 +7,7 @@ package GUI;
 import PanelesGUI.NBoton;
 import PanelesGUI.PanelAltas;
 import Ventana.Vppal;
+import data.App;
 import data.Contacto;
 import data.GestorBD;
 import java.sql.SQLException;
@@ -35,24 +36,12 @@ public class AgregarAmigo extends PanelAltas {
         super(titulo, opciones);
         this.v = v;
         this.panelAnterior = panelAnterior;
+        
+        UtilTema.aplicarTema(this, App.TEMA);
+        getTitleLabel().setFont(App.TEMA.getFuenteTitulo());
+        
+        
         /*
-        JPanel panelCentral = getInputPanel();
-        panelCentral.setOpaque(true);
-        panelCentral.setBackground(v.colorFondo);
-        getTitleLabel().setForeground(v.colorLetraTitulo);
-        getTitleLabel().setFont(v.fuenteTitulo);
-        setAttributeLabelColor(v.colorLetraTitulo);
-        setAttributeLabelFont(v.fuenteBotones);
-        setFieldColor(v.color2);
-        panelCentral.setBorder(new CompoundBorder(new LineBorder(v.color2, 3), new EmptyBorder(5, 5, 5, 5)));
-        
-        setBtnVolver(new NBoton("Volver", v.color1, v.color2));
-        getBtnVolver().setFont(v.fuenteBotones);
-        setBtnDarAlta(new NBoton("Dar Circuito de Alta", v.color1, v.color2));
-        getBtnDarAlta().setFont(v.fuenteBotones);
-
-        */
-        
         //pruebas
         HashMap<String, JTextField> f = getFields();
         f.get("Nombre").setText("Pepe");
@@ -60,8 +49,8 @@ public class AgregarAmigo extends PanelAltas {
         f.get("Direccion").setText("Calle de ejemplo");
         f.get("Aficiones").setText("Furbo y Baloncesto");
         f.get("Pandilla").setText("La banda del patio");
-        //f.get("Sitio de Veraneo").setText("Murcia");
-        
+        f.get("Sitio de Veraneo").setText("Murcia");
+        */
     }
     
     
@@ -98,17 +87,21 @@ public class AgregarAmigo extends PanelAltas {
         
         System.out.println("El nuevo contacto es: \n"+ nc);
         
-        String[] campos = {"Nombre", "Telefono", "Direccion", "Pandilla", "\"Lugar De Veraneo\""};
+        String[] camposTabla = {"Nombre", "Telefono", "Direccion", "Aficiones", "Pandilla", "Veraneo"};
         Object[] valoresContacto = {
             nc.getNombre(),
             Integer.parseInt(nc.getTelefono()), // Convertir a número
             nc.getDireccion(),
+            nc.getAficiones(),
             nc.getPandilla(),
             nc.getSitioVeraneo()
         };
         
         try {
-            GestorBD.insertarDatos(GestorBD.getConexion(), "Contactos", valoresContacto, campos);
+            GestorBD.insertarDatos(GestorBD.getConexion(), "Contactos", valoresContacto, camposTabla);
+            JOptionPane.showMessageDialog(v, "Tu amigo se ha registrado con exito");
+            limpiarCampos();
+            //GestorBD.insertarContacto(GestorBD.getConexion(), nc);
         } catch (SQLException ex) {
             System.out.println("Error al insertar datos en la base de datos:\n"+ex.getMessage());
         }
@@ -129,6 +122,16 @@ public class AgregarAmigo extends PanelAltas {
             throw new IllegalArgumentException("Las aficiones no pueden ser nulas o vacías.");
         }
         return false; // Si no hay errores, devuelve false
+    }
+
+    private void limpiarCampos() {
+        HashMap<String, JTextField> f = getFields();
+        f.get("Nombre").setText("");
+        f.get("Telefono").setText("");
+        f.get("Direccion").setText("");
+        f.get("Aficiones").setText("");
+        f.get("Pandilla").setText("");
+        f.get("Sitio de Veraneo").setText("");
     }
 
     

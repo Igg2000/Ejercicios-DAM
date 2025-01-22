@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,6 +23,7 @@ public class GestorBD {
       
     private static final String rutaArchivoBD = ".//res//Agenda.accdb";
     private static Connection conexion;
+    
     
     public static Connection establecerConexionAccess(String rutaArchivoBD) throws ClassNotFoundException, SQLException {
         Connection conn;
@@ -188,8 +191,44 @@ public class GestorBD {
         GestorBD.conexion = conexion;
     }
 
-    
-    
-    
-    
+    // Métodos específicos del ejercicio
+    public static List<Contacto> recibirListaDeContactos() {
+        // Consulta SQL
+        String consulta = "SELECT * FROM CONTACTOS";
+        List<Contacto> contactos = new ArrayList<>();
+
+        try {
+            // Ejecutar la consulta
+            ResultSet rs = hacerConsulta(conexion, consulta);
+
+            // Procesar los resultados
+            while (rs.next()) {
+                // Extraer los datos de cada columna
+                int id = rs.getInt("ID");
+                String nombre = rs.getString("Nombre");
+                String telefono = rs.getString("Telefono");
+                String direccion = rs.getString("Direccion");
+                String aficiones = rs.getString("Aficiones");
+                String pandilla = rs.getString("Pandilla");
+                String sitioVeraneo = rs.getString("Veraneo");
+
+                // Crear un nuevo objeto Contacto
+                Contacto contacto = new Contacto(nombre, telefono, direccion, aficiones, pandilla, sitioVeraneo);
+                contacto.setId(id);
+                // Agregarlo a la lista
+                contactos.add(contacto);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al realizar la consulta: " + ex.getMessage());
+            return null;
+        }
+
+        System.out.println(contactos);
+        
+        // Devolver la lista de contactos
+        return contactos;
+    }
+
+
+
 }

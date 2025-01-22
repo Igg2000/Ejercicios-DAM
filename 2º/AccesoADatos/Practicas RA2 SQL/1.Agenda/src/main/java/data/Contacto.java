@@ -9,6 +9,7 @@ package data;
  * @author Nacho
  */
 public class Contacto {
+    private int id;
     private String nombre;
     private String telefono;
     private String direccion;
@@ -74,6 +75,15 @@ public class Contacto {
     public void setSitioVeraneo(String sitioVeraneo) {
         this.sitioVeraneo = sitioVeraneo;
     }
+
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     @Override
     public String toString() {

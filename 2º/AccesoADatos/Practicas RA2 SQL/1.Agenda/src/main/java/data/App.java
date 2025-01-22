@@ -5,6 +5,7 @@
 package data;
 
 import GUI.MenuPrincipal;
+import GUI.Tema;
 import PanelesGUI.PMenuV2;
 import Ventana.Vppal;
 import java.awt.Color;
@@ -20,18 +21,9 @@ import java.util.logging.Logger;
  */
 public class App extends Thread {
 
-    
+    public static Tema TEMA = Tema.OSCURO_CYAN; //tema de la app
     private final Vppal v;
     private Connection con;
-    
-    public Color color2=new Color(156, 156, 156);
-    public Color color1=new Color(49, 19, 20);
-    public Color colorFondo=new Color(13,16,35); 
-    public Font fuenteTitulo=new Font("Segoe UI",1,36);
-    public Color colorLetraTitulo=Color.white;
-    public Font fuenteBotones=new Font("Segoe UI",0,18); 
-    public Color colorLetraBotones=Color.BLACK;
-    
     
     
     public App(String name) {
@@ -58,8 +50,8 @@ public class App extends Thread {
             GestorBD.setConexion(con);
             
             
-            String opciones[]={"Agregar Amigo","Ver lista de Amigos","Editar Amigos","Borrar Amigos","Salir"};
-            PanelesGUI.PMenuV2 menupp = new MenuPrincipal(v,opciones, "Agenda", color1, color2, colorFondo, fuenteTitulo, colorLetraTitulo, fuenteBotones, colorLetraBotones);
+            String opciones[]={"Agregar Amigo","Ver lista de Amigos","Salir"};
+            PanelesGUI.PMenuV2 menupp = new MenuPrincipal(v,opciones, "Agenda");
             v.ponPanel(menupp);
             
             

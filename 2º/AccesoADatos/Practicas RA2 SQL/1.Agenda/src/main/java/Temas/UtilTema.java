@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package GUI;
-
-/**
- *
- * @author Nacho
- */
+package Temas;
 import PanelesGUI.NBoton;
 import javax.swing.*;
 import java.awt.*;
 
+
+/**
+ * Clase con utilidades para aplicar los temas de mi enumerado de Temas
+ * @author Nacho
+ */
 public class UtilTema {
 
-    public static void aplicarTema(Container contenedor, Tema tema) {
+    public static void aplicarTema(Container contenedor, Temas tema) {
         
         if(contenedor instanceof JPanel)
             contenedor.setBackground(tema.getFondo());
@@ -26,11 +26,11 @@ public class UtilTema {
         } else if (contenedor instanceof NBoton) {
             ((NBoton)contenedor).cambiarColor2(tema.getBoton());
             ((NBoton)contenedor).cambiarColor1(tema.getComplementario());
-            ((NBoton)contenedor).cambiarColorTexto(Color.white);
+            ((NBoton)contenedor).cambiarColorTexto(tema.getTexto());
             ((NBoton)contenedor).cambiarFuente(tema.getFuenteBoton());
         } else if (contenedor instanceof JButton) {
             contenedor.setBackground(tema.getBoton());
-            contenedor.setForeground(Color.WHITE);
+            contenedor.setForeground(tema.getTexto());
             contenedor.setFont(tema.getFuenteBoton());
             ((JButton)contenedor).setBorder(BorderFactory.createLineBorder(tema.getComplementario()));
         } else if (contenedor instanceof JTextField) {
@@ -51,11 +51,11 @@ public class UtilTema {
             } else if (componente instanceof NBoton) {
                 ((NBoton)componente).cambiarColor2(tema.getBoton());
                 ((NBoton)componente).cambiarColor1(tema.getComplementario());
-                ((NBoton)componente).cambiarColorTexto(Color.white);
+                ((NBoton)componente).cambiarColorTexto(tema.getTexto());
                 ((NBoton)componente).cambiarFuente(tema.getFuenteBoton());
             } else if (componente instanceof JButton) {
                 componente.setBackground(tema.getBoton());
-                componente.setForeground(Color.WHITE);
+                componente.setForeground(tema.getTexto());
                 componente.setFont(tema.getFuenteBoton());
                 ((JButton)componente).setBorder(BorderFactory.createLineBorder(tema.getComplementario()));
             } else if (componente instanceof JTextField) {

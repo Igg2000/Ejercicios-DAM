@@ -5,7 +5,7 @@
 package data;
 
 import GUI.MenuPrincipal;
-import GUI.Tema;
+import Temas.Temas;
 import PanelesGUI.PMenuV2;
 import Ventana.Vppal;
 import java.awt.Color;
@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class App extends Thread {
 
-    public static Tema TEMA = Tema.OSCURO_CYAN; //tema de la app
+    public static Temas TEMA = Temas.OSCURO_CYAN; //tema de la app
     private final Vppal v;
     private Connection con;
     
@@ -40,8 +41,11 @@ public class App extends Thread {
     public void run() {
         
         //si la BD no existe cierro el programa
-        if(!GestorBD.existeLaBD(GestorBD.getRutaArchivoBD()))
+        if(!GestorBD.existeLaBD(GestorBD.getRutaArchivoBD())){
+            JOptionPane.showMessageDialog(null, "No tienes la base de datos\n para poder "
+                    + "ejecutar el programa necesitas la siguiente base de datos:\n"+GestorBD.getRutaArchivoBD());
             return;
+        }
         
         try {
             
@@ -56,6 +60,7 @@ public class App extends Thread {
             
             
             //esto es para hace pruebas
+            System.out.println("Tabla cargada:\n_____________________");
             GestorBD.imprimirConsulta(con, "select * from Contactos");
             
             

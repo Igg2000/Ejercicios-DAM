@@ -4,14 +4,18 @@
  */
 package GUI;
 
+import Temas.UtilTema;
 import PanelesGUI.NBoton;
 import PanelesGUI.PMenuV2;
+import Temas.Temas;
 import Ventana.Vppal;
 import data.App;
 import data.Contacto;
 import data.GestorBD;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.List;
 import javax.swing.JButton;
@@ -19,7 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- *
+ * Menu principal de la aplicacion heredado de mi libreria personal
  * @author Nacho
  */
 public class MenuPrincipal extends PMenuV2{
@@ -36,6 +40,8 @@ public class MenuPrincipal extends PMenuV2{
         
         UtilTema.aplicarTema(this, App.TEMA);
         getTitulo().setFont(App.TEMA.getFuenteTitulo());
+        
+        agregarBotonCambiarTema();
     }
 
     private void funcionalidadBotones(String[] opciones) {
@@ -62,6 +68,35 @@ public class MenuPrincipal extends PMenuV2{
         });
         
         elUltimoBotonCierraLaVentana(opciones);
+     
         
+        
+
+    }
+
+    private void agregarBotonCambiarTema() {
+        JPanel panelTema = new JPanel();
+        panelTema.setOpaque(false);
+        panelTema.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        
+        NBoton botonTema = new NBoton("Cambiar Tema");
+        botonTema.setPreferredSize(new Dimension(100, 40));
+        
+        //Cambia al siguiente tema disponible
+        botonTema.addActionListener(e -> {  
+
+            for (int i = 0; i < Temas.values().length; i++) {
+                if (App.TEMA == Temas.values()[i]){
+                    App.TEMA = Temas.values()[(i + 1) % Temas.values().length];
+                    break;
+                }
+            }
+            MenuPrincipal nuevoMenu = new MenuPrincipal(v, MenuPrincipal.this.getOpciones(),MenuPrincipal.this.getNombreTitulo());
+            v.ponPanel(nuevoMenu);
+        });
+        
+        
+        panelTema.add(botonTema);
+        this.add(panelTema,BorderLayout.SOUTH);
     }
 }

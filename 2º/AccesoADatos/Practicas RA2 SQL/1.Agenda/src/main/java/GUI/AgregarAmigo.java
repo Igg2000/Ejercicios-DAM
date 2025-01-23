@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Temas.UtilTema;
 import PanelesGUI.NBoton;
 import PanelesGUI.PanelAltas;
 import Ventana.Vppal;
@@ -23,8 +24,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 /**
- *
- * @author grovy
+ * Panel de altas para los amigos de la agenda
+ * @author Nacho
  */
 public class AgregarAmigo extends PanelAltas {
 

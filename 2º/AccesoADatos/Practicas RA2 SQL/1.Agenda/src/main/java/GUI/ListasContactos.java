@@ -1,5 +1,6 @@
 package GUI;
 
+import Temas.UtilTema;
 import Ventana.Vppal;
 import data.App;
 import data.Contacto;
@@ -9,13 +10,20 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
+/**
+ * Esta clase contiene la lista de contactos en forma de tarjetas
+ * al hacer click en una de las tarjetas podrás modificar o borrar al contacto
+ * seleccionado, tambien se puede filtrar por nombre o telefono
+ * @author Nacho
+ */
 public class ListasContactos extends JPanel {
 
     private final Vppal v;
     private final MenuPrincipal panelAnterior;
     private final List<Contacto> contactos;
+    private JPanel panelContenedor;
     
-    private int anchoTarjeta=250;
+    private int anchoTarjeta=550;
     private int altoTarjeta=100;
 
     public ListasContactos(Vppal v, MenuPrincipal panelAnterior, List<Contacto> contactos) {
@@ -43,15 +51,19 @@ public class ListasContactos extends JPanel {
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new GridLayout(3, 1));
         infoPanel.setBackground(App.TEMA.getBoton());
+        
 
         JLabel nombreLabel = new JLabel(contacto.getNombre());
         nombreLabel.setFont(App.TEMA.getFuenteTexto());
+        nombreLabel.setForeground(App.TEMA.getTexto());
 
         JLabel telefonoLabel = new JLabel(contacto.getTelefono());
         telefonoLabel.setFont(App.TEMA.getFuenteTexto());
+        telefonoLabel.setForeground(App.TEMA.getTexto());
 
         JLabel direccionLabel = new JLabel(contacto.getDireccion());
         direccionLabel.setFont(App.TEMA.getFuenteTexto());
+        direccionLabel.setForeground(App.TEMA.getTexto());
 
         infoPanel.add(nombreLabel);
         infoPanel.add(telefonoLabel);
@@ -69,9 +81,9 @@ public class ListasContactos extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                tarjeta.setBackground(App.TEMA.getTexto());
+                tarjeta.setBackground(App.TEMA.getComplementario());
                 tarjeta.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-                infoPanel.setBackground(App.TEMA.getTexto());
+                infoPanel.setBackground(App.TEMA.getComplementario());
             }
 
             @Override
@@ -88,8 +100,33 @@ public class ListasContactos extends JPanel {
     public void minitComponents() {
         UtilTema.aplicarTema(this, App.TEMA);
         
+        // Crear el panel de búsqueda
+        JPanel barraBusqueda = new JPanel(new BorderLayout(10, 10));
+        barraBusqueda.setBackground(App.TEMA.getFondo());
+        barraBusqueda.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        
+        JLabel letreroBarraBusqueda = new JLabel("Busca por nombre o telefono");
+        letreroBarraBusqueda.setFont(App.TEMA.getFuenteTexto());
+        letreroBarraBusqueda.setForeground(App.TEMA.getTexto());
+
+        JTextField campoBusqueda = new JTextField();
+        campoBusqueda.setFont(App.TEMA.getFuenteTexto());
+        campoBusqueda.setPreferredSize(new Dimension(200, 30));
+        campoBusqueda.setToolTipText("Introduce el nombre o telefono del amigo que quieres buscar");
+
+        JButton botonBuscar = new JButton("Buscar");
+        botonBuscar.setFont(App.TEMA.getFuenteBoton());
+        botonBuscar.setBackground(App.TEMA.getBoton());
+        botonBuscar.setForeground(App.TEMA.getTexto());
+        botonBuscar.addActionListener(e -> buscarContactos(campoBusqueda.getText()));
+
+        barraBusqueda.add(letreroBarraBusqueda, BorderLayout.WEST);
+        barraBusqueda.add(campoBusqueda, BorderLayout.CENTER);
+        barraBusqueda.add(botonBuscar, BorderLayout.EAST);
+        
         // Panel contenedor para centrar las tarjetas
-        JPanel panelContenedor = new JPanel(new GridLayout(0,1));
+        //JPanel panelContenedor = new JPanel(new GridLayout(0,1));
+        panelContenedor = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         panelContenedor.setBackground(App.TEMA.getFondo());
 
         // Crear tarjetas para cada contacto
@@ -97,16 +134,83 @@ public class ListasContactos extends JPanel {
             JPanel tarjeta = crearTarjeta(contacto);
             panelContenedor.add(tarjeta);
         }
-
-        // Agregar el panel contenedor dentro de un JScrollPane
+        
+        //si no hay tarjetas te sale un mensaje de que no hay amigos
+        if(panelContenedor.getComponentCount()<=0){
+           JLabel vacio = new JLabel("No hay amigos en la lista");
+           vacio.setFont(App.TEMA.getFuenteTitulo());
+           vacio.setForeground(App.TEMA.getTexto());
+           panelContenedor.add(vacio);
+         }
+        
+        // Añadir el panel contenedor a un JScrollPane
         JScrollPane scrollPane = new JScrollPane(panelContenedor);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-        setLayout(new BorderLayout());
-        add(scrollPane, BorderLayout.CENTER);
+        // Ajustar tarjetas dinámicamente al redimensionar la ventana
+           scrollPane.addComponentListener(new java.awt.event.ComponentAdapter() {
+               @Override
+               public void componentResized(java.awt.event.ComponentEvent evt) {
+                   ajustarColumnas(panelContenedor, scrollPane.getViewport().getWidth());
+               }
+           });
 
-        setVisible(true);
+           // Configurar el layout principal
+           setLayout(new BorderLayout());
+           add(scrollPane, BorderLayout.CENTER);
+           add(barraBusqueda, BorderLayout.NORTH);
+
+           // Realizar ajuste inicial de las columnas
+           ajustarColumnas(panelContenedor, scrollPane.getViewport().getWidth());
+
+    }
+
+    
+    //Ajusta las filas y columnas de las tarjetas en función del ancho disponible.
+    private void ajustarColumnas(JPanel panelContenedor, int anchoDisponible) {
+       int tarjetasPorFila = Math.max(anchoDisponible / (anchoTarjeta + 10), 1); // Calcular cuántas tarjetas caben por fila
+       int anchoTotal = (anchoTarjeta + 10) * tarjetasPorFila; // Espacio necesario para las tarjetas por fila
+       panelContenedor.setPreferredSize(new Dimension(anchoTotal, panelContenedor.getComponentCount() * (altoTarjeta + 10)));
+       panelContenedor.revalidate();
+       panelContenedor.repaint();
     }
     
+    /**
+    * Filtra y muestra las tarjetas que coinciden con la búsqueda.
+    *
+    * @param query El texto de búsqueda ingresado por el usuario.
+    */
+   private void buscarContactos(String query) {
+       
+       String busqueda = query.toLowerCase();
+
+       // Filtrar la lista de contactos según la búsqueda
+       List<Contacto> resultados = contactos.stream()
+           .filter(contacto -> contacto.getNombre().toLowerCase().contains(busqueda)
+                   || contacto.getTelefono().contains(busqueda))
+           .toList();
+
+       // Limpiar y volver a agregar las tarjetas filtradas al contenedor
+       
+       panelContenedor.removeAll();
+       for (Contacto contacto : resultados) {
+           JPanel tarjeta = crearTarjeta(contacto);
+           panelContenedor.add(tarjeta);
+       }
+
+       //si no hay tarjetas te sale un mensaje de que no hay amigos
+       if(panelContenedor.getComponentCount()<=0){
+           JLabel vacio = new JLabel("No hay amigos en la lista");
+           vacio.setFont(App.TEMA.getFuenteTitulo());
+           vacio.setForeground(App.TEMA.getTexto());
+           panelContenedor.add(vacio);
+       }
+           
+       
+       // Actualizar la vista
+       panelContenedor.revalidate();
+       panelContenedor.repaint();
+   }
+
 }

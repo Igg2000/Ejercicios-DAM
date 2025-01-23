@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Temas.UtilTema;
 import PanelesGUI.NBoton;
 import PanelesGUI.PanelAltas;
 import Ventana.Vppal;
@@ -21,7 +22,7 @@ import java.util.HashMap;
 
 
 /**
- *
+ * Panel en el que se puede modificar o eliminar contactos
  * @author Nacho
  */
 public class EditarContacto extends PanelAltas {
@@ -70,7 +71,9 @@ public class EditarContacto extends PanelAltas {
         */
         // Botón para eliminar contacto
         JButton btnEliminar = new JButton("Eliminar Contacto");
+        setBtnDarAlta(new JButton("Guardar Cambios"));
         //btnEliminar.setFont(ventana.fuenteBotones);
+        getBtnDarAlta().setPreferredSize(new Dimension(180, 35)); // Tamaño uniforme
         btnEliminar.setPreferredSize(new Dimension(180, 35)); // Tamaño uniforme
         JPanel buttonPanel = getButtonPanel();
         buttonPanel.add(btnEliminar);

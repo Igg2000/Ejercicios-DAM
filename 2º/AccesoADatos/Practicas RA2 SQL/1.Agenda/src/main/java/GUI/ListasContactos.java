@@ -4,8 +4,11 @@ import Temas.UtilTema;
 import Ventana.Vppal;
 import data.App;
 import data.Contacto;
+import data.GestorBD;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -26,10 +29,13 @@ public class ListasContactos extends JPanel {
     private int anchoTarjeta=550;
     private int altoTarjeta=100;
 
-    public ListasContactos(Vppal v, MenuPrincipal panelAnterior, List<Contacto> contactos) {
+    public ListasContactos(Vppal v, MenuPrincipal panelAnterior) {
         this.v = v;
         this.panelAnterior = panelAnterior;
-        this.contactos = contactos;
+        this.contactos = GestorBD.recibirListaDeContactos();
+        
+
+        
         minitComponents();
         
     }
@@ -156,13 +162,36 @@ public class ListasContactos extends JPanel {
                }
            });
 
-           // Configurar el layout principal
-           setLayout(new BorderLayout());
-           add(scrollPane, BorderLayout.CENTER);
-           add(barraBusqueda, BorderLayout.NORTH);
+        // Crear el botón de "volver"
+        JButton botonVolver = new JButton("Volver");
+        botonVolver.setPreferredSize(new Dimension(120, 35)); // Tamaño uniforme
+        botonVolver.setBackground(App.TEMA.getBoton());
+        botonVolver.setFont(App.TEMA.getFuenteBoton());
+        botonVolver.setForeground(App.TEMA.getTexto());
+        botonVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Acción para volver a la vista anterior, por ejemplo:
+                v.setContentPane(panelAnterior);
+                v.revalidate();
+            }
+        });
 
-           // Realizar ajuste inicial de las columnas
-           ajustarColumnas(panelContenedor, scrollPane.getViewport().getWidth());
+        // Crear un panel para el botón con FlowLayout y añadir el botón
+        JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelBoton.setOpaque(false);
+        panelBoton.add(botonVolver);
+
+
+        
+        // Configurar el layout principal
+        setLayout(new BorderLayout());
+        add(scrollPane, BorderLayout.CENTER);
+        add(barraBusqueda, BorderLayout.NORTH);
+        add(panelBoton, BorderLayout.SOUTH);
+
+        // Realizar ajuste inicial de las columnas
+        ajustarColumnas(panelContenedor, scrollPane.getViewport().getWidth());
 
     }
 
@@ -213,4 +242,9 @@ public class ListasContactos extends JPanel {
        panelContenedor.repaint();
    }
 
+   public void ponerYReiniciarPanel(){
+       ListasContactos lc = new ListasContactos(v, panelAnterior);
+       v.ponPanel(lc);
+   }
+   
 }

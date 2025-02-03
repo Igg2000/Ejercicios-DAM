@@ -10,16 +10,9 @@ import PanelesGUI.PMenuV2;
 import Temas.Temas;
 import Ventana.Vppal;
 import data.App;
-import data.Contacto;
-import data.GestorBD;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.util.List;
+
+import java.awt.*;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -33,7 +26,6 @@ public class MenuPrincipal extends PMenuV2{
     public MenuPrincipal(Vppal v, String[] opciones, String nombreTitulo) {
         super(opciones, nombreTitulo);
         this.v = v;
-        //ponerImagenDeFondo(".//res//agenda.png");
         
         
         funcionalidadBotones(opciones);
@@ -48,17 +40,21 @@ public class MenuPrincipal extends PMenuV2{
         JButton[] botones;
         botones = super.getBotones();
         
-        //poner panel altas
+        //poner panel resultados de las rondas
         botones[0].addActionListener(e -> {
-           PanelesGUI.PanelAltas p= new AgregarAmigo(v,this,"Introduce los datos de tu amigo",List.of("Nombre", "Telefono","Direccion", "Aficiones", "Pandilla","Sitio de Veraneo"));
-           v.ponPanel(p);
+            JPanel p = new ResultadosPorRonda(v,this);
+            v.ponPanel(p);
         });
         
-        //poner panel de listas
+        //poner panel tableros de las partidas
         botones[1].addActionListener(e -> {
-            
-            JPanel p = new ListasContactos(v,this);
-           
+            JPanel p = new TablerosDePartidas(v,this);
+            v.ponPanel(p);
+        });
+
+        //poner panel tableros de las rondas
+        botones[2].addActionListener(e -> {
+            JPanel p = new TablerosDeRondas(v,this);
             v.ponPanel(p);
         });
         
@@ -73,8 +69,18 @@ public class MenuPrincipal extends PMenuV2{
         JPanel panelTema = new JPanel();
         panelTema.setOpaque(false);
         panelTema.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        
-        NBoton botonTema = new NBoton("Cambiar Tema");
+
+        //hacer el boton transparente
+        /*
+        int red = App.TEMA.getBoton().getRed();
+        int green = App.TEMA.getBoton().getGreen();
+        int blue = App.TEMA.getBoton().getBlue();
+        Color c= new Color(red,green,blue,150);
+        NBoton botonTema = new NBoton("Cambiar Tema",c,c);
+        */
+        NBoton botonTema = new NBoton("Cambiar Tema",App.TEMA.getBoton(),App.TEMA.getBoton());
+
+
         botonTema.setPreferredSize(new Dimension(100, 40));
         
         //Cambia al siguiente tema disponible

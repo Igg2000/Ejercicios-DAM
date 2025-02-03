@@ -74,18 +74,14 @@ public class AgregarAmigo extends PanelAltas {
         
         //manejo de errores
         try {
-            if (!hayErrores(nombre, telefono, direccion, aficiones)) {
+            if (!hayErrores(nombre, telefono, direccion, aficiones)) 
                 System.out.println("Todos los valores son correctos.");
-            }
         } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(v,e.getMessage());
             return;
         }
         
         Contacto nc = new Contacto(nombre, telefono, direccion, aficiones, pandilla, veraneo);
-
-        
-        
         System.out.println("El nuevo contacto es: \n"+ nc);
         
         String[] camposTabla = {"Nombre", "Telefono", "Direccion", "Aficiones", "Pandilla", "Veraneo"};

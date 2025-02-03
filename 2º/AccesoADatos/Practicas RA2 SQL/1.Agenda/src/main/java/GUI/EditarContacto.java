@@ -29,7 +29,7 @@ public class EditarContacto extends PanelAltas {
 
     private final Vppal ventana;
     private final JPanel menuPrincipal;
-    private final JPanel panelAnterior;
+    private final ListasContactos panelAnterior;
     private final Contacto contacto;
 
     public EditarContacto(Vppal ventana, JPanel menuPrincipal, ListasContactos panelAnterior, Contacto contacto) {
@@ -94,18 +94,10 @@ public class EditarContacto extends PanelAltas {
                 //elimino el contacto
                 GestorBD.borrarDatos(GestorBD.getConexion(), "Contactos", "Id", contacto.getId());
                 JOptionPane.showMessageDialog(null, "Contacto eliminado exitosamente.");
-                //reinicio el panel anterior antes de ponerlo
-                ListasContactos p = (ListasContactos)panelAnterior;
-                p.removeAll();
-                p.minitComponents();
                 
 
-                JButton btn = new JButton(" Volver ");
-                btn.setPreferredSize(new Dimension(120, 35)); // Tamaño uniforme
-                UtilTema.aplicarTema(btn, App.TEMA);
-                Metodos.MetodosGUI.agregarBotonDeVolverAUnPanel(ventana, p, menuPrincipal,btn);
-                
-                ventana.ponPanel(p);
+                //reinicio el panel anterior antes de ponerlo
+                panelAnterior.ponerYReiniciarPanel();
                 
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Error al eliminar el contacto: " + ex.getMessage());
@@ -115,16 +107,8 @@ public class EditarContacto extends PanelAltas {
 
     @Override
     protected void onVolver() {
-        ListasContactos p = (ListasContactos)panelAnterior;
-        p.removeAll();
-        p.minitComponents();
-        
-        JButton btn = new JButton("Volver");
-        btn.setPreferredSize(new Dimension(120, 35)); // Tamaño uniforme
-        UtilTema.aplicarTema(btn, App.TEMA);
-        Metodos.MetodosGUI.agregarBotonDeVolverAUnPanel(ventana, p, menuPrincipal ,btn);
-        
-        ventana.ponPanel(p);
+        //reinicio el panel anterior antes de ponerlo
+        panelAnterior.ponerYReiniciarPanel();
     }
 
     @Override

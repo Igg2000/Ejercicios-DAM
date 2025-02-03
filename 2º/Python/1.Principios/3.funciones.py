@@ -22,3 +22,9 @@ def suma(a,b):
 
 print(suma(3,4))
 
+#se pueden devolver varios valores
+def variosValores(a,b):
+    return a+b,a-b,a*b,a/b
+
+print(variosValores(10,5))
+

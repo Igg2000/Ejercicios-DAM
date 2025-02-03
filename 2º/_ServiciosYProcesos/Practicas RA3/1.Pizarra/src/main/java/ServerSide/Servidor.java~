@@ -34,7 +34,7 @@ public class Servidor {
                 new Thread(nuevoCliente).start();
             }
         } catch (IOException e) {
-            System.out.println("Se ha dejado de escuchar en el puerto " + puerto);
+            e.printStackTrace();
         }
     }
 
@@ -56,7 +56,11 @@ public class Servidor {
 
         boton.addActionListener(e -> {
             encendido = false;
-
+            try {
+                serverSocket.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             try {
                 serverSocket.close();
             } catch (IOException ex) {

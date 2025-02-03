@@ -5,6 +5,8 @@ import Protocol.MensajeDibujo;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 
 public class PizarraGUI extends JFrame {
@@ -30,6 +32,14 @@ public class PizarraGUI extends JFrame {
         add(lienzo, BorderLayout.CENTER);
 
         setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                cliente.conectado=false;
+                super.windowClosing(e);
+            }
+        });
     }
 
     public synchronized void agregarForma(MensajeDibujo forma) {

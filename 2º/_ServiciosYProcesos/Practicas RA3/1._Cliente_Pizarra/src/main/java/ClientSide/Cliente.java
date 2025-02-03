@@ -19,6 +19,7 @@ public class Cliente implements Runnable {
     private String nombreUsuario;
     private String serverIP;
     private int serverPort;
+    public boolean conectado=false;
 
     public Cliente(String serverIP, int serverPort) {
         this.serverIP = serverIP;
@@ -31,6 +32,8 @@ public class Cliente implements Runnable {
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 
+
+
             // Pedir el nombre del usuario
             nombreUsuario = JOptionPane.showInputDialog(null, "Ingrese su nombre:", "Conectar", JOptionPane.PLAIN_MESSAGE);
 
@@ -40,6 +43,7 @@ public class Cliente implements Runnable {
             }
 
             // Notificar conexión exitosa
+            conectado=true;
             JOptionPane.showMessageDialog(null, "Conectado al servidor como " + nombreUsuario);
 
             // Enviar mensaje de nuevo usuario al servidor
@@ -58,14 +62,14 @@ public class Cliente implements Runnable {
         try {
             output.writeObject(msg);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("No se pudo enviar el mensaje");
         }
     }
 
     private void recibirMensajes() {
         new Thread(() -> {
             try {
-                while (true) {
+                while (conectado) {
                     Object obj = input.readObject();
                     if (obj instanceof MensajeDibujo) {
                         MensajeDibujo mensaje = (MensajeDibujo) obj;
@@ -78,9 +82,11 @@ public class Cliente implements Runnable {
                     } else if (obj instanceof List) {
                         ventana.actualizarListaUsuarios((List<String>) obj);
                     }
+                    if (socket.isClosed())
+                        conectado=false;
                 }
             } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
+                System.out.println("No se pudo leer ningun mensaje");
             }
         }).start();
     }

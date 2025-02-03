@@ -11,6 +11,7 @@ public class PizarraGUI extends JFrame {
     private Cliente cliente;
     private Lienzo lienzo;
     private BarraHerramientas herramientas;
+    private ListaUsuarios listaUsuarios;
 
     public PizarraGUI(Cliente cliente) {
         this.cliente = cliente;
@@ -21,7 +22,9 @@ public class PizarraGUI extends JFrame {
 
         lienzo = new Lienzo(this);
         herramientas = new BarraHerramientas(lienzo);
+        listaUsuarios = new ListaUsuarios(this);
 
+        add(listaUsuarios, BorderLayout.EAST);
         add(herramientas, BorderLayout.NORTH);
         add(lienzo, BorderLayout.CENTER);
 
@@ -33,10 +36,10 @@ public class PizarraGUI extends JFrame {
     }
 
     public void actualizarListaUsuarios(List<String> usuarios) {
-        herramientas.actualizarListaUsuarios(usuarios);
+        listaUsuarios.actualizarListaUsuarios(usuarios);
     }
     public void actualizarListaUsuarios(String usuario) {
-        herramientas.actualizarListaUsuarios(usuario);
+        listaUsuarios.actualizarListaUsuarios(usuario);
     }
 
     public Lienzo getLienzo() {

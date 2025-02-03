@@ -7,8 +7,6 @@ import java.util.List;
 
 public class BarraHerramientas extends JPanel {
     private JButton btnCirculo, btnCuadrado, btnAspa, btnColor;
-    private JList<String> listaUsuarios;
-    private DefaultListModel<String> modeloUsuarios;
     private Lienzo lienzo;
 
     public BarraHerramientas(Lienzo lienzo) {
@@ -38,20 +36,7 @@ public class BarraHerramientas extends JPanel {
         add(btnAspa);
         add(btnColor);
 
-        modeloUsuarios = new DefaultListModel<>();
-        listaUsuarios = new JList<>(modeloUsuarios);
-        add(new JScrollPane(listaUsuarios));
     }
 
-    public void actualizarListaUsuarios(List<String> usuarios) {
-        modeloUsuarios.clear();
-        for (String usuario : usuarios) {
-            modeloUsuarios.addElement(usuario);
-        }
-    }
-    public void actualizarListaUsuarios(String usuario) {
-        modeloUsuarios.addElement(usuario);
-
-    }
 
 }

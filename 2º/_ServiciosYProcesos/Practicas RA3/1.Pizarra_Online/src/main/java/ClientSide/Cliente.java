@@ -71,7 +71,7 @@ public class Cliente implements Runnable {
 
                         if (mensaje.getTipo().equals("NUEVO_USUARIO")) {
                             ventana.actualizarListaUsuarios(mensaje.getUsuario());
-                        } else {
+                        } else if (mensaje.getTipo().equals("DIBUJAR")) {
                             ventana.getLienzo().agregarForma(mensaje);
                         }
                     } else if (obj instanceof List) {

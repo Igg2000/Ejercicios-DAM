@@ -10,13 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lienzo extends JPanel {
+    private final PizarraGUI pizarraGUI;
     private List<MensajeDibujo> formas;
     private String herramientaActual = "CIRCULO";
     private Color colorActual = Color.BLACK; // Color por defecto negro
     private int mouseX = -1, mouseY = -1;
     private boolean mostrarPrevisualizacion = false;
 
-    public Lienzo() {
+    public Lienzo(PizarraGUI pizarraGUI) {
+        this.pizarraGUI = pizarraGUI;
         this.formas = new ArrayList<>();
         setBackground(Color.WHITE);
 
@@ -25,7 +27,10 @@ public class Lienzo extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String colorHex = String.format("#%02x%02x%02x", colorActual.getRed(), colorActual.getGreen(), colorActual.getBlue());
-                agregarForma(new MensajeDibujo("DIBUJAR", herramientaActual, e.getX(), e.getY(), "Usuario", colorHex));
+                MensajeDibujo forma = new MensajeDibujo("DIBUJAR", herramientaActual, e.getX(), e.getY(), "Usuario", colorHex);
+                agregarForma(forma);
+                //Esto hace que la pizarra llame al cliente para que le mande la forma al servidor
+                pizarraGUI.agregarForma(forma);
             }
 
             @Override
@@ -47,8 +52,9 @@ public class Lienzo extends JPanel {
         });
     }
 
-    public void agregarForma(MensajeDibujo forma) {
+    public synchronized void agregarForma(MensajeDibujo forma) {
         formas.add(forma);
+
         repaint();
     }
 

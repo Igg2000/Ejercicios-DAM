@@ -1,58 +1,29 @@
 package ClientSide.GUI;
 
-import JPanel;
 
-import java.io.*;
-import java.util.*;
+import javax.swing.*;
+import java.awt.*;
 
-/**
- * 
- */
-public class PizarraGUI extends JPanel {
-
-    /**
-     * Default constructor
-     */
-    public PizarraGUI() {
-    }
-
-    /**
-     * 
-     */
+public class PizarraGUI extends JFrame {
     private Lienzo lienzo;
-
-    /**
-     * 
-     */
     private BarraHerramientas herramientas;
 
-    /**
-     * 
-     */
-    private String herramientaActual;
+    public PizarraGUI() {
+        setTitle("Pizarra Colaborativa");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-    /**
-     * @return
-     */
-    public void minitComponents() {
-        // TODO implement here
-        return null;
+        lienzo = new Lienzo();
+        herramientas = new BarraHerramientas(lienzo);
+
+        add(herramientas, BorderLayout.NORTH);
+        add(lienzo, BorderLayout.CENTER);
+
+        setVisible(true);
     }
 
-    /**
-     * @return
-     */
-    public void actualizarLienzo() {
-        // TODO implement here
-        return null;
+    public static void main(String[] args) {
+        new PizarraGUI();
     }
-
-    /**
-     * @return
-     */
-    public void actualizarListaUsuarios() {
-        // TODO implement here
-        return null;
-    }
-
 }

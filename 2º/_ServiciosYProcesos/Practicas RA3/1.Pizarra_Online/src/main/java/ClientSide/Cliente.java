@@ -6,74 +6,84 @@ import Protocol.MensajeDibujo;
 import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
-import java.util.*;
+import java.util.List;
 
-/**
- * 
- */
-public class Cliente implements Runnable {
-
-    /**
-     * Default constructor
-     */
-    public Cliente() {
-    }
-
-    /**
-     * 
-     */
+public class Cliente {
     private Socket socket;
-
-    /**
-     * 
-     */
     private ObjectInputStream input;
-
-    /**
-     * 
-     */
     private ObjectOutputStream output;
-
-    /**
-     * 
-     */
     private List<String> usuariosConectados;
+    private PizarraGUI ventana;
+    private String nombreUsuario;
 
-    /**
-     * 
-     */
-    private JFrame ventana;
+    public Cliente(String serverIP, int serverPort) {
+        try {
+            socket = new Socket(serverIP, serverPort);
+            output = new ObjectOutputStream(socket.getOutputStream());
+            input = new ObjectInputStream(socket.getInputStream());
 
-    /**
-     * 
-     */
-    private PizarraGUI panel;
+            // Pedir el nombre del usuario al iniciar
+            nombreUsuario = JOptionPane.showInputDialog(null, "Ingrese su nombre:", "Conectar", JOptionPane.PLAIN_MESSAGE);
 
-    /**
-     * @return
-     */
-    public void connectar() {
-        // TODO implement here
+            if (nombreUsuario == null || nombreUsuario.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Nombre inválido. Cerrando aplicación.");
+                System.exit(0);
+            }
 
+            // Notificar conexión exitosa
+            JOptionPane.showMessageDialog(null, "Conectado al servidor como " + nombreUsuario);
+
+            // Enviar al servidor que hay un nuevo usuario
+            output.writeObject(new MensajeDibujo("NUEVO_USUARIO", "", 0, 0, nombreUsuario, ""));
+
+            ventana = new PizarraGUI(this);
+            recibirMensajes();
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con el servidor.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
     }
 
-    /**
-     * @param msg
-     */
     public void enviarMensaje(MensajeDibujo msg) {
-        // TODO implement here
+        try {
+            output.writeObject(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    /**
-     * @return
-     */
-    public void recibirMensaje() {
-        // TODO implement here
+    private void recibirMensajes() {
+        new Thread(() -> {
+            try {
+                while (true) {
+                    Object obj = input.readObject();
+                    if (obj instanceof MensajeDibujo) {
+                        MensajeDibujo mensaje = (MensajeDibujo) obj;
 
+                        if (mensaje.getTipo().equals("NUEVO_USUARIO")) {
+                            ventana.actualizarListaUsuarios(mensaje.getUsuario());
+                        } else {
+                            ventana.getLienzo().agregarForma(mensaje);
+                        }
+                    } else if (obj instanceof List) {
+                        // Recibe la lista de usuarios actualizada
+                        ventana.actualizarListaUsuarios((List<String>) obj);
+                    }
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
-    @Override
-    public void run() {
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+}
 
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente("localhost", 5000);
+        cliente.conectar();
     }
 }

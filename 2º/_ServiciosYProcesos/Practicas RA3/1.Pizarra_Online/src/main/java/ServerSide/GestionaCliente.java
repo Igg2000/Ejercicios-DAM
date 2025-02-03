@@ -1,21 +1,23 @@
 package ServerSide;
 
 import Protocol.MensajeDibujo;
+
 import java.io.*;
 import java.net.Socket;
 
 public class GestionaCliente implements Runnable {
-    private Socket cliente;
+    private Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
     private Servidor servidor;
+    private String nombreUsuario;
 
     public GestionaCliente(Socket socket, Servidor servidor) {
-        this.cliente = socket;
+        this.socket = socket;
         this.servidor = servidor;
         try {
-            output = new ObjectOutputStream(cliente.getOutputStream());
-            input = new ObjectInputStream(cliente.getInputStream());
+            output = new ObjectOutputStream(socket.getOutputStream());
+            input = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,20 +27,33 @@ public class GestionaCliente implements Runnable {
     public void run() {
         try {
             while (true) {
-                MensajeDibujo mensaje = (MensajeDibujo) input.readObject();
-                servidor.broadcast(mensaje);
+                Object obj = input.readObject();
+                if (obj instanceof MensajeDibujo) {
+                    MensajeDibujo mensaje = (MensajeDibujo) obj;
+
+                    if (mensaje.getTipo().equals("NUEVO_USUARIO")) {
+                        nombreUsuario = mensaje.getUsuario();
+                        servidor.agregarUsuario(nombreUsuario);
+                    } else {
+                        servidor.broadcast(mensaje);
+                    }
+                }
             }
         } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Usuario " + nombreUsuario + " desconectado.");
             servidor.quitarCliente(this);
         }
     }
 
-    public void enviarMensaje(MensajeDibujo msg) {
+    public void enviarMensaje(Object mensaje) {
         try {
-            output.writeObject(msg);
-            output.flush();
+            output.writeObject(mensaje);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 }

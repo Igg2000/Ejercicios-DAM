@@ -2,29 +2,23 @@ package ServerSide;
 
 
 import Protocol.MensajeDibujo;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Servidor {
     private int puerto;
     private ServerSocket serverSocket;
     private List<GestionaCliente> clientes;
-    private List<MensajeDibujo> dibujos;
-
-    public static void main(String[] args) {
-        new Servidor(5000).iniciar();
-    }
+    private List<String> nombresUsuarios;
 
     public Servidor(int puerto) {
         this.puerto = puerto;
-        this.clientes = new ArrayList<>();
-        this.dibujos = new ArrayList<>();
-    }
+        clientes = new ArrayList<>();
+        nombresUsuarios = new ArrayList<>();
 
-    public void iniciar() {
         try {
             serverSocket = new ServerSocket(puerto);
             System.out.println("Servidor iniciado en el puerto " + puerto);
@@ -40,16 +34,30 @@ public class Servidor {
         }
     }
 
-    public synchronized void broadcast(MensajeDibujo mensaje) {
-        dibujos.add(mensaje);
+    public synchronized void broadcast(Object mensaje) {
         for (GestionaCliente cliente : clientes) {
             cliente.enviarMensaje(mensaje);
         }
     }
 
-    public synchronized void quitarCliente(GestionaCliente cliente) {
-        clientes.remove(cliente);
+    public synchronized void actualizarListaUsuarios() {
+        broadcast(new ArrayList<>(nombresUsuarios));
     }
 
+    public synchronized void agregarUsuario(String nombre) {
+        if (!nombresUsuarios.contains(nombre)) {
+            nombresUsuarios.add(nombre);
+            actualizarListaUsuarios();
+        }
+    }
 
+    public synchronized void quitarCliente(GestionaCliente cliente) {
+        clientes.remove(cliente);
+        nombresUsuarios.remove(cliente.getNombreUsuario());
+        actualizarListaUsuarios();
+    }
+
+    public static void main(String[] args) {
+        new Servidor(54321);
+    }
 }

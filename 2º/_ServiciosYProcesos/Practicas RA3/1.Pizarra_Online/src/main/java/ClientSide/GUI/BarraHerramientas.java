@@ -49,4 +49,9 @@ public class BarraHerramientas extends JPanel {
             modeloUsuarios.addElement(usuario);
         }
     }
+    public void actualizarListaUsuarios(String usuario) {
+        modeloUsuarios.addElement(usuario);
+
+    }
+
 }

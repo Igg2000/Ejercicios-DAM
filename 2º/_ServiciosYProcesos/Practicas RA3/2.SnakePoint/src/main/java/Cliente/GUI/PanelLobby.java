@@ -8,6 +8,8 @@ import Protocolo.ProtocoloUtiles;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PanelLobby extends JPanel {
@@ -22,22 +24,26 @@ public class PanelLobby extends JPanel {
     // Lista de usuarios conectados (por ejemplo, "Usuario1", "Usuario2", etc.)
     private DefaultListModel<String> modeloUsuarios;
     private JList<String> listaUsuarios;
+    private List<String> listaNombres;
 
     // Número de avatares disponibles
     private final int NUM_AVATARES = 4;
 
-    // Variables para el estado de jugadores (simulación; en la práctica se actualizarían con datos del servidor)
+
     private int totalJugadores = 0;
     private int jugadoresPreparados = 0;
+    private boolean listoParaJugar=false;
 
     public PanelLobby(Ventana ventana, Cliente cliente) {
         this.ventana = ventana;
         this.cliente = cliente;
+        listaNombres = new ArrayList<>();
 
-        mandarMensaje(Protocolo.NUEVO_JUGADOR);
+
+        cliente.enviarNuevoUsuario();
         inicializarComponentes();
-        // Simulación: agregar usuarios conectados
-        simularUsuariosConectados();
+
+        recibirUsuarios();
     }
 
     private void inicializarComponentes() {
@@ -95,26 +101,62 @@ public class PanelLobby extends JPanel {
         add(panelInferior, BorderLayout.SOUTH);
     }
 
-    private void mandarMensaje(int i) {
-        switch (i) {
-            case Protocolo.NUEVO_JUGADOR:
-                String cad = ProtocoloUtiles.crearMensajeNuevoUsuario(cliente.getJugador().getId(), cliente.getJugador().getNombre());
-                cliente.getOut().println(cad);
-        }
+
+
+    private void recibirUsuarios() {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (!listoParaJugar) {
+                    cliente.enviarMensaje(String.valueOf(Protocolo.DAME_LISTA_DE_JUGADORES));
+                    cliente.enviarMensaje(String.valueOf(Protocolo.DAME_JUGADORES_PREPARADOS));
+                    try {
+                        Thread.sleep(500); // espera 1 segundo
+                        String cad = cliente.recibirMensaje();
+                        String[] tokens = ProtocoloUtiles.parsearMensaje(cad);
+
+                        System.out.println("El cliente ha recibido el mensaje: " + cad);
+
+                        // Si el mensaje es de agregar jugadores
+                        if (tokens[0].equals(String.valueOf(Protocolo.AGREGA_JUGADORES_A_LA_LISTA))) {
+                            // Crear lista temporal con los nombres recibidos
+                            List<String> nuevosNombres = new ArrayList<>();
+                            for (int i = 1; i < tokens.length; i++) {
+                                nuevosNombres.add(tokens[i]);
+                            }
+
+                            // Si la lista de nombres actual es diferente a la recibida, se actualiza
+                            if (!nuevosNombres.equals(listaNombres)) {
+                                // Actualizar la lista de nombres y el modelo del JList
+                                listaNombres.clear();
+                                modeloUsuarios.clear();
+
+                                for (String nombre : nuevosNombres) {
+                                    listaNombres.add(nombre);
+                                    modeloUsuarios.addElement(nombre);
+                                }
+                                totalJugadores = modeloUsuarios.getSize();
+                                actualizarEstadoPreparado(); // Actualiza el texto del botón con el estado actual
+
+                                // Actualizar la interfaz
+                                PanelLobby.this.revalidate();
+                            }
+                        } else if (tokens[0].equals(String.valueOf(Protocolo.TOMA_JUGADORES_PREPARADOS))) {
+                            //aqui tengo un problema de sincronizacion
+                            System.out.println("Estos son los jugadores preparados antes: " +jugadoresPreparados);
+                            jugadoresPreparados = Integer.parseInt(tokens[1]);
+                            System.out.println("Estos son los jugadores preparados despues: " +jugadoresPreparados);
+                            actualizarEstadoPreparado();
+                        }
+                    } catch (InterruptedException | IOException e) {
+                        System.out.println("Error al recibir usuarios: " + e.getMessage());
+                    }
+                }
+            }
+        });
+        t.start();
     }
 
-    /**
-     * Método para simular la carga de usuarios conectados.
-     * En un entorno real, estos datos vendrían del servidor.
-     */
-    private void simularUsuariosConectados() {
-        // Agregamos algunos usuarios de ejemplo
-        modeloUsuarios.addElement("Usuario1");
-        modeloUsuarios.addElement("Usuario2");
-        modeloUsuarios.addElement("Usuario3");
-        totalJugadores = modeloUsuarios.getSize();
-        actualizarEstadoPreparado(); // Actualiza el texto del botón con el estado actual
-    }
 
     private void seleccionarAvatar(int id, String rutaImagen) {
         // Resalta el botón seleccionado (quita el borde de los demás)
@@ -151,9 +193,7 @@ public class PanelLobby extends JPanel {
         // Simulación: incrementar el contador de jugadores preparados
         jugadoresPreparados++;
         actualizarEstadoPreparado();
-
-        // Aquí podrías enviar al servidor el mensaje indicando que el usuario está preparado,
-        // por ejemplo: Cliente.enviarPreparado(nombre, avatarSeleccionado.getId());
+        cliente.enviarPreparado(avatarSeleccionado.getId());
     }
 
     /**

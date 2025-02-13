@@ -27,14 +27,14 @@ public class Cliente implements Protocolo {
     /**
      * Envía un mensaje al servidor.
      */
-    public void enviarMensaje(String mensaje) {
+    public synchronized void enviarMensaje(String mensaje) {
         out.println(mensaje);
     }
 
     /**
      * Escucha mensajes del servidor de forma bloqueante.
      */
-    public String recibirMensaje() throws IOException {
+    public synchronized String recibirMensaje() throws IOException {
         return in.readLine();
     }
 
@@ -45,8 +45,13 @@ public class Cliente implements Protocolo {
     }
 
     // Ejemplo de método para notificar que un nuevo usuario se conecta
-    public void enviarNuevoUsuario(int id,String nombre, int avatar) {
-        String mensaje = ProtocoloUtiles.crearMensajeNuevoUsuario(id,nombre);
+    public synchronized void enviarNuevoUsuario() {
+        String mensaje = ProtocoloUtiles.crearMensajeNuevoUsuario(jugador.getNombre());
+        enviarMensaje(mensaje);
+    }
+
+    public synchronized void enviarPreparado(int idAvatar) {
+        String mensaje = ProtocoloUtiles.crearMensajePreparado(idAvatar);
         enviarMensaje(mensaje);
     }
 

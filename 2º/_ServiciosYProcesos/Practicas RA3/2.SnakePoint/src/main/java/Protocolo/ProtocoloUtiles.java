@@ -6,19 +6,15 @@ public class ProtocoloUtiles {
      * Construye un mensaje para un nuevo usuario.
      * Formato: "1:nombre:avatar"
      */
-    public static String crearMensajeNuevoUsuario(int id,String nombre) {
-        return Protocolo.NUEVO_JUGADOR +
+    public static String crearMensajeNuevoUsuario(String nombre) {
+        return  Protocolo.NUEVO_JUGADOR +
                 String.valueOf(Protocolo.SEPARADOR) +
-                id+
-                Protocolo.SEPARADOR +
                 nombre;
     }
 
-    public static String crearMensajePreparado(int id, int avatar) {
+    public static String crearMensajePreparado(int avatar) {
         return Protocolo.JUGADOR_PREPARADO +
                 String.valueOf(Protocolo.SEPARADOR) +
-                id+
-                Protocolo.SEPARADOR +
                 avatar;
     }
 

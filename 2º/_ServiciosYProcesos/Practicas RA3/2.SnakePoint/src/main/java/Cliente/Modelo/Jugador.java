@@ -3,28 +3,16 @@ package Cliente.Modelo;
 import java.awt.*;
 
 public class Jugador extends ObjetoJuego {
-    private int id;
-    private static int contadorId = 1;
     private String nombre;
     private int avatar;
     private int puntuacion;
 
     public Jugador(String nombre, int x, int y, int ancho, int alto) {
         super(x, y, ancho, alto);
-        this.id = contadorId;
-        contadorId++;
         this.nombre = nombre;
         this.puntuacion = 0;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public int setId(int id) {
-        return this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -49,6 +37,7 @@ public class Jugador extends ObjetoJuego {
     public void setAvatar(int avatar) {
         this.avatar = avatar;
     }
+
 
     @Override
     public void actualizar() {

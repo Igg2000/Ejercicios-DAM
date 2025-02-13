@@ -101,7 +101,8 @@ public class Cliente implements Runnable {
     }
 
     public static void main(String[] args) {
-        Cliente cliente = new Cliente("localhost", 54321);
-        cliente.conectar();
+        new Thread(new Cliente("localhost", 54321)).start();
+        //new Thread(new Cliente("localhost", 54321)).start();
+
     }
 }

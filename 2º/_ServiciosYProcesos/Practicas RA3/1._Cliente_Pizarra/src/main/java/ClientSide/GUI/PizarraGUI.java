@@ -19,7 +19,7 @@ public class PizarraGUI extends JFrame {
         this.cliente = cliente;
         setTitle("Pizarra Colaborativa - "+cliente.getNombreUsuario());
         setSize(800, 600);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //se me estaba complicando
         setLayout(new BorderLayout());
 
 

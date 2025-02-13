@@ -20,7 +20,7 @@ public class BarraHerramientas extends JPanel {
         String cuadrado = "\u25A0";   // ■
         String aspa = "\u2716";       // ✖
         String color = ("\uD83C\uDFA8"); // 🎨
-        String borrar = "\uD83E\uDDFD"; // 🧽
+        //String borrar = "\uD83E\uDDFD"; // 🧽
 
         setBackground(TEMA.getFondo());
         setBorder(BorderFactory.createLineBorder(TEMA.getComplementario()));
@@ -29,19 +29,19 @@ public class BarraHerramientas extends JPanel {
         btnCuadrado = new NBoton(cuadrado, TEMA.getComplementario(), TEMA.getBoton());
         btnAspa = new NBoton(aspa, TEMA.getComplementario(), TEMA.getBoton());
         btnColor = new NBoton(color, TEMA.getComplementario(), TEMA.getBoton());
-        btnBorrar = new NBoton(borrar, TEMA.getComplementario(), TEMA.getBoton());
+        //btnBorrar = new NBoton(borrar, TEMA.getComplementario(), TEMA.getBoton());
 
         btnCirculo.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
         btnCuadrado.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
         btnAspa.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
         btnColor.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
-        btnBorrar.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
+        //btnBorrar.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
 
         btnCirculo.setPreferredSize(new Dimension(50, 50));
         btnCuadrado.setPreferredSize(new Dimension(50, 50));
         btnAspa.setPreferredSize(new Dimension(50, 50));
         btnColor.setPreferredSize(new Dimension(50, 50));
-        btnBorrar.setPreferredSize(new Dimension(50, 50));
+        //btnBorrar.setPreferredSize(new Dimension(50, 50));
 
 
 
@@ -62,7 +62,7 @@ public class BarraHerramientas extends JPanel {
         add(btnCuadrado);
         add(btnAspa);
         add(btnColor);
-        add(btnBorrar);
+        //add(btnBorrar);
 
     }
 

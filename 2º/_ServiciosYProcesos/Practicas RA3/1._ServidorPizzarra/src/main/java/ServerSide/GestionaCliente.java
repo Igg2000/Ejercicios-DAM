@@ -49,7 +49,7 @@ public class GestionaCliente implements Runnable {
         try {
             output.writeObject(mensaje);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error al enviar el mensaje.");
         }
     }
 

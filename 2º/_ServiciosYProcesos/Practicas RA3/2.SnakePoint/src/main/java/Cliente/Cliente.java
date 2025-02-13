@@ -20,6 +20,7 @@ public class Cliente implements Protocolo {
 
     public Cliente(String host, int puerto) throws IOException {
         socket = new Socket(host, puerto);
+        socket.setSoTimeout(5000);
         out = new PrintWriter(socket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     }

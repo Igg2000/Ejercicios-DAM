@@ -107,9 +107,10 @@ public class PanelLobby extends JPanel {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
+                cliente.enviarMensaje(String.valueOf(Protocolo.DAME_LISTA_DE_JUGADORES));
+
+
                 while (!listoParaJugar) {
-                    cliente.enviarMensaje(String.valueOf(Protocolo.DAME_LISTA_DE_JUGADORES));
-                    cliente.enviarMensaje(String.valueOf(Protocolo.DAME_JUGADORES_PREPARADOS));
                     try {
                         Thread.sleep(500); // espera 1 segundo
                         String cad = cliente.recibirMensaje();
@@ -149,7 +150,7 @@ public class PanelLobby extends JPanel {
                             actualizarEstadoPreparado();
                         }
                     } catch (InterruptedException | IOException e) {
-                        System.out.println("Error al recibir usuarios: " + e.getMessage());
+                        System.out.println("No se encontraron jugadores, volviendo a buscar: " + e.getMessage());
                     }
                 }
             }
@@ -191,6 +192,7 @@ public class PanelLobby extends JPanel {
         preparado = true;
 
         // Simulación: incrementar el contador de jugadores preparados
+        //cliente.enviarMensaje(String.valueOf(Protocolo.DAME_JUGADORES_PREPARADOS));
         jugadoresPreparados++;
         actualizarEstadoPreparado();
         cliente.enviarPreparado(avatarSeleccionado.getId());

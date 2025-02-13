@@ -128,6 +128,8 @@ public class ManejaCliente implements Runnable,Protocolo {
             cad += ":"+ jugador ;
         }
 
+
+
         System.out.println("ESTOS SON LOS JUGADORES CONECTADOS:" + cad);
 
         gestor.broadcast(AGREGA_JUGADORES_A_LA_LISTA + cad);
@@ -165,6 +167,8 @@ public class ManejaCliente implements Runnable,Protocolo {
         avatar = Integer.parseInt(tokens[1]);
         gestor.incrementarUsuariosPreparados();
         System.out.println("Jugador preparado: ID " + id + "Nombre " + nombre + "Avatar " + avatar);
+
+        procesarDameListaDePreparados(tokens);
 
         if (gestor.getUsuariosPreparados() == gestor.getUsuariosConectados().size()) {
             gestor.broadcast(String.valueOf(INICIO_JUEGO));

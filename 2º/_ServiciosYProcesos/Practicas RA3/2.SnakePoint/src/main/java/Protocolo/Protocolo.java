@@ -19,7 +19,7 @@ public interface Protocolo {
     int CANCELAR_PREPARADO = 7;             // "4" cliente -> servidor
 
 
-    int INICIO_JUEGO = 6;                   // "4:cuentaRegresiva"
+    int INICIO_JUEGO = 8;                   // "4:cuentaRegresiva"
     int MOVER = 7;                          // "5:id:destinoX:destinoY"
     int ACTUALIZAR = 8;                     // "6:estadoJuego"
     int COMIDA_CONSUMIDA = 9;                // "7:idComida:idJugador:puntos"

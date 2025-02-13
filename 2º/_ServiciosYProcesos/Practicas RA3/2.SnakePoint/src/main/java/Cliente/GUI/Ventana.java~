@@ -44,17 +44,4 @@ public class Ventana extends JFrame {
     public void mostrarLobby() {
         layout.show(getContentPane(), "LOBBY");
     }
-
-    public PanelLobby getPanelLobby() {
-        return panelLobby;
-    }
-
-    public PanelJuego getPanelJuego() {
-        return panelJuego;
-    }
-
-    @Override
-    public CardLayout getLayout() {
-        return layout;
-    }
 }

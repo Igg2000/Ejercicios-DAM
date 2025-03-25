@@ -1,0 +1,6 @@
+Para resolver este problema pediremos al usuario que introduzca por teclado un numero del 1 al 10
+esto lo haremos dentro de un bucle que nos obligue a escribir un numero del 1 al 10
+
+una vez tengamos el numero que nos da el usuario crearemos un bucle que empieze en 1 y acabe en 10, (porque las tablas de multiplicar llegan hasta 10)
+dentro de ese bucle escribiremos la operacion y el resultado de multiplicar el numero que nos ha introducido el usuario por el ciclo del bucle en el que estamos
+de esa forma estariamos multiplicando el numero que nos ha introducido el usuario por todos los numeros del 1 al 10

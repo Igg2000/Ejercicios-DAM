@@ -1,0 +1,25 @@
+﻿<Window x:Class="Tema_4_v2_Ejercicio_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_4_v2_Ejercicio_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFEBE5D9"
+        ResizeMode="NoResize"
+        SizeToContent="Manual"
+        >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondoCoche.jpg" Stretch="Uniform"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,110">
+            <ComboBox x:Name="cbMarca" Width="120" Margin="0,0,50,0" SelectionChanged="cbMarca_SelectionChanged"/>
+            <ComboBox x:Name="cbModelo" Width="120" />
+        </StackPanel>
+        <Label Content="Marca" HorizontalAlignment="Left" Margin="255,101,0,0" VerticalAlignment="Top" Height="30" Width="121" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#FFC30803"/>
+        <Label Content="Modelo" HorizontalAlignment="Left" Margin="424,101,0,0" VerticalAlignment="Top" Height="30" Width="121" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="#FFC30803"/>
+        <Rectangle HorizontalAlignment="Left" Height="51" Margin="347,71,0,0" VerticalAlignment="Top" Width="111" Fill="#FFEBE5D9"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+C:\Users\Nacho\source\repos\Tema 5 practica 5\bin\Debug\Tema 5 practica 5.exe.config
+C:\Users\Nacho\source\repos\Tema 5 practica 5\bin\Debug\Tema 5 practica 5.exe
+C:\Users\Nacho\source\repos\Tema 5 practica 5\bin\Debug\Tema 5 practica 5.pdb
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5_MarkupCompile.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5_MarkupCompile.lref
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.g.resources
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema_5_practica_5.Properties.Resources.resources
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.exe
+C:\Users\Nacho\source\repos\Tema 5 practica 5\obj\Debug\Tema 5 practica 5.pdb
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\bin\Debug\Tema 5 practica 5.exe.config
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\bin\Debug\Tema 5 practica 5.exe
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\bin\Debug\Tema 5 practica 5.pdb
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5_MarkupCompile.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5_MarkupCompile.lref
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.g.resources
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema_5_practica_5.Properties.Resources.resources
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.exe
+C:\Users\Nacho\source\repos\Tema 5 practica 5 - Animacion Vacaciones\obj\Debug\Tema 5 practica 5.pdb

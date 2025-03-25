@@ -1,0 +1,62 @@
+﻿<Page x:Class="IGG_Examen_1EVA.CobrarCliente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_Examen_1EVA"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="CobrarCliente">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondo.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Título de la página -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Historial de Servicios"
+               FontSize="36"
+               Margin="10"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               FontWeight="Bold"
+               Foreground="#FFEEF5FF" />
+
+        <!-- Contenido principal -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Top">
+            <!-- Cliente seleccionado -->
+            <TextBlock x:Name="TextBlockCliente" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+
+            <!-- Historial de Servicios -->
+            <TextBlock x:Name="ServiciosContratados" Text="Servicios Contratados:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ListBox x:Name="ListBoxHistorial" Margin="5" Height="200" FontSize="16">
+                <!-- Los elementos de la lista se agregarán dinámicamente -->
+            </ListBox>
+
+            <!-- Botón para calcular el total -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="BotonTotal"
+                        Content="Cobrar"
+                        Margin="5"
+                        Height="50"
+                        Width="150"
+                        Foreground="#FF176B87"
+                        Background="#FFEEF5FF"
+                        FontSize="18"
+                        Click="BotonTotal_Click" />
+            </StackPanel>
+
+            <!-- Texto para mostrar el total -->
+            <TextBlock x:Name="TextBlockTotal" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+        </StackPanel>
+    </Grid>
+</Page>

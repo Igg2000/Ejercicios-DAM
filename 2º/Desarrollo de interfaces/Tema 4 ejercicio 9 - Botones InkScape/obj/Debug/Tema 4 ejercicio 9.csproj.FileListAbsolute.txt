@@ -1,0 +1,15 @@
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9_MarkupCompile.cache
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9_MarkupCompile.lref
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.g.resources
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.pdb
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\bin\Debug\Tema 4 ejercicio 9.exe.config
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\bin\Debug\Tema 4 ejercicio 9.exe
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\bin\Debug\Tema 4 ejercicio 9.pdb
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema_4_ejercicio_9.Properties.Resources.resources
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\Tema 4 ejercicio 9 - Botones InkScape\obj\Debug\Tema 4 ejercicio 9.exe

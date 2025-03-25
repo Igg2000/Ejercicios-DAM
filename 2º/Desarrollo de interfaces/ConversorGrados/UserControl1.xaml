@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ConversorGrados.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConversorGrados"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="250">
+    <Grid Width="250" Height="200">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <TextBlock x:Name="titulo" Grid.Row="0" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="10">
+        Conversor de Temperatura
+        </TextBlock>
+
+        <!-- Campo de texto para la temperatura -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBox x:Name="txtTemperatura" Width="100" Height="30" Margin="5" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="cmbUnidad" Width="120" Height="30" Margin="5" VerticalAlignment="Center">
+                <ComboBoxItem Content="Celsius" IsSelected="True"/>
+                <ComboBoxItem Content="Fahrenheit"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Botones de Conversión -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="botonConvertir" Content="Convertir" Width="100" Height="30" Margin="5" Click="ConvertirButton_Click"/>
+        </StackPanel>
+
+        <!-- Resultado de la conversión -->
+        <TextBlock x:Name="txtResultado" Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Margin="10">
+        Resultado: --
+        </TextBlock>
+
+    </Grid>
+</UserControl>

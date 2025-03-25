@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\buscarcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:buscarcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\buscarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:buscarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\cobrarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:cobrarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|c:\\users\\nacho\\source\\repos\\igg examen 1eva\\altacliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:altacliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|c:\\users\\nacho\\source\\repos\\igg examen 1eva\\menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\agendarcita.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:agendarcita.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\cobrarcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:cobrarcliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1879E299-8DEB-482C-A08B-249EBFFBB264}|IGG Examen 1EVA.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AltaCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\AltaCliente.xaml",
+              "RelativeDocumentMoniker": "AltaCliente.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\AltaCliente.xaml",
+              "RelativeToolTip": "AltaCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T17:09:18.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AgendarCita.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\AgendarCita.xaml",
+              "RelativeDocumentMoniker": "AgendarCita.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\AgendarCita.xaml",
+              "RelativeToolTip": "AgendarCita.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T17:00:01.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CobrarCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\CobrarCliente.xaml",
+              "RelativeDocumentMoniker": "CobrarCliente.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\CobrarCliente.xaml",
+              "RelativeToolTip": "CobrarCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T16:15:15.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuscarCliente.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\BuscarCliente.xaml.cs",
+              "RelativeDocumentMoniker": "BuscarCliente.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\BuscarCliente.xaml.cs",
+              "RelativeToolTip": "BuscarCliente.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T15:50:27.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BuscarCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\BuscarCliente.xaml",
+              "RelativeDocumentMoniker": "BuscarCliente.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\BuscarCliente.xaml",
+              "RelativeToolTip": "BuscarCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T15:49:11.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MenuPrincipal.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MenuPrincipal.xaml.cs",
+              "RelativeDocumentMoniker": "MenuPrincipal.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MenuPrincipal.xaml.cs",
+              "RelativeToolTip": "MenuPrincipal.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAewCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T14:53:51.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MenuPrincipal.xaml",
+              "RelativeToolTip": "MenuPrincipal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T14:44:25.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CobrarCliente.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\CobrarCliente.xaml.cs",
+              "RelativeDocumentMoniker": "CobrarCliente.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\CobrarCliente.xaml.cs",
+              "RelativeToolTip": "CobrarCliente.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEQAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:23:38.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T14:38:27.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG Examen 1EVA\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwCQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T14:38:26.358Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

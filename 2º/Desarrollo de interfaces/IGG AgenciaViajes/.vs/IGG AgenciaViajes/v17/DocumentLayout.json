@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|c:\\users\\nacho\\source\\repos\\igg agenciaviajes\\buscarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|solutionrelative:buscarcliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\viajespendientes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|solutionrelative:viajespendientes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{86A2AC53-3CFA-49F1-BAF5-B49F4A314D9F}|IGG AgenciaViajes.csproj|solutionrelative:menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViajesPendientes.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\ViajesPendientes.xaml",
+              "RelativeDocumentMoniker": "ViajesPendientes.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\ViajesPendientes.xaml",
+              "RelativeToolTip": "ViajesPendientes.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T20:54:35.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuscarCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\BuscarCliente.xaml",
+              "RelativeDocumentMoniker": "BuscarCliente.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\BuscarCliente.xaml",
+              "RelativeToolTip": "BuscarCliente.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T16:56:29.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\MenuPrincipal.xaml",
+              "RelativeToolTip": "MenuPrincipal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-18T15:10:48.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\Login.xaml",
+              "RelativeDocumentMoniker": "Login.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\IGG AgenciaViajes\\Login.xaml",
+              "RelativeToolTip": "Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T17:09:42.711Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

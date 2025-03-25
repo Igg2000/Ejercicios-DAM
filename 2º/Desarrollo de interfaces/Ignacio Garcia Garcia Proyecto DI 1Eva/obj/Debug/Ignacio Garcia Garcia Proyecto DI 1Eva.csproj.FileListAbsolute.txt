@@ -1,0 +1,17 @@
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva_MarkupCompile.cache
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva_MarkupCompile.lref
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\bin\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.exe.config
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\bin\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.exe
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\bin\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.pdb
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.g.resources
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio_Garcia_Garcia_Proyecto_DI_1Eva.Properties.Resources.resources
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.exe
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\Ignacio Garcia Garcia Proyecto DI 1Eva.pdb
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\MenuPrincipal.g.cs
+C:\Users\Nacho\source\repos\Ignacio Garcia Garcia Proyecto DI 1Eva\obj\Debug\MenuPrincipal.baml

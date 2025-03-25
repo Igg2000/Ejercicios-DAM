@@ -1,0 +1,25 @@
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\bin\Debug\IGG AgenciaViajes.exe.config
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\bin\Debug\IGG AgenciaViajes.exe
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\bin\Debug\IGG AgenciaViajes.pdb
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes_MarkupCompile.cache
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes_MarkupCompile.lref
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.g.resources
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG_AgenciaViajes.Properties.Resources.resources
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.exe
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\IGG AgenciaViajes.pdb
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\Login.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\MenuPrincipal.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\Login.baml
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\MenuPrincipal.baml
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\PaginaNuevoViaje.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\PaginaNuevoViaje.baml
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\ViajesPendientes.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\ViajesPendientes.baml
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\BuscarCliente.g.cs
+C:\Users\Nacho\source\repos\IGG AgenciaViajes\obj\Debug\BuscarCliente.baml

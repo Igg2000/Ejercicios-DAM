@@ -1,0 +1,32 @@
+﻿<Window x:Class="Tema_4_ejercicio_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_4_ejercicio_9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Login" HorizontalAlignment="Center" Height="65" Margin="0,82,0,0" VerticalAlignment="Top" Width="178" FontSize="24" FontWeight="Bold" Foreground="#FF484848" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/dibujo2.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Search" HorizontalAlignment="Center" Height="65" Margin="0,152,0,0" VerticalAlignment="Top" Width="178" FontSize="24" FontWeight="Bold" Foreground="#FF484848" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/dibujo2.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Buy Now" HorizontalAlignment="Center" Height="65" Margin="0,222,0,0" VerticalAlignment="Top" Width="178" FontSize="24" FontWeight="Bold" Foreground="#FF484848" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/dibujo2.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Download" HorizontalAlignment="Center" Height="65" Margin="0,292,0,0" VerticalAlignment="Top" Width="178" FontSize="24" FontWeight="Bold" Foreground="#FF484848" BorderBrush="#00707070">
+            <Button.Background>
+                <ImageBrush ImageSource="/dibujo2.png" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

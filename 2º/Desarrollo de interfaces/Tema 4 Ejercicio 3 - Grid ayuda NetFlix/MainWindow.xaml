@@ -1,0 +1,24 @@
+﻿<Window x:Class="Tema_4_Ejercicio_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_4_Ejercicio_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="414" VerticalAlignment="Center" Width="780" ShowGridLines="True">
+            <Label Content="Solicitar series o películas" HorizontalAlignment="Right" Height="52" Margin="0,0,459,352" VerticalAlignment="Bottom" Width="311" VerticalContentAlignment="Center" FontSize="24" FontWeight="Bold"/>
+            <Label Content="¿Hay alguna serie o película que quieras ver en Netflix? Sugiérenosla a continuación." HorizontalAlignment="Right" Height="36" Margin="0,52,235,0" VerticalAlignment="Top" Width="535" VerticalContentAlignment="Center" FontSize="14"/>
+            <Label Content="¿Te preguntas por qué algún titulo ya no está disponible? Visita " Height="36" Margin="0,87,367,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Right" Width="403"/>
+            <Label Content="Si necesitas ayuda para encontrar un titulo, visita" HorizontalAlignment="Right" Height="36" Margin="0,123,459,0" VerticalAlignment="Top" Width="311" VerticalContentAlignment="Center" FontSize="14"/>
+            <Label Content="¿Por qué se retiran series y películas de Netflix?" Height="36" Margin="0,87,44,0"  VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Right" Width="323" Foreground="Red" FontWeight="Bold"/>
+            <Label Content="¿Cómo puedo encontrar series y películas en Netflix?" Height="36" Margin="0,123,100,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="14" HorizontalAlignment="Right" Width="359" Foreground="Red" FontWeight="Bold"/>
+            <TextBox x:Name="titulo1" Height="52" Margin="10,168,0,0" TextWrapping="Wrap" Text="Sugerencia de títulos -1:" Width="386" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="16" Foreground="#FF9D9D9D" MouseLeftButtonDown="clickTitulo1"/>
+            <TextBox x:Name="titulo2" Height="52" Margin="10,225,0,0" TextWrapping="Wrap" Text="Sugerencia de títulos -2:" Width="386" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="16" Foreground="#FF9D9D9D" MouseLeftButtonDown="clickTitulo2"/>
+            <TextBox x:Name="titulo3" Height="52" Margin="10,282,0,0" TextWrapping="Wrap" Text="Sugerencia de títulos -3:" Width="386" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="16" Foreground="#FF9D9D9D" MouseLeftButtonDown="clickTitulo3"/>
+            <Button Content="ENVIAR SUGERENCIA" HorizontalAlignment="Left" Height="46" Margin="10,358,0,0" VerticalAlignment="Top" Width="193" Background="#FFFF1D1D" FontWeight="Bold" Foreground="White" Click="Button_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>

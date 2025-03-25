@@ -1,0 +1,15 @@
+C:\Users\Nacho\source\repos\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.exe.config
+C:\Users\Nacho\source\repos\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.exe
+C:\Users\Nacho\source\repos\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.pdb
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto_MarkupCompile.cache
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto_MarkupCompile.lref
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.g.resources
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.Properties.Resources.resources
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.exe
+C:\Users\Nacho\source\repos\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.pdb

@@ -1,0 +1,87 @@
+﻿<Page x:Class="IGG_Examen_1EVA.AltaCliente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_Examen_1EVA"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="AltaCliente">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondo.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Título de la página -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Alta de Cliente"
+               FontSize="36"
+               Margin="10"
+               VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FFEEF5FF" />
+
+        <!-- Contenido principal -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Top">
+            <!-- Contenedor de Nombre y Apellidos -->
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!-- Nombre -->
+                <StackPanel Grid.Column="0" Margin="5">
+                    <TextBlock Text="Nombre:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxNombre" Margin="5" Height="35" FontSize="16"/>
+                </StackPanel>
+                <!-- Apellidos -->
+                <StackPanel Grid.Column="1" Margin="5">
+                    <TextBlock Text="Apellidos:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxApellidos" Margin="5" Height="35" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Fecha (Último día que acudió) -->
+            <TextBlock Text="Última visita:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <DatePicker x:Name="DatePickerUltimaVisita" Margin="5" Height="35" FontSize="16"/>
+
+            <!-- Color de uñas -->
+            <TextBlock Text="Color de uñas utilizado:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ComboBox x:Name="ComboBoxColorUnas" Margin="5" Height="35" FontSize="16">
+                <ComboBoxItem Content="Rojo" />
+                <ComboBoxItem Content="Rosa" />
+                <ComboBoxItem Content="Azul" />
+                <ComboBoxItem Content="Negro" />
+                <ComboBoxItem Content="Francesa" />
+            </ComboBox>
+
+            <!-- Alérgenos -->
+            <TextBlock Text="Alérgenos:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <TextBox x:Name="TextBoxAlergenos" Margin="5" Height="35" FontSize="16"/>
+
+            <!-- Tipo de masaje favorito -->
+            <TextBlock Text="Tipo de masaje favorito:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ComboBox x:Name="ComboBoxMasajeFavorito" Margin="5" Height="35" FontSize="16">
+                <ComboBoxItem Content="Relajante" />
+                <ComboBoxItem Content="Descontracturante" />
+                <ComboBoxItem Content="Deportivo" />
+                <ComboBoxItem Content="Tailandés" />
+                <ComboBoxItem Content="Con piedras calientes" />
+            </ComboBox>
+
+            <!-- Botones -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="BotonGuardarCliente" Content="Guardar" Margin="5" Height="50" Width="150" Background="#FFEEF5FF" Foreground="#FF176B87" FontSize="18" Click="BotonGuardarCliente_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</Page>

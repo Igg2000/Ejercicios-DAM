@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|c:\\users\\nacho\\source\\repos\\ignacio garcia garcia proyecto di 1eva\\menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|solutionrelative:menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|c:\\users\\nacho\\source\\repos\\ignacio garcia garcia proyecto di 1eva\\menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|solutionrelative:menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF1BDAC8-6C41-4959-AA53-A2E3B3A7A12E}|Ignacio Garcia Garcia Proyecto DI 1Eva.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuPrincipal.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MenuPrincipal.xaml.cs",
+              "RelativeDocumentMoniker": "MenuPrincipal.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MenuPrincipal.xaml.cs",
+              "RelativeToolTip": "MenuPrincipal.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:54:30.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MenuPrincipal.xaml*",
+              "RelativeToolTip": "MenuPrincipal.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-28T15:51:20.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-28T15:10:54.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\Ignacio Garcia Garcia Proyecto DI 1Eva\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwFMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:11:03.326Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+﻿<Window x:Class="MiPrimerProyecto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiPrimerProyecto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.52,0.502" Background="#FF5EA4DA" Opacity="0.3">
+        <Button x:Name="Next" Content="Next" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Height="91" Width="312" Click="Button_Click"/>
+        <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Height="91" Width="312" Click="Exit_Click"/>
+    </Grid>
+</Window>

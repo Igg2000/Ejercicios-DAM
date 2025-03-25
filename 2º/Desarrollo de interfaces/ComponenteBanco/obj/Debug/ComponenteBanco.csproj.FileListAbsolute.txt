@@ -1,0 +1,13 @@
+C:\Users\Nacho\source\repos\ComponenteBanco\bin\Debug\ComponenteBanco.dll
+C:\Users\Nacho\source\repos\ComponenteBanco\bin\Debug\ComponenteBanco.pdb
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\UserControl1.g.cs
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco_MarkupCompile.cache
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco_MarkupCompile.lref
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\UserControl1.baml
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.g.resources
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.Properties.Resources.resources
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.dll
+C:\Users\Nacho\source\repos\ComponenteBanco\obj\Debug\ComponenteBanco.pdb

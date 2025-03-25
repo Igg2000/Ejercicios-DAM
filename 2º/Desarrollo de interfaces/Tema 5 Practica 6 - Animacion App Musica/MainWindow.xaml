@@ -1,0 +1,301 @@
+﻿<Window x:Class="Tema_5_Practica_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_5_Practica_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000"
+        MinWidth="1000" MinHeight="700"
+        Loaded="WindowLoaded">
+    <Window.Resources>
+        <Storyboard x:Key="Pantalla_de_carga" >
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PantallaCarga" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:06" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PantallaCarga" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:05" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:06" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="LogoPantallacarga" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:04" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="LogoPantallacarga" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:02" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:03" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:04" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="00:00:05" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="zoomCaja1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja1" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja1" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="250">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="zoomCaja2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja2" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja2" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="250">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="zoomCaja3">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja3" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja3" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="250">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="zoomCaja4">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja4" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja4" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="250">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="zoomCaja5">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja5" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="150"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="caja5" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01" Value="250">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Background="#222831">
+        <!-- Barra Superior -->
+        <DockPanel LastChildFill="True" Height="100" VerticalAlignment="Top">
+            <!-- Logo -->
+            <Image Source="/logo.png" Width="131" Margin="10,0,0,0" DockPanel.Dock="Left" Stretch="UniformToFill" Height="99" />
+            <!-- Menú superior -->
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" DockPanel.Dock="Top" Orientation="Horizontal" Margin="-100,20,0,0">
+                <TextBlock Text="Novedades" Foreground="#EEEEEE" FontSize="18" Margin="20,0" />
+                <TextBlock Text="Playlists" Foreground="#EEEEEE" FontSize="18" Margin="20,0" />
+                <TextBlock Text="Videos" Foreground="#EEEEEE" FontSize="18" Margin="20,0" />
+                <TextBlock Text="Tienda" Foreground="#EEEEEE" FontSize="18" Margin="20,0" />
+                <TextBlock Text="Legacy" Foreground="#EEEEEE" FontSize="18" Margin="20,0" />
+                <TextBlock Text="Artistas" Foreground="#76ABAE" FontSize="18" FontWeight="Bold" Margin="20,0" />
+                <!-- Botón de búsqueda -->
+                <Button Content="🔍" Width="50" Height="20" Background="Transparent" Foreground="#EEEEEE" BorderThickness="0" DockPanel.Dock="Right" Margin="0" />
+            </StackPanel>
+
+        </DockPanel>
+
+        <!-- Título y subtítulo -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,20">
+            <TextBlock Text="ARTISTAS" Foreground="#EEEEEE" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Verdana" />
+            <TextBlock Text="Conoce a nuestros creadores de emociones" Foreground="#76ABAE" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,0" />
+        </StackPanel>
+
+        <Separator VerticalAlignment="Top" Margin="100,240,100,0" Background="#FF76ABAE" Height="20" BorderBrush="#FF76ABAE" BorderThickness="0,10,0,50" FontSize="18" />
+
+        <!-- Listado de Artistas -->
+        <Grid x:Name="GridAristas" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <!-- Artista 1 -->
+            <Border x:Name="caja1" Background="#31363F" Width="150" Height="200" Margin="10" CornerRadius="10" Grid.Column="0" MouseEnter="caja1_MouseEnter" MouseLeave="caja1_MouseLeave">
+                <StackPanel>
+                    <Grid Width="120" Height="120" Margin="15">
+                        <Ellipse Fill="#76ABAE" />
+                        <Ellipse Stroke="#FF76ABAE" StrokeThickness="3">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/artist1.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <TextBlock Text="Lit Killah" Foreground="#EEEEEE" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="Trap Argentino" Foreground="Gray" HorizontalAlignment="Center" FontSize="12" />
+                </StackPanel>
+            </Border>
+            <!-- Artista 2 -->
+            <Border x:Name="caja2" Background="#31363F" Width="150" Height="200" Margin="10" CornerRadius="10" Grid.Column="1" MouseEnter="caja2_MouseEnter" MouseLeave="caja2_MouseLeave">
+                <StackPanel>
+                    <Grid Width="120" Height="120" Margin="15">
+                        <Ellipse Fill="#76ABAE" />
+                        <Ellipse Stroke="#FF76ABAE" StrokeThickness="3">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/artist2.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <TextBlock Text="Kidd Keo" Foreground="#EEEEEE" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Foreground="Gray" HorizontalAlignment="Center" FontSize="12" ><Run Language="es-es" Text="Hip-Hop/"/><Run Text="Trap"/></TextBlock>
+                </StackPanel>
+            </Border>
+            <!-- Artista 3 -->
+            <Border x:Name="caja3" Background="#31363F" Width="150" Height="200" Margin="10" CornerRadius="10" Grid.Column="2" MouseEnter="caja3_MouseEnter" MouseLeave="caja3_MouseLeave">
+                <StackPanel>
+                    <Grid Width="120" Height="120" Margin="15">
+                        <Ellipse Fill="#76ABAE" />
+                        <Ellipse Stroke="#FF76ABAE" StrokeThickness="3">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/artist3.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <TextBlock Foreground="#EEEEEE" HorizontalAlignment="Center" FontWeight="Bold" ><Run Language="es-es" Text="Duki"/></TextBlock>
+                    <TextBlock Foreground="Gray" HorizontalAlignment="Center" FontSize="12" ><Run Language="es-es" Text="Trap Argentino"/></TextBlock>
+                </StackPanel>
+            </Border>
+            <!-- Artista 4 -->
+            <Border x:Name="caja4" Background="#31363F" Width="150" Height="200" Margin="10" CornerRadius="10" Grid.Column="3" MouseEnter="caja4_MouseEnter" MouseLeave="caja4_MouseLeave">
+                <StackPanel>
+                    <Grid Width="120" Height="120" Margin="15">
+                        <Ellipse Fill="#76ABAE" />
+                        <Ellipse Stroke="#FF76ABAE" StrokeThickness="3">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/artist4.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <TextBlock Text="Jarfaiter" Foreground="#EEEEEE" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="Drill" Foreground="Gray" HorizontalAlignment="Center" FontSize="12" />
+                </StackPanel>
+            </Border>
+            <!-- Artista 5 -->
+            <Border x:Name="caja5" Background="#31363F" Width="150" Height="200" Margin="10" CornerRadius="10" Grid.Column="4" MouseEnter="caja5_MouseEnter" MouseLeave="caja5_MouseLeave">
+                <StackPanel>
+                    <Grid Width="120" Height="120" Margin="15">
+                        <Ellipse Fill="#76ABAE" />
+                        <Ellipse Stroke="#FF76ABAE" StrokeThickness="3">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/artist5.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <TextBlock Text="Natos y Waor" Foreground="#EEEEEE" HorizontalAlignment="Center" FontWeight="Bold" />
+                    <TextBlock Text="Rap" Foreground="Gray" HorizontalAlignment="Center" FontSize="12" />
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="PantallaCarga" d:IsHidden="True" >
+            <Grid.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF76ABAE" Offset="1"/>
+                    <GradientStop Color="#FFEEEEEE" Offset="0"/>
+                </RadialGradientBrush>
+            </Grid.Background>
+            <Image x:Name="LogoPantallacarga" HorizontalAlignment="Center" VerticalAlignment="Center" Source="logo.png" Stretch="Uniform" Height="271" Width="333" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+    </Grid>
+</Window>

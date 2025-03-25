@@ -1,0 +1,100 @@
+﻿<Page x:Class="IGG_AgenciaViajes.PaginaNuevoViaje"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_AgenciaViajes"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="PaginaNuevoViaje">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondoAvion.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Título de la página -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Nuevo Viaje"
+               FontSize="36"
+               Margin="10"
+               VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FFEEF5FF" />
+
+        <!-- Contenido principal -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Top">
+            <!-- Contenedor de Origen y Destino -->
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!-- Origen -->
+                <StackPanel Grid.Column="0" Margin="5">
+                    <TextBlock Text="Origen:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxOrigen" Margin="5" Height="35" FontSize="16"/>
+                </StackPanel>
+                <!-- Destino -->
+                <StackPanel Grid.Column="1" Margin="5">
+                    <TextBlock Text="Destino:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxDestino" Margin="5" Height="35" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Contenedor de Fechas y Horas -->
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Fecha de Ida y Hora de Salida -->
+                <StackPanel Grid.Column="0" Margin="5">
+                    <TextBlock Text="Fecha de ida:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <DatePicker x:Name="DatePickerFechaIda" Margin="5" Height="35" FontSize="16"/>
+                    <TextBlock Text="Hora de salida:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxHoraSalida" Margin="5" Height="35" FontSize="16" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Loaded="TextBox_Loaded"/>
+                </StackPanel>
+
+                <!-- Fecha de Vuelta y Hora de Llegada -->
+                <StackPanel Grid.Column="1" Margin="5">
+                    <TextBlock Text="Fecha de vuelta:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <DatePicker x:Name="DatePickerFechaVuelta" Margin="5" Height="35" FontSize="16"/>
+                    <TextBlock Text="Hora de llegada:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+                    <TextBox x:Name="TextBoxHoraLlegada" Margin="5" Height="35" FontSize="16" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Loaded="TextBox_Loaded"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Tipo de transporte -->
+            <TextBlock Text="Tipo de transporte:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ComboBox x:Name="ComboBoxTransporte" Margin="5" Height="35" FontSize="16">
+                <ComboBoxItem Content="Avión" />
+                <ComboBoxItem Content="Autobús" />
+                <ComboBoxItem Content="Tren" />
+                <ComboBoxItem Content="Auto" />
+            </ComboBox>
+
+            <!-- Tipo de hotel -->
+            <TextBlock Text="Tipo de hotel:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ComboBox x:Name="ComboBoxHotel" Margin="5" Height="35" FontSize="16">
+                <ComboBoxItem Content="Económico" />
+                <ComboBoxItem Content="Estándar" />
+                <ComboBoxItem Content="Lujo" />
+            </ComboBox>
+
+            <!-- Botones -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="BotonGuardarViaje" Content="Guardar" Margin="5" Height="50" Width="150" Background="#FF176B87" Foreground="#FFEEF5FF" FontSize="18" Click="BotonGuardarViaje_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</Page>

@@ -1,0 +1,25 @@
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\MenuPrincipal.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA_MarkupCompile.cache
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA_MarkupCompile.lref
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\bin\Debug\IGG Examen 1EVA.exe.config
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\bin\Debug\IGG Examen 1EVA.exe
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\bin\Debug\IGG Examen 1EVA.pdb
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\MenuPrincipal.baml
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.g.resources
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG_Examen_1EVA.Properties.Resources.resources
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.exe
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\IGG Examen 1EVA.pdb
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\AgendarCita.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\AgendarCita.baml
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\AltaCliente.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\AltaCliente.baml
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\BuscarCliente.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\BuscarCliente.baml
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\CobrarCliente.g.cs
+C:\Users\Nacho\source\repos\IGG Examen 1EVA\obj\Debug\CobrarCliente.baml

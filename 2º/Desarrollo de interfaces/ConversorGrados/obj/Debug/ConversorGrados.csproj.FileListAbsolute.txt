@@ -1,0 +1,13 @@
+C:\Users\Nacho\source\repos\ConversorGrados\bin\Debug\ConversorGrados.dll
+C:\Users\Nacho\source\repos\ConversorGrados\bin\Debug\ConversorGrados.pdb
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\UserControl1.g.cs
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados_MarkupCompile.cache
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados_MarkupCompile.lref
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\UserControl1.baml
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.g.resources
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.Properties.Resources.resources
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.dll
+C:\Users\Nacho\source\repos\ConversorGrados\obj\Debug\ConversorGrados.pdb

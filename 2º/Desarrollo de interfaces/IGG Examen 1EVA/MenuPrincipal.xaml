@@ -1,0 +1,41 @@
+﻿<Page x:Class="IGG_Examen_1EVA.MenuPrincipal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_Examen_1EVA"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="MenuPrincipal">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondo.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Mensaje de bienvenida -->
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+               Text="Estética DAM2" 
+               FontSize="48" 
+               Margin="10" 
+               VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FFEEF5FF" FontWeight="Bold" />
+
+        <!-- Botón de cerrar sesión -->
+
+        <!-- Grid de botones en el centro -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Center">
+            <Button x:Name="BotoAgendarCita" Content="Registrar nueva cita" Margin="5" Height="60" HorizontalAlignment="Stretch" MaxWidth="700" Background="#FFEEF5FF" Foreground="#FF176B87" FontSize="24" Click="BotoAgendarCita_Click" />
+            <Button x:Name="BotonAltaCliente" Content="Dar de alta a cliente" Margin="5" Height="60" HorizontalAlignment="Stretch" MaxWidth="700" Background="#FFEEF5FF" Foreground="#FF176B87" FontSize="24" Click="BotonAltaCliente_Click" />
+            <Button x:Name="BotonBuscarCliente" Content="Buscar Cliente" Margin="5" Height="60" HorizontalAlignment="Stretch" MaxWidth="700" Background="#FFEEF5FF" Foreground="#FF176B87" FontSize="24" Click="BotonBuscarCliente_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

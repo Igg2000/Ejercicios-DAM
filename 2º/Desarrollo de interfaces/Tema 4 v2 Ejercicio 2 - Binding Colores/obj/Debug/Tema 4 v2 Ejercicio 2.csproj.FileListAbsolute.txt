@@ -1,0 +1,15 @@
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\bin\Debug\Tema 4 v2 Ejercicio 2.exe.config
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\bin\Debug\Tema 4 v2 Ejercicio 2.exe
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\bin\Debug\Tema 4 v2 Ejercicio 2.pdb
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.csproj.AssemblyReference.cache
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\MainWindow.g.cs
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\App.g.cs
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2_MarkupCompile.cache
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2_MarkupCompile.lref
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\MainWindow.baml
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.g.resources
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema_4_v2_Ejercicio_2.Properties.Resources.resources
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.csproj.GenerateResource.cache
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.csproj.CoreCompileInputs.cache
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.exe
+C:\Users\Nacho\source\repos\Tema 4 v2 Ejercicio 2\obj\Debug\Tema 4 v2 Ejercicio 2.pdb

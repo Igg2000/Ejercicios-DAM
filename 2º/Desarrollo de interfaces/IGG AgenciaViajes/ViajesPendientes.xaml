@@ -1,0 +1,54 @@
+﻿<Page x:Class="IGG_AgenciaViajes.ViajesPendientes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_AgenciaViajes"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="ViajesPendientes">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondoAvion.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Título de la página -->
+        <TextBlock Grid.Row="0" 
+               Text="Listado de Viajes"
+               FontSize="36"
+               Margin="10"
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Center"
+               Foreground="#FFEEF5FF" 
+               FontWeight="Bold" />
+
+        <!-- Tabla de datos -->
+        <DataGrid Grid.Row="1"
+              x:Name="DataGridViajes"
+              AutoGenerateColumns="False"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              Margin="20"
+              FontSize="16"
+              Foreground="#FF176B87"
+              Background="#FFEEF5FF"
+              HeadersVisibility="Column"
+              GridLinesVisibility="Horizontal"
+              IsReadOnly="True"
+              CanUserAddRows="False">
+            <!-- Tabla no editable -->
+            <!-- Columnas definidas manualmente -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" />
+                <DataGridTextColumn Header="DNI" Binding="{Binding Dni}" Width="*" />
+                <DataGridTextColumn Header="Datos del Viaje" Binding="{Binding DatosViaje}" Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Page>

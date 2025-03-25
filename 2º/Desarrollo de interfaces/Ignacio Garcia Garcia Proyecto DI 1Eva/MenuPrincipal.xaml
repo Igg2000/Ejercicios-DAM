@@ -1,0 +1,42 @@
+﻿<Window x:Class="Ignacio_Garcia_Garcia_Proyecto_DI_1Eva.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ignacio_Garcia_Garcia_Proyecto_DI_1Eva"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Mensaje de bienvenida -->
+        <TextBlock Grid.Row="0" Grid.Column="0" 
+                   Text="¡Bienvenido a Viajes Nacho!" 
+                   FontSize="24" 
+                   Margin="10" 
+                   VerticalAlignment="Top" />
+
+        <!-- Botón de cerrar sesión -->
+        <Button Grid.Row="0" Grid.Column="1" 
+                Content="Cerrar Sesión" 
+                Margin="10" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Center" />
+
+        <!-- Grid de botones en el centro -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Center">
+            <Button x:Name="BotonNuevoViaje" Content="Nuevo viaje" Margin="5" Height="60" HorizontalAlignment="Stretch"/>
+            <Button x:Name="BotonViajesPendientes" Content="Viajes Pendientes" Margin="5" Height="60" HorizontalAlignment="Stretch"/>
+            <Button x:Name="BotonBuscarCliente" Content="Buscar Cliente" Margin="5" Height="60" HorizontalAlignment="Stretch"/>
+            <Button x:Name="BotonRegistrarCliente" Content="Registrar Cliente" Margin="5" Height="60" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+    </Grid>
+</Window>

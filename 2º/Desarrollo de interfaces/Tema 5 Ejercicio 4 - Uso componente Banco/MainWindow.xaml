@@ -1,0 +1,77 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_5_Ejercicio_4"
+        xmlns:ComponenteBanco="clr-namespace:ComponenteBanco;assembly=ComponenteBanco" x:Class="Tema_5_Ejercicio_4.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600" Background="#0A47A9">
+    <Grid Margin="20,0,20,20">
+        <!-- Definimos dos filas para el Grid -->
+        <Grid.RowDefinitions>
+            <!-- Fila para la barra superior -->
+            <RowDefinition Height="Auto" />
+            <!-- Fila para el contenido principal -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Barra superior con un Grid para alineación -->
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="40">
+            <!-- Columna izquierda con el Label -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Label pegado a la izquierda -->
+            <Label Content="ATM" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0" Grid.Column="0" Foreground="White" FontSize="24" FontWeight="Bold"/>
+
+
+            <!-- Label pegado a la derecha -->
+            <Label Content="Card Return" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0" Grid.Column="2" Foreground="#7FFFFFFF" FontSize="16" FontWeight="Bold"/>
+        </Grid>
+
+        <!-- Panel principal con el contenido que ya tenías -->
+        <Grid Grid.Row="1">
+            <!-- Definición de columnas del Grid principal -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Panel Izquierdo -->
+            <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="Welcome" Foreground="White" FontSize="16" Margin="0,20,0,0"/>
+                <TextBlock Text="Ignacio Garcia" Foreground="White" FontSize="18" FontWeight="Bold"/>
+
+                <StackPanel Margin="0,30,0,0">
+                    <TextBlock Text="Account #1" Foreground="White" FontSize="16" />
+                    <ComponenteBanco:controlarDinero x:Name="dineroCuenta" FontSize="24" FontWeight="Bold" ForegroundColor="White"/>
+
+                    <TextBlock Text="Savings #2" Foreground="White" FontSize="16" Margin="0,20,0,0"/>
+                    <TextBlock Text="$795" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                    
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Panel Derecho -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+                <UniformGrid Columns="2" Rows="4" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="350">
+                    <Button x:Name="bGetCash" Content="Get Cash" Background="#5AC4F8" Foreground="White" FontSize="16" Margin="5" Click="bGetCash_Click"/>
+                    <Button x:Name="bDeposit" Content="Deposit" Background="#5AC4F8" Foreground="White" FontSize="16" Margin="5" Click="bDeposit_Click"/>
+                    <Button x:Name="bPayments" Content="Payments" Background="#5AC4F8" Foreground="White" FontSize="16" Margin="5" Click="bGetCash_Click"/>
+                    <Button x:Name="bCreditCard" Content="Credit Card" Background="#5AC4F8" Foreground="White" FontSize="16" Margin="5" Click="ClickSinFuncionalidad"/>
+                    <Button x:Name="bAccountSettings" Content="Account Settings" Background="#5AC4F8" Foreground="White" FontSize="16" Margin="5" Click="ClickSinFuncionalidad"/>
+                    <Button x:Name="bOther" Content="Other" Background="#38598F" Foreground="#7FFFFFFF" FontSize="16" Margin="5" Click="ClickSinFuncionalidad"/>
+                </UniformGrid>
+                <UniformGrid Columns="2" Rows="1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="350" Background="#FFFF4F78">
+                    <TextBox x:Name="cantidadAModificar" HorizontalAlignment="Center" TextWrapping="Wrap" Text="$0,00" VerticalAlignment="Center" Width="120" Background="{x:Null}" FontSize="16" Foreground="White" BorderBrush="{x:Null}" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                    <!-- Quick Cash Button -->
+                    <Label Content="     Quick Cash     &gt;" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,10,10" Background="{x:Null}" Foreground="#7FFFFFFF" FontSize="16" FontWeight="Bold"/>
+                </UniformGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

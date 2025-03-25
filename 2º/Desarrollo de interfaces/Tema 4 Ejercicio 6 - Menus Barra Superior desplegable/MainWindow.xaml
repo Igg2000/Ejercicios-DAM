@@ -1,0 +1,25 @@
+﻿<Window x:Class="Tema_4_Ejercicio_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_4_Ejercicio_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Comunicación" FontSize="36" StaysOpenOnClick="True">
+                <MenuItem Header="Notas de prensa" />
+                <MenuItem Header="Agenda de eventos" />
+                <MenuItem Header="Gracias por ayudarnos a ayudar" />
+                <MenuItem Header="Blogs" />
+                <MenuItem Header="Tu canal de Salud" />
+            </MenuItem>
+                <MenuItem Header="El grupo" FontSize="36"/>
+                <MenuItem Header="Trabaja con nosotros" FontSize="36"/>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
+
+</Window>

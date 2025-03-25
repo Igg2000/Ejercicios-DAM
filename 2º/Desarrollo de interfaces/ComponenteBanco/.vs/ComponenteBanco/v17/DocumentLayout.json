@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nacho\\source\\repos\\ComponenteBanco\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D1DA7D6C-F185-4301-97B1-0A247C7455C0}|ComponenteBanco.csproj|c:\\users\\nacho\\source\\repos\\componentebanco\\usercontrol1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D1DA7D6C-F185-4301-97B1-0A247C7455C0}|ComponenteBanco.csproj|solutionrelative:usercontrol1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1DA7D6C-F185-4301-97B1-0A247C7455C0}|ComponenteBanco.csproj|c:\\users\\nacho\\source\\repos\\componentebanco\\usercontrol1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1DA7D6C-F185-4301-97B1-0A247C7455C0}|ComponenteBanco.csproj|solutionrelative:usercontrol1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserControl1.xaml",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\ComponenteBanco\\UserControl1.xaml",
+              "RelativeDocumentMoniker": "UserControl1.xaml",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\ComponenteBanco\\UserControl1.xaml",
+              "RelativeToolTip": "UserControl1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-14T19:59:42.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserControl1.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Nacho\\source\\repos\\ComponenteBanco\\UserControl1.xaml.cs",
+              "RelativeDocumentMoniker": "UserControl1.xaml.cs",
+              "ToolTip": "C:\\Users\\Nacho\\source\\repos\\ComponenteBanco\\UserControl1.xaml.cs",
+              "RelativeToolTip": "UserControl1.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T19:59:42.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

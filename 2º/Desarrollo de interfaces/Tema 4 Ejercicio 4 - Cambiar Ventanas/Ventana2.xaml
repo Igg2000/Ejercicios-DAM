@@ -1,0 +1,14 @@
+﻿<Window x:Class="Tema_4_Ejercicio_4.Ventana2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema_4_Ejercicio_4"
+        mc:Ignorable="d"
+        Title="Ventana2" Height="450" Width="800">
+    <Grid>
+        <Label Content="Ventana 2" HorizontalAlignment="Center" Height="94" Margin="0,41,0,0" VerticalAlignment="Top" Width="400" FontSize="48" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Content="Ir a la ventana 1" HorizontalAlignment="Center" Height="85" Margin="0,195,0,0" VerticalAlignment="Top" Width="276" Click="Button_Click"/>
+
+    </Grid>
+</Window>

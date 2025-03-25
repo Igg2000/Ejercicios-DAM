@@ -1,0 +1,121 @@
+﻿<Page x:Class="IGG_Examen_1EVA.BuscarCliente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IGG_Examen_1EVA"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="BuscarCliente">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/fondo.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Título de la página -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Buscar Clientes"
+               FontSize="36"
+               Margin="10"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               FontWeight="Bold"
+               Foreground="#FFEEF5FF" />
+
+        <!-- Contenido principal -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10,40,10" VerticalAlignment="Top">
+            <!-- Texto explicativo -->
+            <TextBlock Text="Busque por nombre o apellido (Dejar en blanco para mostrar todo):" 
+                   FontSize="18" 
+                   Margin="5" 
+                   Foreground="#FFEEF5FF" />
+
+            <!-- Contenedor de búsqueda (paralelo) -->
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Campo de búsqueda -->
+                <TextBox x:Name="TextBoxBusqueda"
+                     Grid.Column="0"
+                     Margin="5"
+                     Height="35"
+                     FontSize="16"
+                     VerticalAlignment="Center"/>
+
+                <!-- Botón de búsqueda -->
+                <Button x:Name="BotonBuscar"
+                    Content="Buscar"
+                    Grid.Column="1"
+                    Margin="5"
+                    Height="35"
+                    Width="100"
+                    Foreground="#FF176B87"
+                    Background="#FFEEF5FF"
+                    FontSize="16"
+                    VerticalAlignment="Center"
+                    Click="BotonBuscar_Click" />
+            </Grid>
+
+            <!-- Resultados de búsqueda -->
+            <TextBlock Text="Resultados:" FontSize="18" Margin="5" Foreground="#FFEEF5FF"/>
+            <ListBox x:Name="ListBoxResultados" Margin="5" Height="300" FontSize="16">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <!-- Nombre y Apellidos en la misma línea -->
+                            <TextBlock Text="Nombre:" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Nombre}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Apellidos}"/>
+                            </StackPanel>
+                            <!-- Última visita -->
+                            <TextBlock Text="Última visita:" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text="{Binding UltimaVisita, StringFormat='dd/MM/yyyy'}"/>
+
+                            <!-- Color de uñas -->
+                            <TextBlock Text="Color de uñas:" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text="{Binding ColorUnas}"/>
+
+                            <!-- Alergenos -->
+                            <TextBlock Text="Alergenos:" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text="{Binding Alergenos}"/>
+
+                            <!-- Masaje favorito -->
+                            <TextBlock Text="Masaje favorito:" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text="{Binding MasajeFavorito}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+
+            <!-- Botón para cobrar al cliente -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="BotonCobrarCliente"
+                        Content="Cobrar Cliente"
+                        Margin="5"
+                        Height="50"
+                        Width="150"
+                        Foreground="#FF176B87"
+                        Background="#FFEEF5FF"
+                        FontSize="18"
+                        Click="BotonCobrarCliente_Click" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

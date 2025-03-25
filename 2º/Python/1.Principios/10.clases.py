@@ -1,4 +1,8 @@
 
+#Si quieres una variable publica la escribes normal
+#Si quieres una variable a la que acceden las clases heredadas le añades un _ delante
+#Si quieres una variable privada le añades un __ delante (2_)
+
 class moto():
 
     ruedas = 2
